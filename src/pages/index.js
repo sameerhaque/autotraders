@@ -43,13 +43,13 @@ const IndexPage = ({data}) => (
         <Container>
             <CardDeck className="py-5 ">
               <Card>
-                <Card.Img src="./src/images/man1.png" />
-                <Card.Body>
+                <Card.Img fluid={data.feature_image.childImageSharp.fluid} />
+                <Card.ImgOverlay>
                   <Card.Text>
                     INTERACTIVE CONTENT
                   </Card.Text>
                   <Card.Title>20 Reasons To Believe</Card.Title>
-                </Card.Body>
+                </Card.ImgOverlay>
               </Card>
               <Card>
                 <Card.Img src="holder.js/100px160" />
