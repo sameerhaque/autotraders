@@ -63,24 +63,26 @@ const IndexPage = ({ data }) => (
     <section className={custom.hero_card_section}>
       <Container>
         <CardDeck className="py-5 ">
-          <Card>
-            <Card.Img fluid={data.feature_image.childImageSharp.fluid} />
-            <Card.ImgOverlay>
-              <Card.Text>INTERACTIVE CONTENT</Card.Text>
-              <Card.Title>20 Reasons To Believe</Card.Title>
-            </Card.ImgOverlay>
+          <Card border="0">
+            <Img
+              fluid={data.card1.childImageSharp.fluid}
+              alt="card1"
+              className="img-responsive"
+            />
           </Card>
-          <Card>
-            <Card.Body>
-              <Card.Text>ARTICLE</Card.Text>
-              <Card.Title>The hardest working family member</Card.Title>
-            </Card.Body>
+          <Card border="0">
+            <Img
+              fluid={data.card2.childImageSharp.fluid}
+              alt="card2"
+              className="img-responsive"
+            />
           </Card>
-          <Card>
-            <Card.Body>
-              <Card.Text>ARTICLE</Card.Text>
-              <Card.Title>The Sienna, described from every screen</Card.Title>
-            </Card.Body>
+          <Card border="0">
+            <Img
+              fluid={data.card3.childImageSharp.fluid}
+              alt="card3"
+              className="img-responsive"
+            />
           </Card>
         </CardDeck>
       </Container>
@@ -105,6 +107,21 @@ const IndexPage = ({ data }) => (
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
               </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </section>
+    <section className={custom.bottom_features_section}>
+      <Container>
+        <Row>
+          <Col md={12}>
+            <div className={custom.features_image}>
+              <Img
+                fluid={data.bottom.childImageSharp.fluid}
+                alt="Bottom"
+                className="img-responsive"
+              />
             </div>
           </Col>
         </Row>
@@ -143,7 +160,39 @@ export const query = graphql`
 
     feature_image: file(relativePath: { eq: "sienna-side2.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1200, maxHeight: 500) {
+        fluid(maxWidth: 976, maxHeight: 432) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    card1: file(relativePath: { eq: "CARD1.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 420, maxHeight: 592) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    card2: file(relativePath: { eq: "CARD2.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 420, maxHeight: 592) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    card3: file(relativePath: { eq: "CARD3.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 420, maxHeight: 592) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    bottom: file(relativePath: { eq: "ad_grande.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1340, maxHeight: 601) {
           ...GatsbyImageSharpFluid
         }
       }

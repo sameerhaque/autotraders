@@ -30,6 +30,8 @@ const Layout = ({ children }) => {
       <footer
         style={{
           marginTop: `2rem`,
+          maxWidth: `1120px`,
+          margin: `25px auto`,
         }}
       >
         © {new Date().getFullYear()}, Test Build / Toyota
