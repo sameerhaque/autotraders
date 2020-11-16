@@ -20,18 +20,17 @@ html, body {
 	color: #3e3e3e;
 }
 
-.at_text_secondary {
+.at_van_proud {
 	color: #d7000c;
 	padding-left: 20px;
 	font-weight: bold;
 }
 
 .hero_image {
-/*
 	background-image: url("../images/sienna-side.jpg"); 
-*/
 	background-color: #cccccc; 
 	height: 66vh; 
+	min-height: 66vh;
 	background-position: center; 
 	background-repeat: no-repeat; 
 	background-size: cover; 
@@ -39,17 +38,23 @@ html, body {
 
 .hero_cta_section {
 	background-color: #e7f0f9; 
-	/*height: 500px; */
+	height: 300px;
 }
 
 .hero_cta_bubble {
 	margin-top: -60px;
+	text-align: center;
 }
+
+.hero_cta_know_more {
+	margin-top: 20px;
+	vertical-align: center;
+}
+
 
 .features_image {
 	background-color: #cccccc; 
 	width: 100%; 
-	height: 300px; 
 	background-position: center; 
 	background-repeat: no-repeat; 
 }
