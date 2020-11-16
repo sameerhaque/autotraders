@@ -1,6 +1,6 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-import { Container, Row, Col, CardDeck, Card, Button } from "react-bootstrap"
+import { graphql } from "gatsby"
+import { Container, Row, Col, CardDeck, Card } from "react-bootstrap"
 import custom from "../pages/custom.module.css"
 
 import Layout from "../components/layout"

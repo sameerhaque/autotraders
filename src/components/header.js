@@ -1,17 +1,14 @@
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import custom from "../pages/custom.module.css"
 
-import {Container, Row, Navbar, Nav, Button} from "react-bootstrap"
-
+import { Container, Navbar, Nav } from "react-bootstrap"
 
 const Header = ({ siteTitle }) => (
   <header>
     <div className={custom.at_navbar_top}>
       <Container>
-        <Navbar >
-        </Navbar>
+        <Navbar></Navbar>
       </Container>
     </div>
     <div className={custom.at_navbar_bottom}>
