@@ -28,13 +28,7 @@ body {
 }
 
 .hero_image {
-  background-image: url("../images/sienna-side.jpg");
   background-color: #cccccc;
-  height: 66vh;
-  min-height: 66vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .hero_cta_section {

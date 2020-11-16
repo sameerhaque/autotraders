@@ -11,7 +11,15 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
 
-    <div className={custom.hero_image}></div>
+    <div className={custom.hero_image}>
+      <div className={custom.features_image}>
+        <Img
+          fluid={data.hero.childImageSharp.fluid}
+          alt="Bottom"
+          className="img-responsive"
+        />
+      </div>
+    </div>
 
     <section className={custom.hero_cta_section}>
       <Container>
@@ -193,6 +201,14 @@ export const query = graphql`
     bottom: file(relativePath: { eq: "ad_grande.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1340, maxHeight: 601) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    hero: file(relativePath: { eq: "sienna_side.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, maxHeight: 575) {
           ...GatsbyImageSharpFluid
         }
       }
