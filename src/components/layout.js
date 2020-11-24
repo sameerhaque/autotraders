@@ -27,12 +27,16 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <main>{children}</main>
-      <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.autotraders.ca">AutoTraders</a>
+      <footer
+        style={{
+          marginTop: `2rem`,
+          maxWidth: `1120px`,
+          margin: `25px auto`,
+        }}
+      >
+        © {new Date().getFullYear()}, Test Build / Toyota
+        {` `}
+        <a href="https://www.autotraders.ca">AutoTraders</a>
       </footer>
     </>
   )
