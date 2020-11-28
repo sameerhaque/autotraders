@@ -3,5 +3,5 @@
  *
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
-
-import "./node_modules/bootstrap/dist/css/bootstrap.css";
+import "./src/css/fonts.css"
+import "./src/scss/global.scss"
