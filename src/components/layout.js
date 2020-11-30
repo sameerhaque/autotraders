@@ -29,15 +29,9 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <footer
         style={{
-          marginTop: `2rem`,
-          maxWidth: `1120px`,
-          margin: `25px auto`,
+          height: `110px`,
         }}
-      >
-        © {new Date().getFullYear()}, Test Build / Toyota
-        {` `}
-        <a href="https://www.autotraders.ca">AutoTraders</a>
-      </footer>
+      />
     </>
   )
 }
