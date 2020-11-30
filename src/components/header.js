@@ -8,7 +8,6 @@ import toyotaLogo from "../images/toyota-logo.png"
 import { Container, Row, Col, Navbar, Nav } from "react-bootstrap"
 
 const Header = () => {
-  console.log(header)
   return (
     <header className={header.at_header}>
       <div className={header.at_navbar_top}>
