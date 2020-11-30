@@ -12,8 +12,9 @@ import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   const fullScreenToggle = () => {
-    $(`.${landing.hero_video}`).toggleClass("fullscreen")
-  }
+      $(`.${landing.hero_video}`).toggleClass("fullscreen")
+    },
+    isBrowser = typeof window !== "undefined"
   useEffect(() => {
     $(".rh5v-Fullscreen_button").click(fullScreenToggle)
   }, [])
@@ -22,19 +23,21 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <div className={landing.hero_image}>
         <div className={landing.features_image}>
-          <Video
-            className={landing.hero_video}
-            poster={data.hero.childImageSharp.fluid.src}
-            width="1440"
-            height="579"
-            preload="metadata"
-            autoPlay={true}
-            loop={true}
-            muted={true}
-            controls={["Fullscreen"]}
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </Video>
+          {isBrowser && (
+            <Video
+              className={landing.hero_video}
+              poster={data.hero.childImageSharp.fluid.src}
+              width="1440"
+              height="579"
+              preload="metadata"
+              autoPlay={true}
+              loop={true}
+              muted={true}
+              controls={["Fullscreen"]}
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </Video>
+          )}
         </div>
       </div>
       <section className={landing.hero_cta_section}>
