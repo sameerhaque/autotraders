@@ -1,0 +1,54 @@
+.families_image {
+  position: absolute !important;
+  right: 0;
+  top: -55px;
+  z-index: 99;
+}
+
+.at_van_proud {
+  color: #d7000c;
+  padding-left: 20px;
+  font-weight: bold;
+}
+
+.hero_image {
+  background-color: #cccccc;
+}
+
+.hero_image .hero_video {
+  display: flex;
+}
+
+.hero_cta_section {
+  background-color: #e7f0f9;
+  height: 300px;
+}
+
+.hero_cta_bubble {
+  margin-top: -60px;
+  text-align: center;
+}
+
+.hero_cta_know_more {
+  margin-top: 20px;
+  vertical-align: center;
+}
+
+.features_image {
+  background-color: #cccccc;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.bottom_features_section {
+  margin-top: 60px;
+}
+
+@media(min-width:576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}

@@ -1,48 +1,75 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import { Container, Row, Col, CardDeck, Card } from "react-bootstrap"
-import custom from "../css/custom.module.css"
-
-import Layout from "../components/layout"
+import { DefaultPlayer as Video } from "react-html5video"
 import Img from "gatsby-image"
+import $ from "jquery"
+
+import landing from "../css/landing.module.css"
+import videoSrc from "../videos/video.mp4"
+import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
-  console.log(custom)
+  const fullScreenToggle = () => {
+    $(`.${landing.hero_video}`).toggleClass("fullscreen")
+  }
+  useEffect(() => {
+    $(".rh5v-Fullscreen_button").click(fullScreenToggle)
+  }, [])
   return (
     <Layout>
       <SEO title="Home" />
-      <div className={custom.hero_image}>
-        <div className={custom.features_image}>
-          <Img
-            fluid={data.hero.childImageSharp.fluid}
-            alt="Bottom"
-            className="img-responsive"
-          />
+      <div className={landing.hero_image}>
+        <div className={landing.features_image}>
+          <Video
+            className={landing.hero_video}
+            poster={data.hero.childImageSharp.fluid.src}
+            width="1440"
+            height="579"
+            preload="metadata"
+            autoPlay={true}
+            loop={true}
+            muted={true}
+            controls={["Fullscreen"]}
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </Video>
         </div>
       </div>
-      <section className={custom.hero_cta_section}>
+      <section className={landing.hero_cta_section}>
         <Container>
-          <div className="row d-flex flex-md-row-reverse justify-content-between">
-            <div className="col-xs-12 col-md-4 flex-fill">
-              <div className={custom.hero_cta_bubble}>
-                <Img
-                  fixed={data.bubble1.childImageSharp.fixed}
-                  alt="Bubble 1"
-                  className="rounded-circle img-responsive"
-                />
-                <Img
-                  fixed={data.bubble2.childImageSharp.fixed}
-                  alt="Bubble 2"
-                  className="rounded-circle img-responsive"
-                />
-                <Img
-                  fixed={data.bubble3.childImageSharp.fixed}
-                  alt="Bubble 3"
-                  className="rounded-circle img-responsive"
-                />
+          <Row>
+            <Col
+              sm={12}
+              className="text-center text-md-right position-relative"
+            >
+              <Img
+                fixed={data.families.childImageSharp.fixed}
+                alt="families"
+                className={`img-fluid d-none d-sm-inline-block ${landing.families_image}`}
+              />
+              <Img
+                fixed={data.familiesM.childImageSharp.fixed}
+                alt="families-m"
+                className={`img-fluid d-inline-block d-sm-none ${landing.families_image}`}
+              />
+            </Col>
+          </Row>
+        </Container>
+        <Container>
+          <Row>
+            <Col md={6}>
+              <div className={landing.hero_cta_tag}>
+                TOYOTA <span className="font-weight-bold">SIENNA</span>
               </div>
-              <div className={custom.hero_cta_know_more}>
+              <h2 className="display-4">
+                Makes Us <br />
+                <span className={landing.at_van_proud}>VanProud</span>
+              </h2>
+            </Col>
+            <Col md={6}>
+              <div className={landing.hero_cta_know_more}>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -51,23 +78,11 @@ const IndexPage = ({ data }) => {
                   Know More
                 </div>
               </div>
-            </div>
-
-            <div className="col-xs-12 col-md-8 flex-fill align-self-center">
-              <div className="py-4 px-4">
-                <div className={custom.hero_cta_tag}>
-                  TOYOTA <span className="font-weight-bold">SIENNA</span>
-                </div>
-                <h2 className="display-4">
-                  Makes Us <br />
-                  <span className={custom.at_van_proud}>VanProud</span>
-                </h2>
-              </div>
-            </div>
-          </div>
+            </Col>
+          </Row>
         </Container>
       </section>
-      <section className={custom.hero_card_section}>
+      <section className={landing.hero_card_section}>
         <Container>
           <CardDeck className="py-5 ">
             <Card border="0">
@@ -94,11 +109,11 @@ const IndexPage = ({ data }) => {
           </CardDeck>
         </Container>
       </section>
-      <section className={custom.hero_features_section}>
+      <section className={landing.hero_features_section}>
         <Container>
           <Row>
             <Col md={8}>
-              <div className={custom.features_image}>
+              <div className={landing.features_image}>
                 <Img
                   fluid={data.feature_image.childImageSharp.fluid}
                   alt="Feature Image"
@@ -118,11 +133,11 @@ const IndexPage = ({ data }) => {
           </Row>
         </Container>
       </section>
-      <section className={custom.bottom_features_section}>
+      <section className={landing.bottom_features_section}>
         <Container>
           <Row>
             <Col md={12}>
-              <div className={custom.features_image}>
+              <div className={landing.features_image}>
                 <Img
                   fluid={data.bottom.childImageSharp.fluid}
                   alt="Bottom"
@@ -141,6 +156,20 @@ export default IndexPage
 
 export const query = graphql`
   {
+    families: file(relativePath: { eq: "families.png" }) {
+      childImageSharp {
+        fixed(width: 433, height: 207) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    familiesM: file(relativePath: { eq: "families-m.png" }) {
+      childImageSharp {
+        fixed(width: 335, height: 160) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     bubble1: file(relativePath: { eq: "woman1.png" }) {
       childImageSharp {
         fixed(width: 60, height: 60) {
@@ -205,7 +234,7 @@ export const query = graphql`
       }
     }
 
-    hero: file(relativePath: { eq: "sienna_side.jpg" }) {
+    hero: file(relativePath: { eq: "captura-de-pantalla.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1440, maxHeight: 575) {
           ...GatsbyImageSharpFluid

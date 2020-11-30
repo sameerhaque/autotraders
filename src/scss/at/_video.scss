@@ -1,0 +1,57 @@
+.rh5v-DefaultPlayer_component {
+  position: relative;
+}
+
+.rh5v-DefaultPlayer_video {
+  width: 100%;
+  object-fit: cover;
+}
+
+.fullscreen .rh5v-DefaultPlayer_video {
+  height: auto;
+  object-fit: revert;
+  object-position: center;
+}
+
+.rh5v-Fullscreen_component {
+  position: absolute;
+  bottom: 78px;
+  background: transparent;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  right: 20px;
+}
+
+.rh5v-Fullscreen_button {
+  width: 54px;
+  height: 54px;
+  background: transparent url('../images/fullscreen.svg') no-repeat;
+  border: 0;
+  border-radius: 50%;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  cursor: pointer;
+}
+
+.rh5v-Fullscreen_button:focus {
+  outline: none;
+}
+
+.rh5v-Fullscreen_button .rh5v-Fullscreen_icon {
+  display: none;
+}
+
+.rh5v-Overlay_inner {
+  display: none;
+}
+
+@media(min-width:576px) {
+  .rh5v-Fullscreen_component {
+    bottom: 30px;
+    right: 50px;
+  }
+}
