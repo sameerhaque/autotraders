@@ -11,7 +11,6 @@ import $ from "jquery"
 // Styles
 import landing from "../css/landing.module.css"
 import "swiper/swiper.scss"
-import "swiper/components/pagination/pagination.scss"
 
 // Project components
 import videoSrc from "../videos/video.mp4"
@@ -141,11 +140,11 @@ const IndexPage = ({ data }) => {
                   className="img-responsive"
                 />
                 <div className={landing.slide_legend}>
-                  <h5 className={landing.slide_legend_type}>
-                    Interactive Content
-                  </h5>
+                  <h5 className={landing.slide_legend_type}>ARTICLE</h5>
                   <h3 className={landing.slide_legend_title}>
-                    20 Reasons to Believe
+                    The hardest working
+                    <br />
+                    family member
                   </h3>
                 </div>
               </div>
@@ -158,11 +157,11 @@ const IndexPage = ({ data }) => {
                   className="img-responsive"
                 />
                 <div className={landing.slide_legend}>
-                  <h5 className={landing.slide_legend_type}>
-                    Interactive Content
-                  </h5>
+                  <h5 className={landing.slide_legend_type}>ARTICLE</h5>
                   <h3 className={landing.slide_legend_title}>
-                    20 Reasons to Believe
+                    The Sienna, described
+                    <br />
+                    from every seat
                   </h3>
                 </div>
               </div>
@@ -179,7 +178,9 @@ const IndexPage = ({ data }) => {
                     Interactive Content
                   </h5>
                   <h3 className={landing.slide_legend_title}>
-                    20 Reasons to Believe
+                    20 Reasons
+                    <br />
+                    to Believe
                   </h3>
                 </div>
               </div>
