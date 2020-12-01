@@ -123,6 +123,10 @@
   transform: translateY(-60px);
 }
 
+.card_slide_visible:hover .hero_card_slide {
+  transform: translateY(-60px);
+}
+
 .slide_legend {
   position: absolute;
   bottom: 0;
