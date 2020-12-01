@@ -11,7 +11,6 @@ import $ from "jquery"
 // Styles
 import landing from "../css/landing.module.css"
 import "swiper/swiper.scss"
-import "swiper/components/navigation/navigation.scss"
 import "swiper/components/pagination/pagination.scss"
 
 // Project components
