@@ -114,6 +114,7 @@
   margin-left: 10px;
   margin-right: 10px;
   transition: all 0.5s;
+  overflow: hidden;
 }
 
 .card_slider_prev:hover .hero_card_slide,
@@ -138,19 +139,18 @@
 }
 
 .slide_legend_type {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 19px;
   font-style: normal;
   font-weight: 500;
-  line-height: 21px;
   letter-spacing: 0.05em;
 }
 
 .slide_legend_title {
-  font-family: Roboto;
-  font-size: 36px;
+  font-size: 32px;
+  line-height: 38px;
   font-style: normal;
   font-weight: 500;
-  line-height: 42px;
   letter-spacing: 0em;
 }
 
@@ -212,6 +212,11 @@
   .hero_cta_know_more {
     margin-top: 6rem;
   }
+
+  .slide_legend_title {
+    font-size: 30px;
+    line-height: 35px;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -242,5 +247,15 @@
 
   .families_wrapper {
     padding-top: 80px;
+  }
+
+  .slide_legend_type {
+    font-size: 18px;
+    line-height: 21px;
+  }
+
+  .slide_legend_title {
+    font-size: 36px;
+    line-height: 42px;
   }
 }
