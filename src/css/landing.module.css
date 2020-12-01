@@ -1,14 +1,78 @@
-.families_image {
-  position: absolute !important;
-  right: 0;
-  top: -55px;
-  z-index: 99;
+.hero_cta_section {
+  background-color: #e7f0f9;
+  padding-bottom: 40px;
 }
 
-.at_van_proud {
+.families_wrapper {
+  padding-top: 80px;
+}
+
+.families_image {
+  position: absolute !important;
+  right: 50%;
+  bottom: -17.37px;
+  z-index: 1;
+  transform: translateX(50%);
+}
+
+.hero_cta_tag {
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
+  padding-top: 57.27px;
+}
+
+.hero_cta_tag strong {
+  font-weight: 700;
+}
+
+.heading_wrapper {
+  position: relative;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 340px;
+}
+
+.van_proud {
+  color: #FFFFFF;
+  display: inline-block;
+  font-size: 195px;
+  font-style: normal;
+  font-weight: 900;
+  left: -28px;
+  letter-spacing: 0em;
+  line-height: 1;
+  position: absolute;
+  text-align: left;
+  top: -28px;
+  z-index: 0;
+}
+
+.heading_light {
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.heading_bold {
   color: #d7000c;
-  padding-left: 20px;
-  font-weight: bold;
+  font-weight: 700;
+  text-align: right;
+  position: relative;
+  z-index: 1;
+}
+
+.heading_light,
+.heading_bold {
+  font-size: 65px;
+  font-style: normal;
+  line-height: 65px;
+  letter-spacing: 0em;
 }
 
 .hero_image {
@@ -19,19 +83,61 @@
   display: flex;
 }
 
-.hero_cta_section {
-  background-color: #e7f0f9;
-  height: 300px;
-}
-
 .hero_cta_bubble {
   margin-top: -60px;
   text-align: center;
 }
 
 .hero_cta_know_more {
-  margin-top: 20px;
-  vertical-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
+.hero_card_section {
+  background: #e7f0f9;
+  background: linear-gradient(0deg, #ffffff 50%, #e7f0f9 50%);
+  padding-top: 40px;
+}
+
+.hero_card_section .card_slider {
+  padding: 60px 0 40px;
+}
+
+.hero_card_slide {
+  box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  border-radius: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: all 0.5s;
+}
+
+.card_slider_prev:hover .hero_card_slide,
+.card_slider_active:hover .hero_card_slide,
+.card_slider_next:hover .hero_card_slide {
+  box-shadow: 0px 47px 25px -18px rgba(0, 0, 0, 0.25);
+  transform: translateY(-60px);
+}
+
+.slide_legend {
+  position: absolute;
+  bottom: 0;
+  color: #ffffff;
+  padding: 30px;
+  width: 100%;
+  display: block;
+}
+
+.slide_legend_type {
+  font-size: 1rem;
+}
+
+.slide_legend_title {
+  font-size: 2rem;
 }
 
 .features_image {
@@ -47,8 +153,80 @@
 
 @media(min-width:576px) {}
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+  .families_wrapper {
+    padding-top: 60px;
+  }
 
-@media (min-width: 992px) {}
+  .families_image {
+    right: 0;
+    bottom: -20px;
+    transform: none;
+  }
 
-@media (min-width: 1200px) {}
+  .hero_cta_tag {
+    padding-top: 0;
+  }
+
+  .heading_wrapper {
+    max-width: unset;
+  }
+
+  .hero_cta_know_more {
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero_cta_tag {
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  .van_proud {
+    font-size: 254px;
+    left: -38px;
+    top: -38px;
+  }
+
+  .heading_light,
+  .heading_bold {
+    font-size: 84px;
+    line-height: 85px;
+  }
+
+  .hero_cta_know_more {
+    margin-top: 6rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .families_image {
+    bottom: -48px;
+  }
+
+  .hero_cta_tag {
+    font-size: 24px;
+    line-height: 28.13px;
+  }
+
+  .van_proud {
+    font-size: 300px;
+    left: -43px;
+    top: -48px;
+  }
+
+  .heading_light {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  .heading_bold {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  .families_wrapper {
+    padding-top: 80px;
+  }
+}

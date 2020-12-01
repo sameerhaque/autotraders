@@ -1,15 +1,25 @@
+// Node components
 import React, { useEffect } from "react"
-import { graphql } from "gatsby"
-import { Container, Row, Col, CardDeck, Card } from "react-bootstrap"
+import { graphql, Link } from "gatsby"
+import { Container, Row, Col } from "react-bootstrap"
 import { DefaultPlayer as Video } from "react-html5video"
-import Img from "gatsby-image"
+import SwiperCore, { Pagination } from "swiper"
+import { Swiper, SwiperSlide } from "swiper/react"
+import Img from "gatsby-image/withIEPolyfill"
 import $ from "jquery"
 
+// Styles
 import landing from "../css/landing.module.css"
+import "swiper/swiper.scss"
+import "swiper/components/navigation/navigation.scss"
+import "swiper/components/pagination/pagination.scss"
+
+// Project components
 import videoSrc from "../videos/video.mp4"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+SwiperCore.use([Pagination])
 const IndexPage = ({ data }) => {
   const fullScreenToggle = () => {
       $(`.${landing.hero_video}`).toggleClass("fullscreen")
@@ -41,45 +51,64 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
       <section className={landing.hero_cta_section}>
+        <div className={landing.families_wrapper}>
+          <Container>
+            <Row>
+              <Col
+                md={{ span: 6, order: 1 }}
+                sm={{ span: 12, order: 2 }}
+                xs={{ span: 12, order: 2 }}
+              >
+                <div className={landing.hero_cta_tag}>
+                  TOYOTA <strong>SIENNA</strong>
+                </div>
+              </Col>
+              <Col
+                md={{ span: 6, order: 2 }}
+                sm={{ span: 12, order: 1 }}
+                xs={{ span: 12, order: 1 }}
+              >
+                <div className="text-center text-md-right">
+                  <Img
+                    fixed={data.families.childImageSharp.fixed}
+                    alt="families"
+                    objectFit="contain"
+                    objectPosition="50% 50%"
+                    className={`img-fluid d-none d-md-inline-block ${landing.families_image}`}
+                  />
+                  <Img
+                    fixed={data.familiesM.childImageSharp.fixed}
+                    alt="families-m"
+                    objectFit="contain"
+                    objectPosition="50% 50%"
+                    className={`img-fluid d-inline-block d-md-none ${landing.families_image}`}
+                  />
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
         <Container>
-          <Row>
-            <Col
-              sm={12}
-              className="text-center text-md-right position-relative"
-            >
-              <Img
-                fixed={data.families.childImageSharp.fixed}
-                alt="families"
-                className={`img-fluid d-none d-sm-inline-block ${landing.families_image}`}
-              />
-              <Img
-                fixed={data.familiesM.childImageSharp.fixed}
-                alt="families-m"
-                className={`img-fluid d-inline-block d-sm-none ${landing.families_image}`}
-              />
-            </Col>
-          </Row>
-        </Container>
-        <Container>
-          <Row>
+          <Row className="align-items-center">
             <Col md={6}>
-              <div className={landing.hero_cta_tag}>
-                TOYOTA <span className="font-weight-bold">SIENNA</span>
+              <div className={landing.heading_wrapper}>
+                <span className={landing.van_proud}>#</span>
+                <h2 className={landing.heading_light}>Makes Us</h2>
+                <h2 className={landing.heading_bold}>VanProud</h2>
               </div>
-              <h2 className="display-4">
-                Makes Us <br />
-                <span className={landing.at_van_proud}>VanProud</span>
-              </h2>
             </Col>
-            <Col md={6}>
+            <Col xl={{ span: 5, offset: 1 }} md={6}>
               <div className={landing.hero_cta_know_more}>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Discover what it is that makes this people love their Sienna
+                  and why they are proud of owning one.
                 </p>
-                <div className="font-weight-bold text-right border-bottom">
+                <Link
+                  to="#link"
+                  className="font-weight-bold text-right border-bottom"
+                >
                   Know More
-                </div>
+                </Link>
               </div>
             </Col>
           </Row>
@@ -87,29 +116,74 @@ const IndexPage = ({ data }) => {
       </section>
       <section className={landing.hero_card_section}>
         <Container>
-          <CardDeck className="py-5 ">
-            <Card border="0">
-              <Img
-                fluid={data.card1.childImageSharp.fluid}
-                alt="card1"
-                className="img-responsive"
-              />
-            </Card>
-            <Card border="0">
-              <Img
-                fluid={data.card2.childImageSharp.fluid}
-                alt="card2"
-                className="img-responsive"
-              />
-            </Card>
-            <Card border="0">
-              <Img
-                fluid={data.card3.childImageSharp.fluid}
-                alt="card3"
-                className="img-responsive"
-              />
-            </Card>
-          </CardDeck>
+          <Swiper
+            className={landing.card_slider}
+            slidesPerView={1}
+            centeredSlides={true}
+            slidePrevClass={landing.card_slider_prev}
+            slideDuplicatePrevClass={landing.card_slider_prev}
+            slideActiveClass={landing.card_slider_active}
+            slideDuplicateActiveClass={landing.card_slider_active}
+            slideNextClass={landing.card_slider_next}
+            slideDuplicateNextClass={landing.card_slider_next}
+            pagination={{ clickable: true }}
+            loop={true}
+            breakpoints={{ 768: { slidesPerView: 3 } }}
+            simulateTouch={true}
+            onSwiper={swiper => console.log(swiper)}
+          >
+            <SwiperSlide>
+              <div className={landing.hero_card_slide}>
+                <Img
+                  fluid={data.slide2.childImageSharp.fluid}
+                  alt="slide-2"
+                  className="img-responsive"
+                />
+                <div className={landing.slide_legend}>
+                  <h5 className={landing.slide_legend_type}>
+                    Interactive Content
+                  </h5>
+                  <h3 className={landing.slide_legend_title}>
+                    20 Reasons to Believe
+                  </h3>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={landing.hero_card_slide}>
+                <Img
+                  fluid={data.slide3.childImageSharp.fluid}
+                  alt="slide-3"
+                  className="img-responsive"
+                />
+                <div className={landing.slide_legend}>
+                  <h5 className={landing.slide_legend_type}>
+                    Interactive Content
+                  </h5>
+                  <h3 className={landing.slide_legend_title}>
+                    20 Reasons to Believe
+                  </h3>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className={landing.hero_card_slide}>
+                <Img
+                  fluid={data.slide1.childImageSharp.fluid}
+                  alt="slide-1"
+                  className="img-responsive"
+                />
+                <div className={landing.slide_legend}>
+                  <h5 className={landing.slide_legend_type}>
+                    Interactive Content
+                  </h5>
+                  <h3 className={landing.slide_legend_title}>
+                    20 Reasons to Believe
+                  </h3>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
         </Container>
       </section>
       <section className={landing.hero_features_section}>
@@ -204,7 +278,27 @@ export const query = graphql`
         }
       }
     }
-
+    slide1: file(relativePath: { eq: "slide-1.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 353, maxHeight: 525) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    slide2: file(relativePath: { eq: "slide-2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 353, maxHeight: 525) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    slide3: file(relativePath: { eq: "slide-3.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 353, maxHeight: 525) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     card1: file(relativePath: { eq: "CARD1.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 420, maxHeight: 592) {
