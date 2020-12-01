@@ -51,6 +51,15 @@
 
 @media(min-width:576px) {
   .rh5v-Fullscreen_component {
+    bottom: 78px;
+    right: 30px;
+  }
+}
+
+@media (min-width: 768px) {
+}
+@media (min-width: 1200px) {
+  .rh5v-Fullscreen_component {
     bottom: 30px;
     right: 50px;
   }
