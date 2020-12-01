@@ -123,6 +123,7 @@
   transform: translateY(-60px);
 }
 
+.card_slide_duplicate:hover .hero_card_slide,
 .card_slide_visible:hover .hero_card_slide {
   transform: translateY(-60px);
 }

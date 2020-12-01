@@ -120,6 +120,7 @@ const IndexPage = ({ data }) => {
             slidesPerView={1}
             centeredSlides={true}
             slideVisibleClass={landing.card_slide_visible}
+            slideDuplicateClass={landing.card_slide_duplicate}
             slidePrevClass={landing.card_slider_prev}
             slideDuplicatePrevClass={landing.card_slider_prev}
             slideActiveClass={landing.card_slider_active}
