@@ -3,7 +3,7 @@ import React, { useEffect } from "react"
 import { graphql, Link } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 import { DefaultPlayer as Video } from "react-html5video"
-import SwiperCore, { Pagination } from "swiper"
+import SwiperCore, { EffectCoverflow, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import Img from "gatsby-image/withIEPolyfill"
 import $ from "jquery"
@@ -11,18 +11,20 @@ import $ from "jquery"
 // Styles
 import landing from "../css/landing.module.css"
 import "swiper/swiper.scss"
+import "swiper/components/effect-coverflow/effect-coverflow.scss"
 
 // Project components
 import videoSrc from "../videos/video.mp4"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-SwiperCore.use([Pagination])
+SwiperCore.use([EffectCoverflow, Pagination])
 const IndexPage = ({ data }) => {
   const fullScreenToggle = () => {
       $(`.${landing.hero_video}`).toggleClass("fullscreen")
     },
     isBrowser = typeof window !== "undefined"
+  // [showPagination, setShowPagination] = useState(false)
   useEffect(() => {
     $(".rh5v-Fullscreen_button").click(fullScreenToggle)
   }, [])
@@ -117,7 +119,17 @@ const IndexPage = ({ data }) => {
           <Swiper
             className={landing.card_slider}
             slidesPerView={1}
+            spaceBetween={10}
             centeredSlides={true}
+            effect="coverflow"
+            coverflowEffect={{
+              rotate: 40,
+              stretch: 0,
+              depth: 80,
+              modifier: 1,
+              slideShadows: true,
+            }}
+            updateOnWindowResize={true}
             slideVisibleClass={landing.card_slide_visible}
             slideDuplicateClass={landing.card_slide_duplicate}
             slidePrevClass={landing.card_slider_prev}
@@ -127,10 +139,18 @@ const IndexPage = ({ data }) => {
             slideNextClass={landing.card_slider_next}
             slideDuplicateNextClass={landing.card_slider_next}
             pagination={{ clickable: true }}
+            mousewheel={{ releaseOnEdges: true }}
             loop={true}
-            breakpoints={{ 768: { slidesPerView: 3 } }}
+            breakpoints={{
+              768: { slidesPerView: 3, spaceBetween: 10, effect: "slide" },
+            }}
             simulateTouch={true}
-            onSwiper={swiper => console.log(swiper)}
+            onPaginationRender={(swiper, paginationEl) => {
+              paginationEl.classList.add("d-md-none")
+            }}
+            onResize={swiper => {
+              swiper.update()
+            }}
           >
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
@@ -207,21 +227,6 @@ const IndexPage = ({ data }) => {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-      <section className={landing.bottom_features_section}>
-        <Container>
-          <Row>
-            <Col md={12}>
-              <div className={landing.features_image}>
-                <Img
-                  fluid={data.bottom.childImageSharp.fluid}
-                  alt="Bottom"
-                  className="img-responsive"
-                />
               </div>
             </Col>
           </Row>
