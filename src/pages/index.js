@@ -154,11 +154,7 @@ const IndexPage = ({ data }) => {
           >
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
-                <Img
-                  fluid={data.slide2.childImageSharp.fluid}
-                  alt="slide-2"
-                  className="img-responsive"
-                />
+                <Img fluid={data.slide2.childImageSharp.fluid} alt="slide-2" />
                 <div className={landing.slide_legend}>
                   <h5 className={landing.slide_legend_type}>ARTICLE</h5>
                   <h3 className={landing.slide_legend_title}>
@@ -171,11 +167,7 @@ const IndexPage = ({ data }) => {
             </SwiperSlide>
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
-                <Img
-                  fluid={data.slide3.childImageSharp.fluid}
-                  alt="slide-3"
-                  className="img-responsive"
-                />
+                <Img fluid={data.slide3.childImageSharp.fluid} alt="slide-3" />
                 <div className={landing.slide_legend}>
                   <h5 className={landing.slide_legend_type}>ARTICLE</h5>
                   <h3 className={landing.slide_legend_title}>
@@ -188,11 +180,7 @@ const IndexPage = ({ data }) => {
             </SwiperSlide>
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
-                <Img
-                  fluid={data.slide1.childImageSharp.fluid}
-                  alt="slide-1"
-                  className="img-responsive"
-                />
+                <Img fluid={data.slide1.childImageSharp.fluid} alt="slide-1" />
                 <div className={landing.slide_legend}>
                   <h5 className={landing.slide_legend_type}>
                     Interactive Content
@@ -209,28 +197,79 @@ const IndexPage = ({ data }) => {
         </Container>
       </section>
       <section className={landing.hero_features_section}>
-        <Container>
-          <Row>
-            <Col md={8}>
-              <div className={landing.features_image}>
-                <Img
-                  fluid={data.feature_image.childImageSharp.fluid}
-                  alt="Feature Image"
-                  className="img-responsive"
-                />
+        <div className="d-flex flex-column flex-xl-row">
+          <div className="flex-grow-1 my-auto order-2 order-xl-1">
+            <div className={`${landing.features_wrapper} pr-md-5 pr-xl-0`}>
+              <Img
+                fluid={data.featureCar.childImageSharp.fluid}
+                alt="featureCar"
+                className={`d-none d-md-block ${landing.feature_car}`}
+              />
+              <Img
+                fluid={data.featureCarXs.childImageSharp.fluid}
+                alt="featureCarXs"
+                className="d-md-none"
+              />
+              <img
+                src={data.hotSpot.publicURL}
+                alt="hotSpot-1"
+                className={`${landing.features_hot_spot} ${landing.features_hot_spot_I}`}
+              />
+              <img
+                src={data.hotSpot.publicURL}
+                alt="hotSpot-2"
+                className={`${landing.features_hot_spot} ${landing.features_hot_spot_II}`}
+              />
+              <img
+                src={data.hotSpot.publicURL}
+                alt="hotSpot-2"
+                className={`${landing.features_hot_spot} ${landing.features_hot_spot_III}`}
+              />
+              <img
+                src={data.hotSpot.publicURL}
+                alt="hotSpot-2"
+                className={`${landing.features_hot_spot} ${landing.features_hot_spot_IV}`}
+              />
+            </div>
+          </div>
+          <div className="flex-shrink-1 my-auto order-1 order-xl-2 text-center text-xl-left">
+            <div className={landing.features_content_holder}>
+              <h5 className={landing.features_content_title}>
+                Features we cannot live without
+              </h5>
+              <div className={landing.features_content_wrapper}>
+                <div
+                  className={`${landing.features_content} d-none d-xl-block`}
+                >
+                  <p>
+                    Hover over the image to discover the features from the
+                    Sienna we cannot live without do eiusmod tempor incididunt.
+                  </p>
+                </div>
+                <div className={`${landing.features_content} d-xl-none`}>
+                  <p>
+                    Tap the image to discover the features from the Sienna we
+                    cannot live without do eiusmod tempor.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  className={`btn btn-primary ${landing.features_button} d-none d-xl-inline-block`}
+                >
+                  BUILD &amp; PRICE
+                </button>
               </div>
-            </Col>
-            <Col md={4}>
-              <div className="py-5 px-4">
-                <h4 className="">Features you cannot live without</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+          <div className="flex-grow-1 d-xl-none order-3 text-center pt-5">
+            <button
+              type="button"
+              className={`btn btn-primary ${landing.features_button}`}
+            >
+              BUILD &amp; PRICE
+            </button>
+          </div>
+        </div>
       </section>
     </Layout>
   )
@@ -254,30 +293,6 @@ export const query = graphql`
         }
       }
     }
-    bubble1: file(relativePath: { eq: "woman1.png" }) {
-      childImageSharp {
-        fixed(width: 60, height: 60) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-
-    bubble2: file(relativePath: { eq: "man1.png" }) {
-      childImageSharp {
-        fixed(width: 100, height: 100) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-
-    bubble3: file(relativePath: { eq: "child1.png" }) {
-      childImageSharp {
-        fixed(width: 55, height: 55) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-
     feature_image: file(relativePath: { eq: "sienna-side2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 976, maxHeight: 432) {
@@ -306,38 +321,23 @@ export const query = graphql`
         }
       }
     }
-    card1: file(relativePath: { eq: "CARD1.jpg" }) {
+    featureCar: file(relativePath: { eq: "feature-car.png" }) {
       childImageSharp {
-        fluid(maxWidth: 420, maxHeight: 592) {
+        fluid(maxWidth: 913, maxHeight: 570) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-
-    card2: file(relativePath: { eq: "CARD2.jpg" }) {
+    featureCarXs: file(relativePath: { eq: "feature-car-xs.png" }) {
       childImageSharp {
-        fluid(maxWidth: 420, maxHeight: 592) {
+        fluid(maxWidth: 375, maxHeight: 316) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-
-    card3: file(relativePath: { eq: "CARD3.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 420, maxHeight: 592) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    hotSpot: file(relativePath: { eq: "hotspot.svg" }) {
+      publicURL
     }
-
-    bottom: file(relativePath: { eq: "ad_grande.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1340, maxHeight: 601) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-
     hero: file(relativePath: { eq: "captura-de-pantalla.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1440, maxHeight: 575) {
