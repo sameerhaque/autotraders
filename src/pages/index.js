@@ -1,7 +1,8 @@
 // Node components
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
+import ReactHtmlParser from "react-html-parser"
 import { graphql, Link } from "gatsby"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Modal } from "react-bootstrap"
 import { DefaultPlayer as Video } from "react-html5video"
 import SwiperCore, { EffectCoverflow, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -20,10 +21,67 @@ import SEO from "../components/seo"
 
 SwiperCore.use([EffectCoverflow, Pagination])
 const IndexPage = ({ data }) => {
-  const fullScreenToggle = () => {
+  const featureData = [
+      {
+        featTitle: "Lots of storage, a must for a big family",
+        featImg: data.featureI,
+        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p>`,
+      },
+      {
+        featTitle: "Feature 2",
+        featImg: data.featureI,
+        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p>`,
+      },
+      {
+        featTitle: "Feature 3",
+        featImg: data.featureI,
+        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>`,
+      },
+      {
+        featTitle: "Feature 4",
+        featImg: data.featureI,
+        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>`,
+      },
+    ],
+    fullScreenToggle = () => {
       $(`.${landing.hero_video}`).toggleClass("fullscreen")
     },
-    isBrowser = typeof window !== "undefined"
+    [show, setShow] = useState(false),
+    [featureIndex, setFeatureIndex] = useState(null),
+    isBrowser = typeof window !== "undefined",
+    openFeature = (e, dataIndex) => {
+      e.currentTarget.classList.add(landing.features_hot_spot_active)
+      setFeatureIndex(dataIndex)
+      setShow(true)
+      console.log(featureData[dataIndex - 1])
+    },
+    closeFeature = (e, dataIndex) => {
+      $(`.${landing.features_hot_spot}`).removeClass(
+        landing.features_hot_spot_active
+      )
+      setShow(false)
+    },
+    previousFeature = () => {
+      if (featureIndex === 1) {
+        setFeatureIndex(featureData.length)
+      } else {
+        setFeatureIndex(featureIndex - 1)
+      }
+    },
+    nextFeature = () => {
+      if (featureIndex === featureData.length) {
+        setFeatureIndex(1)
+      } else {
+        setFeatureIndex(featureIndex + 1)
+      }
+    },
+    featureCarLoaded = () => {
+      console.log($(`.${landing.features_hot_spot}`))
+      $(`.${landing.features_hot_spot}`).addClass(landing.hot_spot_display)
+    },
+    featureCarXsLoaded = () => {
+      $(`.${landing.features_hot_spot}`).addClass(landing.hot_spot_display)
+    }
   // [showPagination, setShowPagination] = useState(false)
   useEffect(() => {
     $(".rh5v-Fullscreen_button").click(fullScreenToggle)
@@ -203,33 +261,43 @@ const IndexPage = ({ data }) => {
               <Img
                 fluid={data.featureCar.childImageSharp.fluid}
                 alt="featureCar"
+                onLoad={() => featureCarLoaded()}
                 className={`d-none d-md-block ${landing.feature_car}`}
               />
               <Img
                 fluid={data.featureCarXs.childImageSharp.fluid}
                 alt="featureCarXs"
+                onLoad={() => featureCarXsLoaded()}
                 className="d-md-none"
               />
-              <img
-                src={data.hotSpot.publicURL}
-                alt="hotSpot-1"
+              <button
+                type="button"
                 className={`${landing.features_hot_spot} ${landing.features_hot_spot_I}`}
-              />
-              <img
-                src={data.hotSpot.publicURL}
-                alt="hotSpot-2"
+                onClick={e => openFeature(e, 1)}
+              >
+                <img src={data.hotSpot.publicURL} alt="hotSpot-1" />
+              </button>
+              <button
+                type="button"
                 className={`${landing.features_hot_spot} ${landing.features_hot_spot_II}`}
-              />
-              <img
-                src={data.hotSpot.publicURL}
-                alt="hotSpot-2"
+                onClick={e => openFeature(e, 2)}
+              >
+                <img src={data.hotSpot.publicURL} alt="hotSpot-2" />
+              </button>
+              <button
+                type="button"
                 className={`${landing.features_hot_spot} ${landing.features_hot_spot_III}`}
-              />
-              <img
-                src={data.hotSpot.publicURL}
-                alt="hotSpot-2"
+                onClick={e => openFeature(e, 3)}
+              >
+                <img src={data.hotSpot.publicURL} alt="hotSpot-3" />
+              </button>
+              <button
+                type="button"
                 className={`${landing.features_hot_spot} ${landing.features_hot_spot_IV}`}
-              />
+                onClick={e => openFeature(e, 4)}
+              >
+                <img src={data.hotSpot.publicURL} alt="hotSpot-4" />
+              </button>
             </div>
           </div>
           <div className="flex-shrink-1 my-auto order-1 order-xl-2 text-center text-xl-left">
@@ -271,6 +339,65 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </section>
+      <Modal
+        show={show}
+        onHide={() => closeFeature()}
+        backdrop="static"
+        keyboard={false}
+        className={`fixed-left ${landing.features_modal}`}
+        backdropClassName="d-none"
+        contentClassName={landing.features_modal_content}
+        dialogClassName={`modal-dialog-aside ${landing.features_dialog}`}
+        aria-labelledby="features-modal"
+      >
+        <Modal.Header className={landing.features_modal_header}>
+          <div className={landing.feature_dismiss}>
+            <button
+              type="button"
+              className={landing.roundButton}
+              onClick={() => closeFeature()}
+            >
+              <img src={data.closeFeature.publicURL} alt="close" />
+            </button>
+          </div>
+          <div className={landing.features_title_wrapper}>
+            <h4 className={landing.features_modal_title}>
+              {featureIndex !== null && featureData[featureIndex - 1].featTitle}
+            </h4>
+          </div>
+        </Modal.Header>
+        <Modal.Body className={landing.features_modal_body}>
+          {featureIndex !== null && (
+            <>
+              <img
+                src={
+                  featureData[featureIndex - 1].featImg.childImageSharp.fluid
+                    .src
+                }
+                alt="featImg"
+                className={landing.featImg}
+              />
+              <div>
+                {ReactHtmlParser(featureData[featureIndex - 1].featContent)}
+              </div>
+            </>
+          )}
+        </Modal.Body>
+        <Modal.Footer className={landing.features_modal_footer}>
+          <button
+            className={`${landing.roundButton} mx-2`}
+            onClick={previousFeature}
+          >
+            <img src={data.previousFeature.publicURL} alt="previous" />
+          </button>
+          <button
+            className={`${landing.roundButton} mx-2`}
+            onClick={nextFeature}
+          >
+            <img src={data.nextFeature.publicURL} alt="next" />
+          </button>
+        </Modal.Footer>
+      </Modal>
     </Layout>
   )
 }
@@ -279,6 +406,13 @@ export default IndexPage
 
 export const query = graphql`
   {
+    hero: file(relativePath: { eq: "captura-de-pantalla.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, maxHeight: 575) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     families: file(relativePath: { eq: "families.png" }) {
       childImageSharp {
         fixed(width: 433, height: 207) {
@@ -338,9 +472,18 @@ export const query = graphql`
     hotSpot: file(relativePath: { eq: "hotspot.svg" }) {
       publicURL
     }
-    hero: file(relativePath: { eq: "captura-de-pantalla.jpg" }) {
+    closeFeature: file(relativePath: { eq: "close.svg" }) {
+      publicURL
+    }
+    previousFeature: file(relativePath: { eq: "left.svg" }) {
+      publicURL
+    }
+    nextFeature: file(relativePath: { eq: "right.svg" }) {
+      publicURL
+    }
+    featureI: file(relativePath: { eq: "feature-1.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1440, maxHeight: 575) {
+        fluid(maxWidth: 385, maxHeight: 250) {
           ...GatsbyImageSharpFluid
         }
       }
