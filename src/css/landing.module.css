@@ -660,6 +660,7 @@
   .feature_dismiss {
     padding: 0 50px;
     width: 100%;
+    order: 0;
   }
 
   .features_title_wrapper {
