@@ -1,7 +1,8 @@
 // Node components
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
+import ReactHtmlParser from "react-html-parser"
 import { graphql, Link } from "gatsby"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Modal } from "react-bootstrap"
 import { DefaultPlayer as Video } from "react-html5video"
 import SwiperCore, { EffectCoverflow, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -20,11 +21,84 @@ import SEO from "../components/seo"
 
 SwiperCore.use([EffectCoverflow, Pagination])
 const IndexPage = ({ data }) => {
-  const fullScreenToggle = () => {
+  const featureData = [
+      {
+        featTitle: "Lots of storage, a must for a big family",
+        featImg: data.featureI,
+        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p>`,
+      },
+      {
+        featTitle: "Feature 2",
+        featImg: data.featureI,
+        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p>`,
+      },
+      {
+        featTitle: "Feature 3",
+        featImg: data.featureI,
+        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>`,
+      },
+      {
+        featTitle: "Feature 4",
+        featImg: data.featureI,
+        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>`,
+      },
+    ],
+    [show, setShow] = useState(false),
+    [featureIndex, setFeatureIndex] = useState(null),
+    isBrowser = typeof window !== "undefined",
+    fullScreenToggle = () => {
       $(`.${landing.hero_video}`).toggleClass("fullscreen")
     },
-    isBrowser = typeof window !== "undefined"
-  // [showPagination, setShowPagination] = useState(false)
+    openFeature = (e, dataIndex) => {
+      e.currentTarget.classList.add(landing.features_hot_spot_active)
+      setFeatureIndex(dataIndex)
+      setShow(true)
+    },
+    removeActiveClass = () => {
+      $(`.${landing.features_hot_spot}`).removeClass(
+        landing.features_hot_spot_active
+      )
+    },
+    closeFeature = () => {
+      removeActiveClass()
+      setShow(false)
+    },
+    previousFeature = () => {
+      if (featureIndex === 1) {
+        removeActiveClass()
+        setFeatureIndex(featureData.length)
+        $(`.${landing.features_hot_spot}`)
+          .get(featureData.length - 1)
+          .classList.add(landing.features_hot_spot_active)
+      } else {
+        removeActiveClass()
+        setFeatureIndex(featureIndex - 1)
+        $(`.${landing.features_hot_spot}`)
+          .get(featureIndex - 2)
+          .classList.add(landing.features_hot_spot_active)
+      }
+    },
+    nextFeature = () => {
+      if (featureIndex === featureData.length) {
+        removeActiveClass()
+        setFeatureIndex(1)
+        $(`.${landing.features_hot_spot}`)
+          .get(0)
+          .classList.add(landing.features_hot_spot_active)
+      } else {
+        removeActiveClass()
+        setFeatureIndex(featureIndex + 1)
+        $(`.${landing.features_hot_spot}`)
+          .get(featureIndex)
+          .classList.add(landing.features_hot_spot_active)
+      }
+    },
+    featureCarLoaded = () => {
+      $(`.${landing.features_hot_spot}`).addClass(landing.hot_spot_display)
+    },
+    featureCarXsLoaded = () => {
+      $(`.${landing.features_hot_spot}`).addClass(landing.hot_spot_display)
+    }
   useEffect(() => {
     $(".rh5v-Fullscreen_button").click(fullScreenToggle)
   }, [])
@@ -68,7 +142,9 @@ const IndexPage = ({ data }) => {
                 sm={{ span: 12, order: 1 }}
                 xs={{ span: 12, order: 1 }}
               >
-                <div className="text-center text-md-right">
+                <div
+                  className={`text-center text-md-right ${landing.families_block}`}
+                >
                   <Img
                     fixed={data.families.childImageSharp.fixed}
                     alt="families"
@@ -83,6 +159,17 @@ const IndexPage = ({ data }) => {
                     objectPosition="50% 50%"
                     className={`img-fluid d-inline-block d-md-none ${landing.families_image}`}
                   />
+                  <button
+                    type="button"
+                    className={`d-none ${landing.families_hover_block}`}
+                  >
+                    <h6 className={landing.families_hover_title}>
+                      The Smithersons
+                    </h6>
+                    <p className={landing.families_hover_subtitle}>
+                      See their reasons
+                    </p>
+                  </button>
                 </div>
               </Col>
             </Row>
@@ -154,11 +241,7 @@ const IndexPage = ({ data }) => {
           >
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
-                <Img
-                  fluid={data.slide2.childImageSharp.fluid}
-                  alt="slide-2"
-                  className="img-responsive"
-                />
+                <Img fluid={data.slide2.childImageSharp.fluid} alt="slide-2" />
                 <div className={landing.slide_legend}>
                   <h5 className={landing.slide_legend_type}>ARTICLE</h5>
                   <h3 className={landing.slide_legend_title}>
@@ -171,11 +254,7 @@ const IndexPage = ({ data }) => {
             </SwiperSlide>
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
-                <Img
-                  fluid={data.slide3.childImageSharp.fluid}
-                  alt="slide-3"
-                  className="img-responsive"
-                />
+                <Img fluid={data.slide3.childImageSharp.fluid} alt="slide-3" />
                 <div className={landing.slide_legend}>
                   <h5 className={landing.slide_legend_type}>ARTICLE</h5>
                   <h3 className={landing.slide_legend_title}>
@@ -188,11 +267,7 @@ const IndexPage = ({ data }) => {
             </SwiperSlide>
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
-                <Img
-                  fluid={data.slide1.childImageSharp.fluid}
-                  alt="slide-1"
-                  className="img-responsive"
-                />
+                <Img fluid={data.slide1.childImageSharp.fluid} alt="slide-1" />
                 <div className={landing.slide_legend}>
                   <h5 className={landing.slide_legend_type}>
                     Interactive Content
@@ -209,29 +284,149 @@ const IndexPage = ({ data }) => {
         </Container>
       </section>
       <section className={landing.hero_features_section}>
-        <Container>
-          <Row>
-            <Col md={8}>
-              <div className={landing.features_image}>
-                <Img
-                  fluid={data.feature_image.childImageSharp.fluid}
-                  alt="Feature Image"
-                  className="img-responsive"
-                />
+        <div className="d-flex flex-column flex-xl-row">
+          <div className="flex-grow-1 my-auto order-2 order-xl-1">
+            <div className={`${landing.features_wrapper} pr-md-5 pr-xl-0`}>
+              <Img
+                fluid={data.featureCar.childImageSharp.fluid}
+                alt="featureCar"
+                onLoad={() => featureCarLoaded()}
+                className={`d-none d-md-block ${landing.feature_car}`}
+              />
+              <Img
+                fluid={data.featureCarXs.childImageSharp.fluid}
+                alt="featureCarXs"
+                onLoad={() => featureCarXsLoaded()}
+                className="d-md-none"
+              />
+              <button
+                type="button"
+                className={`${landing.features_hot_spot} ${landing.features_hot_spot_I}`}
+                onClick={e => openFeature(e, 1)}
+              >
+                <img src={data.hotSpot.publicURL} alt="hotSpot-1" />
+              </button>
+              <button
+                type="button"
+                className={`${landing.features_hot_spot} ${landing.features_hot_spot_II}`}
+                onClick={e => openFeature(e, 2)}
+              >
+                <img src={data.hotSpot.publicURL} alt="hotSpot-2" />
+              </button>
+              <button
+                type="button"
+                className={`${landing.features_hot_spot} ${landing.features_hot_spot_III}`}
+                onClick={e => openFeature(e, 3)}
+              >
+                <img src={data.hotSpot.publicURL} alt="hotSpot-3" />
+              </button>
+              <button
+                type="button"
+                className={`${landing.features_hot_spot} ${landing.features_hot_spot_IV}`}
+                onClick={e => openFeature(e, 4)}
+              >
+                <img src={data.hotSpot.publicURL} alt="hotSpot-4" />
+              </button>
+            </div>
+          </div>
+          <div className="flex-shrink-1 my-auto order-1 order-xl-2 text-center text-xl-left">
+            <div className={landing.features_content_holder}>
+              <h5 className={landing.features_content_title}>
+                Features we cannot live without
+              </h5>
+              <div className={landing.features_content_wrapper}>
+                <div
+                  className={`${landing.features_content} d-none d-xl-block`}
+                >
+                  <p>
+                    Hover over the image to discover the features from the
+                    Sienna we cannot live without do eiusmod tempor incididunt.
+                  </p>
+                </div>
+                <div className={`${landing.features_content} d-xl-none`}>
+                  <p>
+                    Tap the image to discover the features from the Sienna we
+                    cannot live without do eiusmod tempor.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  className={`btn btn-primary ${landing.features_button} d-none d-xl-inline-block`}
+                >
+                  BUILD &amp; PRICE
+                </button>
               </div>
-            </Col>
-            <Col md={4}>
-              <div className="py-5 px-4">
-                <h4 className="">Features you cannot live without</h4>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+            </div>
+          </div>
+          <div className="flex-grow-1 d-xl-none order-3 text-center pt-5">
+            <button
+              type="button"
+              className={`btn btn-primary ${landing.features_button}`}
+            >
+              BUILD &amp; PRICE
+            </button>
+          </div>
+        </div>
       </section>
+      <Modal
+        show={show}
+        onHide={() => closeFeature()}
+        backdrop="static"
+        keyboard={false}
+        className={`fixed-left ${landing.features_modal}`}
+        backdropClassName="d-none"
+        contentClassName={landing.features_modal_content}
+        dialogClassName={`modal-dialog-aside ${landing.features_dialog}`}
+        aria-labelledby="features-modal"
+      >
+        <Modal.Header className={landing.features_modal_header}>
+          <div className={landing.feature_dismiss}>
+            <button
+              type="button"
+              className={landing.roundButton}
+              onClick={() => closeFeature()}
+            >
+              <img src={data.closeFeature.publicURL} alt="close" />
+            </button>
+          </div>
+          <div className={landing.features_title_wrapper}>
+            <h4 className={landing.features_modal_title}>
+              {featureIndex !== null && featureData[featureIndex - 1].featTitle}
+            </h4>
+          </div>
+        </Modal.Header>
+        <Modal.Body className={landing.features_modal_body}>
+          {featureIndex !== null && (
+            <>
+              <img
+                src={
+                  featureData[featureIndex - 1].featImg.childImageSharp.fluid
+                    .src
+                }
+                alt="featImg"
+                className={landing.featImg}
+              />
+              <div>
+                {ReactHtmlParser(featureData[featureIndex - 1].featContent)}
+              </div>
+            </>
+          )}
+        </Modal.Body>
+        <Modal.Footer className={landing.features_modal_footer}>
+          <button
+            className={`${landing.roundButton} mx-2`}
+            onClick={previousFeature}
+          >
+            <img src={data.previousFeature.publicURL} alt="previous" />
+          </button>
+          <button
+            className={`${landing.roundButton} mx-2`}
+            onClick={nextFeature}
+          >
+            <img src={data.nextFeature.publicURL} alt="next" />
+          </button>
+        </Modal.Footer>
+      </Modal>
     </Layout>
   )
 }
@@ -240,6 +435,13 @@ export default IndexPage
 
 export const query = graphql`
   {
+    hero: file(relativePath: { eq: "captura-de-pantalla.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1440, maxHeight: 575) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     families: file(relativePath: { eq: "families.png" }) {
       childImageSharp {
         fixed(width: 433, height: 207) {
@@ -254,30 +456,6 @@ export const query = graphql`
         }
       }
     }
-    bubble1: file(relativePath: { eq: "woman1.png" }) {
-      childImageSharp {
-        fixed(width: 60, height: 60) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-
-    bubble2: file(relativePath: { eq: "man1.png" }) {
-      childImageSharp {
-        fixed(width: 100, height: 100) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-
-    bubble3: file(relativePath: { eq: "child1.png" }) {
-      childImageSharp {
-        fixed(width: 55, height: 55) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-
     feature_image: file(relativePath: { eq: "sienna-side2.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 976, maxHeight: 432) {
@@ -306,41 +484,35 @@ export const query = graphql`
         }
       }
     }
-    card1: file(relativePath: { eq: "CARD1.jpg" }) {
+    featureCar: file(relativePath: { eq: "feature-car.png" }) {
       childImageSharp {
-        fluid(maxWidth: 420, maxHeight: 592) {
+        fluid(maxWidth: 913, maxHeight: 570) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-
-    card2: file(relativePath: { eq: "CARD2.jpg" }) {
+    featureCarXs: file(relativePath: { eq: "feature-car-xs.png" }) {
       childImageSharp {
-        fluid(maxWidth: 420, maxHeight: 592) {
+        fluid(maxWidth: 375, maxHeight: 316) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-
-    card3: file(relativePath: { eq: "CARD3.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 420, maxHeight: 592) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    hotSpot: file(relativePath: { eq: "hotspot.svg" }) {
+      publicURL
     }
-
-    bottom: file(relativePath: { eq: "ad_grande.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1340, maxHeight: 601) {
-          ...GatsbyImageSharpFluid
-        }
-      }
+    closeFeature: file(relativePath: { eq: "close.svg" }) {
+      publicURL
     }
-
-    hero: file(relativePath: { eq: "captura-de-pantalla.jpg" }) {
+    previousFeature: file(relativePath: { eq: "left.svg" }) {
+      publicURL
+    }
+    nextFeature: file(relativePath: { eq: "right.svg" }) {
+      publicURL
+    }
+    featureI: file(relativePath: { eq: "feature-1.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1440, maxHeight: 575) {
+        fluid(maxWidth: 385, maxHeight: 250) {
           ...GatsbyImageSharpFluid
         }
       }
