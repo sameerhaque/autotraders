@@ -43,46 +43,62 @@ const IndexPage = ({ data }) => {
         featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>`,
       },
     ],
-    fullScreenToggle = () => {
-      $(`.${landing.hero_video}`).toggleClass("fullscreen")
-    },
     [show, setShow] = useState(false),
     [featureIndex, setFeatureIndex] = useState(null),
     isBrowser = typeof window !== "undefined",
+    fullScreenToggle = () => {
+      $(`.${landing.hero_video}`).toggleClass("fullscreen")
+    },
     openFeature = (e, dataIndex) => {
       e.currentTarget.classList.add(landing.features_hot_spot_active)
       setFeatureIndex(dataIndex)
       setShow(true)
-      console.log(featureData[dataIndex - 1])
     },
-    closeFeature = (e, dataIndex) => {
+    removeActiveClass = () => {
       $(`.${landing.features_hot_spot}`).removeClass(
         landing.features_hot_spot_active
       )
+    },
+    closeFeature = () => {
+      removeActiveClass()
       setShow(false)
     },
     previousFeature = () => {
       if (featureIndex === 1) {
+        removeActiveClass()
         setFeatureIndex(featureData.length)
+        $(`.${landing.features_hot_spot}`)
+          .get(featureData.length - 1)
+          .classList.add(landing.features_hot_spot_active)
       } else {
+        removeActiveClass()
         setFeatureIndex(featureIndex - 1)
+        $(`.${landing.features_hot_spot}`)
+          .get(featureIndex - 2)
+          .classList.add(landing.features_hot_spot_active)
       }
     },
     nextFeature = () => {
       if (featureIndex === featureData.length) {
+        removeActiveClass()
         setFeatureIndex(1)
+        $(`.${landing.features_hot_spot}`)
+          .get(0)
+          .classList.add(landing.features_hot_spot_active)
       } else {
+        removeActiveClass()
         setFeatureIndex(featureIndex + 1)
+        $(`.${landing.features_hot_spot}`)
+          .get(featureIndex)
+          .classList.add(landing.features_hot_spot_active)
       }
     },
     featureCarLoaded = () => {
-      console.log($(`.${landing.features_hot_spot}`))
       $(`.${landing.features_hot_spot}`).addClass(landing.hot_spot_display)
     },
     featureCarXsLoaded = () => {
       $(`.${landing.features_hot_spot}`).addClass(landing.hot_spot_display)
     }
-  // [showPagination, setShowPagination] = useState(false)
   useEffect(() => {
     $(".rh5v-Fullscreen_button").click(fullScreenToggle)
   }, [])
@@ -126,7 +142,9 @@ const IndexPage = ({ data }) => {
                 sm={{ span: 12, order: 1 }}
                 xs={{ span: 12, order: 1 }}
               >
-                <div className="text-center text-md-right">
+                <div
+                  className={`text-center text-md-right ${landing.families_block}`}
+                >
                   <Img
                     fixed={data.families.childImageSharp.fixed}
                     alt="families"
@@ -141,6 +159,17 @@ const IndexPage = ({ data }) => {
                     objectPosition="50% 50%"
                     className={`img-fluid d-inline-block d-md-none ${landing.families_image}`}
                   />
+                  <button
+                    type="button"
+                    className={`d-none ${landing.families_hover_block}`}
+                  >
+                    <h6 className={landing.families_hover_title}>
+                      The Smithersons
+                    </h6>
+                    <p className={landing.families_hover_subtitle}>
+                      See their reasons
+                    </p>
+                  </button>
                 </div>
               </Col>
             </Row>
