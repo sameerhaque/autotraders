@@ -1,13 +1,18 @@
 import PropTypes from "prop-types"
 import React from "react"
 import { Link } from "gatsby"
+import { Container, Row, Col, Navbar, Nav } from "react-bootstrap"
+import $ from "jquery"
+
 import header from "../css/header.module.css"
 import Logo from "../images/logo.png"
 import logoMobile from "../images/logo-m.png"
 import toyotaLogo from "../images/toyota-logo.png"
-import { Container, Row, Col, Navbar, Nav } from "react-bootstrap"
 
 const Header = () => {
+  const openNavigation = () => {
+    $(`body`).toggleClass("overflow-hidden")
+  }
   return (
     <header className={header.at_header}>
       <div className={header.at_navbar_top}>
@@ -38,6 +43,8 @@ const Header = () => {
               <Navbar
                 variant="dark"
                 expand={false}
+                collapseOnSelect
+                onToggle={openNavigation}
                 className={header.at_navbar}
               >
                 <Navbar.Toggle
