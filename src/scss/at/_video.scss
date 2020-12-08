@@ -11,6 +11,7 @@
   height: auto;
   object-fit: revert;
   object-position: center;
+  position: relative!important;
 }
 
 .rh5v-Fullscreen_component {
@@ -24,9 +25,12 @@
 }
 
 .rh5v-Fullscreen_button {
-  width: 54px;
-  height: 54px;
-  background: transparent url('../images/fullscreen.svg') no-repeat;
+  width: 43px;
+  height: 43px;
+  background-color: transparent; 
+  background-image: url('../images/fullscreen.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
   border: 0;
   border-radius: 50%;
   color: inherit;
@@ -35,8 +39,15 @@
   overflow: visible;
   padding: 0;
   cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.2s;
 }
-
+.fullscreen .rh5v-Fullscreen_component {
+  transform: none!important;
+}
+.rh5v-Fullscreen_button:hover{
+  transform: scale(1.2558);
+}
 .rh5v-Fullscreen_button:focus {
   outline: none;
 }

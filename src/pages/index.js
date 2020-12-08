@@ -17,6 +17,11 @@ import "swiper/components/effect-coverflow/effect-coverflow.scss"
 // Project components
 import videoSrc from "../videos/video.mp4"
 import Layout from "../components/layout"
+import Hotspot from "../components/icons/hotspot"
+import Close from "../components/icons/close"
+import Left from "../components/icons/left"
+import Right from "../components/icons/right"
+import StickyAd from "../components/sticky-ad"
 import SEO from "../components/seo"
 
 SwiperCore.use([EffectCoverflow, Pagination])
@@ -100,6 +105,22 @@ const IndexPage = ({ data }) => {
       $(`.${landing.features_hot_spot}`).addClass(landing.hot_spot_display)
     }
   useEffect(() => {
+    $(`.${landing.hero_video}`).height(
+      $(`.${landing.hero_video}`).find("video").height()
+    )
+    $(`.${landing.hero_video}`).find("video").css({ position: `fixed` })
+    $(window).on("load scroll", function () {
+      let scrolled = $(this).scrollTop()
+      // parallax (25% scroll rate)
+      $(`.${landing.hero_video}`).css(
+        "transform",
+        "translate3d(0, " + scrolled * 0.25 + "px, 0)"
+      )
+      $(`.rh5v-Fullscreen_component`).css(
+        "transform",
+        "translate3d(0, " + -(scrolled * 0.25) + "px, 0)"
+      )
+    })
     $(".rh5v-Fullscreen_button").click(fullScreenToggle)
   }, [])
   return (
@@ -190,12 +211,7 @@ const IndexPage = ({ data }) => {
                   Discover what it is that makes this people love their Sienna
                   and why they are proud of owning one.
                 </p>
-                <Link
-                  to="#link"
-                  className="font-weight-bold text-right border-bottom"
-                >
-                  Know More
-                </Link>
+                <Link to="#link">Know More</Link>
               </div>
             </Col>
           </Row>
@@ -217,19 +233,48 @@ const IndexPage = ({ data }) => {
               slideShadows: true,
             }}
             updateOnWindowResize={true}
-            slideVisibleClass={landing.card_slide_visible}
-            slideDuplicateClass={landing.card_slide_duplicate}
-            slidePrevClass={landing.card_slider_prev}
-            slideDuplicatePrevClass={landing.card_slider_prev}
-            slideActiveClass={landing.card_slider_active}
-            slideDuplicateActiveClass={landing.card_slider_active}
-            slideNextClass={landing.card_slider_next}
-            slideDuplicateNextClass={landing.card_slider_next}
+            slideVisibleClass={
+              landing.card_slide_visible !== ""
+                ? landing.card_slide_visible
+                : null
+            }
+            slideDuplicateClass={
+              landing.card_slide_duplicate !== ""
+                ? landing.card_slide_duplicate
+                : null
+            }
+            slidePrevClass={
+              landing.card_slider_prev !== "" ? landing.card_slider_prev : null
+            }
+            slideDuplicatePrevClass={
+              landing.card_slider_prev !== "" ? landing.card_slider_prev : null
+            }
+            slideActiveClass={
+              landing.card_slider_active !== ""
+                ? landing.card_slider_active
+                : null
+            }
+            slideDuplicateActiveClass={
+              landing.card_slider_active !== ""
+                ? landing.card_slider_active
+                : null
+            }
+            slideNextClass={
+              landing.card_slider_next !== "" ? landing.card_slider_next : null
+            }
+            slideDuplicateNextClass={
+              landing.card_slider_next !== "" ? landing.card_slider_next : null
+            }
             pagination={{ clickable: true }}
-            mousewheel={{ releaseOnEdges: true }}
             loop={true}
             breakpoints={{
-              768: { slidesPerView: 3, spaceBetween: 10, effect: "slide" },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 10,
+                effect: "slide",
+                allowSlidePrev: false,
+                allowSlideNext: false,
+              },
             }}
             simulateTouch={true}
             onPaginationRender={(swiper, paginationEl) => {
@@ -304,28 +349,28 @@ const IndexPage = ({ data }) => {
                 className={`${landing.features_hot_spot} ${landing.features_hot_spot_I}`}
                 onClick={e => openFeature(e, 1)}
               >
-                <img src={data.hotSpot.publicURL} alt="hotSpot-1" />
+                <Hotspot />
               </button>
               <button
                 type="button"
                 className={`${landing.features_hot_spot} ${landing.features_hot_spot_II}`}
                 onClick={e => openFeature(e, 2)}
               >
-                <img src={data.hotSpot.publicURL} alt="hotSpot-2" />
+                <Hotspot />
               </button>
               <button
                 type="button"
                 className={`${landing.features_hot_spot} ${landing.features_hot_spot_III}`}
                 onClick={e => openFeature(e, 3)}
               >
-                <img src={data.hotSpot.publicURL} alt="hotSpot-3" />
+                <Hotspot />
               </button>
               <button
                 type="button"
                 className={`${landing.features_hot_spot} ${landing.features_hot_spot_IV}`}
                 onClick={e => openFeature(e, 4)}
               >
-                <img src={data.hotSpot.publicURL} alt="hotSpot-4" />
+                <Hotspot />
               </button>
             </div>
           </div>
@@ -386,7 +431,7 @@ const IndexPage = ({ data }) => {
               className={landing.roundButton}
               onClick={() => closeFeature()}
             >
-              <img src={data.closeFeature.publicURL} alt="close" />
+              <Close />
             </button>
           </div>
           <div className={landing.features_title_wrapper}>
@@ -414,19 +459,20 @@ const IndexPage = ({ data }) => {
         </Modal.Body>
         <Modal.Footer className={landing.features_modal_footer}>
           <button
-            className={`${landing.roundButton} mx-2`}
+            className={`${landing.roundButton} mr-2`}
             onClick={previousFeature}
           >
-            <img src={data.previousFeature.publicURL} alt="previous" />
+            <Left />
           </button>
           <button
             className={`${landing.roundButton} mx-2`}
             onClick={nextFeature}
           >
-            <img src={data.nextFeature.publicURL} alt="next" />
+            <Right />
           </button>
         </Modal.Footer>
       </Modal>
+      <StickyAd />
     </Layout>
   )
 }
@@ -497,18 +543,6 @@ export const query = graphql`
           ...GatsbyImageSharpFluid
         }
       }
-    }
-    hotSpot: file(relativePath: { eq: "hotspot.svg" }) {
-      publicURL
-    }
-    closeFeature: file(relativePath: { eq: "close.svg" }) {
-      publicURL
-    }
-    previousFeature: file(relativePath: { eq: "left.svg" }) {
-      publicURL
-    }
-    nextFeature: file(relativePath: { eq: "right.svg" }) {
-      publicURL
     }
     featureI: file(relativePath: { eq: "feature-1.jpg" }) {
       childImageSharp {

@@ -1,6 +1,9 @@
 .at_header {
   background: #d7000c;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 9999999;
 }
 
 .at_navbar_top {
@@ -106,7 +109,9 @@
 
 .at_navbar_nav {
   align-items: center;
+  height: calc(100vh - 50px);
   text-align: center;
+  overflow-y: scroll;
 }
 
 .at_nav_container {
@@ -146,6 +151,10 @@
   .at_nav_item_link_desc {
     font-size: 48px;
     line-height: 60px;
+  }
+
+  .at_navbar_nav {
+    height: calc(100vh - 59px);
   }
 }
 
