@@ -124,13 +124,30 @@
   }
 
   .hero_cta_know_more>a {
-    border-bottom: 2px solid #0F68C9;
     color: #000000;
     display: inline-block;
     font-weight: 700;
     height: 32px;
     text-align: right;
     text-decoration: none;
+    position: relative;
+  }
+
+  .hero_cta_know_more>a::after {
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    border-bottom: 2px solid #0F68C9;
+    transition: all 0.2s;
+  }
+
+  .hero_cta_know_more>a:hover::after {
+    width: 100%;
+    left: 0;
   }
 
   .hero_card_section {

@@ -8,16 +8,16 @@ import Ad from "../css/ad.module.css"
 const StickyAd = () => {
   const { AdImage, toyotaLogo } = useStaticQuery(graphql`
       {
-        AdImage: file(relativePath: { eq: "sticky-ad.jpg" }) {
+        AdImage: file(relativePath: { eq: "toyota-fixed-banner.jpg" }) {
           childImageSharp {
             fixed(width: 194, height: 268) {
               ...GatsbyImageSharpFixed
             }
           }
         }
-        toyotaLogo: file(relativePath: { eq: "sticky-ad-logo.png" }) {
+        toyotaLogo: file(relativePath: { eq: "toyota-fixed-logo.png" }) {
           childImageSharp {
-            fixed(width: 76, height: 62) {
+            fixed(width: 75, height: 62) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -40,7 +40,7 @@ const StickyAd = () => {
         </div>
         <div className={Ad.contentOuter}>
           <div className={Ad.contentInner}>
-            <Img fixed={toyotaLogo.childImageSharp.fixed} alt="Toyota-Logo" />
+            <Img fixed={toyotaLogo.childImageSharp.fixed} alt="Toyota" />
             <button type="button" className={Ad.buildButton}>
               Build Your Own
             </button>

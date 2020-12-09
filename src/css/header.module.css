@@ -44,6 +44,8 @@
 
 .at_navbar .at_navbar_toggle {
   height: 39px;
+  color: #ffffff;
+  border-color: transparent;
 }
 
 .at_navbar .at_navbar_toggle:focus {
@@ -62,7 +64,7 @@
 }
 
 .at_navbar_collapse {
-  background-color: #d71c0c;
+  background-color: #d7000c;
   position: absolute;
   top: 100%;
   left: 0;

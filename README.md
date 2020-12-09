@@ -5,7 +5,15 @@
   </a>
 </p>
 <h1 align="center">
-  AutoTraders
+  AutoTraders Alpha
+</h1>
+<p align="center">
+  <a href="https://at-b.netlify.app/">
+    <img alt="Gatsby" src="src/images/logo.png" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  AutoTraders Beta
 </h1>
 
 ## 🚀 Quick start
@@ -87,5 +95,12 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.com/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
 ## 💫 Deployment
+Alpha
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/72aeab94-bd03-4533-8800-3ba06104f8cc/deploy-status)](https://app.netlify.com/sites/autotraders/deploys)
+
+Beta
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b4a17e4e-6cda-4677-93d8-8a8308e83a34/deploy-status)](https://app.netlify.com/sites/at-b/deploys)
 
 <!-- AUTO-GENERATED-CONTENT:END -->

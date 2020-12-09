@@ -17,6 +17,7 @@ import "swiper/components/effect-coverflow/effect-coverflow.scss"
 // Project components
 import videoSrc from "../videos/video.mp4"
 import Layout from "../components/layout"
+import Families from "../components/families"
 import Hotspot from "../components/icons/hotspot"
 import Close from "../components/icons/close"
 import Left from "../components/icons/left"
@@ -159,39 +160,11 @@ const IndexPage = ({ data }) => {
                 </div>
               </Col>
               <Col
-                md={{ span: 6, order: 2 }}
+                md={{ span: 5, offset: 1, order: 2 }}
                 sm={{ span: 12, order: 1 }}
                 xs={{ span: 12, order: 1 }}
               >
-                <div
-                  className={`text-center text-md-right ${landing.families_block}`}
-                >
-                  <Img
-                    fixed={data.families.childImageSharp.fixed}
-                    alt="families"
-                    objectFit="contain"
-                    objectPosition="50% 50%"
-                    className={`img-fluid d-none d-md-inline-block ${landing.families_image}`}
-                  />
-                  <Img
-                    fixed={data.familiesM.childImageSharp.fixed}
-                    alt="families-m"
-                    objectFit="contain"
-                    objectPosition="50% 50%"
-                    className={`img-fluid d-inline-block d-md-none ${landing.families_image}`}
-                  />
-                  <button
-                    type="button"
-                    className={`d-none ${landing.families_hover_block}`}
-                  >
-                    <h6 className={landing.families_hover_title}>
-                      The Smithersons
-                    </h6>
-                    <p className={landing.families_hover_subtitle}>
-                      See their reasons
-                    </p>
-                  </button>
-                </div>
+                <Families />
               </Col>
             </Row>
           </Container>
