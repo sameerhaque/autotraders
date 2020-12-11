@@ -120,7 +120,7 @@
     padding-right: 0;
   }
 
-  .article_slider {
+  .slider_section .article_slider {
     overflow: visible;
     margin-bottom: 30px;
   }
