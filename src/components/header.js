@@ -1,5 +1,5 @@
 import PropTypes from "prop-types"
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import { Container, Row, Col, Navbar, Nav } from "react-bootstrap"
 import $ from "jquery"
@@ -10,13 +10,34 @@ import logoMobile from "../images/logo-m.png"
 import toyotaLogo from "../images/toyota-logo.png"
 
 const Header = () => {
-  const openNavigation = () => {
-    $(`body`).toggleClass("overflow-hidden")
-  }
+  const {
+      at_header,
+      at_navbar_top,
+      at_navbar_brand,
+      at_navbar_brand_right,
+      at_navbar_bottom,
+      at_navbar,
+      at_navbar_toggle,
+      at_navbar_toggle_stripes,
+      at_navbar_collapse,
+      at_navbar_nav,
+      at_nav_container,
+      at_nav_item,
+      at_nav_item_link,
+      at_nav_item_link_desc,
+    } = header,
+    openNavigation = () => {
+      $(`body`).toggleClass("overflow-hidden")
+    }
+  useEffect(() => {
+    $(`.${at_nav_item_link}`).click(function () {
+      $(`body`).removeClass("overflow-hidden")
+    })
+  }, [at_nav_item_link])
   return (
-    <header className={header.at_header}>
-      <div className={header.at_navbar_top}>
-        <Link className={header.at_navbar_brand} to="/">
+    <header className={at_header}>
+      <div className={at_navbar_top}>
+        <a className={at_navbar_brand} href="//autotrader.ca">
           <img
             className="d-none d-sm-block"
             src={Logo}
@@ -31,12 +52,12 @@ const Header = () => {
             height={50}
             width={80}
           />
-        </Link>
-        <div className={header.at_navbar_brand_right}>
+        </a>
+        <a href="//toyota.ca" className={at_navbar_brand_right}>
           <img className="" src={toyotaLogo} alt="Toyota" />
-        </div>
+        </a>
       </div>
-      <div className={header.at_navbar_bottom}>
+      <div className={at_navbar_bottom}>
         <Container fluid>
           <Row noGutters={true} className="justify-content-center">
             <Col lg={10} md={9} className="position-initial">
@@ -45,48 +66,54 @@ const Header = () => {
                 expand={false}
                 collapseOnSelect
                 onToggle={openNavigation}
-                className={header.at_navbar}
+                className={at_navbar}
               >
                 <Navbar.Toggle
-                  className={header.at_navbar_toggle}
+                  className={at_navbar_toggle}
                   aria-controls="responsive-navbar-nav"
                 >
-                  <span className={header.at_navbar_toggle_stripes} />
-                  <span className={header.at_navbar_toggle_stripes} />
-                  <span className={header.at_navbar_toggle_stripes} />
+                  <span className={at_navbar_toggle_stripes} />
+                  <span className={at_navbar_toggle_stripes} />
+                  <span className={at_navbar_toggle_stripes} />
                 </Navbar.Toggle>
-                <Navbar.Collapse className={header.at_navbar_collapse}>
-                  <Nav className={header.at_navbar_nav}>
-                    <div className={header.at_nav_container}>
-                      <div className={header.at_nav_item}>
-                        <Link to="/" className={header.at_nav_item_link}>
+                <Navbar.Collapse className={at_navbar_collapse}>
+                  <Nav className={at_navbar_nav}>
+                    <div className={at_nav_container}>
+                      <div className={at_nav_item}>
+                        <Link to="/" className={at_nav_item_link}>
                           HOME
                         </Link>
-                        <div className={header.at_nav_item_link_desc}>
+                        <div className={at_nav_item_link_desc}>
                           Sienna #VanProud
                         </div>
                       </div>
-                      <div className={header.at_nav_item}>
-                        <Link to="#link" className={header.at_nav_item_link}>
+                      <div className={at_nav_item}>
+                        <Link to="#link" className={at_nav_item_link}>
                           INTERACTIVE CONTENT
                         </Link>
-                        <div className={header.at_nav_item_link_desc}>
+                        <div className={at_nav_item_link_desc}>
                           20 Reasons to Believe
                         </div>
                       </div>
-                      <div className={header.at_nav_item}>
-                        <Link to="#link" className={header.at_nav_item_link}>
+                      <div className={at_nav_item}>
+                        <Link
+                          to="/the-hardest-working-family-member/"
+                          className={at_nav_item_link}
+                        >
                           ARTICLE
                         </Link>
-                        <div className={header.at_nav_item_link_desc}>
+                        <div className={at_nav_item_link_desc}>
                           The hardest working family member
                         </div>
                       </div>
-                      <div className={header.at_nav_item}>
-                        <Link to="#link" className={header.at_nav_item_link}>
+                      <div className={at_nav_item}>
+                        <Link
+                          to="/the-sienna-described-from-every-seat/"
+                          className={at_nav_item_link}
+                        >
                           ARTICLE
                         </Link>
-                        <div className={header.at_nav_item_link_desc}>
+                        <div className={at_nav_item_link_desc}>
                           The Sienna, described from every seat
                         </div>
                       </div>

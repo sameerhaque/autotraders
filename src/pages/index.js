@@ -259,28 +259,38 @@ const IndexPage = ({ data }) => {
           >
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
-                <Img fluid={data.slide2.childImageSharp.fluid} alt="slide-2" />
-                <div className={landing.slide_legend}>
-                  <h5 className={landing.slide_legend_type}>ARTICLE</h5>
-                  <h3 className={landing.slide_legend_title}>
-                    The hardest working
-                    <br />
-                    family member
-                  </h3>
-                </div>
+                <Link to="/the-hardest-working-family-member/">
+                  <Img
+                    fluid={data.slide2.childImageSharp.fluid}
+                    alt="slide-2"
+                  />
+                  <div className={landing.slide_legend}>
+                    <h5 className={landing.slide_legend_type}>ARTICLE</h5>
+                    <h3 className={landing.slide_legend_title}>
+                      The hardest working
+                      <br />
+                      family member
+                    </h3>
+                  </div>
+                </Link>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
-                <Img fluid={data.slide3.childImageSharp.fluid} alt="slide-3" />
-                <div className={landing.slide_legend}>
-                  <h5 className={landing.slide_legend_type}>ARTICLE</h5>
-                  <h3 className={landing.slide_legend_title}>
-                    The Sienna, described
-                    <br />
-                    from every seat
-                  </h3>
-                </div>
+                <Link to="/the-sienna-described-from-every-seat/">
+                  <Img
+                    fluid={data.slide3.childImageSharp.fluid}
+                    alt="slide-3"
+                  />
+                  <div className={landing.slide_legend}>
+                    <h5 className={landing.slide_legend_type}>ARTICLE</h5>
+                    <h3 className={landing.slide_legend_title}>
+                      The Sienna, described
+                      <br />
+                      from every seat
+                    </h3>
+                  </div>
+                </Link>
               </div>
             </SwiperSlide>
             <SwiperSlide>

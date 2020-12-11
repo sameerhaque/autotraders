@@ -98,7 +98,6 @@
 
   .hero_image {
     background-color: #cccccc;
-    padding-top: 50px;
   }
 
   .hero_image .hero_video {
@@ -481,10 +480,6 @@
 @media(min-width:576px) {}
 
 @media (min-width: 768px) {
-  .hero_image {
-    padding-top: 59px;
-  }
-
   .families_wrapper {
     padding-top: 60px;
   }
