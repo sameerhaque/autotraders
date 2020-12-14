@@ -299,7 +299,7 @@ export default () => {
                     fixed={nextImage.childImageSharp.fixed}
                   />
                   <div className={nav_area}>
-                    <p>Previous</p>
+                    <p>Next</p>
                     <Link to="#link" className={navigate_next}>
                       <h4>
                         <span className="d-block">20 Reasons</span> to Believe

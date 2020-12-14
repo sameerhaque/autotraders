@@ -22,9 +22,9 @@ const Prev = () => {
         d="M30 33L24.5 27.5L30 22"
         transform="translate(-6 -6)"
         stroke="#ffffff"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   )

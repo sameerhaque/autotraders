@@ -5,9 +5,8 @@ import { Container, Row, Col, Navbar, Nav } from "react-bootstrap"
 import $ from "jquery"
 
 import header from "../css/header.module.css"
-import Logo from "../images/logo.png"
-import logoMobile from "../images/logo-m.png"
 import toyotaLogo from "../images/toyota-logo.png"
+import LogoSVG from "./icons/logo"
 
 const Header = () => {
   const {
@@ -27,31 +26,20 @@ const Header = () => {
       at_nav_item_link_desc,
     } = header,
     openNavigation = () => {
-      $(`body`).toggleClass("overflow-hidden")
-    }
-  useEffect(() => {
-    $(`.${at_nav_item_link}`).click(function () {
+      $(`body`).hasClass("overflow-hidden")
+        ? $(`body`).removeClass("overflow-hidden")
+        : $(`body`).addClass("overflow-hidden")
+    },
+    itemSelected = () => {
       $(`body`).removeClass("overflow-hidden")
-    })
-  }, [at_nav_item_link])
+    }
+  useEffect(() => {}, [])
   return (
     <header className={at_header}>
       <div className={at_navbar_top}>
         <a className={at_navbar_brand} href="//autotrader.ca">
-          <img
-            className="d-none d-sm-block"
-            src={Logo}
-            alt="logo"
-            height={59}
-            width={96}
-          />
-          <img
-            className="d-sm-none"
-            src={logoMobile}
-            alt="logo"
-            height={50}
-            width={80}
-          />
+          <LogoSVG className="d-none d-sm-block" height={59} width={96} />
+          <LogoSVG className="d-sm-none" height={50} width={80} />
         </a>
         <a href="//toyota.ca" className={at_navbar_brand_right}>
           <img className="" src={toyotaLogo} alt="Toyota" />
@@ -80,42 +68,68 @@ const Header = () => {
                   <Nav className={at_navbar_nav}>
                     <div className={at_nav_container}>
                       <div className={at_nav_item}>
-                        <Link to="/" className={at_nav_item_link}>
+                        <Link
+                          to="/"
+                          onClick={itemSelected}
+                          className={at_nav_item_link}
+                        >
                           HOME
                         </Link>
-                        <div className={at_nav_item_link_desc}>
+                        <Link
+                          to="/"
+                          onClick={itemSelected}
+                          className={at_nav_item_link_desc}
+                        >
                           Sienna #VanProud
-                        </div>
+                        </Link>
                       </div>
                       <div className={at_nav_item}>
-                        <Link to="#link" className={at_nav_item_link}>
+                        <Link
+                          to="/20-reasons-to-believe/"
+                          onClick={itemSelected}
+                          className={at_nav_item_link}
+                        >
                           INTERACTIVE CONTENT
                         </Link>
-                        <div className={at_nav_item_link_desc}>
+                        <Link
+                          to="/20-reasons-to-believe/"
+                          onClick={itemSelected}
+                          className={at_nav_item_link_desc}
+                        >
                           20 Reasons to Believe
-                        </div>
+                        </Link>
                       </div>
                       <div className={at_nav_item}>
                         <Link
                           to="/the-hardest-working-family-member/"
+                          onClick={itemSelected}
                           className={at_nav_item_link}
                         >
                           ARTICLE
                         </Link>
-                        <div className={at_nav_item_link_desc}>
+                        <Link
+                          to="/the-hardest-working-family-member/"
+                          onClick={itemSelected}
+                          className={at_nav_item_link_desc}
+                        >
                           The hardest working family member
-                        </div>
+                        </Link>
                       </div>
                       <div className={at_nav_item}>
                         <Link
                           to="/the-sienna-described-from-every-seat/"
+                          onClick={itemSelected}
                           className={at_nav_item_link}
                         >
                           ARTICLE
                         </Link>
-                        <div className={at_nav_item_link_desc}>
+                        <Link
+                          to="/the-sienna-described-from-every-seat/"
+                          onClick={itemSelected}
+                          className={at_nav_item_link_desc}
+                        >
                           The Sienna, described from every seat
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </Nav>

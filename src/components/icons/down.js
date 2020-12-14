@@ -15,8 +15,8 @@ const Down = () => {
         x2="12.3794"
         y2="45.5"
         stroke="white"
-        stroke-linecap="round"
-        stroke-linejoin="bevel"
+        strokeLinecap="round"
+        strokeLinejoin="bevel"
       />
       <line
         x1="12.3794"
