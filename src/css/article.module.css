@@ -1,0 +1,267 @@
+@media(min-width:0) {
+  .hero {
+    background-color: #cee0f3;
+    display: flex;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero_content {
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero_holder {
+    display: flex;
+    height: 100%;
+    position: relative;
+  }
+
+  .hero_button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  .hero_button:focus {
+    outline: none;
+  }
+
+  .hero_inner {
+    height: 100%;
+    padding: 50px 20px;
+    width: 100%;
+  }
+
+  .hero_inner h1 {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 42px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .hero_inner h1 strong {
+    display: block;
+    font-weight: 700;
+  }
+
+  .author_info {
+    display: flex;
+    align-items: center;
+  }
+
+  .author_img {
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 50px;
+    overflow: hidden;
+    width: 50px;
+  }
+
+  .author_info p {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    margin-bottom: 0;
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  .author_info p span {
+    display: block;
+  }
+
+  .author_info p strong {
+    font-weight: 500;
+  }
+
+  .article_content_wrapper {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: left;
+    letter-spacing: 0em;
+  }
+
+  .article_quote h3 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 48px;
+    margin-bottom: 20px;
+  }
+
+  .article_content p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 36px;
+  }
+
+  .slider_section {
+    overflow: hidden;
+  }
+
+  .slider_container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .slider_section .article_slider {
+    overflow: visible;
+    margin-bottom: 30px;
+  }
+
+  .swiper_nav {
+    display: flex;
+    width: 116px;
+    justify-content: space-between;
+    margin-left: 20px;
+  }
+
+  .slider_button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .slider_button:focus {
+    outline: none;
+  }
+
+  .nav_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .nav_holder {
+    background-color: #c4c4c4;
+    border-radius: 12px;
+    box-shadow: 0px 8.709229469299316px 34.836917877197266px 0px rgba(0, 0, 0, 0.25);
+    display: inline-flex;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+  }
+
+  .nav_area {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 32.81%, rgba(0, 0, 0, 0.9) 100%);
+    bottom: 0;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-end;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+  }
+
+  .nav_area a {
+    color: #ffffff;
+  }
+
+  .nav_area a:hover {
+    text-decoration: none;
+  }
+}
+
+@media (min-width:375px) {}
+
+@media (min-width:576px) {}
+
+@media (min-width:768px) {
+  .hero_inner {
+    padding: 60px 30px;
+  }
+
+  .hero_button {
+    bottom: 100px;
+    right: 30px;
+  }
+
+  .hero_inner h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .author_info p {
+    line-height: 32px;
+  }
+
+  .author_info p span {
+    display: inline-block;
+  }
+
+  .article_content_wrapper {
+    padding-bottom: 80px;
+    padding-top: 100px;
+  }
+
+  .swiper_nav {
+    margin-left: 0;
+  }
+
+  .navigation_section .nav_wrapper {
+    margin-bottom: 0;
+  }
+
+  .nav_holder {
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+  }
+
+  .nav_area {
+    background: transparent;
+    color: #000000;
+    display: block;
+    position: relative;
+  }
+
+  .nav_area a {
+    color: #000000;
+  }
+
+  .nav_area a:hover {
+    color: #0F68C9;
+    text-decoration: none;
+  }
+}
+
+@media (min-width:992px) {}
+
+@media (min-width:1200px) {
+  .hero_inner {
+    padding: 60px 50px;
+  }
+
+  .hero_button {
+    right: 50px;
+  }
+
+  .article_content_wrapper {
+    padding-bottom: 100px;
+  }
+
+  .slider_container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}

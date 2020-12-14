@@ -17,6 +17,7 @@
   position: absolute;
   top: 0;
   left: 20px;
+  z-index: 99;
 }
 
 .at_navbar_brand_right {
@@ -89,12 +90,19 @@
 }
 
 .at_nav_item_link_desc {
+  color: #ffffff;
+  display: block;
   font-size: 30px;
   line-height: 35.16px;
   font-weight: 300;
   font-style: normal;
   padding-top: 10px;
   position: relative;
+}
+
+.at_nav_item_link_desc:hover {
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .at_nav_item_link_desc::before {

@@ -19,12 +19,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `AutoTrader`,
+        short_name: `AutoTrader`,
         start_url: `/`,
         background_color: `#e7f0f9`,
         theme_color: `#d7000c`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
