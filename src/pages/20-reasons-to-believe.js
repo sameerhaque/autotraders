@@ -13,8 +13,6 @@ import Right from "../components/icons/right"
 import Flip from "../components/icons/flip"
 
 import InterActive from "../css/interactive.module.css"
-import "swiper/swiper.scss"
-import "swiper/components/effect-flip/effect-flip.scss"
 
 SwiperCore.use([EffectFlip, Pagination])
 export default () => {
@@ -270,7 +268,7 @@ export default () => {
                       >
                         <Flip />
                       </button>
-                      <p className={flip_label}>
+                      <p className={`d-xl-none ${flip_label}`}>
                         <span className="d-block">click</span> to flip
                       </p>
                     </div>

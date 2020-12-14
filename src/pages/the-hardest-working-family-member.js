@@ -12,8 +12,6 @@ import Prev from "../components/icons/prev"
 import Next from "../components/icons/next"
 
 import Article from "../css/article.module.css"
-import "swiper/swiper.scss"
-import "swiper/components/effect-coverflow/effect-coverflow.scss"
 
 SwiperCore.use([EffectCoverflow])
 export default () => {
