@@ -268,7 +268,7 @@ export default () => {
                       >
                         <Flip />
                       </button>
-                      <p className={flip_label}>
+                      <p className={`d-xl-none ${flip_label}`}>
                         <span className="d-block">click</span> to flip
                       </p>
                     </div>
