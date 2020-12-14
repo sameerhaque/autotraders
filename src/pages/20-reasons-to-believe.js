@@ -109,9 +109,9 @@ export default () => {
     [slider, setSlider] = useState(null)
   useEffect(() => {
     if (isBrowser) {
-      setMobile($(window).outerWidth() <= 768 ? true : false)
+      setMobile($(window).outerWidth() < 768 ? true : false)
       $(window).resize(() => {
-        setMobile($(window).outerWidth() <= 768 ? true : false)
+        setMobile($(window).outerWidth() < 768 ? true : false)
         $(`.${reason_slide_holder}`)
           .removeAttr("style")
           .height($(`.${reason_slide_holder}.master`).height())

@@ -60,6 +60,7 @@ $colors: (
   display: inline-block;
   border-radius: 100%;
   background: #F1F1F1;
+  opacity: 1;
   @at-root button#{&} {
     border: none;
     margin: 0;
@@ -74,7 +75,6 @@ $colors: (
 .swiper-pagination-bullet-active {
   width: 15px;
   height: 15px;
-  opacity: 1;
   background: var(--swiper-pagination-color, var(--swiper-theme-color));
 }
 
