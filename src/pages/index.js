@@ -10,9 +10,9 @@ import Img from "gatsby-image/withIEPolyfill"
 import $ from "jquery"
 
 // Styles
-import landing from "../css/landing.module.css"
 import "swiper/swiper.scss"
 import "swiper/components/effect-coverflow/effect-coverflow.scss"
+import landing from "../css/landing.module.css"
 
 // Project components
 import videoSrc from "../videos/video.mp4"
