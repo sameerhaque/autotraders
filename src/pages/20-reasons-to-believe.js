@@ -12,8 +12,6 @@ import Left from "../components/icons/left"
 import Right from "../components/icons/right"
 import Flip from "../components/icons/flip"
 
-import "swiper/swiper.scss"
-import "swiper/components/effect-flip/effect-flip.scss"
 import InterActive from "../css/interactive.module.css"
 
 SwiperCore.use([EffectFlip, Pagination])

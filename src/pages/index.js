@@ -10,8 +10,6 @@ import Img from "gatsby-image/withIEPolyfill"
 import $ from "jquery"
 
 // Styles
-import "swiper/swiper.scss"
-import "swiper/components/effect-coverflow/effect-coverflow.scss"
 import landing from "../css/landing.module.css"
 
 // Project components

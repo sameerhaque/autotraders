@@ -5,3 +5,6 @@
  */
 import "./src/css/fonts.css"
 import "./src/scss/global.scss"
+import "./node_modules/swiper/swiper.scss"
+import "./node_modules/swiper/components/effect-coverflow/effect-coverflow.scss"
+import "./node_modules/swiper/components/effect-flip/effect-flip.scss"
