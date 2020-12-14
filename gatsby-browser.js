@@ -4,7 +4,5 @@
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
 import "./src/css/fonts.css"
+import "./node_modules/swiper/swiper-bundle.min.css"
 import "./src/scss/global.scss"
-import "./node_modules/swiper/swiper.scss"
-import "./node_modules/swiper/components/effect-coverflow/effect-coverflow.scss"
-import "./node_modules/swiper/components/effect-flip/effect-flip.scss"
