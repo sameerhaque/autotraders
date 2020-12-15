@@ -252,6 +252,11 @@
     padding: 60px 50px;
   }
 
+  .hero_holder {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   .hero_button {
     right: 50px;
   }

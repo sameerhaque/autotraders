@@ -9,6 +9,9 @@
 .at_navbar_top {
   background: #3e3e3e;
   min-height: 11px;
+}
+
+.at_navbar_container {
   position: relative;
 }
 
@@ -170,4 +173,11 @@
 
 @media (min-width: 992px) {}
 
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+
+  .at_navbar_container,
+  .at_navbar_bottom_container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

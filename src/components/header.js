@@ -12,9 +12,11 @@ const Header = () => {
   const {
       at_header,
       at_navbar_top,
+      at_navbar_container,
       at_navbar_brand,
       at_navbar_brand_right,
       at_navbar_bottom,
+      at_navbar_bottom_container,
       at_navbar,
       at_navbar_toggle,
       at_navbar_toggle_stripes,
@@ -37,16 +39,18 @@ const Header = () => {
   return (
     <header className={at_header}>
       <div className={at_navbar_top}>
-        <a className={at_navbar_brand} href="//autotrader.ca">
-          <LogoSVG className="d-none d-sm-block" height={59} width={96} />
-          <LogoSVG className="d-sm-none" height={50} width={80} />
-        </a>
-        <a href="//toyota.ca" className={at_navbar_brand_right}>
-          <img className="" src={toyotaLogo} alt="Toyota" />
-        </a>
+        <div className={at_navbar_container}>
+          <a className={at_navbar_brand} href="//autotrader.ca">
+            <LogoSVG className="d-none d-sm-block" height={59} width={96} />
+            <LogoSVG className="d-sm-none" height={50} width={80} />
+          </a>
+          <a href="//toyota.ca" className={at_navbar_brand_right}>
+            <img className="" src={toyotaLogo} alt="Toyota" />
+          </a>
+        </div>
       </div>
       <div className={at_navbar_bottom}>
-        <Container fluid>
+        <Container fluid className={at_navbar_bottom_container}>
           <Row noGutters={true} className="justify-content-center">
             <Col lg={10} md={9} className="position-initial">
               <Navbar

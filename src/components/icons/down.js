@@ -24,20 +24,20 @@ const Down = () => {
         x2="12.3794"
         y2="45.5"
         stroke="white"
-        stroke-linecap="round"
-        stroke-linejoin="bevel"
+        strokeLinecap="round"
+        strokeLinejoin="bevel"
       />
       <path
         d="M1.32861 35.1055L12.5 46.0002L23.6715 35.1055"
         stroke="white"
-        stroke-linecap="round"
-        stroke-linejoin="bevel"
+        strokeLinecap="round"
+        strokeLinejoin="bevel"
       />
       <path
         d="M1.32861 35.1055L12.5 46.0002L23.6715 35.1055"
         stroke="white"
-        stroke-linecap="round"
-        stroke-linejoin="bevel"
+        strokeLinecap="round"
+        strokeLinejoin="bevel"
       />
     </svg>
   )

@@ -293,17 +293,22 @@ const IndexPage = ({ data }) => {
             </SwiperSlide>
             <SwiperSlide>
               <div className={landing.hero_card_slide}>
-                <Img fluid={data.slide1.childImageSharp.fluid} alt="slide-1" />
-                <div className={landing.slide_legend}>
-                  <h5 className={landing.slide_legend_type}>
-                    Interactive Content
-                  </h5>
-                  <h3 className={landing.slide_legend_title}>
-                    20 Reasons
-                    <br />
-                    to Believe
-                  </h3>
-                </div>
+                <Link to="/20-reasons-to-believe/">
+                  <Img
+                    fluid={data.slide1.childImageSharp.fluid}
+                    alt="slide-1"
+                  />
+                  <div className={landing.slide_legend}>
+                    <h5 className={landing.slide_legend_type}>
+                      Interactive Content
+                    </h5>
+                    <h3 className={landing.slide_legend_title}>
+                      20 Reasons
+                      <br />
+                      to Believe
+                    </h3>
+                  </div>
+                </Link>
               </div>
             </SwiperSlide>
           </Swiper>

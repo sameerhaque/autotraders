@@ -169,6 +169,10 @@
     overflow: hidden;
   }
 
+  .reason_slide_holder:focus {
+    outline: none;
+  }
+
   .reason_slide_review {
     height: 100%;
     display: flex;
@@ -407,6 +411,11 @@
 }
 
 @media (min-width:1200px) {
+  .interactive_section_I>div {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   .reason_box {
     flex-direction: row;
   }
@@ -418,6 +427,10 @@
 
   .reason_box_content_wrapper {
     padding-left: 37px;
+  }
+
+  .reason_box_content_area_outer {
+    max-width: 483px;
   }
 
   .reason_box_content_area_outer::before {
