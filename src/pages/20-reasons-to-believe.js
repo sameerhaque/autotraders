@@ -120,7 +120,7 @@ export default () => {
         $(`.${reason_slide_holder}.master`).height()
       )
     }
-  }, [isBrowser, reason_slide_holder])
+  }, [isBrowser, slider, reason_slide_holder])
   console.log(isMobile)
   return (
     <Layout>
@@ -203,7 +203,13 @@ export default () => {
                       onSwiper={swiper => setSlider(swiper)}
                     >
                       <SwiperSlide>
-                        <div className={`${reason_slide_holder} master`}>
+                        <div
+                          className={`${reason_slide_holder} master`}
+                          onClick={e => slider.slideNext()}
+                          onKeyPress={e => slider.slideNext()}
+                          role="link"
+                          tabIndex="0"
+                        >
                           <Img
                             fluid={reasonImage.childImageSharp.fluid}
                             alt="slide-1"
@@ -211,7 +217,13 @@ export default () => {
                         </div>
                       </SwiperSlide>
                       <SwiperSlide>
-                        <div className={reason_slide_holder}>
+                        <div
+                          className={reason_slide_holder}
+                          onClick={e => slider.slideNext()}
+                          onKeyPress={e => slider.slideNext()}
+                          role="link"
+                          tabIndex="0"
+                        >
                           <div className={reason_slide_review}>
                             <div className={reason_review_header}>
                               <div className={reason_review_avatar}>

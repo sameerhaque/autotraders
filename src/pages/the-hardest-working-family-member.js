@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
 import SwiperCore, { EffectCoverflow } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
+import $ from "jquery"
 import Img from "gatsby-image/withIEPolyfill"
 
 import Layout from "../components/layout"
@@ -92,7 +93,19 @@ export default () => {
         }
       }
     `),
-    [slider, setSlider] = useState(null)
+    [slider, setSlider] = useState(null),
+    scrollDown = () => {
+      console.log(
+        $(`.${hero}`).next().offset().top - $(`.${hero}`).offset().top
+      )
+      $("html, body").animate(
+        {
+          scrollTop:
+            $(`.${hero}`).next().offset().top - $(`.${hero}`).offset().top,
+        },
+        200
+      )
+    }
   return (
     <Layout>
       <SEO title="The hardest working family member" />
@@ -102,7 +115,7 @@ export default () => {
           alt="hero-image-sm"
           objectFit="cover"
           objectPosition="50% 50%"
-          className="d-none d-sm-block"
+          className="d-none d-sm-block w-100"
         />
         <Img
           fixed={heroImage.childImageSharp.fixed}
@@ -132,7 +145,7 @@ export default () => {
                 </p>
               </div>
             </div>
-            <button type="button" className={hero_button}>
+            <button type="button" className={hero_button} onClick={scrollDown}>
               <Down />
             </button>
           </div>
