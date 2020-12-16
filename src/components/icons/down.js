@@ -7,7 +7,7 @@ const Down = () => {
       height="47"
       viewBox="0 0 25 47"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="//www.w3.org/2000/svg"
     >
       <line
         x1="12.3794"

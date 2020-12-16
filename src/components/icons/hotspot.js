@@ -7,7 +7,7 @@ const Hotspot = () => {
       height="65"
       viewBox="0 0 65 65"
       fill="none"
-      xmlns="http://www.w3.org/2000/svg"
+      xmlns="//www.w3.org/2000/svg"
     >
       <g opacity="0.9">
         <g opacity="0.3" filter="url(#filter0_b)">
