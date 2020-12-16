@@ -207,254 +207,260 @@ export default () => {
   return (
     <Layout>
       <SEO title="20 Reasons to Believe" />
-      {!isMobile && currentReason !== null ? (
-        <React.Fragment>
-          <section className={interactive_section_I}>
-            <Container fluid>
-              <Row>
-                <Col xl={7} className="d-xl-none">
-                  <h1 className={main_heading}>
-                    <strong>20 Reasons</strong> to believe
-                  </h1>
-                </Col>
-                <Col xl={7} md={6}>
-                  <h1 className={`d-none d-xl-block ${main_heading}`}>
-                    <strong>20 Reasons</strong> to believe
-                  </h1>
-                  <div className={reason_box}>
-                    <div className={reason_box_avatar_wrapper}>
-                      <div className="d-xl-none">
-                        <button
-                          onClick={previousReason}
-                          className={`${reason_roundButton} mr-2`}
-                        >
-                          <Left />
-                        </button>
-                      </div>
-                      <Img
-                        fixed={currentReason.userAvatar.childImageSharp.fixed}
-                        className={box_avatar_image}
-                      />
-                      <div className={reason_navigators}>
-                        <button
-                          onClick={previousReason}
-                          className={`${reason_roundButton} d-none d-xl-inline-block mr-2`}
-                        >
-                          <Left />
-                        </button>
-                        <button
-                          onClick={nextReason}
-                          className={`${reason_roundButton} ml-2`}
-                        >
-                          <Right />
-                        </button>
-                      </div>
-                    </div>
-                    <div className={reason_box_content_wrapper}>
-                      <div className={reason_box_content_area_outer}>
-                        <div
-                          reason-id={("0" + currentReason.id).slice(-2)}
-                          className={reason_box_content_area}
-                        >
-                          <h6 className={reason_box_small_heading}>
-                            <strong>{`REASON ${("0" + currentReason.id).slice(
-                              -2
-                            )}`}</strong>
-                            {` BY ${currentReason.reasonBy}`}
-                          </h6>
-                          <h3 className={reason_box_big_heading}>
-                            {currentReason.reasonBigHeading}
-                          </h3>
-                          {ReactHtmlParser(currentReason.reasonDescription)}
+      {currentReason !== null ? (
+        !isMobile ? (
+          <React.Fragment>
+            <section className={interactive_section_I}>
+              <Container fluid>
+                <Row>
+                  <Col xl={7} className="d-xl-none">
+                    <h1 className={main_heading}>
+                      <strong>20 Reasons</strong> to believe
+                    </h1>
+                  </Col>
+                  <Col xl={7} md={6}>
+                    <h1 className={`d-none d-xl-block ${main_heading}`}>
+                      <strong>20 Reasons</strong> to believe
+                    </h1>
+                    <div className={reason_box}>
+                      <div className={reason_box_avatar_wrapper}>
+                        <div className="d-xl-none">
+                          <button
+                            onClick={previousReason}
+                            className={`${reason_roundButton} mr-2`}
+                          >
+                            <Left />
+                          </button>
+                        </div>
+                        <Img
+                          fixed={currentReason.userAvatar.childImageSharp.fixed}
+                          className={box_avatar_image}
+                        />
+                        <div className={reason_navigators}>
+                          <button
+                            onClick={previousReason}
+                            className={`${reason_roundButton} d-none d-xl-inline-block mr-2`}
+                          >
+                            <Left />
+                          </button>
+                          <button
+                            onClick={nextReason}
+                            className={`${reason_roundButton} ml-2`}
+                          >
+                            <Right />
+                          </button>
                         </div>
                       </div>
-                      <button type="button" className={box_action_button}>
-                        BUILD &amp; PRICE
-                      </button>
+                      <div className={reason_box_content_wrapper}>
+                        <div className={reason_box_content_area_outer}>
+                          <div
+                            reason-id={("0" + currentReason.id).slice(-2)}
+                            className={reason_box_content_area}
+                          >
+                            <h6 className={reason_box_small_heading}>
+                              <strong>{`REASON ${("0" + currentReason.id).slice(
+                                -2
+                              )}`}</strong>
+                              {` BY ${currentReason.reasonBy}`}
+                            </h6>
+                            <h3 className={reason_box_big_heading}>
+                              {currentReason.reasonBigHeading}
+                            </h3>
+                            {ReactHtmlParser(currentReason.reasonDescription)}
+                          </div>
+                        </div>
+                        <button type="button" className={box_action_button}>
+                          BUILD &amp; PRICE
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                </Col>
-                <Col xl={5} md={6}>
-                  <Row className="align-items-center">
-                    <Col xl={{ span: 9, offset: 1 }}>
-                      <div className="position-relative">
-                        <Swiper
-                          slidesPerView={1}
-                          centeredSlides={true}
-                          effect="flip"
-                          updateOnWindowResize={true}
-                          pagination={{ clickable: false }}
-                          loop={true}
-                          simulateTouch={false}
-                          allowTouchMove={false}
-                          onSwiper={swiper => setSlider(swiper)}
-                        >
-                          <SwiperSlide>
-                            <div
-                              className={`${reason_slide_holder} master`}
-                              onClick={e => slider.slideNext()}
-                              onKeyPress={e => slider.slideNext()}
-                              role="button"
-                              tabIndex="0"
-                            >
-                              <Img
-                                fluid={
-                                  currentReason.reasonImage.childImageSharp
-                                    .fluid
-                                }
-                                alt="slide-1"
-                              />
-                            </div>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <div
-                              className={reason_slide_holder}
-                              onClick={e => slider.slideNext()}
-                              onKeyPress={e => slider.slideNext()}
-                              role="button"
-                              tabIndex="0"
-                            >
-                              <div className={reason_slide_review}>
-                                <div className={reason_review_header}>
-                                  <div className={reason_review_avatar}>
-                                    <Img
-                                      fixed={
-                                        currentReason.userImage.childImageSharp
-                                          .fixed
-                                      }
-                                      alt="slide-1"
-                                      className={reason_review_avatar_image}
-                                    />
+                  </Col>
+                  <Col xl={5} md={6}>
+                    <Row className="align-items-center">
+                      <Col xl={{ span: 9, offset: 1 }}>
+                        <div className="position-relative">
+                          <Swiper
+                            slidesPerView={1}
+                            centeredSlides={true}
+                            effect="flip"
+                            updateOnWindowResize={true}
+                            pagination={{ clickable: false }}
+                            loop={true}
+                            simulateTouch={false}
+                            allowTouchMove={false}
+                            onSwiper={swiper => setSlider(swiper)}
+                          >
+                            <SwiperSlide>
+                              <div
+                                className={`${reason_slide_holder} master`}
+                                onClick={e => slider.slideNext()}
+                                onKeyPress={e => slider.slideNext()}
+                                role="button"
+                                tabIndex="0"
+                              >
+                                <Img
+                                  fluid={
+                                    currentReason.reasonImage.childImageSharp
+                                      .fluid
+                                  }
+                                  alt="slide-1"
+                                />
+                              </div>
+                            </SwiperSlide>
+                            <SwiperSlide>
+                              <div
+                                className={reason_slide_holder}
+                                onClick={e => slider.slideNext()}
+                                onKeyPress={e => slider.slideNext()}
+                                role="button"
+                                tabIndex="0"
+                              >
+                                <div className={reason_slide_review}>
+                                  <div className={reason_review_header}>
+                                    <div className={reason_review_avatar}>
+                                      <Img
+                                        fixed={
+                                          currentReason.userImage
+                                            .childImageSharp.fixed
+                                        }
+                                        alt="slide-1"
+                                        className={reason_review_avatar_image}
+                                      />
+                                    </div>
+                                    <div className={reason_review_title}>
+                                      <h3>{currentReason.reasonReviewTitle}</h3>
+                                      <p>
+                                        {"reviewed BY "}
+                                        <strong>
+                                          {currentReason.reviewBy}
+                                        </strong>
+                                      </p>
+                                    </div>
                                   </div>
-                                  <div className={reason_review_title}>
-                                    <h3>{currentReason.reasonReviewTitle}</h3>
-                                    <p>
-                                      {"reviewed BY "}
-                                      <strong>{currentReason.reviewBy}</strong>
-                                    </p>
-                                  </div>
-                                </div>
-                                <div className={reason_review_body}>
-                                  <div className={reason_review_image}>
-                                    <Img
-                                      fluid={
-                                        currentReason.reasonFeatImage
-                                          .childImageSharp.fluid
-                                      }
-                                      alt="slide-1"
-                                    />
-                                  </div>
-                                  <div className={reason_review_content}>
-                                    {ReactHtmlParser(
-                                      currentReason.reviewDescription
-                                    )}
+                                  <div className={reason_review_body}>
+                                    <div className={reason_review_image}>
+                                      <Img
+                                        fluid={
+                                          currentReason.reasonFeatImage
+                                            .childImageSharp.fluid
+                                        }
+                                        alt="slide-1"
+                                      />
+                                    </div>
+                                    <div className={reason_review_content}>
+                                      {ReactHtmlParser(
+                                        currentReason.reviewDescription
+                                      )}
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </SwiperSlide>
-                        </Swiper>
-                        <div
-                          onClick={e =>
-                            e.currentTarget.classList.toggle(button_dark)
-                          }
-                          onKeyPress={e =>
-                            e.currentTarget.classList.toggle(button_dark)
-                          }
-                          className={tablet_flip_button}
-                          role="button"
-                          tabIndex="0"
-                        >
+                            </SwiperSlide>
+                          </Swiper>
+                          <div
+                            onClick={e =>
+                              e.currentTarget.classList.toggle(button_dark)
+                            }
+                            onKeyPress={e =>
+                              e.currentTarget.classList.toggle(button_dark)
+                            }
+                            className={tablet_flip_button}
+                            role="button"
+                            tabIndex="0"
+                          >
+                            <button
+                              type="button"
+                              className={`d-xl-none ${flip_button}`}
+                              onClick={() => slider.slideNext()}
+                            >
+                              <Flip />
+                            </button>
+                            <p className={`d-xl-none ${flip_label}`}>
+                              <span className="d-block">click</span> to flip
+                            </p>
+                          </div>
+                        </div>
+                      </Col>
+                      <Col xl={2}>
+                        <div className="position-relative d-none d-xl-block">
                           <button
                             type="button"
-                            className={`d-xl-none ${flip_button}`}
+                            className={flip_button}
                             onClick={() => slider.slideNext()}
                           >
                             <Flip />
                           </button>
-                          <p className={`d-xl-none ${flip_label}`}>
+                          <p className={flip_label}>
                             <span className="d-block">click</span> to flip
                           </p>
                         </div>
-                      </div>
-                    </Col>
-                    <Col xl={2}>
-                      <div className="position-relative d-none d-xl-block">
-                        <button
-                          type="button"
-                          className={flip_button}
-                          onClick={() => slider.slideNext()}
-                        >
-                          <Flip />
-                        </button>
-                        <p className={flip_label}>
-                          <span className="d-block">click</span> to flip
-                        </p>
-                      </div>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </Container>
-          </section>
-          <section className={interactive_section_II}>
-            <Container>
-              <Row className="align-items-center justify-content-between">
-                <Col>
-                  <p className={filter_label}>ALL 20 REASONS</p>
-                </Col>
-                <Col className="text-right">
-                  <button className={filter_button}>
-                    <span className={filter_label}>FILTER</span>
-                    <Filter />
-                  </button>
-                </Col>
-              </Row>
-              <Row className={filter_cards}>
-                {Reasons.map(({ id, reasonGridTitle, reasonImage }, index) => {
-                  return (
-                    <Col key={id} md={3}>
-                      <div className={reason_card}>
-                        <Img
-                          fluid={reasonImage.childImageSharp.fluid}
-                          alt="reason-1"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setReasonIndex(index)
-                            setCurrentReason(Reasons[index])
-                            $("html, body").animate(
-                              {
-                                scrollTop: 0,
-                              },
-                              500
-                            )
-                          }}
-                          className={reason_card_body}
-                        >
-                          <div className={reason_card_content}>
-                            <p className={reason_card_label}>{`REASON #${(
-                              "0" + id
-                            ).slice(-2)}`}</p>
-                            <h4 className={reason_card_title}>
-                              {reasonGridTitle}
-                            </h4>
+                      </Col>
+                    </Row>
+                  </Col>
+                </Row>
+              </Container>
+            </section>
+            <section className={interactive_section_II}>
+              <Container>
+                <Row className="align-items-center justify-content-between">
+                  <Col>
+                    <p className={filter_label}>ALL 20 REASONS</p>
+                  </Col>
+                  <Col className="text-right">
+                    <button className={filter_button}>
+                      <span className={filter_label}>FILTER</span>
+                      <Filter />
+                    </button>
+                  </Col>
+                </Row>
+                <Row className={filter_cards}>
+                  {Reasons.map(
+                    ({ id, reasonGridTitle, reasonImage }, index) => {
+                      return (
+                        <Col key={id} md={3}>
+                          <div className={reason_card}>
+                            <Img
+                              fluid={reasonImage.childImageSharp.fluid}
+                              alt="reason-1"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setReasonIndex(index)
+                                setCurrentReason(Reasons[index])
+                                $("html, body").animate(
+                                  {
+                                    scrollTop: 0,
+                                  },
+                                  500
+                                )
+                              }}
+                              className={reason_card_body}
+                            >
+                              <div className={reason_card_content}>
+                                <p className={reason_card_label}>{`REASON #${(
+                                  "0" + id
+                                ).slice(-2)}`}</p>
+                                <h4 className={reason_card_title}>
+                                  {reasonGridTitle}
+                                </h4>
+                              </div>
+                            </button>
                           </div>
-                        </button>
-                      </div>
-                    </Col>
-                  )
-                })}
-              </Row>
-            </Container>
-          </section>
-        </React.Fragment>
-      ) : (
-        <React.Fragment>
-          <section className="mobile">mobile</section>
-        </React.Fragment>
-      )}
+                        </Col>
+                      )
+                    }
+                  )}
+                </Row>
+              </Container>
+            </section>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <section className="mobile">mobile</section>
+          </React.Fragment>
+        )
+      ) : null}
       <section className={navigation_section}>
         <Container>
           <Row className="justify-content-between">
