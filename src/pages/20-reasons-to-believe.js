@@ -204,7 +204,6 @@ export default () => {
     userAvatar,
     userImage,
   ])
-  console.log(currentReason)
   return (
     <Layout>
       <SEO title="20 Reasons to Believe" />
