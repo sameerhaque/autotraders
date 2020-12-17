@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { Container, Row, Col } from "react-bootstrap"
-import SwiperCore, { EffectFlip, Pagination } from "swiper"
+import SwiperCore, { EffectFlip, EffectCoverflow, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import ReactHtmlParser from "react-html-parser"
 import Img from "gatsby-image/withIEPolyfill"
@@ -17,7 +17,7 @@ import Reasons from "../components/reasons"
 
 import InterActive from "../css/interactive.module.css"
 
-SwiperCore.use([EffectFlip, Pagination])
+SwiperCore.use([EffectFlip, EffectCoverflow, Pagination])
 export default () => {
   const {
       interactive_section_I,
@@ -46,12 +46,22 @@ export default () => {
       tablet_flip_button,
       flip_button,
       flip_label,
+      interactive_slider_section,
+      interactive_card_slider,
+      interactive_card_slide_visible,
+      interactive_card_slide_duplicate,
+      interactive_card_slide_prev,
+      interactive_card_slide_active,
+      interactive_card_slide_next,
       interactive_section_II,
       filter_button,
       filter_label,
       filter_cards,
       reason_card,
       reason_card_body,
+      reason_card_tap_button,
+      reason_card_tap_holder,
+      reason_card_tap_label,
       reason_card_content,
       reason_card_label,
       reason_card_title,
@@ -462,7 +472,100 @@ export default () => {
             </React.Fragment>
           ) : (
             <React.Fragment>
-              <section className="mobile">mobile</section>
+              <section className={interactive_section_I}>
+                <Container fluid>
+                  <Row>
+                    <Col xs={12}>
+                      <h1 className={main_heading}>
+                        <strong>20 Reasons</strong> to believe
+                      </h1>
+                    </Col>
+                  </Row>
+                </Container>
+              </section>
+              <section className={interactive_slider_section}>
+                <Container>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <div className="flex-grow-1">
+                      <p className={filter_label}>ALL 20 REASONS</p>
+                    </div>
+                    <div className="flex-shrink-0">
+                      <button className={filter_button}>
+                        <span className={filter_label}>FILTER</span>
+                        <Filter />
+                      </button>
+                    </div>
+                  </div>
+                </Container>
+                <Container>
+                  <Swiper
+                    className={interactive_card_slider}
+                    slidesPerView={1}
+                    spaceBetween={10}
+                    centeredSlides={true}
+                    effect="coverflow"
+                    coverflowEffect={{
+                      rotate: 40,
+                      stretch: 0,
+                      depth: 80,
+                      modifier: 1,
+                      slideShadows: true,
+                    }}
+                    updateOnWindowResize={true}
+                    keyboard={{ enabled: true }}
+                    pagination={{ clickable: false, dynamicBullets: true }}
+                    loop={true}
+                    simulateTouch={true}
+                    slideVisibleClass={interactive_card_slide_visible}
+                    slideDuplicateClass={interactive_card_slide_duplicate}
+                    slidePrevClass={interactive_card_slide_prev}
+                    slideDuplicatePrevClass={interactive_card_slide_prev}
+                    slideActiveClass={interactive_card_slide_active}
+                    slideDuplicateActiveClass={interactive_card_slide_active}
+                    slideNextClass={interactive_card_slide_next}
+                    slideDuplicateNextClass={interactive_card_slide_next}
+                  >
+                    {Reasons.map(
+                      ({ id, reasonGridTitle, reasonImage }, index) => {
+                        return (
+                          <SwiperSlide key={id}>
+                            <div className={reason_card}>
+                              <Img
+                                fluid={reasonImage.childImageSharp.fluid}
+                                alt={`reason-${id}`}
+                              />
+                              <div className={reason_card_body}>
+                                <button
+                                  onClick={() => {
+                                    setReasonIndex(index)
+                                    setCurrentReason(Reasons[index])
+                                  }}
+                                  className={reason_card_tap_button}
+                                >
+                                  <div className={reason_card_tap_holder}>
+                                    <Flip />
+                                  </div>
+                                  <div className={reason_card_tap_label}>
+                                    <span className="d-block">TAP</span> TO OPEN
+                                  </div>
+                                </button>
+                                <div className={reason_card_content}>
+                                  <p className={reason_card_label}>{`REASON #${(
+                                    "0" + id
+                                  ).slice(-2)}`}</p>
+                                  <h4 className={reason_card_title}>
+                                    {reasonGridTitle}
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                          </SwiperSlide>
+                        )
+                      }
+                    )}
+                  </Swiper>
+                </Container>
+              </section>
             </React.Fragment>
           )}
           <section className={navigation_section}>
