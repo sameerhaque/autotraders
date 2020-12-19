@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import $ from "jquery"
 import Img from "gatsby-image/withIEPolyfill"
 
@@ -52,7 +52,7 @@ const Families = () => {
         aria-label="Basic example"
         role="group"
       >
-        <button type="button" className={Family.families_button}>
+        <Link to="/20-reasons-to-believe/" className={Family.families_button}>
           <Img
             fluid={user1.childImageSharp.fluid}
             alt="families"
@@ -67,9 +67,9 @@ const Families = () => {
               <h6>See their reasons</h6>
             </div>
           </div>
-        </button>
-        <button
-          type="button"
+        </Link>
+        <Link
+          to="/20-reasons-to-believe/"
           className={`${Family.families_button} ${Family.active_button}`}
         >
           <Img
@@ -86,8 +86,8 @@ const Families = () => {
               <h6>See their reasons</h6>
             </div>
           </div>
-        </button>
-        <button type="button" className={Family.families_button}>
+        </Link>
+        <Link to="/20-reasons-to-believe/" className={Family.families_button}>
           <Img
             fluid={user3.childImageSharp.fluid}
             alt="families"
@@ -102,7 +102,7 @@ const Families = () => {
               <h6>See their reasons</h6>
             </div>
           </div>
-        </button>
+        </Link>
       </div>
     </div>
   )

@@ -182,7 +182,7 @@ const IndexPage = ({ data }) => {
                   Discover what it is that makes this people love their Sienna
                   and why they are proud of owning one.
                 </p>
-                <Link to="#link">Know More</Link>
+                <Link to="/20-reasons-to-believe/">Know More</Link>
               </div>
             </Col>
           </Row>
@@ -382,6 +382,7 @@ const IndexPage = ({ data }) => {
                 </div>
                 <button
                   type="button"
+                  onClick={() => (window.location.href = `//toyota.ca`)}
                   className={`btn btn-primary ${landing.features_button} d-none d-xl-inline-block`}
                 >
                   BUILD &amp; PRICE
@@ -392,6 +393,7 @@ const IndexPage = ({ data }) => {
           <div className="flex-grow-1 d-xl-none order-3 text-center pt-5">
             <button
               type="button"
+              onClick={() => (window.location.href = `//toyota.ca`)}
               className={`btn btn-primary ${landing.features_button}`}
             >
               BUILD &amp; PRICE

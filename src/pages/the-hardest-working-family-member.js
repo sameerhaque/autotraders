@@ -211,6 +211,7 @@ export default () => {
               slideShadows: true,
             }}
             simulateTouch={true}
+            slideToClickedSlide={true}
             onSwiper={swiper => setSlider(swiper)}
           >
             <SwiperSlide>
@@ -295,8 +296,14 @@ export default () => {
                   />
                   <div className={nav_area}>
                     <p>Previous</p>
-                    <Link to="#link" className={navigate_previous}>
-                      <h4>The hardest working family member</h4>
+                    <Link
+                      to="/the-sienna-described-from-every-seat/"
+                      className={navigate_previous}
+                    >
+                      <h4>
+                        <span className="d-block">The Sienna, described</span>{" "}
+                        from every seat
+                      </h4>
                     </Link>
                   </div>
                 </div>
@@ -311,7 +318,10 @@ export default () => {
                   />
                   <div className={nav_area}>
                     <p>Next</p>
-                    <Link to="#link" className={navigate_next}>
+                    <Link
+                      to="/20-reasons-to-believe/"
+                      className={navigate_next}
+                    >
                       <h4>
                         <span className="d-block">20 Reasons</span> to Believe
                       </h4>

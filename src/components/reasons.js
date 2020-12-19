@@ -1,7 +1,7 @@
 export default [
   {
     id: 1,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `I can do so many things`,
@@ -11,7 +11,7 @@ export default [
   },
   {
     id: 2,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,
@@ -21,7 +21,7 @@ export default [
   },
   {
     id: 3,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `It is so comfortable`,
@@ -31,7 +31,7 @@ export default [
   },
   {
     id: 4,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,
@@ -41,7 +41,7 @@ export default [
   },
   {
     id: 5,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,
@@ -51,7 +51,7 @@ export default [
   },
   {
     id: 6,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `It is so comfortable`,
@@ -61,7 +61,7 @@ export default [
   },
   {
     id: 7,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,
@@ -71,7 +71,7 @@ export default [
   },
   {
     id: 8,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `I can do so many things`,
@@ -81,7 +81,7 @@ export default [
   },
   {
     id: 9,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `I can do so many things`,
@@ -91,7 +91,7 @@ export default [
   },
   {
     id: 10,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,
@@ -101,7 +101,7 @@ export default [
   },
   {
     id: 11,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `It is so comfortable`,
@@ -111,7 +111,7 @@ export default [
   },
   {
     id: 12,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,
@@ -121,7 +121,7 @@ export default [
   },
   {
     id: 13,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,
@@ -131,7 +131,7 @@ export default [
   },
   {
     id: 14,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `It is so comfortable`,
@@ -141,7 +141,7 @@ export default [
   },
   {
     id: 15,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `I can do so many things`,
@@ -151,7 +151,7 @@ export default [
   },
   {
     id: 16,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,
@@ -161,7 +161,7 @@ export default [
   },
   {
     id: 17,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `I can do so many things`,
@@ -171,7 +171,7 @@ export default [
   },
   {
     id: 18,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,
@@ -181,7 +181,7 @@ export default [
   },
   {
     id: 19,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `It is so comfortable`,
@@ -191,7 +191,7 @@ export default [
   },
   {
     id: 20,
-    reasonBy: `BY MIKE & LISA MCCLAIR`,
+    reasonBy: `MIKE & LISA MCCLAIR`,
     reasonBigHeading: `We can do so many different things now`,
     reasonDescription: `<p>Discover what it is that makes this people love their Sienna and why they are proud of owning one. Lorem ipsum dolor sit amet nostrud. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque sintom laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi volupta.</p>`,
     reasonGridTitle: `There is so much space!`,

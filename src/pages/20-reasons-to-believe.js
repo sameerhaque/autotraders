@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { Container, Row, Col } from "react-bootstrap"
-import SwiperCore, { EffectFlip, Pagination } from "swiper"
+import { Container, Row, Col, Modal } from "react-bootstrap"
+import SwiperCore, { EffectFlip, EffectCoverflow, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import ReactHtmlParser from "react-html-parser"
 import Img from "gatsby-image/withIEPolyfill"
@@ -9,6 +9,7 @@ import $ from "jquery"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Close from "../components/icons/close"
 import Left from "../components/icons/left"
 import Right from "../components/icons/right"
 import Flip from "../components/icons/flip"
@@ -17,7 +18,7 @@ import Reasons from "../components/reasons"
 
 import InterActive from "../css/interactive.module.css"
 
-SwiperCore.use([EffectFlip, Pagination])
+SwiperCore.use([EffectFlip, EffectCoverflow, Pagination])
 export default () => {
   const {
       interactive_section_I,
@@ -46,15 +47,45 @@ export default () => {
       tablet_flip_button,
       flip_button,
       flip_label,
+      interactive_slider_section,
+      interactive_card_slider,
+      interactive_card_slide_visible,
+      interactive_card_slide_duplicate,
+      interactive_card_slide_prev,
+      interactive_card_slide_active,
+      interactive_card_slide_next,
       interactive_section_II,
       filter_button,
       filter_label,
       filter_cards,
       reason_card,
       reason_card_body,
+      reason_card_tap_button,
+      reason_card_tap_holder,
+      reason_card_tap_label,
       reason_card_content,
       reason_card_label,
       reason_card_title,
+      reason_modal,
+      reason_modal_content,
+      reason_modal_dialog,
+      reason_modal_dismiss,
+      reason_dismiss_button,
+      reason_modal_slider,
+      reason_modal_body_inner,
+      reason_modal_image_holder,
+      reason_modal_block,
+      reason_modal_block_2,
+      reason_modal_block_header,
+      reason_modal_header_upper,
+      reason_modal_user_avatar_image,
+      reason_by_section,
+      reason_heading,
+      reason_modal_block_body,
+      reason_modal_body,
+      swipe_holder,
+      swipe_button,
+      swipe_label,
       navigation_section,
       nav_wrapper,
       nav_holder,
@@ -140,10 +171,16 @@ export default () => {
       }
     `),
     isBrowser = typeof window !== "undefined",
+    [show, setShow] = useState(false),
     [isMobile, setMobile] = useState(false),
     [slider, setSlider] = useState(null),
+    [renderMobileSlider, setRenderMobileSlider] = useState(false),
     [reasonIndex, setReasonIndex] = useState(0),
     [currentReason, setCurrentReason] = useState(null),
+    closeReason = () => {
+      setShow(false)
+      setRenderMobileSlider(false)
+    },
     previousReason = () => {
       if (reasonIndex === 0) {
         setReasonIndex(Reasons.length - 1)
@@ -272,7 +309,13 @@ export default () => {
                               {ReactHtmlParser(currentReason.reasonDescription)}
                             </div>
                           </div>
-                          <button type="button" className={box_action_button}>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              (window.location.href = `//toyota.ca`)
+                            }
+                            className={box_action_button}
+                          >
                             BUILD &amp; PRICE
                           </button>
                         </div>
@@ -462,7 +505,236 @@ export default () => {
             </React.Fragment>
           ) : (
             <React.Fragment>
-              <section className="mobile">mobile</section>
+              <section className={interactive_section_I}>
+                <Container fluid>
+                  <Row>
+                    <Col xs={12}>
+                      <h1 className={main_heading}>
+                        <strong>20 Reasons</strong> to believe
+                      </h1>
+                    </Col>
+                  </Row>
+                </Container>
+              </section>
+              <section className={interactive_slider_section}>
+                <Container>
+                  <div className="d-flex align-items-center justify-content-between">
+                    <div className="flex-grow-1">
+                      <p className={filter_label}>ALL 20 REASONS</p>
+                    </div>
+                    <div className="flex-shrink-0">
+                      <button className={filter_button}>
+                        <span className={filter_label}>FILTER</span>
+                        <Filter />
+                      </button>
+                    </div>
+                  </div>
+                </Container>
+                <Container>
+                  <Swiper
+                    className={interactive_card_slider}
+                    slidesPerView={1}
+                    spaceBetween={10}
+                    centeredSlides={true}
+                    effect="coverflow"
+                    coverflowEffect={{
+                      rotate: 40,
+                      stretch: 0,
+                      depth: 80,
+                      modifier: 1,
+                      slideShadows: true,
+                    }}
+                    updateOnWindowResize={true}
+                    keyboard={{ enabled: true }}
+                    pagination={{ clickable: false, dynamicBullets: true }}
+                    loop={true}
+                    simulateTouch={true}
+                    slideVisibleClass={interactive_card_slide_visible}
+                    slideDuplicateClass={interactive_card_slide_duplicate}
+                    slidePrevClass={interactive_card_slide_prev}
+                    slideDuplicatePrevClass={interactive_card_slide_prev}
+                    slideActiveClass={interactive_card_slide_active}
+                    slideDuplicateActiveClass={interactive_card_slide_active}
+                    slideNextClass={interactive_card_slide_next}
+                    slideDuplicateNextClass={interactive_card_slide_next}
+                  >
+                    {Reasons.map(
+                      ({ id, reasonGridTitle, reasonImage }, index) => {
+                        return (
+                          <SwiperSlide key={id}>
+                            <div className={reason_card}>
+                              <Img
+                                fluid={reasonImage.childImageSharp.fluid}
+                                alt={`reason-${id}`}
+                              />
+                              <div className={reason_card_body}>
+                                <button
+                                  onClick={() => {
+                                    setReasonIndex(index)
+                                    setCurrentReason(Reasons[index])
+                                    setShow(true)
+                                  }}
+                                  className={reason_card_tap_button}
+                                >
+                                  <div className={reason_card_tap_holder}>
+                                    <Flip />
+                                  </div>
+                                  <div className={reason_card_tap_label}>
+                                    <span className="d-block">TAP</span> TO OPEN
+                                  </div>
+                                </button>
+                                <div className={reason_card_content}>
+                                  <p className={reason_card_label}>{`REASON #${(
+                                    "0" + id
+                                  ).slice(-2)}`}</p>
+                                  <h4 className={reason_card_title}>
+                                    {reasonGridTitle}
+                                  </h4>
+                                </div>
+                              </div>
+                            </div>
+                          </SwiperSlide>
+                        )
+                      }
+                    )}
+                  </Swiper>
+                </Container>
+              </section>
+              <Modal
+                show={show}
+                onHide={() => closeReason()}
+                onEntered={() => setRenderMobileSlider(true)}
+                backdrop="static"
+                keyboard={false}
+                className={`fixed-left ${reason_modal}`}
+                backdropClassName="d-none"
+                contentClassName={reason_modal_content}
+                dialogClassName={`modal-dialog-aside ${reason_modal_dialog}`}
+                aria-labelledby="reasons-modal"
+              >
+                <Modal.Body className="p-0">
+                  <div className={reason_modal_dismiss}>
+                    <button
+                      type="button"
+                      className={reason_dismiss_button}
+                      onClick={() => closeReason()}
+                    >
+                      <Close />
+                    </button>
+                  </div>
+                  {renderMobileSlider && (
+                    <Swiper
+                      className={reason_modal_slider}
+                      slidesPerView={1}
+                      updateOnWindowResize={true}
+                      pagination={{ clickable: true }}
+                      loop={true}
+                    >
+                      <SwiperSlide>
+                        <div className={reason_modal_body_inner}>
+                          <Img
+                            fluid={
+                              currentReason.reasonImage.childImageSharp.fluid
+                            }
+                            alt="reasonImage"
+                            className={reason_modal_image_holder}
+                          />
+                          <div className={reason_modal_block}>
+                            <div className={reason_modal_block_header}>
+                              <div className={reason_modal_header_upper}>
+                                <Img
+                                  fixed={
+                                    currentReason.userAvatar.childImageSharp
+                                      .fixed
+                                  }
+                                  className={reason_modal_user_avatar_image}
+                                />
+                                <div className={reason_by_section}>
+                                  <h6 className={reason_box_small_heading}>
+                                    <strong>{`REASON ${(
+                                      "0" + currentReason.id
+                                    ).slice(-2)}`}</strong>
+                                    {` BY ${currentReason.reasonBy}`}
+                                  </h6>
+                                </div>
+                              </div>
+                              <div className={reason_heading}>
+                                <h3 className={reason_box_big_heading}>
+                                  {currentReason.reasonBigHeading}
+                                </h3>
+                              </div>
+                            </div>
+                            <div className={reason_modal_block_body}>
+                              <div className={reason_modal_body}>
+                                {ReactHtmlParser(
+                                  currentReason.reasonDescription
+                                )}
+                              </div>
+                              <button
+                                type="button"
+                                className={box_action_button}
+                              >
+                                BUILD &amp; PRICE
+                              </button>
+                            </div>
+                          </div>
+                          <div className={swipe_holder}>
+                            <button type="button" className={swipe_button}>
+                              <Flip />
+                            </button>
+                            <div className={swipe_label}>
+                              <span className="d-block">SWIPE TO</span> SWAP IT
+                            </div>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <div className={reason_modal_body_inner}>
+                          <div className={reason_modal_block_2}>
+                            <div className={reason_modal_block_header}>
+                              <div className={reason_modal_header_upper}>
+                                <Img
+                                  fixed={
+                                    currentReason.userImage.childImageSharp
+                                      .fixed
+                                  }
+                                  className={reason_modal_user_avatar_image}
+                                />
+                                <div className={reason_by_section}>
+                                  <h6 className={reason_box_small_heading}>
+                                    {"by autojournalist"}
+                                    <strong>{currentReason.reviewBy}</strong>
+                                  </h6>
+                                </div>
+                              </div>
+                              <div className={reason_heading}>
+                                <h3 className={reason_box_big_heading}>
+                                  {currentReason.reasonReviewTitle}
+                                </h3>
+                              </div>
+                            </div>
+                            <div className={reason_modal_block_body}>
+                              <div className={reason_review_image}>
+                                <Img
+                                  fluid={
+                                    currentReason.reasonFeatImage
+                                      .childImageSharp.fluid
+                                  }
+                                />
+                              </div>
+                              <div className={reason_modal_body}>
+                                {ReactHtmlParser(
+                                  currentReason.reviewDescription
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    </Swiper>
+                  )}
+                </Modal.Body>
+              </Modal>
             </React.Fragment>
           )}
           <section className={navigation_section}>
@@ -477,7 +749,10 @@ export default () => {
                       />
                       <div className={nav_area}>
                         <p>Previous</p>
-                        <Link to="#link" className={navigate_previous}>
+                        <Link
+                          to="/the-hardest-working-family-member/"
+                          className={navigate_previous}
+                        >
                           <h4>The hardest working family member</h4>
                         </Link>
                       </div>
@@ -493,7 +768,10 @@ export default () => {
                       />
                       <div className={nav_area}>
                         <p>Next</p>
-                        <Link to="#link" className={navigate_next}>
+                        <Link
+                          to="/the-sienna-described-from-every-seat/"
+                          className={navigate_next}
+                        >
                           <h4>
                             <span className="d-block">
                               The Sienna, described
