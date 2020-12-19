@@ -424,7 +424,16 @@
 
 @media (min-width:375px) {}
 
-@media (min-width:576px) {}
+@media (min-width:576px) {
+  .reason_modal .reason_modal_content {
+    padding-top: 59px;
+  }
+
+  .reason_modal_block,
+  .reason_modal_block_2 {
+    display: block;
+  }
+}
 
 @media (min-width:768px) {
   .interactive_section_I {
