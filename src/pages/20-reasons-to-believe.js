@@ -672,6 +672,9 @@ export default () => {
                               </div>
                               <button
                                 type="button"
+                                onClick={() =>
+                                  (window.location.href = `//toyota.ca`)
+                                }
                                 className={box_action_button}
                               >
                                 BUILD &amp; PRICE

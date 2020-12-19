@@ -454,6 +454,7 @@
 
   .main_heading strong {
     color: #C10000;
+    display: inline-block;
     font-weight: 700;
   }
 
