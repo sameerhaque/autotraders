@@ -69,6 +69,7 @@ export default () => {
                   <strong>#vanproud</strong>
                 </h5>
                 <button
+                  onClick={() => (window.location.href = `//toyota.ca`)}
                   type="button"
                   className={`btn btn-primary ${footer.ad_button}`}
                 >

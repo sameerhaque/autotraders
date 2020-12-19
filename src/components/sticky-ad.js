@@ -41,7 +41,11 @@ const StickyAd = () => {
         <div className={Ad.contentOuter}>
           <div className={Ad.contentInner}>
             <Img fixed={toyotaLogo.childImageSharp.fixed} alt="Toyota" />
-            <button type="button" className={Ad.buildButton}>
+            <button
+              onClick={() => (window.location.href = `//toyota.ca`)}
+              type="button"
+              className={Ad.buildButton}
+            >
               Build Your Own
             </button>
           </div>
