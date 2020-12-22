@@ -219,6 +219,7 @@
 
   .navigation_section .nav_wrapper {
     margin-bottom: 0;
+    display: block;
   }
 
   .nav_holder {

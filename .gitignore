@@ -69,4 +69,5 @@ yarn-error.log
 .yarn-integrity
 
 autotraders.code-workspace
+autotrader-cms.code-workspace
 package-lock.json
