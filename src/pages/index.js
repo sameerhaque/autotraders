@@ -1,9 +1,8 @@
 // Node components
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import ReactHtmlParser from "react-html-parser"
 import { graphql, Link } from "gatsby"
-import { Container, Row, Col, Modal } from "react-bootstrap"
-import { DefaultPlayer as Video } from "react-html5video"
+import { Container, Modal } from "react-bootstrap"
 import SwiperCore, { EffectCoverflow, Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import Img from "gatsby-image/withIEPolyfill"
@@ -13,14 +12,14 @@ import $ from "jquery"
 import landing from "../css/landing.module.css"
 
 // Project components
-import videoSrc from "../videos/video.mp4"
 import Layout from "../components/layout"
-import Families from "../components/families"
+import LandingHero from "./sections/LandingHero"
+import LandingCTA from "./sections/LandingCta"
 import Hotspot from "../components/icons/hotspot"
 import Close from "../components/icons/close"
 import Left from "../components/icons/left"
 import Right from "../components/icons/right"
-import StickyAd from "../components/sticky-ad"
+// import StickyAd from "../components/sticky-ad"
 import SEO from "../components/seo"
 
 SwiperCore.use([EffectCoverflow, Pagination])
@@ -49,10 +48,6 @@ const IndexPage = ({ data }) => {
     ],
     [show, setShow] = useState(false),
     [featureIndex, setFeatureIndex] = useState(null),
-    isBrowser = typeof window !== "undefined",
-    fullScreenToggle = () => {
-      $(`.${landing.hero_video}`).toggleClass("fullscreen")
-    },
     openFeature = (e, dataIndex) => {
       e.currentTarget.classList.add(landing.features_hot_spot_active)
       setFeatureIndex(dataIndex)
@@ -103,91 +98,11 @@ const IndexPage = ({ data }) => {
     featureCarXsLoaded = () => {
       $(`.${landing.features_hot_spot}`).addClass(landing.hot_spot_display)
     }
-  useEffect(() => {
-    $(`.${landing.hero_video}`).height(
-      $(`.${landing.hero_video}`).find("video").height()
-    )
-    $(`.${landing.hero_video}`).find("video").css({ position: `fixed` })
-    $(window).on("load scroll", function () {
-      let scrolled = $(this).scrollTop()
-      // parallax (25% scroll rate)
-      $(`.${landing.hero_video}`).css(
-        "transform",
-        "translate3d(0, " + scrolled * 0.25 + "px, 0)"
-      )
-      $(`.rh5v-Fullscreen_component`).css(
-        "transform",
-        "translate3d(0, " + -(scrolled * 0.25) + "px, 0)"
-      )
-    })
-    $(".rh5v-Fullscreen_button").click(fullScreenToggle)
-  }, [])
   return (
     <Layout>
       <SEO title="Home" />
-      <div className={landing.hero_image}>
-        <div className={landing.features_image}>
-          {isBrowser && (
-            <Video
-              className={landing.hero_video}
-              poster={data.hero.childImageSharp.fluid.src}
-              width="1440"
-              height="579"
-              preload="metadata"
-              autoPlay={true}
-              loop={true}
-              muted={true}
-              controls={["Fullscreen"]}
-            >
-              <source src={videoSrc} type="video/mp4" />
-            </Video>
-          )}
-        </div>
-      </div>
-      <section className={landing.hero_cta_section}>
-        <div className={landing.families_wrapper}>
-          <Container>
-            <Row>
-              <Col
-                md={{ span: 6, order: 1 }}
-                sm={{ span: 12, order: 2 }}
-                xs={{ span: 12, order: 2 }}
-              >
-                <div className={landing.hero_cta_tag}>
-                  TOYOTA <strong>SIENNA</strong>
-                </div>
-              </Col>
-              <Col
-                md={{ span: 5, offset: 1, order: 2 }}
-                sm={{ span: 12, order: 1 }}
-                xs={{ span: 12, order: 1 }}
-              >
-                <Families />
-              </Col>
-            </Row>
-          </Container>
-        </div>
-        <Container>
-          <Row className="align-items-center">
-            <Col md={6}>
-              <div className={landing.heading_wrapper}>
-                <span className={landing.van_proud}>#</span>
-                <h2 className={landing.heading_light}>Makes Us</h2>
-                <h2 className={landing.heading_bold}>VanProud</h2>
-              </div>
-            </Col>
-            <Col xl={{ span: 5, offset: 1 }} md={6}>
-              <div className={landing.hero_cta_know_more}>
-                <p>
-                  Discover what it is that makes this people love their Sienna
-                  and why they are proud of owning one.
-                </p>
-                <Link to="/20-reasons-to-believe/">Know More</Link>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <LandingHero poster={data.hero.childImageSharp.fluid.src} />
+      <LandingCTA />
       <section className={landing.hero_card_section}>
         <Container>
           <Swiper
@@ -460,7 +375,7 @@ const IndexPage = ({ data }) => {
           </button>
         </Modal.Footer>
       </Modal>
-      <StickyAd />
+      {/* <StickyAd /> */}
     </Layout>
   )
 }
