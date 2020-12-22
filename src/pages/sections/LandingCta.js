@@ -20,7 +20,6 @@ const LandingCTA = () => {
       }
     }
   `)
-  console.log(slideImage)
   return (
     <section className={landing_cta.section}>
       <div className={landing_cta.wrapper}>
