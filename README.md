@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://autotraders.netlify.app/">
-    <img alt="Gatsby" src="src/images/logo.png" width="60" />
+    <img alt="Gatsby" src="content/assets/logo.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -9,7 +9,7 @@
 </h1>
 <p align="center">
   <a href="https://at-b.netlify.app/">
-    <img alt="Gatsby" src="src/images/logo.png" width="60" />
+    <img alt="Gatsby" src="content/assets/logo.png" width="60" />
   </a>
 </p>
 <h1 align="center">

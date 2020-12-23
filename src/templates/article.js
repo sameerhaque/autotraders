@@ -63,9 +63,6 @@ const ArticleTemplate = ({ data }) => {
     { prevImage, nextImage } = data,
     [slider, setSlider] = useState(null),
     scrollDown = () => {
-      console.log(
-        $(`.${hero}`).next().offset().top - $(`.${hero}`).offset().top
-      )
       $("html, body").animate(
         {
           scrollTop:
@@ -74,7 +71,6 @@ const ArticleTemplate = ({ data }) => {
         200
       )
     }
-  console.log(sliderImages)
   return (
     <Layout itemScope itemType="http://schema.org/Article">
       <SEO title={title} description={description || excerpt} />
@@ -101,13 +97,12 @@ const ArticleTemplate = ({ data }) => {
           <div className={hero_holder}>
             <div className={hero_inner}>
               <h1>
-                <strong>{`${heading_strong} `}</strong>{heading_thin}
+                <strong>{`${heading_strong} `}</strong>
+                {heading_thin}
               </h1>
               <div className={author_info}>
                 <div className={author_img}>
-                  <Img
-                    fixed={author_image.childImageSharp.fixed}
-                  />
+                  <Img fixed={author_image.childImageSharp.fixed} />
                 </div>
                 <p>
                   <span>

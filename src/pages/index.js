@@ -1,47 +1,47 @@
 // Node components
-import React, { useState } from "react"
-import ReactHtmlParser from "react-html-parser"
-import { graphql, Link } from "gatsby"
-import { Container, Modal } from "react-bootstrap"
-import SwiperCore, { EffectCoverflow, Pagination } from "swiper"
-import { Swiper, SwiperSlide } from "swiper/react"
-import Img from "gatsby-image/withIEPolyfill"
-import $ from "jquery"
+import React, { useState } from 'react'
+import ReactHtmlParser from 'react-html-parser'
+import { graphql, Link } from 'gatsby'
+import { Container, Modal } from 'react-bootstrap'
+import SwiperCore, { EffectCoverflow, Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import Img from 'gatsby-image/withIEPolyfill'
+import $ from 'jquery'
 
 // Styles
-import landing from "../css/landing.module.css"
+import landing from '../css/landing.module.css'
 
 // Project components
-import Layout from "../components/layout"
-import LandingHero from "./sections/LandingHero"
-import LandingCTA from "./sections/LandingCta"
-import Hotspot from "../components/icons/hotspot"
-import Close from "../components/icons/close"
-import Left from "../components/icons/left"
-import Right from "../components/icons/right"
+import Layout from '../components/layout'
+import LandingHero from './sections/LandingHero'
+import LandingCTA from './sections/LandingCta'
+import Hotspot from '../components/icons/hotspot'
+import Close from '../components/icons/close'
+import Left from '../components/icons/left'
+import Right from '../components/icons/right'
 // import StickyAd from "../components/sticky-ad"
-import SEO from "../components/seo"
+import SEO from '../components/seo'
 
 SwiperCore.use([EffectCoverflow, Pagination])
 const IndexPage = ({ data }) => {
   const featureData = [
       {
-        featTitle: "Lots of storage, a must for a big family",
+        featTitle: 'Lots of storage, a must for a big family',
         featImg: data.featureI,
         featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p>`,
       },
       {
-        featTitle: "Feature 2",
+        featTitle: 'Feature 2',
         featImg: data.featureI,
         featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p>`,
       },
       {
-        featTitle: "Feature 3",
+        featTitle: 'Feature 3',
         featImg: data.featureI,
         featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>`,
       },
       {
-        featTitle: "Feature 4",
+        featTitle: 'Feature 4',
         featImg: data.featureI,
         featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>`,
       },
@@ -120,36 +120,36 @@ const IndexPage = ({ data }) => {
             }}
             updateOnWindowResize={true}
             slideVisibleClass={
-              landing.card_slide_visible !== ""
+              landing.card_slide_visible !== ''
                 ? landing.card_slide_visible
                 : null
             }
             slideDuplicateClass={
-              landing.card_slide_duplicate !== ""
+              landing.card_slide_duplicate !== ''
                 ? landing.card_slide_duplicate
                 : null
             }
             slidePrevClass={
-              landing.card_slider_prev !== "" ? landing.card_slider_prev : null
+              landing.card_slider_prev !== '' ? landing.card_slider_prev : null
             }
             slideDuplicatePrevClass={
-              landing.card_slider_prev !== "" ? landing.card_slider_prev : null
+              landing.card_slider_prev !== '' ? landing.card_slider_prev : null
             }
             slideActiveClass={
-              landing.card_slider_active !== ""
+              landing.card_slider_active !== ''
                 ? landing.card_slider_active
                 : null
             }
             slideDuplicateActiveClass={
-              landing.card_slider_active !== ""
+              landing.card_slider_active !== ''
                 ? landing.card_slider_active
                 : null
             }
             slideNextClass={
-              landing.card_slider_next !== "" ? landing.card_slider_next : null
+              landing.card_slider_next !== '' ? landing.card_slider_next : null
             }
             slideDuplicateNextClass={
-              landing.card_slider_next !== "" ? landing.card_slider_next : null
+              landing.card_slider_next !== '' ? landing.card_slider_next : null
             }
             pagination={{ clickable: true }}
             loop={true}
@@ -157,14 +157,14 @@ const IndexPage = ({ data }) => {
               768: {
                 slidesPerView: 3,
                 spaceBetween: 10,
-                effect: "slide",
+                effect: 'slide',
                 allowSlidePrev: false,
                 allowSlideNext: false,
               },
             }}
             simulateTouch={true}
             onPaginationRender={(swiper, paginationEl) => {
-              paginationEl.classList.add("d-md-none")
+              paginationEl.classList.add('d-md-none')
             }}
             onResize={swiper => {
               swiper.update()
