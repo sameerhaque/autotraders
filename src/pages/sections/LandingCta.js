@@ -15,7 +15,7 @@ import Quote from '../../components/icons/quote'
 
 SwiperCore.use([Pagination])
 const LandingCTA = () => {
-  const { slideImageMd, slideImage } = useStaticQuery(graphql`
+  const { slideImageMd, slideImageSm, slideImage } = useStaticQuery(graphql`
       {
         slideImageMd: file(relativePath: { eq: "slide-4.jpg" }) {
           childImageSharp {
@@ -24,7 +24,14 @@ const LandingCTA = () => {
             }
           }
         }
-        slideImage: file(relativePath: { eq: "slide-5.jpg" }) {
+        slideImageSm: file(relativePath: { eq: "slide-5.jpg" }) {
+          childImageSharp {
+            fixed(width: 670, height: 770) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        slideImage: file(relativePath: { eq: "slide-6.jpg" }) {
           childImageSharp {
             fixed(width: 335, height: 385) {
               ...GatsbyImageSharpFixed
@@ -84,9 +91,14 @@ const LandingCTA = () => {
                             className={`d-none d-md-block ${landing_cta.slide_image}`}
                           />
                           <Img
+                            fixed={slideImageSm.childImageSharp.fixed}
+                            alt="slideImageSm"
+                            className={`d-none d-sm-block d-md-none w-100 ${landing_cta.slide_image}`}
+                          />
+                          <Img
                             fixed={slideImage.childImageSharp.fixed}
                             alt="slideImage"
-                            className={`d-md-none ${landing_cta.slide_image}`}
+                            className={`d-sm-none ${landing_cta.slide_image}`}
                           />
                           <div className={landing_cta.slide_content}>
                             <div className={landing_cta.slide_content_inner}>

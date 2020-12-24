@@ -1,10 +1,8 @@
 // Node components
 import React, { useState } from 'react'
 import ReactHtmlParser from 'react-html-parser'
-import { graphql, Link } from 'gatsby'
-import { Container, Modal } from 'react-bootstrap'
-import SwiperCore, { EffectCoverflow, Pagination } from 'swiper'
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { graphql } from 'gatsby'
+import { Modal } from 'react-bootstrap'
 import Img from 'gatsby-image/withIEPolyfill'
 import $ from 'jquery'
 
@@ -15,6 +13,7 @@ import landing from '../css/landing.module.css'
 import Layout from '../components/layout'
 import LandingHero from './sections/LandingHero'
 import LandingCTA from './sections/LandingCta'
+import LandingArticle from './sections/LandingArticle'
 import Hotspot from '../components/icons/hotspot'
 import Close from '../components/icons/close'
 import Left from '../components/icons/left'
@@ -22,7 +21,6 @@ import Right from '../components/icons/right'
 // import StickyAd from "../components/sticky-ad"
 import SEO from '../components/seo'
 
-SwiperCore.use([EffectCoverflow, Pagination])
 const IndexPage = ({ data }) => {
   const featureData = [
       {
@@ -103,132 +101,7 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <LandingHero poster={data.hero.childImageSharp.fluid.src} />
       <LandingCTA />
-      <section className={landing.hero_card_section}>
-        <Container>
-          <Swiper
-            className={landing.card_slider}
-            slidesPerView={1}
-            spaceBetween={10}
-            centeredSlides={true}
-            effect="coverflow"
-            coverflowEffect={{
-              rotate: 40,
-              stretch: 0,
-              depth: 80,
-              modifier: 1,
-              slideShadows: true,
-            }}
-            updateOnWindowResize={true}
-            slideVisibleClass={
-              landing.card_slide_visible !== ''
-                ? landing.card_slide_visible
-                : null
-            }
-            slideDuplicateClass={
-              landing.card_slide_duplicate !== ''
-                ? landing.card_slide_duplicate
-                : null
-            }
-            slidePrevClass={
-              landing.card_slider_prev !== '' ? landing.card_slider_prev : null
-            }
-            slideDuplicatePrevClass={
-              landing.card_slider_prev !== '' ? landing.card_slider_prev : null
-            }
-            slideActiveClass={
-              landing.card_slider_active !== ''
-                ? landing.card_slider_active
-                : null
-            }
-            slideDuplicateActiveClass={
-              landing.card_slider_active !== ''
-                ? landing.card_slider_active
-                : null
-            }
-            slideNextClass={
-              landing.card_slider_next !== '' ? landing.card_slider_next : null
-            }
-            slideDuplicateNextClass={
-              landing.card_slider_next !== '' ? landing.card_slider_next : null
-            }
-            pagination={{ clickable: true }}
-            loop={true}
-            breakpoints={{
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 10,
-                effect: 'slide',
-                allowSlidePrev: false,
-                allowSlideNext: false,
-              },
-            }}
-            simulateTouch={true}
-            onPaginationRender={(swiper, paginationEl) => {
-              paginationEl.classList.add('d-md-none')
-            }}
-            onResize={swiper => {
-              swiper.update()
-            }}
-          >
-            <SwiperSlide>
-              <div className={landing.hero_card_slide}>
-                <Link to="/the-hardest-working-family-member/">
-                  <Img
-                    fluid={data.slide2.childImageSharp.fluid}
-                    alt="slide-2"
-                  />
-                  <div className={landing.slide_legend}>
-                    <h5 className={landing.slide_legend_type}>ARTICLE</h5>
-                    <h3 className={landing.slide_legend_title}>
-                      The hardest working
-                      <br />
-                      family member
-                    </h3>
-                  </div>
-                </Link>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={landing.hero_card_slide}>
-                <Link to="/the-sienna-described-from-every-seat/">
-                  <Img
-                    fluid={data.slide3.childImageSharp.fluid}
-                    alt="slide-3"
-                  />
-                  <div className={landing.slide_legend}>
-                    <h5 className={landing.slide_legend_type}>ARTICLE</h5>
-                    <h3 className={landing.slide_legend_title}>
-                      The Sienna, described
-                      <br />
-                      from every seat
-                    </h3>
-                  </div>
-                </Link>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={landing.hero_card_slide}>
-                <Link to="/20-reasons-to-believe/">
-                  <Img
-                    fluid={data.slide1.childImageSharp.fluid}
-                    alt="slide-1"
-                  />
-                  <div className={landing.slide_legend}>
-                    <h5 className={landing.slide_legend_type}>
-                      Interactive Content
-                    </h5>
-                    <h3 className={landing.slide_legend_title}>
-                      20 Reasons
-                      <br />
-                      to Believe
-                    </h3>
-                  </div>
-                </Link>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </Container>
-      </section>
+      <LandingArticle />
       <section className={landing.hero_features_section}>
         <div className="d-flex flex-column flex-xl-row">
           <div className="flex-grow-1 my-auto order-2 order-xl-1">
