@@ -1,6 +1,5 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Container, Row, Col } from 'react-bootstrap'
 import Img from 'gatsby-image/withIEPolyfill'
 import footer from '../css/footer.module.css'
 

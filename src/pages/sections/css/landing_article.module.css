@@ -1,0 +1,131 @@
+@media(min-width:0px) {
+  .section {
+    background: #ffffff;
+    background: linear-gradient(0deg, #cee0f3 46%, #ffffff 46%);
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 15px;
+    overflow: hidden;
+  }
+
+  .heading {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+    max-width: 280px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .description {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .article>a {
+    display: block;
+  }
+
+  .article>a:hover {
+    text-decoration: none;
+  }
+
+  .article_image {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .article_title {
+    color: #000000;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    text-align: left;
+    opacity: 0;
+  }
+
+  .slider {
+    overflow: visible;
+    padding-bottom: 50px;
+  }
+
+  .slide_active .article_title {
+    opacity: 1;
+  }
+
+  .slide_pagination .bullet {
+    background-color: #ffffff;
+  }
+
+  .slide_pagination .active_bullet {
+    background-color: #0f68c9;
+  }
+}
+
+@media(min-width:576px) {}
+
+@media (min-width: 768px) {
+  .section {
+    padding-bottom: 65px;
+  }
+
+  .heading {
+    font-size: 48px;
+    line-height: 56px;
+    max-width: unset;
+    margin-bottom: 10px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 32px;
+    margin-bottom: 0;
+  }
+
+  .articles {
+    margin-top: 30px;
+  }
+
+  .article_title {
+    font-size: 34px;
+    line-height: 40px;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .heading {
+    text-align: left;
+  }
+
+  .description {
+    text-align: left;
+  }
+
+  .article_title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .heading {
+    margin-bottom: 0;
+  }
+
+  .description {
+    margin-bottom: 9px;
+  }
+
+  .articles {
+    margin-top: 25px;
+  }
+
+  .article_image {
+    margin-bottom: 40px;
+  }
+}
