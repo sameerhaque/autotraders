@@ -1,6 +1,7 @@
 @media(min-width:0px) {
   .hero_image {
     background-color: #cccccc;
+    min-height: 579px;
   }
 
   .features_image {

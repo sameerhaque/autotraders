@@ -18,7 +18,7 @@ import Hotspot from '../components/icons/hotspot'
 import Close from '../components/icons/close'
 import Left from '../components/icons/left'
 import Right from '../components/icons/right'
-// import StickyAd from "../components/sticky-ad"
+import StickyAd from '../components/sticky-ad'
 import SEO from '../components/seo'
 
 const IndexPage = ({ data }) => {
@@ -248,7 +248,7 @@ const IndexPage = ({ data }) => {
           </button>
         </Modal.Footer>
       </Modal>
-      {/* <StickyAd /> */}
+      <StickyAd />
     </Layout>
   )
 }
