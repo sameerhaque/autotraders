@@ -72,7 +72,7 @@ const LandingArticle = () => {
             </Col>
             <Col md={6}>
               <div className={landing_article.article}>
-                <Link to="/20-reasons-to-believe/">
+                <Link to="/the-sienna-described-from-every-seat/">
                   <Img
                     fluid={Article_2.childImageSharp.fluid}
                     className={landing_article.article_image}
@@ -133,7 +133,7 @@ const LandingArticle = () => {
                     : landing_article.article
                 }
               >
-                <Link to="/20-reasons-to-believe/">
+                <Link to="/the-sienna-described-from-every-seat/">
                   <Img
                     fluid={Article_2.childImageSharp.fluid}
                     className={landing_article.article_image}
