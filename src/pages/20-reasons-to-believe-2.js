@@ -87,7 +87,6 @@ export default () => {
         }
       }
     `)
-  console.log(InterActive)
   return (
     <Layout>
       <SEO title="20 Reasons to Believe" />

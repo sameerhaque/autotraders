@@ -26,11 +26,7 @@ const StickyAd = () => {
       }
     `),
     isBrowser = typeof window !== undefined,
-    [adDismissed, dismissAdForever] = useState(
-      isBrowser && localStorage.getItem('adDismissed') !== null
-        ? JSON.parse(localStorage.getItem('adDismissed'))
-        : false
-    ),
+    [adDismissed, dismissAdForever] = useState(false),
     dismissAd = () => {
       confirmAlert({
         title: `Dismiss Forever`,
@@ -56,6 +52,11 @@ const StickyAd = () => {
       })
     }
   useEffect(() => {
+    dismissAdForever(
+      isBrowser && localStorage.getItem('adDismissed') !== null
+        ? JSON.parse(localStorage.getItem('adDismissed'))
+        : false
+    )
     setTimeout(() => {
       $(`.${Ad.wrapper}`).addClass(Ad.showAd)
     }, 500)
