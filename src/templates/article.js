@@ -1,20 +1,21 @@
-import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
-import { Container, Row, Col } from "react-bootstrap"
-import SwiperCore, { EffectCoverflow } from "swiper"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { markdown } from "markdown"
-import ReactHtmlParser from "react-html-parser"
-import $ from "jquery"
-import Img from "gatsby-image/withIEPolyfill"
+import React, { useState } from 'react'
+import { Link, graphql } from 'gatsby'
+import { Container, Row, Col } from 'react-bootstrap'
+import SwiperCore, { EffectCoverflow } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { markdown } from 'markdown'
+import ReactHtmlParser from 'react-html-parser'
+import $ from 'jquery'
+import Img from 'gatsby-image/withIEPolyfill'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Down from "../components/icons/down"
-import Prev from "../components/icons/prev"
-import Next from "../components/icons/next"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Down from '../components/icons/down'
+import Prev from '../components/icons/prev'
+import Next from '../components/icons/next'
 
-import Article from "../css/article.module.css"
+import Article from '../css/article.module.css'
+import navigation from '../css/navigation.module.css'
 
 SwiperCore.use([EffectCoverflow])
 const ArticleTemplate = ({ data }) => {
@@ -36,13 +37,15 @@ const ArticleTemplate = ({ data }) => {
       article_slide,
       swiper_nav,
       slider_button,
+    } = Article,
+    {
       navigation_section,
       nav_wrapper,
       nav_holder,
       nav_area,
       navigate_previous,
       navigate_next,
-    } = Article,
+    } = navigation,
     { excerpt, frontmatter } = post,
     {
       author,
@@ -63,7 +66,7 @@ const ArticleTemplate = ({ data }) => {
     { prevImage, nextImage } = data,
     [slider, setSlider] = useState(null),
     scrollDown = () => {
-      $("html, body").animate(
+      $('html, body').animate(
         {
           scrollTop:
             $(`.${hero}`).next().offset().top - $(`.${hero}`).offset().top,
@@ -107,7 +110,7 @@ const ArticleTemplate = ({ data }) => {
                 <p>
                   <span>
                     by <strong>{author}</strong>,
-                  </span>{" "}
+                  </span>{' '}
                   <strong>autoTRADER</strong> {designation}
                 </p>
               </div>
@@ -128,7 +131,7 @@ const ArticleTemplate = ({ data }) => {
             </Col>
             <Col>
               <div className={article_content}>
-                {entryBody !== "" &&
+                {entryBody !== '' &&
                   ReactHtmlParser(markdown.toHTML(entryBody))}
               </div>
             </Col>
@@ -189,7 +192,7 @@ const ArticleTemplate = ({ data }) => {
             </Col>
             <Col>
               <div className={article_content}>
-                {exitBody !== "" && ReactHtmlParser(markdown.toHTML(exitBody))}
+                {exitBody !== '' && ReactHtmlParser(markdown.toHTML(exitBody))}
               </div>
             </Col>
           </Row>
@@ -197,12 +200,12 @@ const ArticleTemplate = ({ data }) => {
       </section>
       <section className={navigation_section}>
         <Container>
-          <Row className="justify-content-between">
-            <Col lg={3} md={5} className="text-center text-md-left">
-              <div className={nav_wrapper}>
-                <div className={nav_holder}>
+          <Row>
+            <Col md={6} className="text-center">
+              <div className={`w-100 ${nav_wrapper}`}>
+                <div className={`w-100 ${nav_holder}`}>
                   <Img
-                    className="d-md-none"
+                    className="w-100"
                     fixed={prevImage.childImageSharp.fixed}
                   />
                   <div className={nav_area}>
@@ -212,7 +215,7 @@ const ArticleTemplate = ({ data }) => {
                       className={navigate_previous}
                     >
                       <h4>
-                        <span className="d-block">The Sienna, described</span>{" "}
+                        <span className="d-block">The Sienna, described</span>{' '}
                         from every seat
                       </h4>
                     </Link>
@@ -220,11 +223,11 @@ const ArticleTemplate = ({ data }) => {
                 </div>
               </div>
             </Col>
-            <Col lg={3} md={5} className="text-center text-md-right">
-              <div className={nav_wrapper}>
-                <div className={nav_holder}>
+            <Col md={6} className="text-center">
+              <div className={`w-100 ${nav_wrapper}`}>
+                <div className={`w-100 ${nav_holder}`}>
                   <Img
-                    className="d-md-none"
+                    className="w-100"
                     fixed={nextImage.childImageSharp.fixed}
                   />
                   <div className={nav_area}>
