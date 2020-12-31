@@ -60,7 +60,7 @@ const StickyAd = () => {
     setTimeout(() => {
       $(`.${Ad.wrapper}`).addClass(Ad.showAd)
     }, 500)
-  }, [])
+  }, [isBrowser])
   return (
     <React.Fragment>
       {adDismissed ? null : (

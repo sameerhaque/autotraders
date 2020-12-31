@@ -12,8 +12,7 @@
   .nav_holder {
     background-color: #c4c4c4;
     border-radius: 12px;
-    box-shadow: 0px 8.709229469299316px 34.836917877197266px 0px
-      rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 8.709229469299316px 34.836917877197266px 0px rgba(0, 0, 0, 0.25);
     display: inline-flex;
     overflow: hidden;
     position: relative;
@@ -21,11 +20,9 @@
   }
 
   .nav_area {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0) 32.81%,
-      rgba(0, 0, 0, 0.9) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 32.81%,
+        rgba(0, 0, 0, 0.9) 100%);
     bottom: 0;
     color: #ffffff;
     display: flex;
@@ -47,11 +44,9 @@
   }
 }
 
-@media (min-width: 375px) {
-}
+@media (min-width: 375px) {}
 
-@media (min-width: 576px) {
-}
+@media (min-width: 576px) {}
 
 @media (min-width: 768px) {
   .reason_card1 {
@@ -62,6 +57,7 @@
     background: #1f4465;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
   }
+
   .card_layer1 {
     background: linear-gradient(90deg, #1f4465 5%, rgba(214, 169, 169, 0) 100%);
     position: absolute;
@@ -70,6 +66,7 @@
     top: 0;
     z-index: 9;
   }
+
   .reason_card_content {
     padding: 30px;
     color: #ffffff;
@@ -78,17 +75,20 @@
     z-index: 999;
     text-align: left;
   }
+
   .reason_card_label_index {
     font-size: 18px;
     line-height: 32px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
   }
+
   .reason_card_title {
     font-weight: 500;
     font-size: 36px;
     line-height: 42px;
   }
+
   .reason_card_title_width {
     max-width: 330px;
     width: 100%;
@@ -96,6 +96,7 @@
     font-size: 36px;
     line-height: 42px;
   }
+
   .reason_card_city {
     font-size: 18px;
     line-height: 32px;
@@ -104,6 +105,7 @@
     padding-top: 85px;
     display: block;
   }
+
   .reason_card_city2 {
     font-size: 18px;
     line-height: 32px;
@@ -112,6 +114,7 @@
     padding-top: 45px;
     display: block;
   }
+
   .reason_card2 {
     border-radius: 20px;
     height: 320px;
@@ -120,18 +123,18 @@
     background: #75c2b2;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
   }
+
   .card_layer2 {
-    background: linear-gradient(
-      90deg,
-      #75c2b2 25%,
-      rgba(214, 169, 169, 0) 100%
-    );
+    background: linear-gradient(90deg,
+        #75c2b2 25%,
+        rgba(214, 169, 169, 0) 100%);
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     z-index: 9;
   }
+
   .reason_card3 {
     border-radius: 20px;
     height: 320px;
@@ -140,18 +143,18 @@
     background: #cdc07f;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
   }
+
   .card_layer3 {
-    background: linear-gradient(
-      90deg,
-      #cdc07f 20%,
-      rgba(214, 169, 169, 0) 100%
-    );
+    background: linear-gradient(90deg,
+        #cdc07f 20%,
+        rgba(214, 169, 169, 0) 100%);
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     z-index: 9;
   }
+
   .reason_card4 {
     border-radius: 20px;
     height: 320px;
@@ -160,6 +163,7 @@
     background: #474a57;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
   }
+
   .card_layer4 {
     background: linear-gradient(90deg, #474a57 5%, rgba(214, 169, 169, 0) 100%);
     position: absolute;
@@ -168,20 +172,24 @@
     top: 0;
     z-index: 9;
   }
+
   .view_all_reasons {
     background: #e6eff8;
 
     padding: 60px 0px;
   }
+
   .reason_section_title {
     width: 303px;
     font-size: 64px;
     line-height: 64px;
     color: #3e3e3e;
   }
+
   .bold_title {
     font-weight: 700;
   }
+
   .navigation_section {
     background: #e6eff8;
     padding-bottom: 60px;
@@ -215,8 +223,6 @@
   }
 }
 
-@media (min-width: 992px) {
-}
+@media (min-width: 992px) {}
 
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) {}
