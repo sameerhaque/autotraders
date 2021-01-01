@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { navigate, Link, graphql, useStaticQuery } from 'gatsby'
 import { Container, Row, Col } from 'react-bootstrap'
 import Img from 'gatsby-image/withIEPolyfill'
 import $ from 'jquery'
@@ -9,9 +9,11 @@ import ReactHtmlParser from 'react-html-parser'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Close from '../components/icons/close'
 import Left from '../components/icons/left'
 import Right from '../components/icons/right'
 import Flip from '../components/icons/flip'
+import Open from '../components/icons/open'
 import Quote from '../components/icons/quote'
 import Reasons from '../components/reasons'
 
@@ -30,6 +32,32 @@ export default () => {
       reason_slider_content_area,
       reason_slider_content_top,
       reason_slider_content_below,
+      reason_slider_tablet,
+      reason_slider,
+      reason_slider_pagination,
+      reason_slider_pagination_bullet,
+      reason_slider_pagination_active_bullet,
+      reason_card_holder,
+      reason_card_inner,
+      reason_card_inner_content_area,
+      reason_slider_modal_open,
+      reason_modal_area,
+      reason_modal_wrapper,
+      reason_modal_dismiss,
+      reason_modal_slider,
+      reason_modal_pagination,
+      reason_modal_pagination_bullet,
+      reason_modal_pagination_active_bullet,
+      reason_modal_title,
+      reason_modal_author,
+      reason_modal_content,
+      reason_card_button,
+      reason_card_button_label,
+      reason_card_button_element,
+      reason_card_button_icon,
+      reason_card_inner_content,
+      reason_card_inner_content_label,
+      reason_card_inner_content_title,
       reason_content_wrapper,
       reason_content_holder,
       reason_content_quote,
@@ -75,18 +103,11 @@ export default () => {
       reason_card_city2,
     } = card,
     {
-      navigation_section,
-      nav_wrapper,
-      nav_holder,
-      nav_area,
-      navigate_previous,
-      navigate_next,
-    } = navigation,
-    {
       userAvatar,
-      reason1Bg,
+      reason1BgXl,
+      reason1BgMd,
       reason1,
-      // reasonImage1,
+      reasonImage1,
       reasonImage2,
       reasonImage3,
       reasonImage4,
@@ -107,9 +128,16 @@ export default () => {
             }
           }
         }
-        reason1Bg: file(relativePath: { eq: "reason-1-bg.jpg" }) {
+        reason1BgXl: file(relativePath: { eq: "reason-1-bg.jpg" }) {
           childImageSharp {
             fixed(width: 869, height: 740) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        reason1BgMd: file(relativePath: { eq: "reason-1-bg-md.jpg" }) {
+          childImageSharp {
+            fixed(width: 1024, height: 433) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -209,33 +237,43 @@ export default () => {
     `),
     isBrowser = typeof window !== 'undefined',
     [mode, setMode] = useState('desktop'),
+    [activeSlide, setActiveSlide] = useState(null),
     // [show, setShow] = useState(false),
     [slider, setSlider] = useState(null),
+    [tabletModal, setTabletModal] = useState(false),
     // [renderMobileSlider, setRenderMobileSlider] = useState(false),
     [reasonIndex, setReasonIndex] = useState(0),
     [swiperWidth, setSwiperWidth] = useState(0),
     [currentReason, setCurrentReason] = useState(null),
+    openTabletModal = (_, index) => {
+      setReasonIndex(index)
+      setCurrentReason(Reasons[index])
+      setTabletModal(true)
+    },
+    closeTabletModal = () => {
+      setTabletModal(false)
+    },
     // closeReason = () => {
     //   // setShow(false)
     //   // setRenderMobileSlider(false)
     // },
     previousReason = () => {
-      // if (reasonIndex === 0) {
-      //   // setReasonIndex(Reasons.length - 1)
-      //   // setCurrentReason(Reasons[Reasons.length - 1])
-      // } else {
-      //   // setReasonIndex(reasonIndex - 1)
-      //   // setCurrentReason(Reasons[reasonIndex - 1])
-      // }
+      if (reasonIndex === 0) {
+        setReasonIndex(Reasons.length - 1)
+        setCurrentReason(Reasons[Reasons.length - 1])
+      } else {
+        setReasonIndex(reasonIndex - 1)
+        setCurrentReason(Reasons[reasonIndex - 1])
+      }
     },
     nextReason = () => {
-      // if (reasonIndex === Reasons.length - 1) {
-      //   // setReasonIndex(0)
-      //   // setCurrentReason(Reasons[0])
-      // } else {
-      //   // setReasonIndex(reasonIndex + 1)
-      //   // setCurrentReason(Reasons[reasonIndex + 1])
-      // }
+      if (reasonIndex === Reasons.length - 1) {
+        setReasonIndex(0)
+        setCurrentReason(Reasons[0])
+      } else {
+        setReasonIndex(reasonIndex + 1)
+        setCurrentReason(Reasons[reasonIndex + 1])
+      }
     },
     resetMode = useCallback(() => {
       if ($(window).outerWidth() >= 1200) {
@@ -247,18 +285,20 @@ export default () => {
       }
     }, [])
   Reasons.forEach((_, index) => {
-    let reasonImg
-    if ([1, 8, 9, 15, 17].includes(index + 1)) {
-      reasonImg = reason1
-    } else if ([2, 5, 10, 16, 18].includes(index + 1)) {
-      reasonImg = reasonImage2
-    } else if ([3, 6, 11, 14, 19].includes(index + 1)) {
-      reasonImg = reasonImage3
-    } else {
-      reasonImg = reasonImage4
-    }
     Reasons[index].userAvatar = userAvatar
-    Reasons[index].reasonImage = reasonImg
+    if ([1, 8, 9, 15, 17].includes(index + 1)) {
+      Reasons[index].reasonImage = reason1
+      Reasons[index].reasonImageMd = reasonImage1
+    } else if ([2, 5, 10, 16, 18].includes(index + 1)) {
+      Reasons[index].reasonImage = reasonImage2
+      Reasons[index].reasonImageMd = reasonImage2
+    } else if ([3, 6, 11, 14, 19].includes(index + 1)) {
+      Reasons[index].reasonImage = reasonImage3
+      Reasons[index].reasonImageMd = reasonImage3
+    } else {
+      Reasons[index].reasonImage = reasonImage4
+      Reasons[index].reasonImageMd = reasonImage4
+    }
     Reasons[index].reasonFeatImage = reasonFeatImage
     Reasons[index].userImage = userImage
   })
@@ -286,7 +326,6 @@ export default () => {
     reason_content_wrap,
     reason_slide_holder,
   ])
-  console.log(currentReason)
   return (
     <Layout>
       <SEO title="20 Reasons to Believe" />
@@ -300,6 +339,9 @@ export default () => {
                     <button
                       type="button"
                       className={`btn btn-primary ${breadcrumb_back_button}`}
+                      onClick={() => {
+                        navigate('/')
+                      }}
                     >
                       <Left />
                     </button>
@@ -324,12 +366,22 @@ export default () => {
         </section>
       )}
       {(mode === 'desktop' || mode === 'tablet') && (
-        <section className={reason_slider_section}>
+        <section
+          className={
+            tabletModal
+              ? `${reason_slider_section} ${reason_slider_modal_open}`
+              : reason_slider_section
+          }
+        >
           {currentReason !== null ? (
             <>
               <Img
-                className={reason_slider_bg}
-                fixed={reason1Bg.childImageSharp.fixed}
+                className={`d-none d-xl-block ${reason_slider_bg}`}
+                fixed={reason1BgXl.childImageSharp.fixed}
+              />
+              <Img
+                className={`d-none d-md-block d-xl-none ${reason_slider_bg}`}
+                fixed={reason1BgMd.childImageSharp.fixed}
               />
               <div className={reason_slider_content_area}>
                 <div className={reason_slider_content_top}>
@@ -345,166 +397,371 @@ export default () => {
                     </Row>
                   </Container>
                 </div>
-                <div className={reason_slider_content_below}>
-                  <div className={`container-fluid ${reason_content_wrapper}`}>
-                    <div className={`row no-gutters ${reason_content_holder}`}>
-                      <Quote className={reason_content_quote} />
-                      <div className={`col ${reason_navigation}`}>
-                        <button
-                          onClick={previousReason}
-                          className={`${reason_roundButton} ${prev}`}
-                        >
-                          <Left />
-                        </button>
-                      </div>
-                      <div className={`col-10 ${reason_content_wrap}`}>
-                        <Row noGutters={true} className="h-100">
-                          <Col xl={6}>
-                            <div className={reason_content}>
-                              <h3 className={reason_box_heading}>
-                                {`#${('0' + currentReason.id).slice(-2)} ${
-                                  currentReason.reasonBigHeading
-                                }`}
-                              </h3>
-                              {ReactHtmlParser(currentReason.reasonDescription)}
-                              <h5 className={reason_box_author}>
-                                {currentReason.reasonBy}
-                              </h5>
-                            </div>
-                          </Col>
-                          <Col xl={6}>
-                            <div className={reason_flip_slider}>
-                              <Swiper
-                                slidesPerView={1}
-                                centeredSlides={true}
-                                effect="flip"
-                                updateOnWindowResize={true}
-                                loop={true}
-                                simulateTouch={false}
-                                allowTouchMove={false}
-                                onSwiper={swiper => {
-                                  setSlider(swiper)
-                                }}
-                                onSlideChange={() => {
-                                  $(
-                                    `.${reason_slide_holder}:not(.master)`
-                                  ).height(
-                                    $(`.${reason_slide_holder}.master`).height()
-                                  )
-                                }}
-                                width={swiperWidth}
-                                setWrapperSize={false}
-                              >
-                                <SwiperSlide>
-                                  <div
-                                    className={`${reason_slide_holder} master`}
-                                    onClick={e => slider.slideNext()}
-                                    onKeyPress={e => slider.slideNext()}
-                                    role="button"
-                                    tabIndex="0"
-                                  >
-                                    <Img
-                                      fluid={
-                                        currentReason.reasonImage
-                                          .childImageSharp.fluid
-                                      }
-                                      alt="slide-1"
-                                    />
-                                  </div>
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                  <div
-                                    className={`${reason_slide_holder}`}
-                                    onClick={e => slider.slideNext()}
-                                    onKeyPress={e => slider.slideNext()}
-                                    role="button"
-                                    tabIndex="0"
-                                  >
-                                    <div className={reason_slide_review}>
-                                      <div className={reason_review_header}>
-                                        <div className={reason_review_avatar}>
-                                          <Img
-                                            fixed={
-                                              currentReason.userImage
-                                                .childImageSharp.fixed
-                                            }
-                                            alt="slide-1"
-                                            className={
-                                              reason_review_avatar_image
-                                            }
-                                          />
+                {mode === 'desktop' && (
+                  <div className={reason_slider_content_below}>
+                    <div
+                      className={`container-fluid ${reason_content_wrapper}`}
+                    >
+                      <div
+                        className={`row no-gutters ${reason_content_holder}`}
+                      >
+                        <Quote className={reason_content_quote} />
+                        <div className={`col ${reason_navigation}`}>
+                          <button
+                            onClick={previousReason}
+                            className={`${reason_roundButton} ${prev}`}
+                          >
+                            <Left />
+                          </button>
+                        </div>
+                        <div className={`col-10 ${reason_content_wrap}`}>
+                          <Row noGutters={true} className="h-100">
+                            <Col xl={6}>
+                              <div className={reason_content}>
+                                <h3 className={reason_box_heading}>
+                                  {`#${('0' + currentReason.id).slice(-2)} ${
+                                    currentReason.reasonBigHeading
+                                  }`}
+                                </h3>
+                                {ReactHtmlParser(
+                                  currentReason.reasonDescription
+                                )}
+                                <h5 className={reason_box_author}>
+                                  {currentReason.reasonBy}
+                                </h5>
+                              </div>
+                            </Col>
+                            <Col xl={6}>
+                              <div className={reason_flip_slider}>
+                                <Swiper
+                                  slidesPerView={1}
+                                  centeredSlides={true}
+                                  effect="flip"
+                                  updateOnWindowResize={true}
+                                  loop={true}
+                                  simulateTouch={false}
+                                  allowTouchMove={false}
+                                  onSwiper={swiper => {
+                                    setSlider(swiper)
+                                  }}
+                                  onSlideChange={() => {
+                                    $(
+                                      `.${reason_slide_holder}:not(.master)`
+                                    ).height(
+                                      $(
+                                        `.${reason_slide_holder}.master`
+                                      ).height()
+                                    )
+                                  }}
+                                  width={swiperWidth}
+                                  setWrapperSize={false}
+                                >
+                                  <SwiperSlide>
+                                    <div
+                                      className={`${reason_slide_holder} master`}
+                                      onClick={e => slider.slideNext()}
+                                      onKeyPress={e => slider.slideNext()}
+                                      role="button"
+                                      tabIndex="0"
+                                    >
+                                      <Img
+                                        fluid={
+                                          currentReason.reasonImage
+                                            .childImageSharp.fluid
+                                        }
+                                        alt="slide-1"
+                                      />
+                                    </div>
+                                  </SwiperSlide>
+                                  <SwiperSlide>
+                                    <div
+                                      className={`${reason_slide_holder}`}
+                                      onClick={e => slider.slideNext()}
+                                      onKeyPress={e => slider.slideNext()}
+                                      role="button"
+                                      tabIndex="0"
+                                    >
+                                      <div className={reason_slide_review}>
+                                        <div className={reason_review_header}>
+                                          <div className={reason_review_avatar}>
+                                            <Img
+                                              fixed={
+                                                currentReason.userImage
+                                                  .childImageSharp.fixed
+                                              }
+                                              alt="slide-1"
+                                              className={
+                                                reason_review_avatar_image
+                                              }
+                                            />
+                                          </div>
+                                          <div className={reason_review_title}>
+                                            <h3>Expert Review</h3>
+                                            <p>
+                                              {`BY ${currentReason.reviewBy}`}
+                                            </p>
+                                          </div>
                                         </div>
-                                        <div className={reason_review_title}>
-                                          <h3>Expert Review</h3>
-                                          <p>
-                                            {`BY ${currentReason.reviewBy}`}
-                                          </p>
-                                        </div>
-                                      </div>
-                                      <div className={reason_review_body}>
-                                        <div className={reason_review_image}>
-                                          <Img
-                                            fluid={
-                                              currentReason.reasonFeatImage
-                                                .childImageSharp.fluid
-                                            }
-                                            alt="slide-1"
-                                          />
-                                        </div>
-                                        <div className={reason_review_content}>
-                                          {ReactHtmlParser(
-                                            currentReason.reviewDescription
-                                          )}
+                                        <div className={reason_review_body}>
+                                          <div className={reason_review_image}>
+                                            <Img
+                                              fluid={
+                                                currentReason.reasonFeatImage
+                                                  .childImageSharp.fluid
+                                              }
+                                              alt="slide-1"
+                                            />
+                                          </div>
+                                          <div
+                                            className={reason_review_content}
+                                          >
+                                            {ReactHtmlParser(
+                                              currentReason.reviewDescription
+                                            )}
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
-                                  </div>
-                                </SwiperSlide>
-                              </Swiper>
-                              <div
-                                onClick={e => {
-                                  e.currentTarget.classList.toggle(button_dark)
-                                  slider.slideNext()
-                                }}
-                                onKeyPress={e => {
-                                  e.currentTarget.classList.toggle(button_dark)
-                                  slider.slideNext()
-                                }}
-                                className={desktop_flip_button}
-                                role="button"
-                                tabIndex="0"
-                              >
-                                <button type="button" className={flip_button}>
-                                  <Flip />
-                                </button>
-                                <p className={flip_label}>
-                                  <span className="d-block">click</span> to flip
-                                </p>
+                                  </SwiperSlide>
+                                </Swiper>
+                                <div
+                                  onClick={e => {
+                                    e.currentTarget.classList.toggle(
+                                      button_dark
+                                    )
+                                    slider.slideNext()
+                                  }}
+                                  onKeyPress={e => {
+                                    e.currentTarget.classList.toggle(
+                                      button_dark
+                                    )
+                                    slider.slideNext()
+                                  }}
+                                  className={desktop_flip_button}
+                                  role="button"
+                                  tabIndex="0"
+                                >
+                                  <button type="button" className={flip_button}>
+                                    <Flip />
+                                  </button>
+                                  <p className={flip_label}>
+                                    <span className="d-block">click</span> to
+                                    flip
+                                  </p>
+                                </div>
                               </div>
-                            </div>
-                          </Col>
-                        </Row>
-                      </div>
-                      <div className={`col ${reason_navigation}`}>
-                        <button
-                          onClick={nextReason}
-                          className={`${reason_roundButton} ${next}`}
-                        >
-                          <Right />
-                        </button>
+                            </Col>
+                          </Row>
+                        </div>
+                        <div className={`col ${reason_navigation}`}>
+                          <button
+                            onClick={nextReason}
+                            className={`${reason_roundButton} ${next}`}
+                          >
+                            <Right />
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                )}
+                {mode === 'tablet' && (
+                  <div className={reason_slider_content_below}>
+                    <div className={reason_slider_tablet}>
+                      <Swiper
+                        className={reason_slider}
+                        slidesPerView={1}
+                        spaceBetween={70}
+                        centeredSlides={true}
+                        effect="coverflow"
+                        coverflowEffect={{
+                          rotate: 0,
+                          stretch: 0,
+                          depth: 110,
+                          modifier: 1,
+                          slideShadows: false,
+                        }}
+                        updateOnWindowResize={true}
+                        keyboard={{ enabled: true }}
+                        pagination={{
+                          clickable: false,
+                          bulletClass: reason_slider_pagination_bullet,
+                          bulletActiveClass: reason_slider_pagination_active_bullet,
+                        }}
+                        loop={true}
+                        simulateTouch={true}
+                        slideToClickedSlide={true}
+                        onPaginationRender={(swiper, paginationEl) => {
+                          paginationEl.classList.add(reason_slider_pagination)
+                        }}
+                        onSlideChange={swiper => {
+                          setActiveSlide(swiper.realIndex)
+                        }}
+                        onSwiper={swiper => {
+                          setActiveSlide(swiper.realIndex)
+                        }}
+                      >
+                        {Reasons.map(
+                          ({ id, reasonImageMd, reasonGridTitle }, index) => {
+                            return (
+                              <SwiperSlide key={id}>
+                                <div className={reason_card_holder}>
+                                  <Img
+                                    fluid={reasonImageMd.childImageSharp.fluid}
+                                    alt={`reason-${id}`}
+                                  />
+                                  {activeSlide === index && (
+                                    <div className={reason_card_inner}>
+                                      <div
+                                        className={
+                                          reason_card_inner_content_area
+                                        }
+                                      >
+                                        <div className={reason_card_button}>
+                                          <p
+                                            className={reason_card_button_label}
+                                          >
+                                            TAP{' '}
+                                            <span className="d-block">
+                                              TO OPEN
+                                            </span>
+                                          </p>
+                                          <button
+                                            className={
+                                              reason_card_button_element
+                                            }
+                                            onClick={e => {
+                                              openTabletModal(e, index)
+                                            }}
+                                          >
+                                            <Open
+                                              className={
+                                                reason_card_button_icon
+                                              }
+                                            />
+                                          </button>
+                                        </div>
+                                        <div
+                                          className={reason_card_inner_content}
+                                        >
+                                          <p
+                                            className={
+                                              reason_card_inner_content_label
+                                            }
+                                          >{`REASON #${('0' + id).slice(
+                                            -2
+                                          )}`}</p>
+                                          <h4
+                                            className={
+                                              reason_card_inner_content_title
+                                            }
+                                          >
+                                            {reasonGridTitle}
+                                          </h4>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
+                              </SwiperSlide>
+                            )
+                          }
+                        )}
+                      </Swiper>
+                    </div>
+                  </div>
+                )}
               </div>
+              {mode === 'tablet' && (
+                <div className={reason_modal_area}>
+                  <div className={reason_modal_wrapper}>
+                    <button
+                      onClick={closeTabletModal}
+                      className={reason_modal_dismiss}
+                    >
+                      <Close />
+                    </button>
+                    <Swiper
+                      className={reason_modal_slider}
+                      pagination={{
+                        clickable: false,
+                        bulletClass: reason_modal_pagination_bullet,
+                        bulletActiveClass: reason_modal_pagination_active_bullet,
+                      }}
+                      onPaginationRender={(_, paginationEl) => {
+                        paginationEl.classList.add(reason_modal_pagination)
+                      }}
+                      width={718}
+                    >
+                      <SwiperSlide>
+                        <Row className="m-0">
+                          <Col md={7}>
+                            <h3 className={reason_modal_title}>
+                              <strong>{`#${('0' + currentReason.id).slice(
+                                -2
+                              )}`}</strong>
+                              {` ${currentReason.reasonBigHeading}`}
+                            </h3>
+                            <h5 className={reason_modal_author}>
+                              {currentReason.reasonBy}
+                            </h5>
+                          </Col>
+                          <Col md={12}>
+                            <div className={reason_modal_content}>
+                              {ReactHtmlParser(
+                                currentReason.reasonDescriptionTablet
+                              )}
+                            </div>
+                          </Col>
+                        </Row>
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <Row className="m-0">
+                          <Col md={7}>
+                            <div className={reason_review_header}>
+                              <div className={reason_review_avatar}>
+                                <Img
+                                  fixed={
+                                    currentReason.userImage.childImageSharp
+                                      .fixed
+                                  }
+                                  alt="slide-1"
+                                  className={reason_review_avatar_image}
+                                />
+                              </div>
+                              <div className={reason_review_title}>
+                                <h3 className={reason_modal_title}>
+                                  Expert Review
+                                </h3>
+                                <h5
+                                  className={reason_modal_author}
+                                >{`BY ${currentReason.reviewBy}`}</h5>
+                              </div>
+                            </div>
+                          </Col>
+                          <Col md={6}>
+                            <Img
+                              fluid={
+                                currentReason.reasonFeatImage.childImageSharp
+                                  .fluid
+                              }
+                              alt="slide-1"
+                            />
+                          </Col>
+                          <Col md={6}>
+                            <div className={reason_review_content}>
+                              {ReactHtmlParser(currentReason.reviewDescription)}
+                            </div>
+                          </Col>
+                        </Row>
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
+                </div>
+              )}
             </>
           ) : null}
         </section>
-      )}
-      {mode === 'tablet' && (
-        <>
-          <p>tablet</p>
-        </>
       )}
       {mode === 'mobile' && (
         <>
@@ -518,8 +775,7 @@ export default () => {
               <Row className="mb-3">
                 <Col className="col-12">
                   <p className={reason_section_title}>
-                    <strong className={bold_title}>View</strong>
-                    <br /> all reasons
+                    <strong className={bold_title}>View</strong> all reasons
                   </p>
                 </Col>
               </Row>
@@ -945,72 +1201,23 @@ export default () => {
               </Row>
             </Container>
           </section>
-          <section className={navigation_section}>
-            <Container>
-              <Row className="justify-content-between">
-                <Col lg={3} md={5} className="text-center text-md-left">
-                  <div className={nav_wrapper}>
-                    <div className={nav_holder}>
-                      <Img
-                        className="d-md-none"
-                        fixed={prevImage.childImageSharp.fixed}
-                      />
-                      <div className={nav_area}>
-                        <p>Previous</p>
-                        <Link
-                          to="/the-hardest-working-family-member/"
-                          className={navigate_previous}
-                        >
-                          <h4>The hardest working family member</h4>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col lg={3} md={5} className="text-center text-md-right">
-                  <div className={nav_wrapper}>
-                    <div className={nav_holder}>
-                      <Img
-                        className="d-md-none"
-                        fixed={nextImage.childImageSharp.fixed}
-                      />
-                      <div className={nav_area}>
-                        <p>Next</p>
-                        <Link
-                          to="/the-sienna-described-from-every-seat/"
-                          className={navigate_next}
-                        >
-                          <h4>
-                            <span className="d-block">
-                              The Sienna, described
-                            </span>{' '}
-                            from every seat
-                          </h4>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </section>
         </>
       )}
-      <section className={navigation_section}>
+      <section className={navigation.navigation_section}>
         <Container>
           <Row>
             <Col md={6} className="text-center">
-              <div className={`w-100 ${nav_wrapper}`}>
-                <div className={`w-100 ${nav_holder}`}>
+              <div className={`w-100 ${navigation.nav_wrapper}`}>
+                <div className={`w-100 ${navigation.nav_holder}`}>
                   <Img
                     className="w-100"
                     fixed={prevImage.childImageSharp.fixed}
                   />
-                  <div className={nav_area}>
+                  <div className={navigation.nav_area}>
                     <p>Previous</p>
                     <Link
                       to="/the-hardest-working-family-member/"
-                      className={navigate_previous}
+                      className={navigation.navigate_previous}
                     >
                       <h4>The hardest working family member</h4>
                     </Link>
@@ -1019,17 +1226,17 @@ export default () => {
               </div>
             </Col>
             <Col md={6} className="text-center">
-              <div className={`w-100 ${nav_wrapper}`}>
-                <div className={`w-100 ${nav_holder}`}>
+              <div className={`w-100 ${navigation.nav_wrapper}`}>
+                <div className={`w-100 ${navigation.nav_holder}`}>
                   <Img
                     className="w-100"
                     fixed={nextImage.childImageSharp.fixed}
                   />
-                  <div className={nav_area}>
+                  <div className={navigation.nav_area}>
                     <p>Next</p>
                     <Link
                       to="/the-sienna-described-from-every-seat/"
-                      className={navigate_next}
+                      className={navigation.navigate_next}
                     >
                       <h4>
                         <span className="d-block">The Sienna, described</span>{' '}
