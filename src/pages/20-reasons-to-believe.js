@@ -33,11 +33,13 @@ export default () => {
       reason_slider_content_top,
       reason_slider_content_below,
       reason_slider_tablet,
+      reason_slider_mobile,
       reason_slider,
       reason_slider_pagination,
       reason_slider_pagination_bullet,
       reason_slider_pagination_active_bullet,
       reason_card_holder,
+      reason_card_image,
       reason_card_inner,
       reason_card_inner_content_area,
       reason_slider_modal_open,
@@ -50,6 +52,7 @@ export default () => {
       reason_modal_pagination_active_bullet,
       reason_modal_title,
       reason_modal_author,
+      reason_modal_feat_image,
       reason_modal_content,
       reason_card_button,
       reason_card_button_label,
@@ -106,6 +109,7 @@ export default () => {
       userAvatar,
       reason1BgXl,
       reason1BgMd,
+      reason1Bg,
       reason1,
       reasonImage1,
       reasonImage2,
@@ -139,6 +143,13 @@ export default () => {
           childImageSharp {
             fixed(width: 1024, height: 433) {
               ...GatsbyImageSharpFixed
+            }
+          }
+        }
+        reason1Bg: file(relativePath: { eq: "reason-1-bg-xs.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 750, maxHeight: 903) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -591,7 +602,7 @@ export default () => {
                         loop={true}
                         simulateTouch={true}
                         slideToClickedSlide={true}
-                        onPaginationRender={(swiper, paginationEl) => {
+                        onPaginationRender={(_, paginationEl) => {
                           paginationEl.classList.add(reason_slider_pagination)
                         }}
                         onSlideChange={swiper => {
@@ -745,6 +756,7 @@ export default () => {
                                 currentReason.reasonFeatImage.childImageSharp
                                   .fluid
                               }
+                              className={reason_modal_feat_image}
                               alt="slide-1"
                             />
                           </Col>
@@ -765,7 +777,223 @@ export default () => {
       )}
       {mode === 'mobile' && (
         <>
-          <p>mobile</p>
+          {currentReason !== null ? (
+            <section
+              className={
+                tabletModal
+                  ? `${reason_slider_section} ${reason_slider_modal_open}`
+                  : reason_slider_section
+              }
+            >
+              <Img
+                className={reason_slider_bg}
+                fluid={reason1Bg.childImageSharp.fluid}
+              />
+              <div className={reason_slider_content_area}>
+                <div className={reason_slider_content_top}>
+                  <button
+                    type="button"
+                    onClick={() => (window.location.href = `//toyota.ca`)}
+                    className={`btn btn-primary ${breadcrumb_button}`}
+                  >
+                    BUILD &amp; PRICE
+                  </button>
+                  <h1 className={main_heading}>
+                    <strong>20</strong>
+                    <span> Reasons </span>
+                    <strong className="d-block">to believe</strong>
+                  </h1>
+                </div>
+                <div className={reason_slider_content_below}>
+                  <div className={reason_slider_mobile}>
+                    <Swiper
+                      className={reason_slider}
+                      slidesPerView={1}
+                      spaceBetween={40}
+                      centeredSlides={true}
+                      effect="coverflow"
+                      coverflowEffect={{
+                        rotate: 0,
+                        stretch: 0,
+                        depth: 110,
+                        modifier: 1,
+                        slideShadows: false,
+                      }}
+                      updateOnWindowResize={true}
+                      keyboard={{ enabled: true }}
+                      pagination={{
+                        clickable: false,
+                        bulletClass: reason_slider_pagination_bullet,
+                        bulletActiveClass: reason_slider_pagination_active_bullet,
+                      }}
+                      loop={true}
+                      simulateTouch={true}
+                      slideToClickedSlide={true}
+                      onPaginationRender={(_, paginationEl) => {
+                        paginationEl.classList.add(reason_slider_pagination)
+                      }}
+                      onSlideChange={swiper => {
+                        setActiveSlide(swiper.realIndex)
+                      }}
+                      onSwiper={swiper => {
+                        setActiveSlide(swiper.realIndex)
+                      }}
+                    >
+                      {Reasons.map(
+                        ({ id, reasonImageMd, reasonGridTitle }, index) => {
+                          return (
+                            <SwiperSlide key={id}>
+                              <div className={reason_card_holder}>
+                                <Img
+                                  fluid={reasonImageMd.childImageSharp.fluid}
+                                  alt={`reason-${id}`}
+                                  className={reason_card_image}
+                                />
+                                {activeSlide === index && (
+                                  <div className={reason_card_inner}>
+                                    <div
+                                      className={reason_card_inner_content_area}
+                                    >
+                                      <div className={reason_card_button}>
+                                        <p className={reason_card_button_label}>
+                                          TAP{' '}
+                                          <span className="d-block">
+                                            TO OPEN
+                                          </span>
+                                        </p>
+                                        <button
+                                          className={reason_card_button_element}
+                                          onClick={e => {
+                                            openTabletModal(e, index)
+                                          }}
+                                        >
+                                          <Open
+                                            className={reason_card_button_icon}
+                                          />
+                                        </button>
+                                      </div>
+                                      <div
+                                        className={reason_card_inner_content}
+                                      >
+                                        <p
+                                          className={
+                                            reason_card_inner_content_label
+                                          }
+                                        >{`REASON #${('0' + id).slice(-2)}`}</p>
+                                        <h4
+                                          className={
+                                            reason_card_inner_content_title
+                                          }
+                                        >
+                                          {reasonGridTitle}
+                                        </h4>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            </SwiperSlide>
+                          )
+                        }
+                      )}
+                    </Swiper>
+                  </div>
+                </div>
+              </div>
+              <div className={reason_modal_area}>
+                <div className={reason_modal_wrapper}>
+                  <button
+                    onClick={closeTabletModal}
+                    className={reason_modal_dismiss}
+                  >
+                    <Close />
+                  </button>
+                  <Swiper
+                    className={reason_modal_slider}
+                    spaceBetween={20}
+                    updateOnWindowResize={true}
+                    pagination={{
+                      clickable: false,
+                      bulletClass: reason_modal_pagination_bullet,
+                      bulletActiveClass: reason_modal_pagination_active_bullet,
+                    }}
+                    onPaginationRender={(_, paginationEl) => {
+                      paginationEl.classList.add(reason_modal_pagination)
+                    }}
+                    width={$(`.${reason_modal_wrapper}`).width()}
+                  >
+                    <SwiperSlide>
+                      <Row noGutters={true} className="justify-content-center">
+                        <Col xs={12} sm={7}>
+                          <button
+                            type="button"
+                            onClick={() =>
+                              (window.location.href = `//toyota.ca`)
+                            }
+                            className={`btn btn-primary ${breadcrumb_button}`}
+                          >
+                            BUILD &amp; PRICE
+                          </button>
+                          <h3 className={reason_modal_title}>
+                            <strong>{`#${('0' + currentReason.id).slice(
+                              -2
+                            )}`}</strong>
+                            {` ${currentReason.reasonBigHeading}`}
+                          </h3>
+                          <h5 className={reason_modal_author}>
+                            {currentReason.reasonBy}
+                          </h5>
+                        </Col>
+                        <Col xs={12} sm={7}>
+                          <div className={reason_modal_content}>
+                            {ReactHtmlParser(currentReason.reasonDescription)}
+                          </div>
+                        </Col>
+                      </Row>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <Row noGutters={true} className="justify-content-center">
+                        <Col xs={12} sm={7}>
+                          <div className={reason_review_header}>
+                            <div className={reason_review_avatar}>
+                              <Img
+                                fixed={
+                                  currentReason.userImage.childImageSharp.fixed
+                                }
+                                alt="slide-1"
+                                className={reason_review_avatar_image}
+                              />
+                            </div>
+                            <div className={reason_review_title}>
+                              <h3 className={reason_modal_title}>
+                                Expert Review
+                              </h3>
+                              <h5
+                                className={reason_modal_author}
+                              >{`BY ${currentReason.reviewBy}`}</h5>
+                            </div>
+                          </div>
+                        </Col>
+                        <Col xs={12} sm={7}>
+                          <Img
+                            fluid={
+                              currentReason.reasonFeatImage.childImageSharp
+                                .fluid
+                            }
+                            className={reason_modal_feat_image}
+                            alt="slide-1"
+                          />
+                          <div className={reason_modal_content}>
+                            {ReactHtmlParser(currentReason.reviewDescription)}
+                          </div>
+                        </Col>
+                      </Row>
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+              </div>
+            </section>
+          ) : null}
         </>
       )}
       {(mode === 'desktop' || mode === 'tablet') && (
