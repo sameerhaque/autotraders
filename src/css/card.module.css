@@ -572,8 +572,10 @@
 
   .reason_card1 {
     -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: #1f4465;
     border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
@@ -648,8 +650,10 @@
 
   .reason_card2 {
     -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: #75c2b2;
     border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
@@ -673,8 +677,10 @@
 
   .reason_card3 {
     -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: #cdc07f;
     border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
@@ -698,8 +704,10 @@
 
   .reason_card4 {
     -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: #474a57;
     border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
