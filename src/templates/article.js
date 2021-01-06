@@ -93,7 +93,6 @@ const ArticleTemplate = ({ data }) => {
       })
     }
   }, [isBrowser, setSliderWidth])
-  console.log(sliderSize)
   return (
     <Layout itemScope itemType="http://schema.org/Article">
       <SEO title={title} description={description || excerpt} />
