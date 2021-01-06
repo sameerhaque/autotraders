@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Link, graphql } from 'gatsby'
 import { Container, Row, Col } from 'react-bootstrap'
 import SwiperCore, { EffectCoverflow } from 'swiper'
@@ -73,7 +73,27 @@ const ArticleTemplate = ({ data }) => {
         },
         200
       )
+    },
+    isBrowser = typeof window !== undefined,
+    [sliderSize, setSetSliderSize] = useState(null),
+    setSliderWidth = useCallback(() => {
+      if ($(window).outerWidth() >= 1200) {
+        setSetSliderSize(1010)
+      } else if ($(window).outerWidth() >= 768) {
+        setSetSliderSize(720)
+      } else {
+        setSetSliderSize($(window).width())
+      }
+    }, [])
+  useEffect(() => {
+    if (isBrowser) {
+      setSliderWidth()
+      $(window).resize(() => {
+        setSliderWidth()
+      })
     }
+  }, [isBrowser, setSliderWidth])
+  console.log(sliderSize)
   return (
     <Layout itemScope itemType="http://schema.org/Article">
       <SEO title={title} description={description || excerpt} />
@@ -150,18 +170,20 @@ const ArticleTemplate = ({ data }) => {
               stretch: -80,
               depth: 170,
               modifier: 1,
-              slideShadows: true,
+              slideShadows: false,
             }}
             simulateTouch={true}
             slideToClickedSlide={true}
             onSwiper={swiper => setSlider(swiper)}
+            width={sliderSize}
           >
             {sliderImages.map((slide, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <div className={article_slide}>
-                    <Img fluid={slide.childImageSharp.fluid} />
-                  </div>
+                  <Img
+                    fluid={slide.childImageSharp.fluid}
+                    className={article_slide}
+                  />
                 </SwiperSlide>
               )
             })}

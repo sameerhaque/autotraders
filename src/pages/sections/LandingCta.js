@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import SwiperCore, { Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Img from 'gatsby-image/withIEPolyfill'
+import $ from 'jquery'
 
 import landing_cta from './css/landing_cta.module.css'
 
@@ -40,9 +41,27 @@ const LandingCTA = () => {
         }
       }
     `),
+    isBrowser = typeof window !== undefined,
+    [sliderSize, setSetSliderSize] = useState(null),
+    setSliderWidth = useCallback(() => {
+      if ($(window).outerWidth() >= 1200) {
+        setSetSliderSize($(`.${landing_cta.all_reason}`).width())
+      } else if ($(window).outerWidth() >= 768) {
+        setSetSliderSize($(window).width() - 60)
+      } else {
+        setSetSliderSize($(window).width() - 40)
+      }
+    }, []),
     know_more_text =
       'Discover the reasons that make this people love their Sienna and why they are proud of owning one.'
-
+  useEffect(() => {
+    if (isBrowser) {
+      setSliderWidth()
+      $(window).resize(() => {
+        setSliderWidth()
+      })
+    }
+  }, [isBrowser, setSliderWidth])
   return (
     <section className={landing_cta.section}>
       <div className={landing_cta.wrapper}>
@@ -76,15 +95,20 @@ const LandingCTA = () => {
                   slidesPerView={1}
                   spaceBetween={20}
                   pagination={{ clickable: false }}
+                  updateOnWindowResize={true}
                   loop={true}
                   onPaginationRender={(swiper, paginationEl) => {
                     paginationEl.classList.add(landing_cta.slider_pagination)
                   }}
+                  width={sliderSize}
                 >
                   {Array.from({ length: 3 }, (_, i) => i + 1).map(val => {
                     return (
                       <SwiperSlide key={val}>
-                        <div className={landing_cta.slide_holder}>
+                        <Link
+                          to="/20-reasons-to-believe/"
+                          className={landing_cta.slide_holder}
+                        >
                           <Img
                             fixed={slideImageMd.childImageSharp.fixed}
                             alt="slideImageMd"
@@ -98,7 +122,7 @@ const LandingCTA = () => {
                           <Img
                             fixed={slideImage.childImageSharp.fixed}
                             alt="slideImage"
-                            className={`d-sm-none ${landing_cta.slide_image}`}
+                            className={`d-sm-none w-100 ${landing_cta.slide_image}`}
                           />
                           <div className={landing_cta.slide_content}>
                             <div className={landing_cta.slide_content_inner}>
@@ -117,7 +141,7 @@ const LandingCTA = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </Link>
                       </SwiperSlide>
                     )
                   })}

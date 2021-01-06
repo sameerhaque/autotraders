@@ -2,8 +2,6 @@
   .hero_features_section {
     background: #ffffff;
     background: linear-gradient(0deg, #ffffff 42%, #cee0f3 42%);
-    margin: auto;
-    max-width: 1440px;
     padding-top: 20px;
     padding-bottom: 20px;
     position: relative;
@@ -24,17 +22,21 @@
   }
 
   .features_hot_spot {
-    background: transparent;
+    background-color: transparent;
+    background-image: url('../../../images/hotspot.png');
+    background-size: 100% auto;
     border: none;
     border-radius: 50%;
     box-shadow: 0 0 0 0 transparent;
     cursor: pointer;
+    height: 65px;
     opacity: 0;
     padding: 0;
     position: absolute;
     transition: all 0.2s;
     transform-origin: center;
     transform: scale(1);
+    width: 65px;
   }
 
   .features_wrapper .hot_spot_display {
@@ -43,7 +45,6 @@
 
   .features_hot_spot:hover,
   .features_hot_spot_active {
-    /* box-shadow: 0 0 0 20px rgb(15 104 201 / 0.4); */
     transform: scale(1.67691);
   }
 
