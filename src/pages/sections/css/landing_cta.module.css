@@ -10,7 +10,6 @@
     padding-top: 50px;
     padding-bottom: 50px;
     position: relative;
-    min-height: 852px;
   }
 
   .hash {
@@ -62,6 +61,7 @@
 
   .all_reason {
     position: relative;
+    max-width: 100%;
   }
 
   .slider_wrapper {
@@ -77,7 +77,7 @@
     display: flex;
     justify-content: flex-end;
     margin-bottom: 30px;
-    min-height: 540px;
+    min-height: 500px;
   }
 
   .slide_image {
@@ -241,5 +241,9 @@
 
   .know_more p {
     margin-bottom: 15px;
+  }
+
+  .all_reason {
+    max-width: 1010px;
   }
 }

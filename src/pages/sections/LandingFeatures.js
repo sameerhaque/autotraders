@@ -7,7 +7,6 @@ import $ from 'jquery'
 
 import landing_features from './css/landing_features.module.css'
 
-import Hotspot from '../../components/icons/hotspot'
 import Close from '../../components/icons/close'
 import Left from '../../components/icons/left'
 import Right from '../../components/icons/right'
@@ -179,30 +178,26 @@ const LandingFeatures = () => {
                   type="button"
                   className={`${landing_features.features_hot_spot} ${landing_features.features_hot_spot_I}`}
                   onClick={e => openFeature(e, 1)}
-                >
-                  <Hotspot />
-                </button>
+                  aria-label="Hotspot 1"
+                />
                 <button
                   type="button"
                   className={`${landing_features.features_hot_spot} ${landing_features.features_hot_spot_II}`}
                   onClick={e => openFeature(e, 2)}
-                >
-                  <Hotspot />
-                </button>
+                  aria-label="Hotspot 2"
+                />
                 <button
                   type="button"
                   className={`${landing_features.features_hot_spot} ${landing_features.features_hot_spot_III}`}
                   onClick={e => openFeature(e, 3)}
-                >
-                  <Hotspot />
-                </button>
+                  aria-label="Hotspot 3"
+                />
                 <button
                   type="button"
                   className={`${landing_features.features_hot_spot} ${landing_features.features_hot_spot_IV}`}
                   onClick={e => openFeature(e, 4)}
-                >
-                  <Hotspot />
-                </button>
+                  aria-label="Hotspot 4"
+                />
               </div>
             </div>
             <div className="flex-shrink-1 d-block d-md-none d-xl-block mt-auto order-1 order-xl-2 text-center text-xl-left">

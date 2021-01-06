@@ -571,30 +571,42 @@
   }
 
   .reason_card1 {
-    border-radius: 20px;
-    height: 320px;
-    position: relative;
-    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: #1f4465;
+    border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0);
   }
 
-  .card_layer1 {
+  .reason_card1::before {
     background: linear-gradient(90deg, #1f4465 5%, rgba(214, 169, 169, 0) 100%);
-    position: absolute;
+    content: '';
+    display: block;
     height: 100%;
-    width: 100%;
+    position: absolute;
     top: 0;
+    width: 100%;
     z-index: 9;
   }
 
   .reason_card_content {
     padding: 30px;
     color: #ffffff;
+    height: 100%;
+    left: 0;
     position: absolute;
-    top: 0;
-    z-index: 999;
     text-align: left;
+    top: 0;
+    width: 100%;
+    z-index: 999;
   }
 
   .reason_card_label_index {
@@ -637,60 +649,83 @@
   }
 
   .reason_card2 {
-    border-radius: 20px;
-    height: 320px;
-    position: relative;
-    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: #75c2b2;
+    border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0);
   }
 
-  .card_layer2 {
-    background: linear-gradient(90deg,
-        #75c2b2 25%,
-        rgba(214, 169, 169, 0) 100%);
-    position: absolute;
+  .reason_card2::before {
+    background: linear-gradient(90deg, #75c2b2 25%, rgba(214, 169, 169, 0) 100%);
+    content: '';
+    display: block;
     height: 100%;
-    width: 100%;
+    position: absolute;
     top: 0;
+    width: 100%;
     z-index: 9;
   }
 
   .reason_card3 {
-    border-radius: 20px;
-    height: 320px;
-    position: relative;
-    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: #cdc07f;
+    border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0);
   }
 
-  .card_layer3 {
-    background: linear-gradient(90deg,
-        #cdc07f 20%,
-        rgba(214, 169, 169, 0) 100%);
-    position: absolute;
+  .reason_card3::before {
+    background: linear-gradient(90deg, #cdc07f 20%, rgba(214, 169, 169, 0) 100%);
+    content: '';
+    display: block;
     height: 100%;
-    width: 100%;
+    position: absolute;
     top: 0;
+    width: 100%;
     z-index: 9;
   }
 
   .reason_card4 {
-    border-radius: 20px;
-    height: 320px;
-    position: relative;
-    overflow: hidden;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
     background: #474a57;
+    border-radius: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    transform: translateZ(0);
   }
 
-  .card_layer4 {
+  .reason_card4::before {
     background: linear-gradient(90deg, #474a57 5%, rgba(214, 169, 169, 0) 100%);
-    position: absolute;
+    content: '';
+    display: block;
     height: 100%;
-    width: 100%;
+    position: absolute;
     top: 0;
+    width: 100%;
     z-index: 9;
   }
 

@@ -29,9 +29,19 @@
     height: 100%;
     justify-content: flex-end;
     left: 0;
+    padding: 20px;
     position: absolute;
     width: 100%;
     z-index: 1;
+  }
+
+  .nav_area p {
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+
+  .nav_area a h4 {
+    margin-bottom: 0;
   }
 
   .nav_area a {

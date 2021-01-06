@@ -125,6 +125,10 @@
     margin-bottom: 30px;
   }
 
+  .slider_section .article_slide {
+    border-radius: 10px;
+  }
+
   .swiper_nav {
     display: flex;
     width: 116px;

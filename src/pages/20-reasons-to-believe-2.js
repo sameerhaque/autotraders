@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import { Container, Row, Col, Modal } from "react-bootstrap"
-import SwiperCore, { EffectFlip, EffectCoverflow, Pagination } from "swiper"
-import { Swiper, SwiperSlide } from "swiper/react"
-import ReactHtmlParser from "react-html-parser"
-import Img from "gatsby-image/withIEPolyfill"
-import $ from "jquery"
+import React, { useEffect, useState } from 'react'
+import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Container, Row, Col, Modal } from 'react-bootstrap'
+import SwiperCore, { EffectFlip, EffectCoverflow, Pagination } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import ReactHtmlParser from 'react-html-parser'
+import Img from 'gatsby-image/withIEPolyfill'
+import $ from 'jquery'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Close from "../components/icons/close"
-import Left from "../components/icons/left"
-import Right from "../components/icons/right"
-import Flip from "../components/icons/flip"
-import Filter from "../components/icons/filter"
-import Reasons from "../components/reasons"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import Close from '../components/icons/close'
+import Left from '../components/icons/left'
+import Right from '../components/icons/right'
+import Flip from '../components/icons/flip'
+import Filter from '../components/icons/filter'
+import Reasons from '../components/reasons'
 
-import InterActive from "../css/interactive.module.css"
+import InterActive from '../css/interactive.module.css'
 
 SwiperCore.use([EffectFlip, EffectCoverflow, Pagination])
 export default () => {
@@ -170,7 +170,7 @@ export default () => {
         }
       }
     `),
-    isBrowser = typeof window !== "undefined",
+    isBrowser = typeof window !== 'undefined',
     [show, setShow] = useState(false),
     [isMobile, setMobile] = useState(false),
     [slider, setSlider] = useState(null),
@@ -221,7 +221,7 @@ export default () => {
       $(window).resize(() => {
         setMobile($(window).outerWidth() < 768 ? true : false)
         $(`.${reason_slide_holder}`)
-          .removeAttr("style")
+          .removeAttr('style')
           .height($(`.${reason_slide_holder}.master`).height())
       })
       $(`.${reason_slide_holder}`).height(
@@ -294,12 +294,12 @@ export default () => {
                         <div className={reason_box_content_wrapper}>
                           <div className={reason_box_content_area_outer}>
                             <div
-                              reason-id={("0" + currentReason.id).slice(-2)}
+                              reason-id={('0' + currentReason.id).slice(-2)}
                               className={reason_box_content_area}
                             >
                               <h6 className={reason_box_small_heading}>
                                 <strong>{`REASON ${(
-                                  "0" + currentReason.id
+                                  '0' + currentReason.id
                                 ).slice(-2)}`}</strong>
                                 {` BY ${currentReason.reasonBy}`}
                               </h6>
@@ -378,7 +378,7 @@ export default () => {
                                           {currentReason.reasonReviewTitle}
                                         </h3>
                                         <p>
-                                          {"reviewed BY "}
+                                          {'reviewed BY '}
                                           <strong>
                                             {currentReason.reviewBy}
                                           </strong>
@@ -476,7 +476,7 @@ export default () => {
                                 onClick={() => {
                                   setReasonIndex(index)
                                   setCurrentReason(Reasons[index])
-                                  $("html, body").animate(
+                                  $('html, body').animate(
                                     {
                                       scrollTop: 0,
                                     },
@@ -487,7 +487,7 @@ export default () => {
                               >
                                 <div className={reason_card_content}>
                                   <p className={reason_card_label}>{`REASON #${(
-                                    "0" + id
+                                    '0' + id
                                   ).slice(-2)}`}</p>
                                   <h4 className={reason_card_title}>
                                     {reasonGridTitle}
@@ -585,7 +585,7 @@ export default () => {
                                 </button>
                                 <div className={reason_card_content}>
                                   <p className={reason_card_label}>{`REASON #${(
-                                    "0" + id
+                                    '0' + id
                                   ).slice(-2)}`}</p>
                                   <h4 className={reason_card_title}>
                                     {reasonGridTitle}
@@ -652,7 +652,7 @@ export default () => {
                                 <div className={reason_by_section}>
                                   <h6 className={reason_box_small_heading}>
                                     <strong>{`REASON ${(
-                                      "0" + currentReason.id
+                                      '0' + currentReason.id
                                     ).slice(-2)}`}</strong>
                                     {` BY ${currentReason.reasonBy}`}
                                   </h6>
@@ -705,7 +705,7 @@ export default () => {
                                 />
                                 <div className={reason_by_section}>
                                   <h6 className={reason_box_small_heading}>
-                                    {"by autojournalist"}
+                                    {'by autojournalist'}
                                     <strong>{currentReason.reviewBy}</strong>
                                   </h6>
                                 </div>
@@ -778,7 +778,7 @@ export default () => {
                           <h4>
                             <span className="d-block">
                               The Sienna, described
-                            </span>{" "}
+                            </span>{' '}
                             from every seat
                           </h4>
                         </Link>

@@ -70,8 +70,8 @@ export default () => {
           <div className={`container-xl ${footer.ad_container}`}>
             <div className={footer.ad_inner}>
               <h4 className={footer.ad_heading_big}>
-                <span>Get</span>
-                <span>yours</span>
+                <span>Get </span>
+                <span>yours </span>
                 <strong>today</strong>
               </h4>
               <h5 className={footer.ad_heading_I}>

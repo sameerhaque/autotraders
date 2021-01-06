@@ -91,13 +91,9 @@ export default () => {
       reason_section_title,
       bold_title,
       reason_card1,
-      card_layer1,
       reason_card2,
-      card_layer2,
       reason_card3,
-      card_layer3,
       reason_card4,
-      card_layer4,
       reason_card_content,
       reason_card_label_index,
       reason_card_title,
@@ -1010,41 +1006,35 @@ export default () => {
               <Row>
                 <Col md={4} className="mb-3">
                   <div className={reason_card1}>
-                    <div className={card_layer1}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar1.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={8} className="mb-3">
                   <div className={reason_card2}>
-                    <div className={card_layer2}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar2.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1052,41 +1042,35 @@ export default () => {
               <Row>
                 <Col md={8} className="mb-3">
                   <div className={reason_card3}>
-                    <div className={card_layer3}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar3.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={4} className="mb-3">
                   <div className={reason_card4}>
-                    <div className={card_layer4}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar4.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1094,41 +1078,35 @@ export default () => {
               <Row>
                 <Col md={4} className="mb-3">
                   <div className={reason_card1}>
-                    <div className={card_layer1}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar1.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={8} className="mb-3">
                   <div className={reason_card2}>
-                    <div className={card_layer2}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar2.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1136,41 +1114,35 @@ export default () => {
               <Row>
                 <Col md={8} className="mb-3">
                   <div className={reason_card3}>
-                    <div className={card_layer3}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar3.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={4} className="mb-3">
                   <div className={reason_card4}>
-                    <div className={card_layer4}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar4.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1178,41 +1150,35 @@ export default () => {
               <Row>
                 <Col md={4} className="mb-3">
                   <div className={reason_card1}>
-                    <div className={card_layer1}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar1.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={8} className="mb-3">
                   <div className={reason_card2}>
-                    <div className={card_layer2}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar2.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1220,41 +1186,35 @@ export default () => {
               <Row>
                 <Col md={8} className="mb-3">
                   <div className={reason_card3}>
-                    <div className={card_layer3}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar3.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={4} className="mb-3">
                   <div className={reason_card4}>
-                    <div className={card_layer4}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar4.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1262,41 +1222,35 @@ export default () => {
               <Row>
                 <Col md={4} className="mb-3">
                   <div className={reason_card1}>
-                    <div className={card_layer1}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar1.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={8} className="mb-3">
                   <div className={reason_card2}>
-                    <div className={card_layer2}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar2.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1304,41 +1258,35 @@ export default () => {
               <Row>
                 <Col md={8} className="mb-3">
                   <div className={reason_card3}>
-                    <div className={card_layer3}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar3.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={4} className="mb-3">
                   <div className={reason_card4}>
-                    <div className={card_layer4}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar4.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1346,41 +1294,35 @@ export default () => {
               <Row>
                 <Col md={4} className="mb-3">
                   <div className={reason_card1}>
-                    <div className={card_layer1}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar1.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={8} className="mb-3">
                   <div className={reason_card2}>
-                    <div className={card_layer2}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar2.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1388,41 +1330,35 @@ export default () => {
               <Row>
                 <Col md={8} className="mb-3">
                   <div className={reason_card3}>
-                    <div className={card_layer3}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar3.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title_width}>
-                          We can keep everyone warm and happy in our Sienna.
-                        </h4>
-                        <span className={reason_card_city2}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
                 <Col md={4} className="mb-3">
                   <div className={reason_card4}>
-                    <div className={card_layer4}></div>
-                    <div className="position-relative text-right">
-                      <Img
-                        fixed={reasonCar4.childImageSharp.fixed}
-                        alt="reason-1"
-                      />
-                      <div className={reason_card_content}>
-                        <p className={reason_card_label_index}>01</p>
-                        <h4 className={reason_card_title}>
-                          I can do so many things
-                        </h4>
-                        <span className={reason_card_city}>
-                          deborah, quebec city
-                        </span>
-                      </div>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
                     </div>
                   </div>
                 </Col>
@@ -1447,7 +1383,10 @@ export default () => {
                       to="/the-hardest-working-family-member/"
                       className={navigation.navigate_previous}
                     >
-                      <h4>The hardest working family member</h4>
+                      <h4>
+                        <span className="d-block">The hardest working</span>{' '}
+                        family member
+                      </h4>
                     </Link>
                   </div>
                 </div>
