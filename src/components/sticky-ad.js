@@ -29,11 +29,11 @@ const StickyAd = () => {
     [adDismissed, dismissAdForever] = useState(false),
     dismissAd = () => {
       confirmAlert({
-        title: `Dismiss Forever`,
-        message: `You Don't want to see this again?`,
+        title: `Dismiss Forever?`,
+        message: `Think again! offer might be limited.`,
         buttons: [
           {
-            label: 'Yes',
+            label: `Yes, never show this again`,
             onClick: () => {
               localStorage.setItem('adDismissed', true)
               dismissAdForever(true)
@@ -41,7 +41,7 @@ const StickyAd = () => {
             },
           },
           {
-            label: 'No',
+            label: `No, I'll check later`,
             onClick: () => {
               localStorage.setItem('adDismissed', false)
               dismissAdForever(false)

@@ -772,6 +772,9 @@
 
   .reason_slider_content_area {
     overflow: visible;
+    max-width: 1440px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .main_heading {
@@ -788,12 +791,12 @@
     height: 100%;
   }
 
-  .reason_content_holder::after {
+  .reason_content_wrap::before {
     border: 1px solid #FFFFFF;
     content: '';
     display: block;
     height: 0px;
-    left: 0;
+    left: -74px;
     position: absolute;
     top: 45px;
     width: 86px;
@@ -801,6 +804,7 @@
 
   .reason_navigation {
     flex-shrink: 1;
+    flex-grow: 0;
     margin-top: auto;
     margin-bottom: auto;
   }
@@ -810,7 +814,7 @@
     margin-top: auto;
     margin-bottom: auto;
     height: 100%;
-    max-width: 1115px;
+    position: relative;
   }
 
   .reason_content {
@@ -821,7 +825,7 @@
   .reason_content_quote {
     position: absolute;
     top: 0;
-    left: 65px;
+    left: -10px;
   }
 
   .reason_box_heading {
@@ -848,8 +852,11 @@
     letter-spacing: 0.05em;
   }
 
-  .reason_flip_slider {
+  .reason_content_wrap .reason_flip_slider_col {
     padding-right: 30px;
+  }
+
+  .reason_flip_slider {
     transform: translateY(-8%);
     position: relative;
   }
