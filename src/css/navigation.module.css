@@ -1,6 +1,8 @@
 @media(min-width:0) {
   .navigation_section {
     padding-top: 45px;
+    background-color: #ffffff;
+    position: relative;
   }
 
   .nav_wrapper {
@@ -18,6 +20,15 @@
     overflow: hidden;
     position: relative;
     z-index: 0;
+  }
+
+  .nav_image picture img {
+    transform: scale(1);
+    transition: opacity 500ms ease 0s, transform 0.2s !important;
+  }
+
+  .nav_holder:hover .nav_image picture img {
+    transform: scale(1.1);
   }
 
   .nav_area {
@@ -70,7 +81,6 @@
   .navigation_section {
     padding-bottom: 35px;
     padding-bottom: 36px;
-    background: #ffffff;
   }
 
   .navigation_section .nav_wrapper {

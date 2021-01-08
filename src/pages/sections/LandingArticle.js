@@ -49,8 +49,7 @@ const LandingArticle = () => {
           </Col>
           <Col lg={6}>
             <p className={`${landing_article.description} pr-lg-4`}>
-              Discover the content we have created to show how amazing it is and
-              what you can do with it.
+              See how the Toyota Sienna can fit your own lifestyle.
             </p>
           </Col>
         </Row>

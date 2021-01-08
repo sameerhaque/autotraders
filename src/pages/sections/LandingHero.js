@@ -26,6 +26,7 @@ const LandingHero = () => {
     $(`.${landing_hero.hero_video}`).height(
       $(`.${landing_hero.hero_video}`).find('video').height()
     )
+    $(`.${landing_hero.hero_video}`).find('video').get(0).play()
     $(`.${landing_hero.hero_video}`).find('video').css({ position: `fixed` })
     $(window).on('load scroll', function () {
       let scrolled = $(this).scrollTop()
@@ -51,7 +52,6 @@ const LandingHero = () => {
             width="1440"
             height="579"
             preload="metadata"
-            autoPlay={true}
             loop={true}
             muted={true}
             controls={['Fullscreen']}

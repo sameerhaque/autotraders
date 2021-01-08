@@ -7,6 +7,8 @@
     overflow: hidden;
   }
 
+  .hero_image {}
+
   .hero_content {
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0.3);
@@ -96,6 +98,8 @@
     padding-top: 50px;
     text-align: left;
     letter-spacing: 0em;
+    background-color: #ffffff;
+    position: relative;
   }
 
   .article_quote h3 {
@@ -113,6 +117,8 @@
 
   .slider_section {
     overflow: hidden;
+    background-color: #ffffff;
+    position: relative;
   }
 
   .slider_container {
