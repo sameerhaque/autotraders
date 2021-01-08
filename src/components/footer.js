@@ -75,7 +75,7 @@ export default () => {
                 <strong>today</strong>
               </h4>
               <h5 className={footer.ad_heading_I}>
-                Get your Sienna today and start writing your own reasons.
+                Become VanProud with your very own Toyota Sienna.
               </h5>
               <button
                 onClick={() => (window.location.href = `//toyota.ca`)}

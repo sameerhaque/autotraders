@@ -72,6 +72,7 @@ export default () => {
       reason_flip_slider_col,
       reason_flip_slider,
       reason_slide_holder,
+      reason_slide_master,
       reason_slide_review,
       reason_review_header,
       reason_review_avatar,
@@ -91,6 +92,8 @@ export default () => {
       view_all_reasons,
       reason_section_title,
       bold_title,
+      reason_card,
+      reason_card_img,
       reason_card1,
       reason_card2,
       reason_card3,
@@ -492,7 +495,7 @@ export default () => {
                                           currentReason.reasonImage
                                             .childImageSharp.fluid
                                         }
-                                        className="h-100"
+                                        className={`${reason_slide_master} h-100`}
                                         imgStyle={{ maxWidth: sliderSize }}
                                         style={{ maxWidth: sliderSize }}
                                         alt="slide-1"
@@ -1023,10 +1026,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={reason_card1}>
+                <div className={`${reason_card} ${reason_card1}`}>
                   <Img
                     fixed={reasonCar1.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1040,10 +1044,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={reason_card2}>
+                <div className={`${reason_card} ${reason_card2}`}>
                   <Img
                     fixed={reasonCar2.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1059,10 +1064,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={reason_card3}>
+                <div className={`${reason_card} ${reason_card3}`}>
                   <Img
                     fixed={reasonCar3.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1076,10 +1082,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={reason_card4}>
+                <div className={`${reason_card} ${reason_card4}`}>
                   <Img
                     fixed={reasonCar4.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1095,10 +1102,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={reason_card1}>
+                <div className={`${reason_card} ${reason_card1}`}>
                   <Img
                     fixed={reasonCar1.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1112,10 +1120,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={reason_card2}>
+                <div className={`${reason_card} ${reason_card2}`}>
                   <Img
                     fixed={reasonCar2.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1131,10 +1140,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={reason_card3}>
+                <div className={`${reason_card} ${reason_card3}`}>
                   <Img
                     fixed={reasonCar3.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1148,10 +1158,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={reason_card4}>
+                <div className={`${reason_card} ${reason_card4}`}>
                   <Img
                     fixed={reasonCar4.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1167,10 +1178,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={reason_card1}>
+                <div className={`${reason_card} ${reason_card1}`}>
                   <Img
                     fixed={reasonCar1.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1184,10 +1196,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={reason_card2}>
+                <div className={`${reason_card} ${reason_card2}`}>
                   <Img
                     fixed={reasonCar2.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1203,10 +1216,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={reason_card3}>
+                <div className={`${reason_card} ${reason_card3}`}>
                   <Img
                     fixed={reasonCar3.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1220,10 +1234,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={reason_card4}>
+                <div className={`${reason_card} ${reason_card4}`}>
                   <Img
                     fixed={reasonCar4.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1239,10 +1254,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={reason_card1}>
+                <div className={`${reason_card} ${reason_card1}`}>
                   <Img
                     fixed={reasonCar1.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1256,10 +1272,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={reason_card2}>
+                <div className={`${reason_card} ${reason_card2}`}>
                   <Img
                     fixed={reasonCar2.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1275,10 +1292,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={reason_card3}>
+                <div className={`${reason_card} ${reason_card3}`}>
                   <Img
                     fixed={reasonCar3.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1292,10 +1310,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={reason_card4}>
+                <div className={`${reason_card} ${reason_card4}`}>
                   <Img
                     fixed={reasonCar4.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1311,10 +1330,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={reason_card1}>
+                <div className={`${reason_card} ${reason_card1}`}>
                   <Img
                     fixed={reasonCar1.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1328,10 +1348,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={reason_card2}>
+                <div className={`${reason_card} ${reason_card2}`}>
                   <Img
                     fixed={reasonCar2.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1347,10 +1368,11 @@ export default () => {
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={reason_card3}>
+                <div className={`${reason_card} ${reason_card3}`}>
                   <Img
                     fixed={reasonCar3.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1364,10 +1386,11 @@ export default () => {
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={reason_card4}>
+                <div className={`${reason_card} ${reason_card4}`}>
                   <Img
                     fixed={reasonCar4.childImageSharp.fixed}
                     alt="reason-1"
+                    className={reason_card_img}
                   />
                   <div className={reason_card_content}>
                     <p className={reason_card_label_index}>01</p>
@@ -1391,7 +1414,7 @@ export default () => {
               <div className={`w-100 ${navigation.nav_wrapper}`}>
                 <div className={`w-100 ${navigation.nav_holder}`}>
                   <Img
-                    className="w-100"
+                    className={`w-100 ${navigation.nav_image}`}
                     fixed={prevImage.childImageSharp.fixed}
                   />
                   <div className={navigation.nav_area}>
@@ -1413,7 +1436,7 @@ export default () => {
               <div className={`w-100 ${navigation.nav_wrapper}`}>
                 <div className={`w-100 ${navigation.nav_holder}`}>
                   <Img
-                    className="w-100"
+                    className={`w-100 ${navigation.nav_image}`}
                     fixed={nextImage.childImageSharp.fixed}
                   />
                   <div className={navigation.nav_area}>

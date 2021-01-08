@@ -548,14 +548,19 @@
     height: 43px;
     width: 43px;
     margin: 0;
+    transition: background-color 0.2s;
   }
 
   .reason_roundButton svg path {
     stroke: #3E3E3E;
   }
 
+  .reason_roundButton:hover {
+    background-color: #000000;
+  }
+
   .reason_roundButton:hover svg path {
-    stroke: #0F68C9;
+    stroke: #ffffff;
   }
 
   .reason_roundButton:focus {
@@ -865,6 +870,17 @@
     overflow: hidden;
     background: #C4C4C4;
     border-radius: 10px;
+  }
+
+  .reason_card .reason_card_img picture img,
+  .reason_slide_master picture img {
+    transform: scale(1);
+    transition: opacity 500ms ease 0s, transform 0.2s !important;
+  }
+
+  .reason_card:hover .reason_card_img picture img,
+  .reason_slide_holder:hover .reason_slide_master picture img {
+    transform: scale(1.1);
   }
 
   .reason_slide_holder:focus {

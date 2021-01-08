@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import SwiperCore, { Pagination } from 'swiper'
+import SwiperCore, { Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import Img from 'gatsby-image/withIEPolyfill'
 import $ from 'jquery'
@@ -14,7 +14,7 @@ import HashMd from '../../components/icons/hash-md'
 import HashXl from '../../components/icons/hash-xl'
 import Quote from '../../components/icons/quote'
 
-SwiperCore.use([Pagination])
+SwiperCore.use([Autoplay, Pagination])
 const LandingCTA = () => {
   const { slideImageMd, slideImageSm, slideImage } = useStaticQuery(graphql`
       {
@@ -53,7 +53,7 @@ const LandingCTA = () => {
       }
     }, []),
     know_more_text =
-      'Discover the reasons that make this people love their Sienna and why they are proud of owning one.'
+      'People love their Toyota Sienna. Find out why they’re so proud to own one.'
   useEffect(() => {
     if (isBrowser) {
       setSliderWidth()
@@ -94,9 +94,12 @@ const LandingCTA = () => {
                   className={landing_cta.slider_wrapper}
                   slidesPerView={1}
                   spaceBetween={20}
-                  pagination={{ clickable: false }}
+                  pagination={{ clickable: true }}
                   updateOnWindowResize={true}
                   loop={true}
+                  autoplay={{
+                    delay: 6000,
+                  }}
                   onPaginationRender={(swiper, paginationEl) => {
                     paginationEl.classList.add(landing_cta.slider_pagination)
                   }}

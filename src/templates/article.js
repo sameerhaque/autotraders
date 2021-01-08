@@ -22,6 +22,7 @@ const ArticleTemplate = ({ data }) => {
   const post = data.markdownRemark,
     {
       hero,
+      hero_image,
       hero_content,
       hero_holder,
       hero_inner,
@@ -42,6 +43,7 @@ const ArticleTemplate = ({ data }) => {
       navigation_section,
       nav_wrapper,
       nav_holder,
+      nav_image,
       nav_area,
       navigate_previous,
       navigate_next,
@@ -88,11 +90,26 @@ const ArticleTemplate = ({ data }) => {
   useEffect(() => {
     if (isBrowser) {
       setSliderWidth()
+      $(window).width() >= 768
+        ? $(`.${hero}`).height($(`.${hero_image}.imageDesktop`).height())
+        : $(`.${hero}`).height($(`.${hero_image}.imageMobile`).height())
+      $(`.${hero_image} picture`).find('img').css({ position: `fixed` })
+      $(window).on('load scroll', function () {
+        let scrolled = $(this).scrollTop()
+        // parallax (25% scroll rate)
+        $(`.${hero_image}`).css(
+          'transform',
+          'translate3d(0, ' + scrolled * 0.25 + 'px, 0)'
+        )
+      })
       $(window).resize(() => {
         setSliderWidth()
+        $(window).width() >= 768
+          ? $(`.${hero}`).height($(`.${hero_image}.imageDesktop`).height())
+          : $(`.${hero}`).height($(`.${hero_image}.imageMobile`).height())
       })
     }
-  }, [isBrowser, setSliderWidth])
+  }, [isBrowser, setSliderWidth, hero, hero_image])
   return (
     <Layout itemScope itemType="http://schema.org/Article">
       <SEO title={title} description={description || excerpt} />
@@ -103,7 +120,7 @@ const ArticleTemplate = ({ data }) => {
             alt="hero-image-sm"
             objectFit="cover"
             objectPosition="50% 50%"
-            className="d-none d-sm-block w-100"
+            className={`d-none d-sm-block w-100 imageDesktop ${hero_image}`}
           />
         )}
         {imageMobile !== null && (
@@ -112,7 +129,7 @@ const ArticleTemplate = ({ data }) => {
             alt="hero-image"
             objectFit="cover"
             objectPosition="50% 50%"
-            className="d-sm-none w-100"
+            className={`d-sm-none w-100 imageMobile ${hero_image}`}
           />
         )}
         <div className={hero_content}>
@@ -226,7 +243,7 @@ const ArticleTemplate = ({ data }) => {
               <div className={`w-100 ${nav_wrapper}`}>
                 <div className={`w-100 ${nav_holder}`}>
                   <Img
-                    className="w-100"
+                    className={`w-100 ${nav_image}`}
                     fixed={prevImage.childImageSharp.fixed}
                   />
                   <div className={nav_area}>
@@ -248,7 +265,7 @@ const ArticleTemplate = ({ data }) => {
               <div className={`w-100 ${nav_wrapper}`}>
                 <div className={`w-100 ${nav_holder}`}>
                   <Img
-                    className="w-100"
+                    className={`w-100 ${nav_image}`}
                     fixed={nextImage.childImageSharp.fixed}
                   />
                   <div className={nav_area}>

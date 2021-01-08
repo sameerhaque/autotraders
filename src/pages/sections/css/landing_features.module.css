@@ -92,12 +92,6 @@
     padding: 10px 45px;
     text-align: center;
     text-transform: uppercase;
-    transform: translateY(0);
-    transition: transform 0.2s;
-  }
-
-  .features_button:hover {
-    transform: translateY(-5px);
   }
 
   .features_button:focus,

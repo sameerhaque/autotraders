@@ -39,6 +39,15 @@
     margin-bottom: 30px;
   }
 
+  .article_image picture img {
+    transform: scale(1);
+    transition: opacity 500ms ease 0s, transform 0.2s !important;
+  }
+
+  .article>a:hover .article_image picture img {
+    transform: scale(1.1);
+  }
+
   .article_title {
     color: #000000;
     font-size: 24px;

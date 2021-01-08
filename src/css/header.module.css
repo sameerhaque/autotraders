@@ -1,135 +1,125 @@
-.at_header {
-  background: #d7000c;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  width: 100%;
-  z-index: 9999999;
-}
+@media(min-width:0) {
+  .at_header {
+    background: #d7000c;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 9999999;
+  }
 
-.at_navbar_top {
-  background: #3e3e3e;
-  min-height: 11px;
-}
+  .at_navbar_top {
+    background: #3e3e3e;
+    min-height: 11px;
+  }
 
-.at_navbar_container {
-  position: relative;
-}
+  .at_navbar_container {
+    position: relative;
+  }
 
-.at_navbar_brand {
-  color: #f5f5f5;
-  position: absolute;
-  top: 0;
-  left: 20px;
-  z-index: 99;
-}
+  .at_navbar_brand {
+    color: #f5f5f5;
+    position: absolute;
+    top: 0;
+    left: 20px;
+    z-index: 99;
+  }
 
-.at_navbar_brand_right {
-  background-color: #f5f5f5;
-  padding: 1px 26.5px 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 99;
-}
+  .at_navbar_brand_right {
+    background-color: #f5f5f5;
+    padding: 1px 26.5px 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 99;
+  }
 
-.at_navbar_bottom {
-  /* background: #d7000c; */
-  color: #fff;
-  height: 39px;
-  display: flex;
-  align-items: center;
-  position: relative;
-}
+  .at_navbar_bottom {
+    /* background: #d7000c; */
+    color: #fff;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
 
-.at_navbar {
-  justify-content: center;
-  position: initial;
-}
+  .at_navbar {
+    justify-content: center;
+    position: initial;
+  }
 
-.at_navbar .at_navbar_toggle {
-  height: 39px;
-  color: #ffffff;
-  border-color: transparent;
-}
+  .at_navbar .at_navbar_toggle {
+    height: 39px;
+    color: #ffffff;
+    border-color: transparent;
+  }
 
-.at_navbar .at_navbar_toggle:focus {
-  outline: none;
-}
+  .at_navbar .at_navbar_toggle:focus {
+    outline: none;
+  }
 
-.at_navbar_toggle_stripes {
-  display: block;
-  background-color: #ffffff;
-  height: 1px;
-  width: 32px;
-}
+  .at_navbar_toggle_stripes {
+    display: block;
+    background-color: #ffffff;
+    height: 1px;
+    width: 32px;
+  }
 
-.at_navbar_toggle_stripes:nth-child(2) {
-  margin: 7.61px 0;
-}
+  .at_navbar_toggle_stripes:nth-child(2) {
+    margin: 7.61px 0;
+  }
 
-.at_navbar_collapse {
-  background-color: #d7000c;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  z-index: 9;
-}
+  .at_navbar_collapse {
+    background-color: #d7000c;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 9;
+  }
 
-.at_nav_item {
-  padding: 20px 0;
-}
+  .at_nav_item {
+    padding: 20px 0;
+  }
 
-.at_nav_item .at_nav_item_link {
-  display: inline-block;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 18.75px;
-  font-style: normal;
-  padding-bottom: 10px;
-  text-decoration: none;
-  letter-spacing: .5px;
-}
+  .at_nav_item .at_nav_item_link {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18.75px;
+    font-style: normal;
+    padding-bottom: 10px;
+    text-decoration: none;
+    letter-spacing: .5px;
+  }
 
-.at_nav_item_link_desc {
-  color: #ffffff;
-  display: block;
-  font-size: 30px;
-  line-height: 35.16px;
-  font-weight: 300;
-  font-style: normal;
-  padding-top: 10px;
-  position: relative;
-}
+  .at_nav_item_link_desc {
+    color: #ffffff;
+    display: block;
+    font-size: 30px;
+    line-height: 35.16px;
+    font-weight: 300;
+    font-style: normal;
+    padding-top: 10px;
+    position: relative;
+  }
 
-.at_nav_item_link_desc:hover {
-  color: #ffffff;
-  text-decoration: none;
-}
+  .at_nav_item_link_desc:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
 
-.at_nav_item_link_desc::before {
-  content: '';
-  display: block;
-  position: absolute;
-  background-color: #ffffff;
-  height: 1px;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 32px;
-}
+  .at_navbar_nav {
+    align-items: center;
+    height: calc(100vh - 50px);
+    text-align: center;
+    overflow-y: scroll;
+  }
 
-.at_navbar_nav {
-  align-items: center;
-  height: calc(100vh - 50px);
-  text-align: center;
-  overflow-y: scroll;
-}
-
-.at_nav_container {
-  padding: 51px 16px;
-  max-width: 660px;
+  .at_nav_container {
+    padding: 51px 16px;
+    max-width: 660px;
+  }
 }
 
 @media(min-width:576px) {

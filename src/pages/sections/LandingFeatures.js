@@ -51,9 +51,9 @@ const LandingFeatures = () => {
     `),
     featureData = [
       {
-        featTitle: 'Lots of storage, a must for a big family',
+        featTitle: 'A versatile family mover packed with style and features',
         featImg: featureI,
-        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p>`,
+        featContent: `<p>Take seven or eight passengers in comfort or fold the seats for a huge cargo area; the 2021 Toyota Sienna is the do-it-all vehicle to fit your family’s busy lifestyle. With a standard hybrid powertrain, available all-wheel drive and loads of features, the Sienna transports both people and their stuff safely and efficiently.</p>`,
       },
       {
         featTitle: 'Feature 2',
@@ -131,13 +131,13 @@ const LandingFeatures = () => {
             <Col md={6}>
               <div className={landing_features.features_content_holder}>
                 <h5 className={landing_features.features_content_title}>
-                  Features we cannot live without
+                  Features we can’t live without
                 </h5>
                 <div className={landing_features.features_content_wrapper}>
                   <div className={landing_features.features_content}>
                     <p>
-                      Click on the hotspots to discover the features from the
-                      Sienna we cannot live without.
+                      Discover the technology and features that makes the Toyota
+                      Sienna ready for any adventure.
                     </p>
                   </div>
                 </div>
@@ -203,24 +203,23 @@ const LandingFeatures = () => {
             <div className="flex-shrink-1 d-block d-md-none d-xl-block mt-auto order-1 order-xl-2 text-center text-xl-left">
               <div className={landing_features.features_content_holder}>
                 <h5 className={landing_features.features_content_title}>
-                  Features we cannot live without
+                  Features we can’t live without
                 </h5>
                 <div className={landing_features.features_content_wrapper}>
                   <div
                     className={`${landing_features.features_content} d-none d-xl-block`}
                   >
                     <p>
-                      Hover over the image to discover the features from the
-                      Sienna we cannot live without do eiusmod tempor
-                      incididunt.
+                      Discover the technology and features that makes the Toyota
+                      Sienna ready for any adventure.
                     </p>
                   </div>
                   <div
                     className={`${landing_features.features_content} d-xl-none`}
                   >
                     <p>
-                      Tap the image to discover the features from the Sienna we
-                      cannot live without do eiusmod tempor.
+                      Discover the technology and features that makes the Toyota
+                      Sienna ready for any adventure.
                     </p>
                   </div>
                   <button
