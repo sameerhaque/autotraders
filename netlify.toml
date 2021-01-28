@@ -16,6 +16,18 @@
   for = "/*.js"
   [headers.values]
     Cache-Control = "public, s-max-age=604800, must-revalidate"
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
+[[headers]]
+  for = "/*.mp4"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
 
 [[headers]]
   for = "/sw.js"
