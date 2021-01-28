@@ -43,13 +43,13 @@ const LandingArticle = () => {
       <div className="container-xl">
         <Row className="justify-content-between align-items-end">
           <Col lg={5}>
-            <h3 className={`${landing_article.heading} pr-xl-4 mr-lg-3`}>
+            <h3 className={`${landing_article.heading} pr-xl-4`}>
               Learn more about the Sienna
             </h3>
           </Col>
           <Col lg={6}>
             <p className={`${landing_article.description} pr-lg-4`}>
-              See how the Toyota Sienna can fit your own lifestyle.
+              See how the Toyota Sienna <strong>can fit your own lifestyle.</strong>
             </p>
           </Col>
         </Row>
@@ -71,14 +71,14 @@ const LandingArticle = () => {
             </Col>
             <Col md={6}>
               <div className={landing_article.article}>
-                <Link to="/the-sienna-described-from-every-seat/">
+                <Link to="/sienna-2021-the-view-from-every-row/">
                   <Img
                     fluid={Article_2.childImageSharp.fluid}
                     className={landing_article.article_image}
                     alt="Article-2"
                   />
                   <div className={landing_article.article_title}>
-                    The Sienna, described from every seat
+                    Sienna 2021, the view from every row
                   </div>
                 </Link>
               </div>
@@ -132,14 +132,14 @@ const LandingArticle = () => {
                     : landing_article.article
                 }
               >
-                <Link to="/the-sienna-described-from-every-seat/">
+                <Link to="/sienna-2021-the-view-from-every-row/">
                   <Img
                     fluid={Article_2.childImageSharp.fluid}
                     className={landing_article.article_image}
                     alt="Article-2"
                   />
                   <div className={landing_article.article_title}>
-                    The Sienna, described from every seat
+                    Sienna 2021, the view from every row
                   </div>
                 </Link>
               </div>

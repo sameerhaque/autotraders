@@ -61,12 +61,18 @@ const ArticleTemplate = ({ data }) => {
       imageMobile,
       entryQuote,
       entryBody,
+      entrySliderImages,
+      middleQuote,
+      middleBody,
+      middleSliderImages,
       exitQuote,
       exitBody,
-      sliderImages,
+      exitSliderImages,
     } = frontmatter,
     { prevImage, nextImage } = data,
-    [slider, setSlider] = useState(null),
+    [entrySlider, setEntrySlider] = useState(null),
+    [middleSlider, setMiddleSlider] = useState(null),
+    [exitSlider, setExitSlider] = useState(null),
     scrollDown = () => {
       $('html, body').animate(
         {
@@ -190,10 +196,10 @@ const ArticleTemplate = ({ data }) => {
             }}
             simulateTouch={true}
             slideToClickedSlide={true}
-            onSwiper={swiper => setSlider(swiper)}
+            onSwiper={swiper => setEntrySlider(swiper)}
             width={sliderSize}
           >
-            {sliderImages.map((slide, index) => {
+            {entrySliderImages.map((slide, index) => {
               return (
                 <SwiperSlide key={index}>
                   <Img
@@ -207,13 +213,76 @@ const ArticleTemplate = ({ data }) => {
           <div className={swiper_nav}>
             <button
               className={slider_button}
-              onClick={() => slider.slidePrev()}
+              onClick={() => entrySlider.slidePrev()}
             >
               <Prev />
             </button>
             <button
               className={slider_button}
-              onClick={() => slider.slideNext()}
+              onClick={() => entrySlider.slideNext()}
+            >
+              <Next />
+            </button>
+          </div>
+        </Container>
+      </section>
+      <section className={article_content_wrapper}>
+        <Container>
+          <Row>
+            <Col xl={5} lg={4} xs={12}>
+              <div className={article_quote}>
+                <h3>{middleQuote}</h3>
+              </div>
+            </Col>
+            <Col>
+              <div className={article_content}>
+                {middleBody !== '' &&
+                  ReactHtmlParser(markdown.toHTML(middleBody))}
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+      <section className={slider_section}>
+        <Container className={slider_container}>
+          <Swiper
+            className={article_slider}
+            slidesPerView={1}
+            spaceBetween={10}
+            effect="coverflow"
+            coverflowEffect={{
+              rotate: 0,
+              stretch: -80,
+              depth: 170,
+              modifier: 1,
+              slideShadows: false,
+            }}
+            simulateTouch={true}
+            slideToClickedSlide={true}
+            onSwiper={swiper => setMiddleSlider(swiper)}
+            width={sliderSize}
+          >
+            {middleSliderImages.map((slide, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <Img
+                    fluid={slide.childImageSharp.fluid}
+                    className={article_slide}
+                  />
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
+          <div className={swiper_nav}>
+            <button
+              className={slider_button}
+              onClick={() => middleSlider.slidePrev()}
+            >
+              <Prev />
+            </button>
+            <button
+              className={slider_button}
+              onClick={() => middleSlider.slideNext()}
             >
               <Next />
             </button>
@@ -236,6 +305,52 @@ const ArticleTemplate = ({ data }) => {
           </Row>
         </Container>
       </section>
+      <section className={slider_section}>
+        <Container className={slider_container}>
+          <Swiper
+            className={article_slider}
+            slidesPerView={1}
+            spaceBetween={10}
+            effect="coverflow"
+            coverflowEffect={{
+              rotate: 0,
+              stretch: -80,
+              depth: 170,
+              modifier: 1,
+              slideShadows: false,
+            }}
+            simulateTouch={true}
+            slideToClickedSlide={true}
+            onSwiper={swiper => setExitSlider(swiper)}
+            width={sliderSize}
+          >
+            {exitSliderImages.map((slide, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <Img
+                    fluid={slide.childImageSharp.fluid}
+                    className={article_slide}
+                  />
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
+          <div className={swiper_nav}>
+            <button
+              className={slider_button}
+              onClick={() => exitSlider.slidePrev()}
+            >
+              <Prev />
+            </button>
+            <button
+              className={slider_button}
+              onClick={() => exitSlider.slideNext()}
+            >
+              <Next />
+            </button>
+          </div>
+        </Container>
+      </section>
       <section className={navigation_section}>
         <Container>
           <Row>
@@ -249,12 +364,12 @@ const ArticleTemplate = ({ data }) => {
                   <div className={nav_area}>
                     <p>Previous</p>
                     <Link
-                      to="/the-sienna-described-from-every-seat/"
+                      to="/sienna-2021-the-view-from-every-row/"
                       className={navigate_previous}
                     >
                       <h4>
-                        <span className="d-block">The Sienna, described</span>{' '}
-                        from every seat
+                        <span className="d-block">Sienna 2021,</span>{' '}
+                        The View from Every Row
                       </h4>
                     </Link>
                   </div>
@@ -328,9 +443,25 @@ export const pageQuery = graphql`
         designation
         entryQuote
         entryBody
+        entrySliderImages {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        middleQuote
+        middleBody
+        middleSliderImages {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         exitQuote
         exitBody
-        sliderImages {
+        exitSliderImages {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid

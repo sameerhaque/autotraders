@@ -1,4 +1,4 @@
-@media(min-width:0px) {
+@media (min-width: 0px) {
   .section {
     background: #ffffff;
     background: linear-gradient(0deg, #cee0f3 46%, #ffffff 46%);
@@ -25,11 +25,11 @@
     text-align: center;
   }
 
-  .article>a {
+  .article > a {
     display: block;
   }
 
-  .article>a:hover {
+  .article > a:hover {
     text-decoration: none;
   }
 
@@ -44,7 +44,7 @@
     transition: opacity 500ms ease 0s, transform 0.2s !important;
   }
 
-  .article>a:hover .article_image picture img {
+  .article > a:hover .article_image picture img {
     transform: scale(1.1);
   }
 
@@ -75,7 +75,8 @@
   }
 }
 
-@media(min-width:576px) {}
+@media (min-width: 576px) {
+}
 
 @media (min-width: 768px) {
   .section {
@@ -129,7 +130,9 @@
   .description {
     margin-bottom: 9px;
   }
-
+  .article_title {
+    max-width: 85%;
+  }
   .articles {
     margin-top: 25px;
   }

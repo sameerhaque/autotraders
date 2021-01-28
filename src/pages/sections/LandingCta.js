@@ -3,12 +3,14 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import SwiperCore, { Autoplay, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import ReactHtmlParser from 'react-html-parser'
 import Img from 'gatsby-image/withIEPolyfill'
 import $ from 'jquery'
 
 import landing_cta from './css/landing_cta.module.css'
 
 import stringMaxWord from '../../components/functions/stringMaxWord'
+import Reasons from '../../components/reasons'
 import Hash from '../../components/icons/hash'
 import HashMd from '../../components/icons/hash-md'
 import HashXl from '../../components/icons/hash-xl'
@@ -53,7 +55,7 @@ const LandingCTA = () => {
       }
     }, []),
     know_more_text =
-      'People love their Toyota Sienna. Find out why they’re so proud to own one.'
+      'People love their Toyota Sienna. Find out the reasons why they’re so proud to own one.'
   useEffect(() => {
     if (isBrowser) {
       setSliderWidth()
@@ -105,7 +107,7 @@ const LandingCTA = () => {
                   }}
                   width={sliderSize}
                 >
-                  {Array.from({ length: 3 }, (_, i) => i + 1).map(val => {
+                  {Array.from({ length: 3 }, (_, i) => i + 1).map((val, index) => {
                     return (
                       <SwiperSlide key={val}>
                         <Link
@@ -132,14 +134,13 @@ const LandingCTA = () => {
                               <Quote className={landing_cta.quote} />
                               <div className={landing_cta.slide_content_holder}>
                                 <p className={landing_cta.quote_index}>
-                                  Reason #1
+                                  {`Reason #${Reasons[index].id}`}
                                 </p>
                                 <h4 className={landing_cta.quote_heading}>
-                                  We can keep everyone warm and happy in our
-                                  Sienna.
+                                  {Reasons[index].reasonGridTitle}
                                 </h4>
                                 <p className={landing_cta.location}>
-                                  <strong>deborah</strong>, quebec city
+                                  {ReactHtmlParser(Reasons[index].reasonBy)}
                                 </p>
                               </div>
                             </div>

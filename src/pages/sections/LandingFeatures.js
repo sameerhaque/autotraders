@@ -51,24 +51,29 @@ const LandingFeatures = () => {
     `),
     featureData = [
       {
-        featTitle: 'A versatile family mover packed with style and features',
+        featTitle: 'JBL® Premium Audio System',
         featImg: featureI,
-        featContent: `<p>Take seven or eight passengers in comfort or fold the seats for a huge cargo area; the 2021 Toyota Sienna is the do-it-all vehicle to fit your family’s busy lifestyle. With a standard hybrid powertrain, available all-wheel drive and loads of features, the Sienna transports both people and their stuff safely and efficiently.</p>`,
+        featContent: `<p>Standard on the Limited and optional on the XSE, the <strong>12-speaker JBL® Premium Audio system can turn the Sienna’s interior into a concert theatre.</strong> The system includes a subwoofer and 1,200-watt amplifier, plus Clari-Fi® digital restoration technology. Coupled with the standard Apple CarPlayTM and Android AutoTM, and available SiriusXM® with 3-month All-Access trial, you can enjoy your music with crystal clarity.</p>`,
       },
       {
-        featTitle: 'Feature 2',
+        featTitle: 'Digital Display Rearview Mirror',
         featImg: featureI,
-        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p>`,
+        featContent: `<p>With the Sienna filled with passengers or cargo, it could be difficult to see out of the rear-view mirror. But the solution is <strong>Toyota’s Digital Display Rearview Mirror; simply flip the standard mirror up to turn it into a digital screen,</strong> with the image feeding from the rear camera. Now you can see everything behind you, making the drive safer regardless of what you’re carrying.</p>`,
       },
       {
-        featTitle: 'Feature 3',
+        featTitle: 'Hybrid powertrain is standard',
         featImg: featureI,
-        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>`,
+        featContent: `<p>No other minivan comes standard with a hybrid powertrain across the lineup. <strong>A 2.5-litre four-cylinder gasoline engine and two electric motors work together for front-drive versions, combining for 245 horsepower.</strong> For all-wheel-drive models, a third electric motor in the rear activates when wheel slip is detected for on-demand AWD.</p>`,
       },
       {
-        featTitle: 'Feature 4',
+        featTitle: 'Power Sliding Doors with Kick Sensors',
         featImg: featureI,
-        featContent: `<p>Lorem ipsum dolor sit amet nostrud. Sed ut perspi ciatis unde omnis iste natus error sit voluptatem sine accusantium doloremque laudantium, totam remam.</p><p>Lorem ipsum dolor sit amet nostrud. Sed ut sinden perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.</p>`,
+        featContent: `<p>With an armload of groceries or even a child, it could be cumbersome to open a sliding door. But with the Sienna, not only do the side doors slide automatically, but now you don’t even have to touch them. <strong>With the proximity key fob in your pocket, simply wave your foot under the indicator on the bottom sill, and the door will magically open,</strong> giving you access without having to put anything on the ground. The rear cargo door also has the same features.</p>`,
+      },
+      {
+        featTitle: 'Toyota Safety SenseTM 2.0',
+        featImg: featureI,
+        featContent: `<p>With the Sienna, you’ll likely be carrying the most precious cargo of all: your family. So every Sienna is equipped with <strong>Toyota Safety SenseTM 2.0</strong>, a suite of features that includes <strong>Pre-Collision System with Pedestrian Detection/Low Light Detection and Bicycle Detection, Full-Speed Range Dynamic Radar Cruise Control, Lane Departure Alert with Lane Trace Assist and Automatic High Beams.</strong></p>`,
       },
     ],
     [show, setShow] = useState(false),
@@ -137,7 +142,7 @@ const LandingFeatures = () => {
                   <div className={landing_features.features_content}>
                     <p>
                       Discover the technology and features that makes the Toyota
-                      Sienna ready for any adventure.
+                      Sienna <strong>ready for any adventure.</strong>
                     </p>
                   </div>
                 </div>
@@ -198,6 +203,12 @@ const LandingFeatures = () => {
                   onClick={e => openFeature(e, 4)}
                   aria-label="Hotspot 4"
                 />
+                <button
+                  type="button"
+                  className={`${landing_features.features_hot_spot} ${landing_features.features_hot_spot_V}`}
+                  onClick={e => openFeature(e, 5)}
+                  aria-label="Hotspot 5"
+                />
               </div>
             </div>
             <div className="flex-shrink-1 d-block d-md-none d-xl-block mt-auto order-1 order-xl-2 text-center text-xl-left">
@@ -211,7 +222,7 @@ const LandingFeatures = () => {
                   >
                     <p>
                       Discover the technology and features that makes the Toyota
-                      Sienna ready for any adventure.
+                      Sienna <strong>ready for any adventure.</strong>
                     </p>
                   </div>
                   <div
@@ -219,7 +230,7 @@ const LandingFeatures = () => {
                   >
                     <p>
                       Discover the technology and features that makes the Toyota
-                      Sienna ready for any adventure.
+                      Sienna <strong>ready for any adventure.</strong>
                     </p>
                   </div>
                   <button

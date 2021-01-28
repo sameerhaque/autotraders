@@ -449,7 +449,7 @@ export default () => {
                                   currentReason.reasonDescription
                                 )}
                                 <h5 className={reason_box_author}>
-                                  {currentReason.reasonBy}
+                                  {ReactHtmlParser(currentReason.reasonBy)}
                                 </h5>
                               </div>
                             </Col>
@@ -631,7 +631,7 @@ export default () => {
                         }}
                       >
                         {Reasons.map(
-                          ({ id, reasonImageMd, reasonGridTitle }, index) => {
+                          ({ id, reasonImageMd, reasonBigHeading }, index) => {
                             return (
                               <SwiperSlide key={id}>
                                 <div className={reason_card_holder}>
@@ -685,7 +685,7 @@ export default () => {
                                               reason_card_inner_content_title
                                             }
                                           >
-                                            {reasonGridTitle}
+                                            {reasonBigHeading}
                                           </h4>
                                         </div>
                                       </div>
@@ -732,7 +732,7 @@ export default () => {
                               {` ${currentReason.reasonBigHeading}`}
                             </h3>
                             <h5 className={reason_modal_author}>
-                              {currentReason.reasonBy}
+                              {ReactHtmlParser(currentReason.reasonBy)}
                             </h5>
                           </Col>
                           <Col md={12}>
@@ -858,7 +858,7 @@ export default () => {
                       }}
                     >
                       {Reasons.map(
-                        ({ id, reasonImageMd, reasonGridTitle }, index) => {
+                        ({ id, reasonImageMd, reasonBigHeading }, index) => {
                           return (
                             <SwiperSlide key={id}>
                               <div className={reason_card_holder}>
@@ -903,7 +903,7 @@ export default () => {
                                             reason_card_inner_content_title
                                           }
                                         >
-                                          {reasonGridTitle}
+                                          {reasonBigHeading}
                                         </h4>
                                       </div>
                                     </div>
@@ -959,7 +959,7 @@ export default () => {
                             {` ${currentReason.reasonBigHeading}`}
                           </h3>
                           <h5 className={reason_modal_author}>
-                            {currentReason.reasonBy}
+                            {ReactHtmlParser(currentReason.reasonBy)}
                           </h5>
                         </Col>
                         <Col xs={12} sm={7}>
@@ -1442,12 +1442,12 @@ export default () => {
                   <div className={navigation.nav_area}>
                     <p>Next</p>
                     <Link
-                      to="/the-sienna-described-from-every-seat/"
+                      to="/sienna-2021-the-view-from-every-row/"
                       className={navigation.navigate_next}
                     >
                       <h4>
-                        <span className="d-block">The Sienna, described</span>{' '}
-                        from every seat
+                        <span className="d-block">Sienna 2021,</span>{' '}
+                        The View from Every Row
                       </h4>
                     </Link>
                   </div>
