@@ -1,4 +1,4 @@
-@media(min-width:0) {
+@media (min-width: 0) {
   .hero {
     background-color: #cee0f3;
     display: flex;
@@ -7,7 +7,8 @@
     overflow: hidden;
   }
 
-  .hero_image {}
+  .hero_image {
+  }
 
   .hero_content {
     color: #ffffff;
@@ -105,14 +106,20 @@
   .article_quote h3 {
     font-size: 36px;
     font-weight: 500;
-    line-height: 48px;
+    line-height: 44px;
     margin-bottom: 20px;
   }
 
+  .article_content h4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 10px;
+  }
   .article_content p {
     font-size: 18px;
     font-weight: 300;
-    line-height: 36px;
+    line-height: 32px;
   }
 
   .slider_section {
@@ -153,11 +160,13 @@
   }
 }
 
-@media (min-width:375px) {}
+@media (min-width: 375px) {
+}
 
-@media (min-width:576px) {}
+@media (min-width: 576px) {
+}
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .hero_inner {
     padding: 60px 30px;
   }
@@ -190,11 +199,17 @@
   }
 }
 
-@media (min-width:992px) {}
+@media (min-width: 992px) {
+}
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   .hero_inner {
     padding: 60px 50px;
+  }
+
+  .hero_inner h1 {
+    font-size: 64px;
+    line-height: 64px;
   }
 
   .hero_holder {
@@ -204,6 +219,10 @@
 
   .hero_button {
     right: 50px;
+  }
+
+  .article_quote h3 {
+    max-width: 391px;
   }
 
   .article_content_wrapper {

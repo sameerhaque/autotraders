@@ -1,4 +1,4 @@
-@media(min-width:0px) {
+@media (min-width: 0px) {
   .hero_features_section {
     background: #ffffff;
     background: linear-gradient(0deg, #ffffff 42%, #cee0f3 42%);
@@ -76,13 +76,13 @@
     margin-bottom: 5px;
   }
 
-  .features_content>p:last-child {
+  .features_content > p:last-child {
     margin-bottom: 0;
   }
 
   .features_button {
-    background-color: #C10000;
-    border-color: #C10000;
+    background-color: #c10000;
+    border-color: #c10000;
     border-radius: 300px;
     font-size: 14px;
     font-style: normal;
@@ -108,23 +108,28 @@
   }
 
   .features_hot_spot_I {
-    bottom: 122px;
-    left: 18px;
+    bottom: 65px;
+    left: 70px;
   }
 
   .features_hot_spot_II {
-    bottom: 20px;
-    left: 60px;
+    bottom: 125px;
+    left: 190px;
   }
 
   .features_hot_spot_III {
-    bottom: 125px;
-    left: 200px;
+    bottom: 35px;
+    left: 220px;
   }
 
   .features_hot_spot_IV {
     bottom: 5px;
-    left: 220px;
+    left: 45px;
+  }
+
+  .features_hot_spot_V {
+    bottom: 75px;
+    left: 140px;
   }
 
   .features_modal {
@@ -163,9 +168,9 @@
     min-height: 72px;
   }
 
-  .features_modal_header>div:last-child::before {
-    background-color: #C10000;
-    content: "";
+  .features_modal_header > div:last-child::before {
+    background-color: #c10000;
+    content: '';
     display: block;
     height: 5px;
     left: 0;
@@ -230,19 +235,19 @@
   }
 
   .features_modal_header .roundButton svg path {
-    fill: #3E3E3E;
+    fill: #3e3e3e;
   }
 
   .features_modal_header .roundButton:hover svg path {
-    fill: #0F68C9;
+    fill: #0f68c9;
   }
 
   .features_modal_footer .roundButton svg path {
-    stroke: #3E3E3E;
+    stroke: #3e3e3e;
   }
 
   .features_modal_footer .roundButton:hover svg path {
-    stroke: #0F68C9;
+    stroke: #0f68c9;
   }
 
   .features_modal_content .roundButton:focus {
@@ -254,7 +259,8 @@
   }
 }
 
-@media(min-width:576px) {}
+@media (min-width: 576px) {
+}
 
 @media (min-width: 768px) {
   .hero_features_section {
@@ -298,22 +304,27 @@
 
   .features_hot_spot_I {
     bottom: 115px;
-    left: 95px;
+    left: 180px;
   }
 
   .features_hot_spot_II {
-    bottom: 75px;
-    left: 235px;
+    bottom: 190px;
+    left: 385px;
   }
 
   .features_hot_spot_III {
-    bottom: 140px;
-    left: 330px;
+    bottom: 65px;
+    left: 440px;
   }
 
   .features_hot_spot_IV {
-    bottom: 45px;
-    left: 495px;
+    bottom: 35px;
+    left: 160px;
+  }
+
+  .features_hot_spot_V {
+    bottom: 140px;
+    left: 300px;
   }
 
   .features_modal {
@@ -335,7 +346,7 @@
     margin-right: 2rem;
   }
 
-  .features_modal_header>div:last-child::before {
+  .features_modal_header > div:last-child::before {
     width: 20px;
   }
 
@@ -366,23 +377,28 @@
 
 @media (min-width: 992px) {
   .features_hot_spot_I {
-    bottom: 185px;
-    left: 140px;
+    bottom: 180px;
+    left: 270px;
   }
 
   .features_hot_spot_II {
-    bottom: 130px;
-    left: 325px;
+    bottom: 280px;
+    left: 525px;
   }
 
   .features_hot_spot_III {
-    bottom: 200px;
-    left: 455px;
+    bottom: 115px;
+    left: 610px;
   }
 
   .features_hot_spot_IV {
-    bottom: 75px;
-    left: 690px;
+    bottom: 60px;
+    left: 220px;
+  }
+
+  .features_hot_spot_V {
+    bottom: 210px;
+    left: 420px;
   }
 }
 
@@ -410,7 +426,7 @@
     line-height: 42px;
     margin-bottom: 20px;
     text-align: left;
-    max-width: 305px;
+    max-width: 280px;
     padding: 0;
   }
 
@@ -427,23 +443,28 @@
   }
 
   .features_hot_spot_I {
-    bottom: 220px;
-    left: 130px;
+    bottom: 140px;
+    left: 170px;
   }
 
   .features_hot_spot_II {
-    bottom: 130px;
-    left: 260px;
+    bottom: 230px;
+    left: 400px;
   }
 
   .features_hot_spot_III {
-    bottom: 260px;
-    left: 440px;
+    bottom: 85px;
+    left: 450px;
   }
 
   .features_hot_spot_IV {
-    bottom: 75px;
-    left: 515px;
+    bottom: 45px;
+    left: 140px;
+  }
+
+  .features_hot_spot_V {
+    bottom: 175px;
+    left: 295px;
   }
 
   .features_modal .features_dialog {
@@ -467,13 +488,13 @@
     width: 100%;
   }
 
-  .features_modal_header>div:last-child::before {
+  .features_modal_header > div:last-child::before {
     width: 30px;
   }
 
   .features_modal_title {
     font-size: 36px;
-    line-height: 48px;
+    line-height: 42px;
     margin-right: 1rem;
   }
 
@@ -492,25 +513,31 @@
 @media (min-width: 1359px) {
   .features_hot_spot_I {
     bottom: unset;
-    left: 3%;
-    top: 52%;
+    left: 25%;
+    top: 58%;
   }
 
   .features_hot_spot_II {
     bottom: unset;
-    left: 22%;
-    top: 64%;
+    left: 58%;
+    top: 36%;
   }
 
   .features_hot_spot_III {
     bottom: unset;
-    left: 43%;
-    top: 50%;
+    left: 67%;
+    top: 70%;
   }
 
   .features_hot_spot_IV {
     bottom: unset;
-    left: 63%;
-    top: 84%;
+    left: 20%;
+    top: 77%;
+  }
+
+  .features_hot_spot_V {
+    bottom: unset;
+    left: 43%;
+    top: 50%;
   }
 }

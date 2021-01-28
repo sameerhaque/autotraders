@@ -121,18 +121,18 @@ const Header = () => {
                       </div>
                       <div className={at_nav_item}>
                         <Link
-                          to="/the-sienna-described-from-every-seat/"
+                          to="/sienna-2021-the-view-from-every-row/"
                           onClick={itemSelected}
                           className={at_nav_item_link}
                         >
                           ARTICLE
                         </Link>
                         <Link
-                          to="/the-sienna-described-from-every-seat/"
+                          to="/sienna-2021-the-view-from-every-row/"
                           onClick={itemSelected}
                           className={at_nav_item_link_desc}
                         >
-                          The Sienna, described from every seat
+                          Sienna 2021, The View from Every Row
                         </Link>
                       </div>
                     </div>

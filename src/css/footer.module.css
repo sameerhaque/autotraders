@@ -1,4 +1,4 @@
-@media(min-width:0px) {
+@media (min-width: 0px) {
   .at_footer {
     padding-top: 40px;
     padding-bottom: 84px;
@@ -50,15 +50,18 @@
   .ad_box .ad_heading_I {
     color: #ffffff;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 32px;
     letter-spacing: 0em;
     margin-bottom: 20px;
   }
-
+  .ad_box .ad_heading_I strong {
+    display: block;
+    font-weight: 500;
+  }
   .ad_box .ad_button {
-    background-color: #C10000;
-    border-color: #C10000;
+    background-color: #c10000;
+    border-color: #c10000;
     border-radius: 52px;
     font-size: 14px;
     font-style: normal;
@@ -71,7 +74,8 @@
   }
 }
 
-@media(min-width:576px) {}
+@media (min-width: 576px) {
+}
 
 @media (min-width: 768px) {
   .at_footer {
@@ -92,7 +96,8 @@
   }
 }
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+}
 
 @media (min-width: 1200px) {
   .at_footer {

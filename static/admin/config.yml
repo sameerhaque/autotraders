@@ -2,11 +2,11 @@ backend:
   name: git-gateway
   branch: master
   commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
-    uploadMedia: "[skip ci] Upload “{{path}}”"
-    deleteMedia: "[skip ci] Delete “{{path}}”"
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
 media_folder: static/img
 public_folder: /img
 collections:
@@ -15,14 +15,14 @@ collections:
     folder: content/article
     create: true
     slug: index
-    path: "{{title}}/index"
+    path: '{{title}}/index'
     editor:
       preview: false
     fields:
       - label: Template Key
         name: templateKey
         widget: hidden
-        default: "article"
+        default: 'article'
       - label: Title
         name: title
         widget: string
@@ -65,8 +65,22 @@ collections:
       - label: Entry Body
         name: entryBody
         widget: markdown
-      - label: Slider Images
-        name: sliderImages
+      - label: Entry Slider Images
+        name: entrySliderImages
+        widget: list
+        label_singular: Add New Slide
+        field:
+          label: Slide
+          name: Slide
+          widget: image
+      - label: Middle Quote
+        name: middleQuote
+        widget: text
+      - label: Middle Body
+        name: middleBody
+        widget: markdown
+      - label: Middle Slider Images
+        name: middleSliderImages
         widget: list
         label_singular: Add New Slide
         field:
@@ -79,3 +93,11 @@ collections:
       - label: Exit Body
         name: exitBody
         widget: markdown
+      - label: Exit Slider Images
+        name: exitSliderImages
+        widget: list
+        label_singular: Add New Slide
+        field:
+          label: Slide
+          name: Slide
+          widget: image

@@ -1,4 +1,4 @@
-@media(min-width:0) {
+@media (min-width: 0) {
   .at_header {
     background: #d7000c;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -90,7 +90,7 @@
     font-style: normal;
     padding-bottom: 10px;
     text-decoration: none;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
   }
 
   .at_nav_item_link_desc {
@@ -113,7 +113,7 @@
     align-items: center;
     height: calc(100vh - 50px);
     text-align: center;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 
   .at_nav_container {
@@ -122,7 +122,7 @@
   }
 }
 
-@media(min-width:576px) {
+@media (min-width: 576px) {
   .at_navbar_top {
     background: #3e3e3e;
     min-height: 20px;
@@ -165,10 +165,10 @@
   }
 }
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+}
 
 @media (min-width: 1200px) {
-
   .at_navbar_container,
   .at_navbar_bottom_container {
     max-width: 1440px;
