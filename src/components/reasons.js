@@ -8,16 +8,18 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>An <strong>available rear entertainment system includes an 11.6-inch video screen that pulls down from the ceiling,</strong> along with an <strong>HDMI port and two wireless headphones.</strong> Passengers in the third row can also use a headphone jack.</p>`,
+    blockSize: `s`,
   },
   {
     id: 2,
     reasonBy: `<strong>JENN,</strong> MONTREAL, QC`,
     reasonBigHeading: `The Security Blanket`,
     reasonDescription: `<p>Our old van didn’t have all the fancy safety gadgets that newer vehicles do, and we didn’t really think anything of it. But then my husband got a newer car a couple years ago with features such as emergency braking and blind spot warning, and we both knew our next van needed this when we upgraded last year. <strong>We’ve never had to use these features, but it’s nice to know that they’re just another layer of safety for us.</strong> Of course, it’s my family; we’ll do anything that makes our drive safer.</p>`,
-    reasonDescriptionTablet: `<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies luctus fermentum. Praesent pharetra augue non augue commodo, ut euismod arcu molestie. Nulla nec convallis lacus, vel aliquam dui. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies luctus fermentum. Praesent pharetra volutpa siunundum comudos molestider. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies luctus fermentum. Praesent pharetra augue non augue commodo, ut euismod arcu molestie. Nulla nec convallis lacus, vel aliquam dui. Aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ultricies luctus fermentum. Praesent pharetra volutpa siunundum comudos molestider.</p>`,
+    reasonDescriptionTablet: `<p>Our old van didn’t have all the fancy safety gadgets that newer vehicles do, and we didn’t really think anything of it. But then my husband got a newer car a couple years ago with features such as emergency braking and blind spot warning, and we both knew our next van needed this when we upgraded last year. <strong>We’ve never had to use these features, but it’s nice to know that they’re just another layer of safety for us.</strong> Of course, it’s my family; we’ll do anything that makes our drive safer.</p>`,
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
-    reviewDescription: `<p>Every Sienna gets a <strong>9-inch touchscreen with Apple CarPlay™ and Android Auto™, Bluetooth and seven USB charging ports.</strong> Available is a 12-speaker JBL® Premium Audio with a subwoofer and 1,200-watt amplifier, plus Clari-Fi® digital restoration technology. Sirius satellite radio is also available and comes with a 3-month, all-access trial subscription.</p>`,
+    reviewDescription: `<p>Every Sienna is equipped with <strong>Toyota Safety Sense™ 2.0,</strong> a suite of advanced safety features that includes Pre-Collision System with Pedestrian Detection/Low Light Detection and Bicycle Detection, Full-Speed Range Dynamic Radar Cruise Control, Lane Departure Alert with Lane Trace Assist and Automatic High Beams. Also standard is Blind Spot Monitor with Rear Cross Traffic Alert. </p>`,
+    blockSize: `l`,
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>Every Sienna gets a <strong>9-inch touchscreen with Apple CarPlay™ and Android Auto™, Bluetooth and seven USB charging ports.</strong> Available is a 12-speaker JBL® Premium Audio with a subwoofer and 1,200-watt amplifier, plus Clari-Fi® digital restoration technology. Sirius satellite radio is also available and comes with a 3-month, all-access trial subscription.</p>`,
+    blockSize: `l`,
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>An <strong>available rear entertainment</strong> system includes an 11.6-inch video screen that pulls down from the ceiling, along with an HDMI port and two wireless headphones. Passengers in the third row can also use a headphone jack.</p>`,
+    blockSize: `s`,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>With the Sienna, there’s no need for extreme measures to save fuel. Every model is a hybrid, with a 2.5L four cylinder engine combined with either two electric motors for the front-drive system, or three with the all-wheel-drive versions. <strong>The Sienna is rated at 6.6L/100 km in the city, 6.5L/100km highway and a combined 6.5L/100km.</strong> That’s better fuel economy than many compact hatchbacks.</p>`,
+    blockSize: `s`,
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ export default [
     reasonGridTitle: `It is so comfortable`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>The Sienna offers <strong>available power sliding doors with kick sensor and power rear door with kick sensor.</strong> The kick sensor convenience allows hands-free operation with the key fob in your pocket.</p>`,
+    blockSize: `l`,
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p><strong>Available on the Sienna is a 1500W inverter, enough to power kitchen appliances, power tools or other electrical devices.</strong> Two 120V outlets are located inside; one on the back of the front console, and one in the rear cargo area.</p>`,
+    blockSize: `l`,
   },
   {
     id: 8,
@@ -78,6 +85,7 @@ export default [
     reasonGridTitle: `I can do so many things`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>Every Sienna comes standard with no less than <strong>seven USB charging ports, (both USB-A and USB-C)</strong> throughout the cabin. One port in the dash also serves to connect a phone with the infotainment system. An available Qi wireless phone charging tray is also located in the front dash.</p>`,
+    blockSize: `s`,
   },
   {
     id: 9,
@@ -88,6 +96,7 @@ export default [
     reasonGridTitle: `I can do so many things`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>You don’t need parchment paper to make the trip more serene for a rest. Every Sienna comes with <strong>2nd Row Sunshade on Sliding Doors</strong> that roll up out of the doors to help block sunlight and keep the interior cooler. Also available are 3rd Sunshades on Quarter Windows.</p>`,
+    blockSize: `s`,
   },
   {
     id: 10,
@@ -98,6 +107,7 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>With all rear seats folded to the front, the Sienna has a full <strong>2,860L of flat-floor cargo space.</strong> Even with the second-row in place, there is still a generous 2,129L, while behind the third row is 949L, good for a full set of luggage.</p>`,
+    blockSize: `l`,
   },
   {
     id: 11,
@@ -108,6 +118,7 @@ export default [
     reasonGridTitle: `It is so comfortable`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p><strong>Every Sienna model is ready for Canadian winters,</strong> with standard features that include heated front seats, a heated steering wheel, heated exterior mirrors, windshield wiper de-icer and rear-window defroster. The Limited version also gets heated second-row seats.</p>`,
+    blockSize: `l`,
   },
   {
     id: 12,
@@ -118,6 +129,7 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>The base Sienna LE has <strong>three-zone climate control that allows separate temperatures to be set for each row.</strong> But step up to the XLE and higher and the four-zone climate control will have second- and third-row temperature regulation along with separate controls for the driver and front passenger.</p>`,
+    blockSize: `s`,
   },
   {
     id: 13,
@@ -128,6 +140,7 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p><strong>Available front and rear parking sensors</strong> ensure safe positioning of the Sienna every time.</p>`,
+    blockSize: `s`,
   },
   {
     id: 14,
@@ -138,6 +151,7 @@ export default [
     reasonGridTitle: `It is so comfortable`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>Every Sienna has a <strong>generous-size centre console storage compartment, but bags and other larger items have their own place,</strong> under the Bridge Console that houses the gear shifter. A large and convenient area with a light right between the front seats is the perfect place for your bag.</p>`,
+    blockSize: `l`,
   },
   {
     id: 15,
@@ -148,6 +162,7 @@ export default [
     reasonGridTitle: `I can do so many things`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>Available on the XSE and standard on the Limited is the <strong>rear entertainment system, which includes an 11.6-inch video screen</strong> that pulls down from the ceiling, along with an HDMI port and two wireless headphones. Passengers in the third row can also use a headphone jack.</p>`,
+    blockSize: `l`,
   },
   {
     id: 16,
@@ -158,6 +173,7 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>Available on the XSE and standard with the Limited, the <strong>Digital Display Rearview Mirror</strong> may look like an ordinary mirror at first. But when your rear sight is impeded by passengers or cargo, flip it up and it turns into a digital screen, with the image feeding from the rear camera.</p>`,
+    blockSize: `s`,
   },
   {
     id: 17,
@@ -168,6 +184,7 @@ export default [
     reasonGridTitle: `I can do so many things`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>Available on the Sienna is the Bird’s Eye View Cameras with Perimeter Scan. <strong>This feature lets you see every corner of the Sienna through the 9-inch touchscreen for perfect, safe parking.</strong> Curb View also helps avoid scuffing your wheels when parking near curbs, too.</p>`,
+    blockSize: `s`,
   },
   {
     id: 18,
@@ -178,6 +195,7 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>Every Sienna, whether front-wheel drive or all-wheel drive, is equipped to <strong>tow up to 3,500 lbs safely with the available towing package,</strong> giving you options for your small trailer, boat or other equipment that accompanies your busy life.</p>`,
+    blockSize: `l`,
   },
   {
     id: 19,
@@ -188,6 +206,7 @@ export default [
     reasonGridTitle: `It is so comfortable`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>The XSE and Limited versions of the Sienna have <strong>available 2nd row Long Slide Captains Chairs</strong> that open up incredible room for passengers. They both independently slide up to 63.5 centimetres, giving even tall people enough room to stretch out. The third row is also designed for adults to be comfortable, too, and not just children.</p>`,
+    blockSize: `l`,
   },
   {
     id: 20,
@@ -198,5 +217,6 @@ export default [
     reasonGridTitle: `We can keep everyone warm and happy in our Sienna.`,
     reviewBy: `NEIL VORANO`,
     reviewDescription: `<p>Every Sienna gets a <strong>9-inch touchscreen with Apple CarPlay™ and Android Auto™, Bluetooth and seven USB charging ports.</strong> Available is a 12-speaker JBL® Premium Audio with a subwoofer and 1,200-watt amplifier, plus Clari-Fi® digital restoration technology. Sirius satellite radio is also available and comes with a 3-month, all-access trial subscription.</p>`,
+    blockSize: `s`,
   },
 ]
