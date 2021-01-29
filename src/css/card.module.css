@@ -1,6 +1,6 @@
-@media(min-width:0) {
+@media (min-width: 0) {
   .reason_slider_section {
-    background: #0F68C9;
+    background: #0f68c9;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
     overflow: hidden;
     padding-bottom: 193px;
@@ -14,7 +14,11 @@
 
   .reason_slider_bg::after {
     background: transparent;
-    background: linear-gradient(180deg, rgba(15, 104, 201, 0) 77.53%, #0F68C9 98.48%);
+    background: linear-gradient(
+      180deg,
+      rgba(15, 104, 201, 0) 77.53%,
+      #0f68c9 98.48%
+    );
     content: '';
     display: block;
     position: absolute;
@@ -62,7 +66,7 @@
   }
 
   .reason_modal_wrapper {
-    background: #E1EDF6;
+    background: #e1edf6;
     display: flex;
     height: 100%;
     padding: 23px 20px;
@@ -77,8 +81,8 @@
   }
 
   .breadcrumb_button {
-    background-color: #CC0000;
-    border-color: #CC0000;
+    background-color: #cc0000;
+    border-color: #cc0000;
     border-radius: 300px;
     padding: 10px 30px;
     font-size: 14px;
@@ -199,7 +203,11 @@
 
   .reason_card_inner_content {
     background: rgba(0, 0, 0, 0);
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 32.81%, rgba(0, 0, 0, 0.9) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 32.81%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
     bottom: 0;
     display: flex;
     flex-direction: column;
@@ -357,9 +365,10 @@
   }
 }
 
-@media (min-width:375px) {}
+@media (min-width: 375px) {
+}
 
-@media (min-width:576px) {
+@media (min-width: 576px) {
   .reason_slider_section {
     padding-bottom: 0;
   }
@@ -369,7 +378,7 @@
   }
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .breadcrumb_section {
     background-color: #e6eff9;
     padding-top: 18px;
@@ -378,8 +387,8 @@
 
   .breadcrumb_back_button {
     align-items: center;
-    background-color: #CC0000;
-    border-color: #CC0000;
+    background-color: #cc0000;
+    border-color: #cc0000;
     border-radius: 50px;
     display: flex;
     height: 30px;
@@ -408,16 +417,16 @@
     text-align: left;
   }
 
-  .breadcrumb_content>a {
+  .breadcrumb_content > a {
     color: #000000;
     font-weight: 700;
   }
 
-  .breadcrumb_content>a::after {
+  .breadcrumb_content > a::after {
     content: ' / ';
   }
 
-  .breadcrumb_content>a:hover {
+  .breadcrumb_content > a:hover {
     color: #000000;
     text-decoration: none;
   }
@@ -491,7 +500,7 @@
   }
 
   .reason_modal_dismiss {
-    background: #2F7FCB;
+    background: #2f7fcb;
     top: 24px;
     right: 24px;
   }
@@ -552,7 +561,7 @@
   }
 
   .reason_roundButton svg path {
-    stroke: #3E3E3E;
+    stroke: #3e3e3e;
   }
 
   .reason_roundButton:hover {
@@ -670,7 +679,11 @@
   }
 
   .reason_card2::before {
-    background: linear-gradient(90deg, #75c2b2 25%, rgba(214, 169, 169, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      #75c2b2 25%,
+      rgba(214, 169, 169, 0) 100%
+    );
     content: '';
     display: block;
     height: 100%;
@@ -697,7 +710,11 @@
   }
 
   .reason_card3::before {
-    background: linear-gradient(90deg, #cdc07f 20%, rgba(214, 169, 169, 0) 100%);
+    background: linear-gradient(
+      90deg,
+      #cdc07f 20%,
+      rgba(214, 169, 169, 0) 100%
+    );
     content: '';
     display: block;
     height: 100%;
@@ -750,7 +767,7 @@
   }
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
   .reason_slider_section {
     padding-bottom: 185px;
   }
@@ -761,7 +778,7 @@
   }
 }
 
-@media (min-width:1200px) {
+@media (min-width: 1200px) {
   .breadcrumb_section {
     padding-bottom: 29px;
   }
@@ -772,7 +789,7 @@
   }
 
   .reason_slider_bg::after {
-    background: linear-gradient(90deg, #0F68C9 0, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(90deg, #0f68c9 0, rgba(0, 0, 0, 0) 100%);
   }
 
   .reason_slider_content_area {
@@ -797,7 +814,7 @@
   }
 
   .reason_content_wrap::before {
-    border: 1px solid #FFFFFF;
+    border: 1px solid #ffffff;
     content: '';
     display: block;
     height: 0px;
@@ -844,7 +861,7 @@
 
   .reason_content p {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 30px;
     letter-spacing: 0em;
     max-width: 447px;
@@ -868,7 +885,7 @@
 
   .reason_slide_holder {
     overflow: hidden;
-    background: #C4C4C4;
+    background: #c4c4c4;
     border-radius: 10px;
   }
 
@@ -954,7 +971,7 @@
     padding-left: 50px;
     padding-right: 50px;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 30px;
     letter-spacing: 0em;
     text-align: left;
