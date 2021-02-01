@@ -73,7 +73,14 @@ const StickyAd = () => {
               <div className={Ad.contentInner}>
                 <Img fixed={toyotaLogo.childImageSharp.fixed} alt="Toyota" />
                 <button
-                  onClick={() => (window.location.href = `//toyota.ca`)}
+                  onClick={() => {
+                    window.dataLayer.push({
+                      event: 'gtm.bx',
+                      eventAction: 'toyota sienna 2021 - exit - toyota',
+                      eventLabel: 'build your own',
+                    })
+                    window.location.href = `//toyota.ca`
+                  }}
                   type="button"
                   className={Ad.buildButton}
                 >

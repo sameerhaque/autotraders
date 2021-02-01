@@ -1,12 +1,12 @@
-import PropTypes from "prop-types"
-import React, { useEffect } from "react"
-import { Link } from "gatsby"
-import { Container, Row, Col, Navbar, Nav } from "react-bootstrap"
-import $ from "jquery"
+import PropTypes from 'prop-types'
+import React from 'react'
+import { Link } from 'gatsby'
+import { Container, Row, Col, Navbar, Nav } from 'react-bootstrap'
+import $ from 'jquery'
 
-import header from "../css/header.module.css"
-import toyotaLogo from "../images/toyota-logo.png"
-import LogoSVG from "./icons/logo"
+import header from '../css/header.module.css'
+import toyotaLogo from '../images/toyota-logo.png'
+import LogoSVG from './icons/logo'
 
 const Header = () => {
   const {
@@ -27,24 +27,44 @@ const Header = () => {
       at_nav_item_link,
       at_nav_item_link_desc,
     } = header,
+    navAction = 'toyota sienna 2021 - nav',
     openNavigation = () => {
-      $(`body`).hasClass("overflow-hidden")
-        ? $(`body`).removeClass("overflow-hidden")
-        : $(`body`).addClass("overflow-hidden")
+      $(`body`).hasClass('overflow-hidden')
+        ? $(`body`).removeClass('overflow-hidden')
+        : $(`body`).addClass('overflow-hidden')
     },
     itemSelected = () => {
-      $(`body`).removeClass("overflow-hidden")
+      $(`body`).removeClass('overflow-hidden')
     }
-  useEffect(() => {}, [])
   return (
     <header className={at_header}>
       <div className={at_navbar_top}>
         <div className={at_navbar_container}>
-          <a className={at_navbar_brand} href="//autotrader.ca">
+          <a
+            className={at_navbar_brand}
+            onClick={() =>
+              window.dataLayer.push({
+                event: 'gtm.bx',
+                eventAction: 'toyota sienna 2021 - exit - trader',
+                eventLabel: 'logo',
+              })
+            }
+            href="//autotrader.ca"
+          >
             <LogoSVG className="d-none d-sm-block" height={59} width={96} />
             <LogoSVG className="d-sm-none" height={50} width={80} />
           </a>
-          <a href="//toyota.ca" className={at_navbar_brand_right}>
+          <a
+            href="//toyota.ca"
+            onClick={() =>
+              window.dataLayer.push({
+                event: 'gtm.bx',
+                eventAction: 'toyota sienna 2021 - exit - toyota',
+                eventLabel: 'logo',
+              })
+            }
+            className={at_navbar_brand_right}
+          >
             <img className="" src={toyotaLogo} alt="Toyota" />
           </a>
         </div>
@@ -62,6 +82,16 @@ const Header = () => {
               >
                 <Navbar.Toggle
                   className={at_navbar_toggle}
+                  onClick={() => {
+                    if (navAction !== undefined) {
+                      window.dataLayer = window.dataLayer || []
+                      window.dataLayer.push({
+                        event: 'gtm.bx',
+                        eventAction: navAction,
+                        eventLabel: 'toggle',
+                      })
+                    }
+                  }}
                   aria-controls="responsive-navbar-nav"
                 >
                   <span className={at_navbar_toggle_stripes} />
@@ -74,14 +104,28 @@ const Header = () => {
                       <div className={at_nav_item}>
                         <Link
                           to="/"
-                          onClick={itemSelected}
+                          onClick={() => {
+                            window.dataLayer.push({
+                              event: 'gtm.bx',
+                              eventAction: navAction,
+                              eventLabel: 'home',
+                            })
+                            itemSelected()
+                          }}
                           className={at_nav_item_link}
                         >
                           HOME
                         </Link>
                         <Link
                           to="/"
-                          onClick={itemSelected}
+                          onClick={() => {
+                            window.dataLayer.push({
+                              event: 'gtm.bx',
+                              eventAction: navAction,
+                              eventLabel: 'home',
+                            })
+                            itemSelected()
+                          }}
                           className={at_nav_item_link_desc}
                         >
                           Sienna #VanProud
@@ -90,14 +134,28 @@ const Header = () => {
                       <div className={at_nav_item}>
                         <Link
                           to="/20-reasons-to-believe/"
-                          onClick={itemSelected}
+                          onClick={() => {
+                            window.dataLayer.push({
+                              event: 'gtm.bx',
+                              eventAction: navAction,
+                              eventLabel: 'reasons',
+                            })
+                            itemSelected()
+                          }}
                           className={at_nav_item_link}
                         >
                           INTERACTIVE CONTENT
                         </Link>
                         <Link
                           to="/20-reasons-to-believe/"
-                          onClick={itemSelected}
+                          onClick={() => {
+                            window.dataLayer.push({
+                              event: 'gtm.bx',
+                              eventAction: navAction,
+                              eventLabel: 'reasons',
+                            })
+                            itemSelected()
+                          }}
                           className={at_nav_item_link_desc}
                         >
                           20 Reasons to Believe
@@ -106,14 +164,28 @@ const Header = () => {
                       <div className={at_nav_item}>
                         <Link
                           to="/the-hardest-working-family-member/"
-                          onClick={itemSelected}
+                          onClick={() => {
+                            window.dataLayer.push({
+                              event: 'gtm.bx',
+                              eventAction: navAction,
+                              eventLabel: 'article - family',
+                            })
+                            itemSelected()
+                          }}
                           className={at_nav_item_link}
                         >
                           ARTICLE
                         </Link>
                         <Link
                           to="/the-hardest-working-family-member/"
-                          onClick={itemSelected}
+                          onClick={() => {
+                            window.dataLayer.push({
+                              event: 'gtm.bx',
+                              eventAction: navAction,
+                              eventLabel: 'article - family',
+                            })
+                            itemSelected()
+                          }}
                           className={at_nav_item_link_desc}
                         >
                           The hardest working family member
@@ -122,14 +194,28 @@ const Header = () => {
                       <div className={at_nav_item}>
                         <Link
                           to="/sienna-2021-the-view-from-every-row/"
-                          onClick={itemSelected}
+                          onClick={() => {
+                            window.dataLayer.push({
+                              event: 'gtm.bx',
+                              eventAction: navAction,
+                              eventLabel: 'article - sienna',
+                            })
+                            itemSelected()
+                          }}
                           className={at_nav_item_link}
                         >
                           ARTICLE
                         </Link>
                         <Link
                           to="/sienna-2021-the-view-from-every-row/"
-                          onClick={itemSelected}
+                          onClick={() => {
+                            window.dataLayer.push({
+                              event: 'gtm.bx',
+                              eventAction: navAction,
+                              eventLabel: 'article - sienna',
+                            })
+                            itemSelected()
+                          }}
                           className={at_nav_item_link_desc}
                         >
                           Sienna 2021, The View from Every Row

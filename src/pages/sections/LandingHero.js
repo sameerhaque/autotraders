@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { DefaultPlayer as Video } from 'react-html5video'
 import { graphql, useStaticQuery } from 'gatsby'
 import $ from 'jquery'
@@ -18,15 +18,49 @@ const LandingHero = () => {
         }
       }
     `),
+    [playedPer, setPlayedPer] = useState(0),
     isBrowser = typeof window !== 'undefined',
     fullScreenToggle = () => {
       $(`.${landing_hero.hero_video}`).toggleClass('fullscreen')
     }
   useEffect(() => {
+    const videoElement = $(`.${landing_hero.hero_video}`).find('video').get(0)
+    videoElement.play()
+    videoElement.addEventListener('playing', _ => {
+      let fireCount = 0
+      window.dataLayer.push({
+        event: 'gtm.bx',
+        eventAction: 'toyota sienna 2021 - video',
+        eventLabel: `play`,
+      })
+      setInterval(() => {
+        const nowPlayed = Math.ceil(
+          (videoElement.currentTime / videoElement.duration) * 100
+        )
+        switch (nowPlayed) {
+          case 25:
+          case 50:
+          case 75:
+          case 90:
+          case 100:
+            if (fireCount === 0 && nowPlayed > playedPer) {
+              fireCount++
+              setPlayedPer(nowPlayed)
+              window.dataLayer.push({
+                event: 'gtm.bx',
+                eventAction: 'toyota sienna 2021 - video',
+                eventLabel: `{{${nowPlayed}}}`,
+              })
+            }
+            break
+          default:
+            fireCount = 0
+        }
+      }, 1000)
+    })
     $(`.${landing_hero.hero_video}`).height(
       $(`.${landing_hero.hero_video}`).find('video').height()
     )
-    $(`.${landing_hero.hero_video}`).find('video').get(0).play()
     $(`.${landing_hero.hero_video}`).find('video').css({ position: `fixed` })
     $(window).on('load scroll', function () {
       let scrolled = $(this).scrollTop()
@@ -41,7 +75,7 @@ const LandingHero = () => {
       )
     })
     $('.rh5v-Fullscreen_button').click(fullScreenToggle)
-  }, [])
+  }, [playedPer])
   return (
     <section className={landing_hero.hero_image}>
       <div className={landing_hero.features_image}>

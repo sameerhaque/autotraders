@@ -1,5 +1,5 @@
 // Node components
-import React from 'react'
+import React, { useEffect } from 'react'
 
 // Project components
 import Layout from '../components/layout'
@@ -11,6 +11,18 @@ import StickyAd from '../components/sticky-ad'
 import SEO from '../components/seo'
 
 const IndexPage = ({ data }) => {
+  useEffect(() => {
+    if (
+      window.dataLayer[window.dataLayer.length - 1].pageType !==
+      '/brand-experience/toyota-sienna/2021/home/en'
+    ) {
+      window.dataLayer.push({
+        event: 'gtm.page_load',
+        pageType: '/brand-experience/toyota-sienna/2021/home/en',
+        sponsoredContentCampaign: 'toyota sienna - 2021',
+      })
+    }
+  }, [])
   return (
     <Layout>
       <SEO title="Home" />
