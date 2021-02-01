@@ -107,51 +107,71 @@ const LandingCTA = () => {
                   }}
                   width={sliderSize}
                 >
-                  {Array.from({ length: 3 }, (_, i) => i + 1).map((val, index) => {
-                    return (
-                      <SwiperSlide key={val}>
-                        <Link
-                          to="/20-reasons-to-believe/"
-                          className={landing_cta.slide_holder}
-                        >
-                          <Img
-                            fixed={slideImageMd.childImageSharp.fixed}
-                            alt="slideImageMd"
-                            className={`d-none d-md-block ${landing_cta.slide_image}`}
-                          />
-                          <Img
-                            fixed={slideImageSm.childImageSharp.fixed}
-                            alt="slideImageSm"
-                            className={`d-none d-sm-block d-md-none w-100 ${landing_cta.slide_image}`}
-                          />
-                          <Img
-                            fixed={slideImage.childImageSharp.fixed}
-                            alt="slideImage"
-                            className={`d-sm-none w-100 ${landing_cta.slide_image}`}
-                          />
-                          <div className={landing_cta.slide_content}>
-                            <div className={landing_cta.slide_content_inner}>
-                              <Quote className={landing_cta.quote} />
-                              <div className={landing_cta.slide_content_holder}>
-                                <p className={landing_cta.quote_index}>
-                                  {`Reason #${Reasons[index].id}`}
-                                </p>
-                                <h4 className={landing_cta.quote_heading}>
-                                  {Reasons[index].reasonGridTitle}
-                                </h4>
-                                <p className={landing_cta.location}>
-                                  {ReactHtmlParser(Reasons[index].reasonBy)}
-                                </p>
+                  {Array.from({ length: 3 }, (_, i) => i + 1).map(
+                    (val, index) => {
+                      return (
+                        <SwiperSlide key={val}>
+                          <Link
+                            to="/20-reasons-to-believe/"
+                            className={landing_cta.slide_holder}
+                            onClick={() =>
+                              window.dataLayer.push({
+                                event: 'gtm.bx',
+                                eventAction:
+                                  'toyota sienna 2021 - home - card - click',
+                                eventLabel: `card ${val}`,
+                              })
+                            }
+                          >
+                            <Img
+                              fixed={slideImageMd.childImageSharp.fixed}
+                              alt="slideImageMd"
+                              className={`d-none d-md-block ${landing_cta.slide_image}`}
+                            />
+                            <Img
+                              fixed={slideImageSm.childImageSharp.fixed}
+                              alt="slideImageSm"
+                              className={`d-none d-sm-block d-md-none w-100 ${landing_cta.slide_image}`}
+                            />
+                            <Img
+                              fixed={slideImage.childImageSharp.fixed}
+                              alt="slideImage"
+                              className={`d-sm-none w-100 ${landing_cta.slide_image}`}
+                            />
+                            <div className={landing_cta.slide_content}>
+                              <div className={landing_cta.slide_content_inner}>
+                                <Quote className={landing_cta.quote} />
+                                <div
+                                  className={landing_cta.slide_content_holder}
+                                >
+                                  <p className={landing_cta.quote_index}>
+                                    {`Reason #${Reasons[index].id}`}
+                                  </p>
+                                  <h4 className={landing_cta.quote_heading}>
+                                    {Reasons[index].reasonGridTitle}
+                                  </h4>
+                                  <p className={landing_cta.location}>
+                                    {ReactHtmlParser(Reasons[index].reasonBy)}
+                                  </p>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </Link>
-                      </SwiperSlide>
-                    )
-                  })}
+                          </Link>
+                        </SwiperSlide>
+                      )
+                    }
+                  )}
                 </Swiper>
                 <Link
                   to="/20-reasons-to-believe/"
+                  onClick={() => {
+                    window.dataLayer.push({
+                      event: 'gtm.bx',
+                      eventAction:
+                        'toyota sienna 2021 - home - see all reasons',
+                      eventLabel: '',
+                    })
+                  }}
                   className={`btn btn-primary ${landing_cta.reasons_button}`}
                 >
                   SEE ALL REASONS

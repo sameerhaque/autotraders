@@ -49,7 +49,8 @@ const LandingArticle = () => {
           </Col>
           <Col lg={6}>
             <p className={`${landing_article.description} pr-lg-4`}>
-              See how the Toyota Sienna <strong>can fit your own lifestyle.</strong>
+              See how the Toyota Sienna{' '}
+              <strong>can fit your own lifestyle.</strong>
             </p>
           </Col>
         </Row>
@@ -57,7 +58,17 @@ const LandingArticle = () => {
           <Row className={landing_article.articles}>
             <Col md={6}>
               <div className={landing_article.article}>
-                <Link to="/the-hardest-working-family-member/">
+                <Link
+                  onClick={() =>
+                    window.dataLayer.push({
+                      event: 'gtm.bx',
+                      eventAction:
+                        'toyota sienna 2021 - home - article - family',
+                      eventLabel: ``,
+                    })
+                  }
+                  to="/the-hardest-working-family-member/"
+                >
                   <Img
                     fluid={Article_1.childImageSharp.fluid}
                     className={landing_article.article_image}
@@ -71,7 +82,14 @@ const LandingArticle = () => {
             </Col>
             <Col md={6}>
               <div className={landing_article.article}>
-                <Link to="/sienna-2021-the-view-from-every-row/">
+                <Link onClick={() =>
+                    window.dataLayer.push({
+                      event: 'gtm.bx',
+                      eventAction:
+                        'toyota sienna 2021 - home - article - sienna',
+                      eventLabel: ``,
+                    })
+                  } to="/sienna-2021-the-view-from-every-row/">
                   <Img
                     fluid={Article_2.childImageSharp.fluid}
                     className={landing_article.article_image}
@@ -112,7 +130,14 @@ const LandingArticle = () => {
                     : landing_article.article
                 }
               >
-                <Link to="/the-hardest-working-family-member/">
+                <Link onClick={() =>
+                    window.dataLayer.push({
+                      event: 'gtm.bx',
+                      eventAction:
+                        'toyota sienna 2021 - home - article - family',
+                      eventLabel: ``,
+                    })
+                  } to="/the-hardest-working-family-member/">
                   <Img
                     fluid={Article_1.childImageSharp.fluid}
                     className={landing_article.article_image}
@@ -132,7 +157,14 @@ const LandingArticle = () => {
                     : landing_article.article
                 }
               >
-                <Link to="/sienna-2021-the-view-from-every-row/">
+                <Link onClick={() =>
+                    window.dataLayer.push({
+                      event: 'gtm.bx',
+                      eventAction:
+                        'toyota sienna 2021 - home - article - sienna',
+                      eventLabel: ``,
+                    })
+                  } to="/sienna-2021-the-view-from-every-row/">
                   <Img
                     fluid={Article_2.childImageSharp.fluid}
                     className={landing_article.article_image}

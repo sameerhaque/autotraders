@@ -95,6 +95,20 @@ const ArticleTemplate = ({ data }) => {
     }, [])
   useEffect(() => {
     if (isBrowser) {
+      if (
+        window.dataLayer[window.dataLayer.length - 1].pageType !==
+        `/brand-experience/toyota-sienna/2021/article-${
+          window.location.pathname.includes('family') ? 'family' : 'sienna'
+        }/en`
+      ) {
+        window.dataLayer.push({
+          event: 'gtm.page_load',
+          pageType: `/brand-experience/toyota-sienna/2021/article-${
+            window.location.pathname.includes('family') ? 'family' : 'sienna'
+          }/en`,
+          sponsoredContentCampaign: 'toyota sienna - 2021',
+        })
+      }
       setSliderWidth()
       $(window).width() >= 768
         ? $(`.${hero}`).height($(`.${hero_image}.imageDesktop`).height())
@@ -368,8 +382,8 @@ const ArticleTemplate = ({ data }) => {
                       className={navigate_previous}
                     >
                       <h4>
-                        <span className="d-block">Sienna 2021,</span>{' '}
-                        The View from Every Row
+                        <span className="d-block">Sienna 2021,</span> The View
+                        from Every Row
                       </h4>
                     </Link>
                   </div>

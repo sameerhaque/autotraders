@@ -79,6 +79,11 @@ const LandingFeatures = () => {
     [show, setShow] = useState(false),
     [featureIndex, setFeatureIndex] = useState(null),
     openFeature = (e, dataIndex) => {
+      window.dataLayer.push({
+        event: 'gtm.bx',
+        eventAction: 'toyota sienna 2021 - home - feature',
+        eventLabel: `feature ${dataIndex}`,
+      })
       e.currentTarget.classList.add(landing_features.features_hot_spot_active)
       setFeatureIndex(dataIndex)
       setShow(true)
@@ -151,7 +156,14 @@ const LandingFeatures = () => {
             <Col md={6} className="text-right">
               <button
                 type="button"
-                onClick={() => (window.location.href = `//toyota.ca`)}
+                onClick={() => {
+                  window.dataLayer.push({
+                    event: 'gtm.bx',
+                    eventAction: 'toyota sienna 2021 - exit - toyota',
+                    eventLabel: 'build and price',
+                  })
+                  window.location.href = `//toyota.ca`
+                }}
                 className={`btn btn-primary ${landing_features.features_button}`}
               >
                 BUILD &amp; PRICE
@@ -235,7 +247,14 @@ const LandingFeatures = () => {
                   </div>
                   <button
                     type="button"
-                    onClick={() => (window.location.href = `//toyota.ca`)}
+                    onClick={() => {
+                      window.dataLayer.push({
+                        event: 'gtm.bx',
+                        eventAction: 'toyota sienna 2021 - exit - toyota',
+                        eventLabel: 'build and price',
+                      })
+                      window.location.href = `//toyota.ca`
+                    }}
                     className={`btn btn-primary ${landing_features.features_button} d-none d-xl-inline-block`}
                   >
                     BUILD &amp; PRICE
@@ -246,7 +265,14 @@ const LandingFeatures = () => {
             <div className="flex-grow-1 d-md-none order-3 text-center pt-5">
               <button
                 type="button"
-                onClick={() => (window.location.href = `//toyota.ca`)}
+                onClick={() => {
+                  window.dataLayer.push({
+                    event: 'gtm.bx',
+                    eventAction: 'toyota sienna 2021 - exit - toyota',
+                    eventLabel: 'build and price',
+                  })
+                  window.location.href = `//toyota.ca`
+                }}
                 className={`btn btn-primary ${landing_features.features_button}`}
               >
                 BUILD &amp; PRICE

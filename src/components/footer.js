@@ -75,10 +75,18 @@ export default () => {
                 <strong>today</strong>
               </h4>
               <h5 className={footer.ad_heading_I}>
-                Become VanProud with your <strong>very own Toyota Sienna.</strong>
+                Become VanProud with your{' '}
+                <strong>very own Toyota Sienna.</strong>
               </h5>
               <button
-                onClick={() => (window.location.href = `//toyota.ca`)}
+                onClick={() => {
+                  window.dataLayer.push({
+                    event: 'gtm.bx',
+                    eventAction: 'toyota sienna 2021 - exit - toyota',
+                    eventLabel: 'get yours today',
+                  })
+                  window.location.href = `//toyota.ca`
+                }}
                 type="button"
                 className={`btn btn-primary ${footer.ad_button}`}
               >
