@@ -168,17 +168,6 @@
     min-height: 72px;
   }
 
-  .features_modal_header > div:last-child::before {
-    background-color: #c10000;
-    content: '';
-    display: block;
-    height: 5px;
-    left: 0;
-    position: absolute;
-    top: 1.25rem;
-    width: 10px;
-  }
-
   .features_modal_title {
     font-size: 24px;
     font-style: normal;
@@ -346,10 +335,6 @@
     margin-right: 2rem;
   }
 
-  .features_modal_header > div:last-child::before {
-    width: 20px;
-  }
-
   .feature_dismiss {
     padding-left: 0;
     padding-right: 30px;
@@ -425,9 +410,9 @@
     font-size: 36px;
     line-height: 42px;
     margin-bottom: 20px;
-    text-align: left;
-    max-width: 280px;
-    padding: 0;
+    text-align: right;
+    max-width: 320px;
+    padding-left: 40px;
   }
 
   .features_content {
@@ -435,7 +420,8 @@
     line-height: 32px;
     margin-bottom: 30px;
     max-width: 320px;
-    text-align: left;
+    text-align: right;
+    padding-left: 30px;
   }
 
   .features_button {
@@ -486,10 +472,6 @@
   .features_title_wrapper {
     padding: 0 50px;
     width: 100%;
-  }
-
-  .features_modal_header > div:last-child::before {
-    width: 30px;
   }
 
   .features_modal_title {
