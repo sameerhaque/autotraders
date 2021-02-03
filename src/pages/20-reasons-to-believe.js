@@ -92,6 +92,7 @@ export default () => {
       view_all_reasons,
       reason_section_title,
       bold_title,
+      reason_card_wrap,
       reason_card,
       reason_card_img,
       reason_card1,
@@ -1137,380 +1138,420 @@ export default () => {
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card1}`}>
-                  <Img
-                    fixed={reasonCar1.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card1}`}>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card2}`}>
-                  <Img
-                    fixed={reasonCar2.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card2}`}>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card3}`}>
-                  <Img
-                    fixed={reasonCar3.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card3}`}>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card4}`}>
-                  <Img
-                    fixed={reasonCar4.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card4}`}>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card1}`}>
-                  <Img
-                    fixed={reasonCar1.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card1}`}>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card2}`}>
-                  <Img
-                    fixed={reasonCar2.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card2}`}>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card3}`}>
-                  <Img
-                    fixed={reasonCar3.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card3}`}>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card4}`}>
-                  <Img
-                    fixed={reasonCar4.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card4}`}>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card1}`}>
-                  <Img
-                    fixed={reasonCar1.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card1}`}>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card2}`}>
-                  <Img
-                    fixed={reasonCar2.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card2}`}>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card3}`}>
-                  <Img
-                    fixed={reasonCar3.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card3}`}>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card4}`}>
-                  <Img
-                    fixed={reasonCar4.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card4}`}>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card1}`}>
-                  <Img
-                    fixed={reasonCar1.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card1}`}>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card2}`}>
-                  <Img
-                    fixed={reasonCar2.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card2}`}>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card3}`}>
-                  <Img
-                    fixed={reasonCar3.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card3}`}>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card4}`}>
-                  <Img
-                    fixed={reasonCar4.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card4}`}>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card1}`}>
-                  <Img
-                    fixed={reasonCar1.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card1}`}>
+                    <Img
+                      fixed={reasonCar1.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card2}`}>
-                  <Img
-                    fixed={reasonCar2.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card2}`}>
+                    <Img
+                      fixed={reasonCar2.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
             </Row>
             <Row>
               <Col md={8} className="mb-3">
-                <div className={`${reason_card} ${reason_card3}`}>
-                  <Img
-                    fixed={reasonCar3.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title_width}>
-                      We can keep everyone warm and happy in our Sienna.
-                    </h4>
-                    <span className={reason_card_city2}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card3}`}>
+                    <Img
+                      fixed={reasonCar3.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title_width}>
+                        We can keep everyone warm and happy in our Sienna.
+                      </h4>
+                      <span className={reason_card_city2}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
               <Col md={4} className="mb-3">
-                <div className={`${reason_card} ${reason_card4}`}>
-                  <Img
-                    fixed={reasonCar4.childImageSharp.fixed}
-                    alt="reason-1"
-                    className={reason_card_img}
-                  />
-                  <div className={reason_card_content}>
-                    <p className={reason_card_label_index}>01</p>
-                    <h4 className={reason_card_title}>
-                      I can do so many things
-                    </h4>
-                    <span className={reason_card_city}>
-                      deborah, quebec city
-                    </span>
+                <div className={`${reason_card_wrap}`}>
+                  <div className={`${reason_card} ${reason_card4}`}>
+                    <Img
+                      fixed={reasonCar4.childImageSharp.fixed}
+                      alt="reason-1"
+                      className={reason_card_img}
+                    />
+                    <div className={reason_card_content}>
+                      <p className={reason_card_label_index}>01</p>
+                      <h4 className={reason_card_title}>
+                        I can do so many things
+                      </h4>
+                      <span className={reason_card_city}>
+                        deborah, quebec city
+                      </span>
+                    </div>
                   </div>
                 </div>
               </Col>
@@ -1518,7 +1559,7 @@ export default () => {
           </Container>
         </section>
       )}
-      <section className={navigation.navigation_section}>
+      <section className={`${navigation.reasons} ${navigation.navigation_section}`}>
         <Container>
           <Row>
             <Col md={6} className="text-center">

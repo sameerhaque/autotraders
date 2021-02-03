@@ -1,8 +1,12 @@
-@media(min-width:0) {
+@media (min-width: 0) {
   .navigation_section {
     padding-top: 45px;
     background-color: #ffffff;
     position: relative;
+  }
+
+  .reasons.navigation_section {
+    background: #e6eff9;
   }
 
   .nav_wrapper {
@@ -14,8 +18,9 @@
 
   .nav_holder {
     background-color: #c4c4c4;
-    border-radius: 12px;
-    box-shadow: 0px 8.709229469299316px 34.836917877197266px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    box-shadow: 0px 8.709229469299316px 34.836917877197266px 0px
+      rgba(0, 0, 0, 0.25);
     display: inline-flex;
     overflow: hidden;
     position: relative;
@@ -32,7 +37,11 @@
   }
 
   .nav_area {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 32.81%, rgba(0, 0, 0, 0.9) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 32.81%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
     bottom: 0;
     color: #ffffff;
     display: flex;
@@ -73,11 +82,13 @@
   }
 }
 
-@media (min-width:375px) {}
+@media (min-width: 375px) {
+}
 
-@media (min-width:576px) {}
+@media (min-width: 576px) {
+}
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .navigation_section {
     padding-bottom: 35px;
     padding-bottom: 36px;
@@ -88,15 +99,31 @@
   }
 
   .nav_holder {
-    border-radius: 10px;
     box-shadow: 0px 8.70923px 34.8369px rgba(0, 0, 0, 0.25);
   }
 
   .nav_area {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 80.81%, rgba(0, 0, 0, 0.9) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 80.81%,
+      rgba(0, 0, 0, 0.9) 100%
+    );
   }
 }
 
-@media (min-width:992px) {}
+@media (min-width: 992px) {
+}
 
-@media (min-width:1200px) {}
+@media (min-width: 1200px) {
+  .navigation_section {
+    padding-top: 100px;
+  }
+
+  .reasons.navigation_section {
+    padding-top: 84px;
+  }
+
+  .navigation_section .nav_wrapper {
+    margin-top: 0;
+  }
+}

@@ -584,6 +584,11 @@
     margin-left: 31px;
   }
 
+  .reason_card_wrap {
+    border-radius: 20px;
+    box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.15);
+  }
+
   .reason_card1 {
     -webkit-mask-image: -webkit-radial-gradient(white, black);
     mask-image: radial-gradient(white, black);
@@ -753,7 +758,7 @@
 
   .view_all_reasons {
     background: #e6eff9;
-    padding: 60px 0px;
+    padding: 60px 0 0;
   }
 
   .reason_section_title {
@@ -887,6 +892,7 @@
     overflow: hidden;
     background: #c4c4c4;
     border-radius: 10px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.15);
   }
 
   .reason_card .reason_card_img picture img,
