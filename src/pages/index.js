@@ -17,7 +17,7 @@ const IndexPage = ({ data }) => {
       '/brand-experience/toyota-sienna/2021/home/en'
     ) {
       window.dataLayer.push({
-        event: 'gtm.page_load',
+        event: 'gtm_bx_virtual_page',
         pageType: '/brand-experience/toyota-sienna/2021/home/en',
         sponsoredContentCampaign: 'toyota sienna - 2021',
       })

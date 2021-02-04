@@ -75,7 +75,7 @@ const StickyAd = () => {
                 <button
                   onClick={() => {
                     window.dataLayer.push({
-                      event: 'gtm.bx',
+                      event: 'gtm_bx',
                       eventAction: 'toyota sienna 2021 - exit - toyota',
                       eventLabel: 'build your own',
                     })

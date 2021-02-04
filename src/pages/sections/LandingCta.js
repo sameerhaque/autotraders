@@ -116,7 +116,7 @@ const LandingCTA = () => {
                             className={landing_cta.slide_holder}
                             onClick={() =>
                               window.dataLayer.push({
-                                event: 'gtm.bx',
+                                event: 'gtm_bx',
                                 eventAction:
                                   'toyota sienna 2021 - home - card - click',
                                 eventLabel: `card ${val}`,
@@ -166,7 +166,7 @@ const LandingCTA = () => {
                   to="/20-reasons-to-believe/"
                   onClick={() => {
                     window.dataLayer.push({
-                      event: 'gtm.bx',
+                      event: 'gtm_bx',
                       eventAction:
                         'toyota sienna 2021 - home - see all reasons',
                       eventLabel: '',

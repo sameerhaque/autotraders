@@ -44,7 +44,7 @@ const Header = () => {
             className={at_navbar_brand}
             onClick={() =>
               window.dataLayer.push({
-                event: 'gtm.bx',
+                event: 'gtm_bx',
                 eventAction: 'toyota sienna 2021 - exit - trader',
                 eventLabel: 'logo',
               })
@@ -58,7 +58,7 @@ const Header = () => {
             href="//toyota.ca"
             onClick={() =>
               window.dataLayer.push({
-                event: 'gtm.bx',
+                event: 'gtm_bx',
                 eventAction: 'toyota sienna 2021 - exit - toyota',
                 eventLabel: 'logo',
               })
@@ -86,7 +86,7 @@ const Header = () => {
                     if (navAction !== undefined) {
                       window.dataLayer = window.dataLayer || []
                       window.dataLayer.push({
-                        event: 'gtm.bx',
+                        event: 'gtm_bx',
                         eventAction: navAction,
                         eventLabel: 'toggle',
                       })
@@ -106,7 +106,7 @@ const Header = () => {
                           to="/"
                           onClick={() => {
                             window.dataLayer.push({
-                              event: 'gtm.bx',
+                              event: 'gtm_bx',
                               eventAction: navAction,
                               eventLabel: 'home',
                             })
@@ -120,7 +120,7 @@ const Header = () => {
                           to="/"
                           onClick={() => {
                             window.dataLayer.push({
-                              event: 'gtm.bx',
+                              event: 'gtm_bx',
                               eventAction: navAction,
                               eventLabel: 'home',
                             })
@@ -136,7 +136,7 @@ const Header = () => {
                           to="/20-reasons-to-believe/"
                           onClick={() => {
                             window.dataLayer.push({
-                              event: 'gtm.bx',
+                              event: 'gtm_bx',
                               eventAction: navAction,
                               eventLabel: 'reasons',
                             })
@@ -150,7 +150,7 @@ const Header = () => {
                           to="/20-reasons-to-believe/"
                           onClick={() => {
                             window.dataLayer.push({
-                              event: 'gtm.bx',
+                              event: 'gtm_bx',
                               eventAction: navAction,
                               eventLabel: 'reasons',
                             })
@@ -166,7 +166,7 @@ const Header = () => {
                           to="/the-hardest-working-family-member/"
                           onClick={() => {
                             window.dataLayer.push({
-                              event: 'gtm.bx',
+                              event: 'gtm_bx',
                               eventAction: navAction,
                               eventLabel: 'article - family',
                             })
@@ -180,7 +180,7 @@ const Header = () => {
                           to="/the-hardest-working-family-member/"
                           onClick={() => {
                             window.dataLayer.push({
-                              event: 'gtm.bx',
+                              event: 'gtm_bx',
                               eventAction: navAction,
                               eventLabel: 'article - family',
                             })
@@ -196,7 +196,7 @@ const Header = () => {
                           to="/sienna-2021-the-view-from-every-row/"
                           onClick={() => {
                             window.dataLayer.push({
-                              event: 'gtm.bx',
+                              event: 'gtm_bx',
                               eventAction: navAction,
                               eventLabel: 'article - sienna',
                             })
@@ -210,7 +210,7 @@ const Header = () => {
                           to="/sienna-2021-the-view-from-every-row/"
                           onClick={() => {
                             window.dataLayer.push({
-                              event: 'gtm.bx',
+                              event: 'gtm_bx',
                               eventAction: navAction,
                               eventLabel: 'article - sienna',
                             })
