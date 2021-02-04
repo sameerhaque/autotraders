@@ -366,77 +366,76 @@ const ArticleTemplate = ({ data }) => {
         </Container>
       </section>
       <section className={navigation_section}>
-        <Container>
-          <Row>
-            <Col md={6} className="text-center">
-              <div className={`w-100 ${nav_wrapper}`}>
-                <div className={`w-100 ${nav_holder}`}>
-                  <Img
-                    className={`w-100 ${nav_image}`}
-                    fluid={
-                      isBrowser &&
-                      window.location.pathname.includes(
-                        'the-hardest-working-family-member'
-                      )
-                        ? prevImageI.childImageSharp.fluid
-                        : prevImageII.childImageSharp.fluid
-                    }
-                  />
-                  <div className={nav_area}>
-                    <p>Previous</p>
-                    <Link
-                      to={
-                        isBrowser &&
+        {isBrowser && (
+          <Container>
+            <Row>
+              <Col md={6} className="text-center">
+                <div className={`w-100 ${nav_wrapper}`}>
+                  <div className={`w-100 ${nav_holder}`}>
+                    <Img
+                      className={`w-100 ${nav_image}`}
+                      fluid={
                         window.location.pathname.includes(
                           'the-hardest-working-family-member'
                         )
-                          ? '/sienna-2021-the-view-from-every-row/'
-                          : '/the-hardest-working-family-member/'
+                          ? prevImageI.childImageSharp.fluid
+                          : prevImageII.childImageSharp.fluid
                       }
-                      className={navigate_previous}
-                    >
-                      {isBrowser &&
-                      window.location.pathname.includes(
-                        'the-hardest-working-family-member'
-                      ) ? (
-                        <h4>
-                          <span className="d-block">Sienna 2021,</span> The View
-                          from Every Row
-                        </h4>
-                      ) : (
-                        <h4>
-                          <span className="d-block">The hardest working</span>{' '}
-                          family member
-                        </h4>
-                      )}
-                    </Link>
+                    />
+                    <div className={nav_area}>
+                      <p>Previous</p>
+                      <Link
+                        to={
+                          window.location.pathname.includes(
+                            'the-hardest-working-family-member'
+                          )
+                            ? '/sienna-2021-the-view-from-every-row/'
+                            : '/the-hardest-working-family-member/'
+                        }
+                        className={navigate_previous}
+                      >
+                        {window.location.pathname.includes(
+                          'the-hardest-working-family-member'
+                        ) ? (
+                          <h4>
+                            <span className="d-block">Sienna 2021,</span> The
+                            View from Every Row
+                          </h4>
+                        ) : (
+                          <h4>
+                            <span className="d-block">The hardest working</span>{' '}
+                            family member
+                          </h4>
+                        )}
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Col>
-            <Col md={6} className="text-center">
-              <div className={`w-100 ${nav_wrapper}`}>
-                <div className={`w-100 ${nav_holder}`}>
-                  <Img
-                    className={`w-100 ${nav_image}`}
-                    fluid={nextImage.childImageSharp.fluid}
-                  />
-                  <div className={nav_area}>
-                    <p>Next</p>
-                    <Link
-                      to="/20-reasons-to-believe/"
-                      className={navigate_next}
-                    >
-                      <h4>
-                        <span className="d-block">20 Reasons</span> to Believe
-                      </h4>
-                    </Link>
+              </Col>
+              <Col md={6} className="text-center">
+                <div className={`w-100 ${nav_wrapper}`}>
+                  <div className={`w-100 ${nav_holder}`}>
+                    <Img
+                      className={`w-100 ${nav_image}`}
+                      fluid={nextImage.childImageSharp.fluid}
+                    />
+                    <div className={nav_area}>
+                      <p>Next</p>
+                      <Link
+                        to="/20-reasons-to-believe/"
+                        className={navigate_next}
+                      >
+                        <h4>
+                          <span className="d-block">20 Reasons</span> to Believe
+                        </h4>
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+              </Col>
+            </Row>
+          </Container>
+        )}
       </section>
     </Layout>
   )
