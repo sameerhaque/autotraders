@@ -3,6 +3,8 @@ import { DefaultPlayer as Video } from 'react-html5video'
 import { graphql, useStaticQuery } from 'gatsby'
 import $ from 'jquery'
 
+import Down from '../../components/icons/down'
+
 import landing_hero from './css/landing_hero.module.css'
 import videoSrc from '../../videos/video.mp4'
 
@@ -20,6 +22,15 @@ const LandingHero = () => {
     `),
     [playedPer, setPlayedPer] = useState(0),
     isBrowser = typeof window !== 'undefined',
+    scrollDown = () => {
+      $('html, body').animate(
+        {
+          scrollTop:
+            $(`.${landing_hero.hero_image}`).next().offset().top - $(`.${landing_hero.hero_image}`).offset().top,
+        },
+        200
+      )
+    },
     fullScreenToggle = () => {
       $(`.${landing_hero.hero_video}`).toggleClass('fullscreen')
     }
@@ -29,7 +40,7 @@ const LandingHero = () => {
     videoElement.addEventListener('playing', _ => {
       let fireCount = 0
       window.dataLayer.push({
-        event: 'gtm.bx',
+        event: 'gtm_bx',
         eventAction: 'toyota sienna 2021 - video',
         eventLabel: `play`,
       })
@@ -47,7 +58,7 @@ const LandingHero = () => {
               fireCount++
               setPlayedPer(nowPlayed)
               window.dataLayer.push({
-                event: 'gtm.bx',
+                event: 'gtm_bx',
                 eventAction: 'toyota sienna 2021 - video',
                 eventLabel: `{{${nowPlayed}}}`,
               })
@@ -80,18 +91,27 @@ const LandingHero = () => {
     <section className={landing_hero.hero_image}>
       <div className={landing_hero.features_image}>
         {isBrowser && (
-          <Video
-            className={landing_hero.hero_video}
-            poster={poster.childImageSharp.fluid.src}
-            width="1440"
-            height="579"
-            preload="metadata"
-            loop={true}
-            muted={true}
-            controls={['Fullscreen']}
-          >
-            <source src={videoSrc} type="video/mp4" />
-          </Video>
+          <>
+            <Video
+              className={landing_hero.hero_video}
+              poster={poster.childImageSharp.fluid.src}
+              width="1440"
+              height="579"
+              preload="metadata"
+              loop={true}
+              muted={true}
+              controls={['Fullscreen']}
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </Video>
+            <button
+              type="button"
+              className={landing_hero.hero_button}
+              onClick={scrollDown}
+            >
+              <Down />
+            </button>
+          </>
         )}
       </div>
     </section>

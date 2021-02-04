@@ -17,6 +17,10 @@ const LandingFeatures = () => {
       featureCarMd,
       featureCarXs,
       featureI,
+      featureII,
+      featureIII,
+      featureIV,
+      featureV,
     } = useStaticQuery(graphql`
       {
         featureCar: file(relativePath: { eq: "feature-car.png" }) {
@@ -47,6 +51,34 @@ const LandingFeatures = () => {
             }
           }
         }
+        featureII: file(relativePath: { eq: "feature-2.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 385, maxHeight: 250) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        featureIII: file(relativePath: { eq: "feature-3.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 385, maxHeight: 250) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        featureIV: file(relativePath: { eq: "feature-4.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 385, maxHeight: 250) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        featureV: file(relativePath: { eq: "feature-5.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 385, maxHeight: 250) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     `),
     featureData = [
@@ -57,22 +89,22 @@ const LandingFeatures = () => {
       },
       {
         featTitle: 'Digital Display Rearview Mirror',
-        featImg: featureI,
+        featImg: featureII,
         featContent: `<p>With the Sienna filled with passengers or cargo, it could be difficult to see out of the rear-view mirror. But the solution is <strong>Toyota’s Digital Display Rearview Mirror; simply flip the standard mirror up to turn it into a digital screen,</strong> with the image feeding from the rear camera. Now you can see everything behind you, making the drive safer regardless of what you’re carrying.</p>`,
       },
       {
         featTitle: 'Hybrid powertrain is standard',
-        featImg: featureI,
+        featImg: featureIII,
         featContent: `<p>No other minivan comes standard with a hybrid powertrain across the lineup. <strong>A 2.5-litre four-cylinder gasoline engine and two electric motors work together for front-drive versions, combining for 245 horsepower.</strong> For all-wheel-drive models, a third electric motor in the rear activates when wheel slip is detected for on-demand AWD.</p>`,
       },
       {
         featTitle: 'Power Sliding Doors with Kick Sensors',
-        featImg: featureI,
+        featImg: featureIV,
         featContent: `<p>With an armload of groceries or even a child, it could be cumbersome to open a sliding door. But with the Sienna, not only do the side doors slide automatically, but now you don’t even have to touch them. <strong>With the proximity key fob in your pocket, simply wave your foot under the indicator on the bottom sill, and the door will magically open,</strong> giving you access without having to put anything on the ground. The rear cargo door also has the same features.</p>`,
       },
       {
         featTitle: 'Toyota Safety SenseTM 2.0',
-        featImg: featureI,
+        featImg: featureV,
         featContent: `<p>With the Sienna, you’ll likely be carrying the most precious cargo of all: your family. So every Sienna is equipped with <strong>Toyota Safety SenseTM 2.0</strong>, a suite of features that includes <strong>Pre-Collision System with Pedestrian Detection/Low Light Detection and Bicycle Detection, Full-Speed Range Dynamic Radar Cruise Control, Lane Departure Alert with Lane Trace Assist and Automatic High Beams.</strong></p>`,
       },
     ],
@@ -80,7 +112,7 @@ const LandingFeatures = () => {
     [featureIndex, setFeatureIndex] = useState(null),
     openFeature = (e, dataIndex) => {
       window.dataLayer.push({
-        event: 'gtm.bx',
+        event: 'gtm_bx',
         eventAction: 'toyota sienna 2021 - home - feature',
         eventLabel: `feature ${dataIndex}`,
       })
@@ -158,7 +190,7 @@ const LandingFeatures = () => {
                 type="button"
                 onClick={() => {
                   window.dataLayer.push({
-                    event: 'gtm.bx',
+                    event: 'gtm_bx',
                     eventAction: 'toyota sienna 2021 - exit - toyota',
                     eventLabel: 'build and price',
                   })
@@ -249,7 +281,7 @@ const LandingFeatures = () => {
                     type="button"
                     onClick={() => {
                       window.dataLayer.push({
-                        event: 'gtm.bx',
+                        event: 'gtm_bx',
                         eventAction: 'toyota sienna 2021 - exit - toyota',
                         eventLabel: 'build and price',
                       })
@@ -267,7 +299,7 @@ const LandingFeatures = () => {
                 type="button"
                 onClick={() => {
                   window.dataLayer.push({
-                    event: 'gtm.bx',
+                    event: 'gtm_bx',
                     eventAction: 'toyota sienna 2021 - exit - toyota',
                     eventLabel: 'build and price',
                   })

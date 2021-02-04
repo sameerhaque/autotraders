@@ -11,27 +11,28 @@
   height: auto;
   object-fit: revert;
   object-position: center;
-  position: relative!important;
+  position: relative !important;
 }
 
 .rh5v-Fullscreen_component {
-  position: absolute;
   bottom: 78px;
+  display: flex;
   background: transparent;
   padding: 0;
+  position: absolute;
   border-radius: 50%;
   border: none;
   right: 20px;
 }
 
 .rh5v-Fullscreen_button {
-  width: 43px;
-  height: 43px;
-  background-color: transparent; 
+  width: 45px;
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid #ffffff;
   background-image: url('../images/fullscreen.svg');
   background-repeat: no-repeat;
-  background-size: contain;
-  border: 0;
+  background-position: center;
   border-radius: 50%;
   color: inherit;
   font: inherit;
@@ -43,9 +44,9 @@
   transition: transform 0.2s;
 }
 .fullscreen .rh5v-Fullscreen_component {
-  transform: none!important;
+  transform: none !important;
 }
-.rh5v-Fullscreen_button:hover{
+.rh5v-Fullscreen_button:hover {
   transform: scale(1.2558);
 }
 .rh5v-Fullscreen_button:focus {
@@ -60,7 +61,7 @@
   display: none;
 }
 
-@media(min-width:576px) {
+@media (min-width: 576px) {
   .rh5v-Fullscreen_component {
     bottom: 78px;
     right: 30px;
@@ -73,5 +74,33 @@
   .rh5v-Fullscreen_component {
     bottom: 30px;
     right: 50px;
+  }
+
+  .rh5v-Fullscreen_button::before {
+    color: #ffffff;
+    content: 'FULL SCREEN';
+    position: absolute;
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    max-width: 39px;
+    text-align: right;
+    top: 50%;
+    left: calc(-100% - 10px);
+    transform: translateY(-50%) scale(1);
+    transition: transform 0.2s;
+  }
+
+  .fullscreen .rh5v-Fullscreen_button::before {
+    content: 'EXIT FULL SCREEN';
+    max-width: 55px;
+    left: calc(-100% - 26px);
+  }
+
+  .rh5v-Fullscreen_button:hover::before {
+    transform: translateY(-50%) scale(0.8);
   }
 }

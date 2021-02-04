@@ -69,7 +69,7 @@ const ArticleTemplate = ({ data }) => {
       exitBody,
       exitSliderImages,
     } = frontmatter,
-    { prevImage, nextImage } = data,
+    { prevImageI, prevImageII, nextImage } = data,
     [entrySlider, setEntrySlider] = useState(null),
     [middleSlider, setMiddleSlider] = useState(null),
     [exitSlider, setExitSlider] = useState(null),
@@ -82,7 +82,7 @@ const ArticleTemplate = ({ data }) => {
         200
       )
     },
-    isBrowser = typeof window !== undefined,
+    isBrowser = typeof window !== 'undefined',
     [sliderSize, setSetSliderSize] = useState(null),
     setSliderWidth = useCallback(() => {
       if ($(window).outerWidth() >= 1200) {
@@ -102,7 +102,7 @@ const ArticleTemplate = ({ data }) => {
         }/en`
       ) {
         window.dataLayer.push({
-          event: 'gtm.page_load',
+          event: 'gtm_page_load',
           pageType: `/brand-experience/toyota-sienna/2021/article-${
             window.location.pathname.includes('family') ? 'family' : 'sienna'
           }/en`,
@@ -366,53 +366,76 @@ const ArticleTemplate = ({ data }) => {
         </Container>
       </section>
       <section className={navigation_section}>
-        <Container>
-          <Row>
-            <Col md={6} className="text-center">
-              <div className={`w-100 ${nav_wrapper}`}>
-                <div className={`w-100 ${nav_holder}`}>
-                  <Img
-                    className={`w-100 ${nav_image}`}
-                    fixed={prevImage.childImageSharp.fixed}
-                  />
-                  <div className={nav_area}>
-                    <p>Previous</p>
-                    <Link
-                      to="/sienna-2021-the-view-from-every-row/"
-                      className={navigate_previous}
-                    >
-                      <h4>
-                        <span className="d-block">Sienna 2021,</span> The View
-                        from Every Row
-                      </h4>
-                    </Link>
+        {isBrowser && (
+          <Container>
+            <Row>
+              <Col md={6} className="text-center">
+                <div className={`w-100 ${nav_wrapper}`}>
+                  <div className={`w-100 ${nav_holder}`}>
+                    <Img
+                      className={`w-100 ${nav_image}`}
+                      fluid={
+                        window.location.pathname.includes(
+                          'the-hardest-working-family-member'
+                        )
+                          ? prevImageI.childImageSharp.fluid
+                          : prevImageII.childImageSharp.fluid
+                      }
+                    />
+                    <div className={nav_area}>
+                      <p>Previous</p>
+                      <Link
+                        to={
+                          window.location.pathname.includes(
+                            'the-hardest-working-family-member'
+                          )
+                            ? '/sienna-2021-the-view-from-every-row/'
+                            : '/the-hardest-working-family-member/'
+                        }
+                        className={navigate_previous}
+                      >
+                        {window.location.pathname.includes(
+                          'the-hardest-working-family-member'
+                        ) ? (
+                          <h4>
+                            <span className="d-block">Sienna 2021,</span> The
+                            View from Every Row
+                          </h4>
+                        ) : (
+                          <h4>
+                            <span className="d-block">The hardest working</span>{' '}
+                            family member
+                          </h4>
+                        )}
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Col>
-            <Col md={6} className="text-center">
-              <div className={`w-100 ${nav_wrapper}`}>
-                <div className={`w-100 ${nav_holder}`}>
-                  <Img
-                    className={`w-100 ${nav_image}`}
-                    fixed={nextImage.childImageSharp.fixed}
-                  />
-                  <div className={nav_area}>
-                    <p>Next</p>
-                    <Link
-                      to="/20-reasons-to-believe/"
-                      className={navigate_next}
-                    >
-                      <h4>
-                        <span className="d-block">20 Reasons</span> to Believe
-                      </h4>
-                    </Link>
+              </Col>
+              <Col md={6} className="text-center">
+                <div className={`w-100 ${nav_wrapper}`}>
+                  <div className={`w-100 ${nav_holder}`}>
+                    <Img
+                      className={`w-100 ${nav_image}`}
+                      fluid={nextImage.childImageSharp.fluid}
+                    />
+                    <div className={nav_area}>
+                      <p>Next</p>
+                      <Link
+                        to="/20-reasons-to-believe/"
+                        className={navigate_next}
+                      >
+                        <h4>
+                          <span className="d-block">20 Reasons</span> to Believe
+                        </h4>
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
+              </Col>
+            </Row>
+          </Container>
+        )}
       </section>
     </Layout>
   )
@@ -484,17 +507,24 @@ export const pageQuery = graphql`
         }
       }
     }
-    prevImage: file(relativePath: { eq: "captura-de-pantalla-4.jpg" }) {
+    prevImageI: file(relativePath: { eq: "sienna-2021.jpg" }) {
       childImageSharp {
-        fixed(width: 335, height: 250) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 543, maxHeight: 250) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
-    nextImage: file(relativePath: { eq: "captura-de-pantalla-5.jpg" }) {
+    prevImageII: file(relativePath: { eq: "hardest-working.jpg" }) {
       childImageSharp {
-        fixed(width: 335, height: 250) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 542, maxHeight: 250) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    nextImage: file(relativePath: { eq: "20-reason.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 543, maxHeight: 250) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

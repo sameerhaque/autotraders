@@ -108,15 +108,69 @@ export default () => {
     } = card,
     {
       userAvatar,
-      reason1BgXl,
-      reason1BgMd,
-      reason1Bg,
+      heroBgXl,
+      heroBgMd,
+      heroBg,
       reason1,
+      reason2,
+      reason3,
+      reason4,
+      reason5,
+      reason6,
+      reason7,
+      reason8,
+      reason9,
+      reason10,
+      reason11,
+      reason12,
+      reason13,
+      reason14,
+      reason15,
+      reason16,
+      reason17,
+      reason18,
+      reason19,
+      reason20,
       reasonImage1,
       reasonImage2,
       reasonImage3,
       reasonImage4,
-      reasonFeatImage,
+      reasonImage5,
+      reasonImage6,
+      reasonImage7,
+      reasonImage8,
+      reasonImage9,
+      reasonImage10,
+      reasonImage11,
+      reasonImage12,
+      reasonImage13,
+      reasonImage14,
+      reasonImage15,
+      reasonImage16,
+      reasonImage17,
+      reasonImage18,
+      reasonImage19,
+      reasonImage20,
+      reasonFeatImage1,
+      reasonFeatImage2,
+      reasonFeatImage3,
+      reasonFeatImage4,
+      reasonFeatImage5,
+      reasonFeatImage6,
+      reasonFeatImage7,
+      reasonFeatImage8,
+      reasonFeatImage9,
+      reasonFeatImage10,
+      reasonFeatImage11,
+      reasonFeatImage12,
+      reasonFeatImage13,
+      reasonFeatImage14,
+      reasonFeatImage15,
+      reasonFeatImage16,
+      reasonFeatImage17,
+      reasonFeatImage18,
+      reasonFeatImage19,
+      reasonFeatImage20,
       userImage,
       prevImage,
       nextImage,
@@ -133,63 +187,441 @@ export default () => {
             }
           }
         }
-        reason1BgXl: file(relativePath: { eq: "reason-1-bg.jpg" }) {
+        heroBgXl: file(relativePath: { eq: "reason-1-bg.jpg" }) {
           childImageSharp {
             fixed(width: 869, height: 740) {
               ...GatsbyImageSharpFixed
             }
           }
         }
-        reason1BgMd: file(relativePath: { eq: "reason-1-bg-md.jpg" }) {
+        heroBgMd: file(relativePath: { eq: "reason-1-bg-md.jpg" }) {
           childImageSharp {
             fixed(width: 1024, height: 433) {
               ...GatsbyImageSharpFixed
             }
           }
         }
-        reason1Bg: file(relativePath: { eq: "reason-1-bg-xs.jpg" }) {
+        heroBg: file(relativePath: { eq: "reason-1-bg-xs.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 750, maxHeight: 903) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        reason1: file(relativePath: { eq: "reson-1.jpg" }) {
+        reason1: file(relativePath: { eq: "reason-1.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 547, maxHeight: 708) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        reasonImage1: file(relativePath: { eq: "captura-de-pantalla-6.jpg" }) {
+        reasonImage1: file(relativePath: { eq: "reason-1.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 434, maxHeight: 598) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        reasonImage2: file(relativePath: { eq: "captura-de-pantalla-7.jpg" }) {
+        reasonFeatImage1: file(relativePath: { eq: "reason-1-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason2: file(relativePath: { eq: "reason-2.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage2: file(relativePath: { eq: "reason-2.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 360) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        reasonImage3: file(relativePath: { eq: "captura-de-pantalla-8.jpg" }) {
+        reasonFeatImage2: file(relativePath: { eq: "reason-2-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason3: file(relativePath: { eq: "reason-3.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage3: file(relativePath: { eq: "reason-3.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        reasonImage4: file(relativePath: { eq: "captura-de-pantalla-9.jpg" }) {
+        reasonFeatImage3: file(relativePath: { eq: "reason-3-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason4: file(relativePath: { eq: "reason-4.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage4: file(relativePath: { eq: "reason-4.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        reasonFeatImage: file(relativePath: { eq: "reason_featured.jpg" }) {
+        reasonFeatImage4: file(relativePath: { eq: "reason-4-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason5: file(relativePath: { eq: "reason-5.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage5: file(relativePath: { eq: "reason-5.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage5: file(relativePath: { eq: "reason-5-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason6: file(relativePath: { eq: "reason-6.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage6: file(relativePath: { eq: "reason-6.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage6: file(relativePath: { eq: "reason-6-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason7: file(relativePath: { eq: "reason-7.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage7: file(relativePath: { eq: "reason-7.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage7: file(relativePath: { eq: "reason-7-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason8: file(relativePath: { eq: "reason-8.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage8: file(relativePath: { eq: "reason-8.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage8: file(relativePath: { eq: "reason-8-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason9: file(relativePath: { eq: "reason-9.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage9: file(relativePath: { eq: "reason-9.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage9: file(relativePath: { eq: "reason-9-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason10: file(relativePath: { eq: "reason-10.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage10: file(relativePath: { eq: "reason-10.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage10: file(relativePath: { eq: "reason-10-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason11: file(relativePath: { eq: "reason-11.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage11: file(relativePath: { eq: "reason-11.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 434, maxHeight: 598) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage11: file(relativePath: { eq: "reason-11-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason12: file(relativePath: { eq: "reason-12.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage12: file(relativePath: { eq: "reason-12.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 360) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage12: file(relativePath: { eq: "reason-12-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason13: file(relativePath: { eq: "reason-13.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage13: file(relativePath: { eq: "reason-13.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage13: file(relativePath: { eq: "reason-13-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason14: file(relativePath: { eq: "reason-14.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage14: file(relativePath: { eq: "reason-14.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage14: file(relativePath: { eq: "reason-14-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason15: file(relativePath: { eq: "reason-15.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage15: file(relativePath: { eq: "reason-15.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage15: file(relativePath: { eq: "reason-15-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason16: file(relativePath: { eq: "reason-16.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage16: file(relativePath: { eq: "reason-16.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage16: file(relativePath: { eq: "reason-16-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason17: file(relativePath: { eq: "reason-17.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage17: file(relativePath: { eq: "reason-17.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage17: file(relativePath: { eq: "reason-17-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason18: file(relativePath: { eq: "reason-18.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage18: file(relativePath: { eq: "reason-18.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage18: file(relativePath: { eq: "reason-18-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason19: file(relativePath: { eq: "reason-19.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage19: file(relativePath: { eq: "reason-19.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage19: file(relativePath: { eq: "reason-19-flip.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 447, maxHeight: 280) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reason20: file(relativePath: { eq: "reason-20.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 547, maxHeight: 708) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonImage20: file(relativePath: { eq: "reason-20.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 261, maxHeight: 359) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonFeatImage20: file(relativePath: { eq: "reason-20-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
               ...GatsbyImageSharpFluid
@@ -203,17 +635,17 @@ export default () => {
             }
           }
         }
-        prevImage: file(relativePath: { eq: "captura-de-pantalla-4.jpg" }) {
+        prevImage: file(relativePath: { eq: "hardest-working.jpg" }) {
           childImageSharp {
-            fixed(width: 335, height: 250) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 542, maxHeight: 250) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
-        nextImage: file(relativePath: { eq: "captura-de-pantalla-5.jpg" }) {
+        nextImage: file(relativePath: { eq: "sienna-2021.jpg" }) {
           childImageSharp {
-            fixed(width: 335, height: 250) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 543, maxHeight: 250) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -260,7 +692,7 @@ export default () => {
       setCurrentReason(Reasons[index])
       setTabletModal(true)
       window.dataLayer.push({
-        event: 'gtm.bx',
+        event: 'gtm_bx',
         eventAction: 'toyota sienna 2021 - card - click',
         eventLabel: `card ${('0' + index + 1).slice(-2)}`,
       })
@@ -273,7 +705,7 @@ export default () => {
         setReasonIndex(Reasons.length - 1)
         setCurrentReason(Reasons[Reasons.length - 1])
         window.dataLayer.push({
-          event: 'gtm.bx',
+          event: 'gtm_bx',
           eventAction: 'toyota sienna 2021 - card - nav - prev',
           eventLabel: `card ${('0' + Reasons.length).slice(-2)}`,
         })
@@ -281,7 +713,7 @@ export default () => {
         setReasonIndex(reasonIndex - 1)
         setCurrentReason(Reasons[reasonIndex - 1])
         window.dataLayer.push({
-          event: 'gtm.bx',
+          event: 'gtm_bx',
           eventAction: 'toyota sienna 2021 - card - nav - prev',
           eventLabel: `card ${('0' + reasonIndex).slice(-2)}`,
         })
@@ -292,7 +724,7 @@ export default () => {
         setReasonIndex(0)
         setCurrentReason(Reasons[0])
         window.dataLayer.push({
-          event: 'gtm.bx',
+          event: 'gtm_bx',
           eventAction: 'toyota sienna 2021 - card - nav - next',
           eventLabel: `card 0${1}`,
         })
@@ -300,7 +732,7 @@ export default () => {
         setReasonIndex(reasonIndex + 1)
         setCurrentReason(Reasons[reasonIndex + 1])
         window.dataLayer.push({
-          event: 'gtm.bx',
+          event: 'gtm_bx',
           eventAction: 'toyota sienna 2021 - card - nav - next',
           eventLabel: `card ${('0' + reasonIndex + 2).slice(-2)}`,
         })
@@ -324,20 +756,109 @@ export default () => {
     }, [reason_content_wrap])
   Reasons.forEach((_, index) => {
     Reasons[index].userAvatar = userAvatar
-    if ([1, 8, 9, 15, 17].includes(index + 1)) {
-      Reasons[index].reasonImage = reason1
-      Reasons[index].reasonImageMd = reasonImage1
-    } else if ([2, 5, 10, 16, 18].includes(index + 1)) {
-      Reasons[index].reasonImage = reasonImage2
-      Reasons[index].reasonImageMd = reasonImage2
-    } else if ([3, 6, 11, 14, 19].includes(index + 1)) {
-      Reasons[index].reasonImage = reasonImage3
-      Reasons[index].reasonImageMd = reasonImage3
-    } else {
-      Reasons[index].reasonImage = reasonImage4
-      Reasons[index].reasonImageMd = reasonImage4
+    switch (index + 1) {
+      case 1:
+        Reasons[index].reasonImage = reason1
+        Reasons[index].reasonImageMd = reasonImage1
+        Reasons[index].reasonFeatImage = reasonFeatImage1
+        break
+      case 2:
+        Reasons[index].reasonImage = reason2
+        Reasons[index].reasonImageMd = reasonImage2
+        Reasons[index].reasonFeatImage = reasonFeatImage2
+        break
+      case 3:
+        Reasons[index].reasonImage = reason3
+        Reasons[index].reasonImageMd = reasonImage3
+        Reasons[index].reasonFeatImage = reasonFeatImage3
+        break
+      case 4:
+        Reasons[index].reasonImage = reason4
+        Reasons[index].reasonImageMd = reasonImage4
+        Reasons[index].reasonFeatImage = reasonFeatImage4
+        break
+      case 5:
+        Reasons[index].reasonImage = reason5
+        Reasons[index].reasonImageMd = reasonImage5
+        Reasons[index].reasonFeatImage = reasonFeatImage5
+        break
+      case 6:
+        Reasons[index].reasonImage = reason6
+        Reasons[index].reasonImageMd = reasonImage6
+        Reasons[index].reasonFeatImage = reasonFeatImage6
+        break
+      case 7:
+        Reasons[index].reasonImage = reason7
+        Reasons[index].reasonImageMd = reasonImage7
+        Reasons[index].reasonFeatImage = reasonFeatImage7
+        break
+      case 8:
+        Reasons[index].reasonImage = reason8
+        Reasons[index].reasonImageMd = reasonImage8
+        Reasons[index].reasonFeatImage = reasonFeatImage8
+        break
+      case 9:
+        Reasons[index].reasonImage = reason9
+        Reasons[index].reasonImageMd = reasonImage9
+        Reasons[index].reasonFeatImage = reasonFeatImage9
+        break
+      case 10:
+        Reasons[index].reasonImage = reason10
+        Reasons[index].reasonImageMd = reasonImage10
+        Reasons[index].reasonFeatImage = reasonFeatImage10
+        break
+      case 11:
+        Reasons[index].reasonImage = reason11
+        Reasons[index].reasonImageMd = reasonImage11
+        Reasons[index].reasonFeatImage = reasonFeatImage11
+        break
+      case 12:
+        Reasons[index].reasonImage = reason12
+        Reasons[index].reasonImageMd = reasonImage12
+        Reasons[index].reasonFeatImage = reasonFeatImage12
+        break
+      case 13:
+        Reasons[index].reasonImage = reason13
+        Reasons[index].reasonImageMd = reasonImage13
+        Reasons[index].reasonFeatImage = reasonFeatImage13
+        break
+      case 14:
+        Reasons[index].reasonImage = reason14
+        Reasons[index].reasonImageMd = reasonImage14
+        Reasons[index].reasonFeatImage = reasonFeatImage14
+        break
+      case 15:
+        Reasons[index].reasonImage = reason15
+        Reasons[index].reasonImageMd = reasonImage15
+        Reasons[index].reasonFeatImage = reasonFeatImage15
+        break
+      case 16:
+        Reasons[index].reasonImage = reason16
+        Reasons[index].reasonImageMd = reasonImage16
+        Reasons[index].reasonFeatImage = reasonFeatImage16
+        break
+      case 17:
+        Reasons[index].reasonImage = reason17
+        Reasons[index].reasonImageMd = reasonImage17
+        Reasons[index].reasonFeatImage = reasonFeatImage17
+        break
+      case 18:
+        Reasons[index].reasonImage = reason18
+        Reasons[index].reasonImageMd = reasonImage18
+        Reasons[index].reasonFeatImage = reasonFeatImage18
+        break
+      case 19:
+        Reasons[index].reasonImage = reason19
+        Reasons[index].reasonImageMd = reasonImage19
+        Reasons[index].reasonFeatImage = reasonFeatImage19
+        break
+      case 20:
+        Reasons[index].reasonImage = reason20
+        Reasons[index].reasonImageMd = reasonImage20
+        Reasons[index].reasonFeatImage = reasonFeatImage20
+        break
+      default:
     }
-    Reasons[index].reasonFeatImage = reasonFeatImage
     Reasons[index].userImage = userImage
   })
   useEffect(() => {
@@ -347,7 +868,7 @@ export default () => {
         '/brand-experience/toyota-sienna/2021/reasons/en'
       ) {
         window.dataLayer.push({
-          event: 'gtm.page_load',
+          event: 'gtm_bx_virtual_page',
           pageType: '/brand-experience/toyota-sienna/2021/reasons/en',
           sponsoredContentCampaign: 'toyota sienna - 2021',
         })
@@ -435,11 +956,11 @@ export default () => {
             <>
               <Img
                 className={`d-none d-xl-block ${reason_slider_bg}`}
-                fixed={reason1BgXl.childImageSharp.fixed}
+                fixed={heroBgXl.childImageSharp.fixed}
               />
               <Img
                 className={`d-none d-md-block d-xl-none ${reason_slider_bg}`}
-                fixed={reason1BgMd.childImageSharp.fixed}
+                fixed={heroBgMd.childImageSharp.fixed}
               />
               <div className={reason_slider_content_area}>
                 <div className={reason_slider_content_top}>
@@ -523,7 +1044,7 @@ export default () => {
                                       className={`${reason_slide_holder} master`}
                                       onClick={e => {
                                         window.dataLayer.push({
-                                          event: 'gtm.bx',
+                                          event: 'gtm_bx',
                                           eventAction:
                                             'toyota sienna 2021 - card - flip',
                                           eventLabel: `card ${(
@@ -534,7 +1055,7 @@ export default () => {
                                       }}
                                       onKeyPress={e => {
                                         window.dataLayer.push({
-                                          event: 'gtm.bx',
+                                          event: 'gtm_bx',
                                           eventAction:
                                             'toyota sienna 2021 - card - flip',
                                           eventLabel: `card ${(
@@ -563,7 +1084,7 @@ export default () => {
                                       className={`${reason_slide_holder}`}
                                       onClick={e => {
                                         window.dataLayer.push({
-                                          event: 'gtm.bx',
+                                          event: 'gtm_bx',
                                           eventAction:
                                             'toyota sienna 2021 - card - flip',
                                           eventLabel: `card ${(
@@ -574,7 +1095,7 @@ export default () => {
                                       }}
                                       onKeyPress={e => {
                                         window.dataLayer.push({
-                                          event: 'gtm.bx',
+                                          event: 'gtm_bx',
                                           eventAction:
                                             'toyota sienna 2021 - card - flip',
                                           eventLabel: `card ${(
@@ -632,7 +1153,7 @@ export default () => {
                                 <div
                                   onClick={e => {
                                     window.dataLayer.push({
-                                      event: 'gtm.bx',
+                                      event: 'gtm_bx',
                                       eventAction:
                                         'toyota sienna 2021 - card - flip',
                                       eventLabel: `card ${(
@@ -646,7 +1167,7 @@ export default () => {
                                   }}
                                   onKeyPress={e => {
                                     window.dataLayer.push({
-                                      event: 'gtm.bx',
+                                      event: 'gtm_bx',
                                       eventAction:
                                         'toyota sienna 2021 - card - flip',
                                       eventLabel: `card ${(
@@ -723,7 +1244,7 @@ export default () => {
                         }}
                         onSlideNextTransitionEnd={swiper => {
                           window.dataLayer.push({
-                            event: 'gtm.bx',
+                            event: 'gtm_bx',
                             eventAction:
                               'toyota sienna 2021 - card - nav - next',
                             eventLabel: `card ${(
@@ -733,7 +1254,7 @@ export default () => {
                         }}
                         onSlidePrevTransitionEnd={swiper => {
                           window.dataLayer.push({
-                            event: 'gtm.bx',
+                            event: 'gtm_bx',
                             eventAction:
                               'toyota sienna 2021 - card - nav - prev',
                             eventLabel: `card ${(
@@ -917,7 +1438,7 @@ export default () => {
             >
               <Img
                 className={reason_slider_bg}
-                fluid={reason1Bg.childImageSharp.fluid}
+                fluid={heroBg.childImageSharp.fluid}
               />
               <div className={reason_slider_content_area}>
                 <div className={reason_slider_content_top}>
@@ -1559,7 +2080,9 @@ export default () => {
           </Container>
         </section>
       )}
-      <section className={`${navigation.reasons} ${navigation.navigation_section}`}>
+      <section
+        className={`${navigation.reasons} ${navigation.navigation_section}`}
+      >
         <Container>
           <Row>
             <Col md={6} className="text-center">
@@ -1567,7 +2090,7 @@ export default () => {
                 <div className={`w-100 ${navigation.nav_holder}`}>
                   <Img
                     className={`w-100 ${navigation.nav_image}`}
-                    fixed={prevImage.childImageSharp.fixed}
+                    fluid={prevImage.childImageSharp.fluid}
                   />
                   <div className={navigation.nav_area}>
                     <p>Previous</p>
@@ -1589,7 +2112,7 @@ export default () => {
                 <div className={`w-100 ${navigation.nav_holder}`}>
                   <Img
                     className={`w-100 ${navigation.nav_image}`}
-                    fixed={nextImage.childImageSharp.fixed}
+                    fluid={nextImage.childImageSharp.fluid}
                   />
                   <div className={navigation.nav_area}>
                     <p>Next</p>

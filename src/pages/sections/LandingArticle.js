@@ -61,7 +61,7 @@ const LandingArticle = () => {
                 <Link
                   onClick={() =>
                     window.dataLayer.push({
-                      event: 'gtm.bx',
+                      event: 'gtm_bx',
                       eventAction:
                         'toyota sienna 2021 - home - article - family',
                       eventLabel: ``,
@@ -84,7 +84,7 @@ const LandingArticle = () => {
               <div className={landing_article.article}>
                 <Link onClick={() =>
                     window.dataLayer.push({
-                      event: 'gtm.bx',
+                      event: 'gtm_bx',
                       eventAction:
                         'toyota sienna 2021 - home - article - sienna',
                       eventLabel: ``,
@@ -132,7 +132,7 @@ const LandingArticle = () => {
               >
                 <Link onClick={() =>
                     window.dataLayer.push({
-                      event: 'gtm.bx',
+                      event: 'gtm_bx',
                       eventAction:
                         'toyota sienna 2021 - home - article - family',
                       eventLabel: ``,
@@ -159,7 +159,7 @@ const LandingArticle = () => {
               >
                 <Link onClick={() =>
                     window.dataLayer.push({
-                      event: 'gtm.bx',
+                      event: 'gtm_bx',
                       eventAction:
                         'toyota sienna 2021 - home - article - sienna',
                       eventLabel: ``,
