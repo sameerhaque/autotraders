@@ -374,6 +374,7 @@ const ArticleTemplate = ({ data }) => {
                   <Img
                     className={`w-100 ${nav_image}`}
                     fluid={
+                      isBrowser &&
                       window.location.pathname.includes(
                         'the-hardest-working-family-member'
                       )
@@ -385,6 +386,7 @@ const ArticleTemplate = ({ data }) => {
                     <p>Previous</p>
                     <Link
                       to={
+                        isBrowser &&
                         window.location.pathname.includes(
                           'the-hardest-working-family-member'
                         )
@@ -393,7 +395,8 @@ const ArticleTemplate = ({ data }) => {
                       }
                       className={navigate_previous}
                     >
-                      {window.location.pathname.includes(
+                      {isBrowser &&
+                      window.location.pathname.includes(
                         'the-hardest-working-family-member'
                       ) ? (
                         <h4>
