@@ -82,7 +82,7 @@ const ArticleTemplate = ({ data }) => {
         200
       )
     },
-    isBrowser = typeof window !== undefined,
+    isBrowser = typeof window !== 'undefined',
     [sliderSize, setSetSliderSize] = useState(null),
     setSliderWidth = useCallback(() => {
       if ($(window).outerWidth() >= 1200) {

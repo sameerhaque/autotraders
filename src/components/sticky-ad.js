@@ -25,7 +25,7 @@ const StickyAd = () => {
         }
       }
     `),
-    isBrowser = typeof window !== undefined,
+    isBrowser = typeof window !== 'undefined',
     [adDismissed, dismissAdForever] = useState(false),
     dismissAd = () => {
       confirmAlert({
