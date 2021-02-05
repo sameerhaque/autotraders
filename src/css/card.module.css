@@ -642,7 +642,7 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 42px;
-    max-width: 80%;
+    hyphens: auto;
   }
 
   .reason_card_title_width {
@@ -811,6 +811,10 @@
 
   .main_heading {
     margin-bottom: 0;
+  }
+
+  .reason_card_title {
+    max-width: 80%;
   }
 
   .reason_content_wrapper {
