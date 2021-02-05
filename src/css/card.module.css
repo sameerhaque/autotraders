@@ -786,10 +786,6 @@
     font-size: 41px;
     line-height: 49px;
   }
-
-  .reason_card_title {
-    max-width: 80%;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -815,6 +811,10 @@
 
   .main_heading {
     margin-bottom: 0;
+  }
+
+  .reason_card_title {
+    max-width: 80%;
   }
 
   .reason_content_wrapper {
