@@ -6,7 +6,7 @@ import $ from 'jquery'
 import Down from '../../components/icons/down'
 
 import landing_hero from './css/landing_hero.module.css'
-import videoSrc from '../../videos/video.mp4'
+import videoSrcXl from '../../videos/video-xl.mp4'
 
 const LandingHero = () => {
   const { poster } = useStaticQuery(graphql`
@@ -102,7 +102,7 @@ const LandingHero = () => {
               muted={true}
               controls={['Fullscreen']}
             >
-              <source src={videoSrc} type="video/mp4" />
+              <source src={videoSrcXl} type="video/mp4" />
             </Video>
             <button
               type="button"
