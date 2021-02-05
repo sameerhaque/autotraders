@@ -396,13 +396,13 @@
   }
 
   .hero_section_container {
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 0;
+    padding-left: 0;
     max-width: 1110px;
   }
 
   .features_content_holder {
-    padding: 20px 0 60px;
+    padding: 20px 0 90px;
     max-width: unset;
   }
 

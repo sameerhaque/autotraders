@@ -40,7 +40,7 @@ const LandingArticle = () => {
   }, [isBrowser])
   return (
     <section className={landing_article.section}>
-      <div className="container-xl">
+      <div className="container-xl px-xl-0">
         <Row className="justify-content-between align-items-end">
           <Col lg={5}>
             <h3 className={`${landing_article.heading} pr-xl-4`}>

@@ -22,7 +22,7 @@ export default () => {
       }
       footerImgSm: file(relativePath: { eq: "footer-fab.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 750, maxHeight: 1120) {
+          fluid(maxWidth: 750, maxHeight: 800) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -67,7 +67,7 @@ export default () => {
           className="d-sm-none"
         />
         <div className={footer.ad_box}>
-          <div className={`container-xl ${footer.ad_container}`}>
+          <div className={`container-xl px-xl-0 ${footer.ad_container}`}>
             <div className={footer.ad_inner}>
               <h4 className={footer.ad_heading_big}>
                 <span>Get </span>
@@ -83,14 +83,14 @@ export default () => {
                   window.dataLayer.push({
                     event: 'gtm_bx',
                     eventAction: 'toyota sienna 2021 - exit - toyota',
-                    eventLabel: 'get yours today',
+                    eventLabel: 'build and price',
                   })
                   window.location.href = `//toyota.ca`
                 }}
                 type="button"
                 className={`btn btn-primary ${footer.ad_button}`}
               >
-                GET YOURS TODAY
+                BUILD &amp; PRICE
               </button>
             </div>
           </div>
