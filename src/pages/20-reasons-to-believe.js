@@ -72,6 +72,7 @@ export default () => {
       reason_flip_slider_col,
       reason_flip_slider,
       reason_slide_holder,
+      reason_slide_loader,
       reason_slide_master,
       reason_slide_review,
       reason_review_header,
@@ -171,13 +172,29 @@ export default () => {
       reasonFeatImage18,
       reasonFeatImage19,
       reasonFeatImage20,
+      reasonBoxImage1,
+      reasonBoxImage2,
+      reasonBoxImage3,
+      reasonBoxImage4,
+      reasonBoxImage5,
+      reasonBoxImage6,
+      reasonBoxImage7,
+      reasonBoxImage8,
+      reasonBoxImage9,
+      reasonBoxImage10,
+      reasonBoxImage11,
+      reasonBoxImage12,
+      reasonBoxImage13,
+      reasonBoxImage14,
+      reasonBoxImage15,
+      reasonBoxImage16,
+      reasonBoxImage17,
+      reasonBoxImage18,
+      reasonBoxImage19,
+      reasonBoxImage20,
       userImage,
       prevImage,
       nextImage,
-      reasonCar1,
-      reasonCar2,
-      reasonCar3,
-      reasonCar4,
     } = useStaticQuery(graphql`
       {
         userAvatar: file(relativePath: { eq: "user-avatar.png" }) {
@@ -222,6 +239,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage1: file(relativePath: { eq: "reason-1-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage1: file(relativePath: { eq: "reason-1-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -240,6 +264,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 360) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage2: file(relativePath: { eq: "reason-2-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -264,6 +295,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage3: file(relativePath: { eq: "reason-3-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage3: file(relativePath: { eq: "reason-3-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -282,6 +320,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage4: file(relativePath: { eq: "reason-4-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -306,6 +351,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage5: file(relativePath: { eq: "reason-5-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage5: file(relativePath: { eq: "reason-5-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -324,6 +376,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage6: file(relativePath: { eq: "reason-6-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -348,6 +407,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage7: file(relativePath: { eq: "reason-7-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage7: file(relativePath: { eq: "reason-7-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -366,6 +432,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage8: file(relativePath: { eq: "reason-8-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -390,6 +463,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage9: file(relativePath: { eq: "reason-9-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage9: file(relativePath: { eq: "reason-9-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -408,6 +488,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage10: file(relativePath: { eq: "reason-10-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -432,6 +519,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage11: file(relativePath: { eq: "reason-11-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage11: file(relativePath: { eq: "reason-11-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -450,6 +544,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 360) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage12: file(relativePath: { eq: "reason-12-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -474,6 +575,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage13: file(relativePath: { eq: "reason-13-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage13: file(relativePath: { eq: "reason-13-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -492,6 +600,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage14: file(relativePath: { eq: "reason-14-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -516,6 +631,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage15: file(relativePath: { eq: "reason-15-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage15: file(relativePath: { eq: "reason-15-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -534,6 +656,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage16: file(relativePath: { eq: "reason-16-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -558,6 +687,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage17: file(relativePath: { eq: "reason-17-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage17: file(relativePath: { eq: "reason-17-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -576,6 +712,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage18: file(relativePath: { eq: "reason-18-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -600,6 +743,13 @@ export default () => {
             }
           }
         }
+        reasonBoxImage19: file(relativePath: { eq: "reason-19-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 735, height: 320) {
+              ...GatsbyImageSharpFixed
+            }
+          }
+        }
         reasonFeatImage19: file(relativePath: { eq: "reason-19-flip.jpg" }) {
           childImageSharp {
             fluid(maxWidth: 447, maxHeight: 280) {
@@ -618,6 +768,13 @@ export default () => {
           childImageSharp {
             fluid(maxWidth: 261, maxHeight: 359) {
               ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        reasonBoxImage20: file(relativePath: { eq: "reason-20-box.jpg" }) {
+          childImageSharp {
+            fixed(width: 356, height: 320) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
@@ -649,34 +806,6 @@ export default () => {
             }
           }
         }
-        reasonCar1: file(relativePath: { eq: "car-backside.jpg" }) {
-          childImageSharp {
-            fixed(width: 306, height: 320) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        reasonCar2: file(relativePath: { eq: "car-inside-river.jpg" }) {
-          childImageSharp {
-            fixed(width: 490, height: 320) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        reasonCar3: file(relativePath: { eq: "car-inner-part.jpg" }) {
-          childImageSharp {
-            fixed(width: 540, height: 320) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        reasonCar4: file(relativePath: { eq: "cartoon-car.jpg" }) {
-          childImageSharp {
-            fixed(width: 306, height: 320) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
       }
     `),
     isBrowser = typeof window !== undefined,
@@ -701,6 +830,7 @@ export default () => {
       setTabletModal(false)
     },
     previousReason = () => {
+      $(`.${reason_slide_loader}`).show()
       if (reasonIndex === 0) {
         setReasonIndex(Reasons.length - 1)
         setCurrentReason(Reasons[Reasons.length - 1])
@@ -720,6 +850,7 @@ export default () => {
       }
     },
     nextReason = () => {
+      $(`.${reason_slide_loader}`).show()
       if (reasonIndex === Reasons.length - 1) {
         setReasonIndex(0)
         setCurrentReason(Reasons[0])
@@ -760,101 +891,121 @@ export default () => {
       case 1:
         Reasons[index].reasonImage = reason1
         Reasons[index].reasonImageMd = reasonImage1
+        Reasons[index].reasonBoxImage = reasonBoxImage1
         Reasons[index].reasonFeatImage = reasonFeatImage1
         break
       case 2:
         Reasons[index].reasonImage = reason2
         Reasons[index].reasonImageMd = reasonImage2
+        Reasons[index].reasonBoxImage = reasonBoxImage2
         Reasons[index].reasonFeatImage = reasonFeatImage2
         break
       case 3:
         Reasons[index].reasonImage = reason3
         Reasons[index].reasonImageMd = reasonImage3
+        Reasons[index].reasonBoxImage = reasonBoxImage3
         Reasons[index].reasonFeatImage = reasonFeatImage3
         break
       case 4:
         Reasons[index].reasonImage = reason4
         Reasons[index].reasonImageMd = reasonImage4
+        Reasons[index].reasonBoxImage = reasonBoxImage4
         Reasons[index].reasonFeatImage = reasonFeatImage4
         break
       case 5:
         Reasons[index].reasonImage = reason5
         Reasons[index].reasonImageMd = reasonImage5
+        Reasons[index].reasonBoxImage = reasonBoxImage5
         Reasons[index].reasonFeatImage = reasonFeatImage5
         break
       case 6:
         Reasons[index].reasonImage = reason6
         Reasons[index].reasonImageMd = reasonImage6
+        Reasons[index].reasonBoxImage = reasonBoxImage6
         Reasons[index].reasonFeatImage = reasonFeatImage6
         break
       case 7:
         Reasons[index].reasonImage = reason7
         Reasons[index].reasonImageMd = reasonImage7
+        Reasons[index].reasonBoxImage = reasonBoxImage7
         Reasons[index].reasonFeatImage = reasonFeatImage7
         break
       case 8:
         Reasons[index].reasonImage = reason8
         Reasons[index].reasonImageMd = reasonImage8
+        Reasons[index].reasonBoxImage = reasonBoxImage8
         Reasons[index].reasonFeatImage = reasonFeatImage8
         break
       case 9:
         Reasons[index].reasonImage = reason9
         Reasons[index].reasonImageMd = reasonImage9
+        Reasons[index].reasonBoxImage = reasonBoxImage9
         Reasons[index].reasonFeatImage = reasonFeatImage9
         break
       case 10:
         Reasons[index].reasonImage = reason10
         Reasons[index].reasonImageMd = reasonImage10
+        Reasons[index].reasonBoxImage = reasonBoxImage10
         Reasons[index].reasonFeatImage = reasonFeatImage10
         break
       case 11:
         Reasons[index].reasonImage = reason11
         Reasons[index].reasonImageMd = reasonImage11
+        Reasons[index].reasonBoxImage = reasonBoxImage11
         Reasons[index].reasonFeatImage = reasonFeatImage11
         break
       case 12:
         Reasons[index].reasonImage = reason12
         Reasons[index].reasonImageMd = reasonImage12
+        Reasons[index].reasonBoxImage = reasonBoxImage12
         Reasons[index].reasonFeatImage = reasonFeatImage12
         break
       case 13:
         Reasons[index].reasonImage = reason13
         Reasons[index].reasonImageMd = reasonImage13
+        Reasons[index].reasonBoxImage = reasonBoxImage13
         Reasons[index].reasonFeatImage = reasonFeatImage13
         break
       case 14:
         Reasons[index].reasonImage = reason14
         Reasons[index].reasonImageMd = reasonImage14
+        Reasons[index].reasonBoxImage = reasonBoxImage14
         Reasons[index].reasonFeatImage = reasonFeatImage14
         break
       case 15:
         Reasons[index].reasonImage = reason15
         Reasons[index].reasonImageMd = reasonImage15
+        Reasons[index].reasonBoxImage = reasonBoxImage15
         Reasons[index].reasonFeatImage = reasonFeatImage15
         break
       case 16:
         Reasons[index].reasonImage = reason16
         Reasons[index].reasonImageMd = reasonImage16
+        Reasons[index].reasonBoxImage = reasonBoxImage16
         Reasons[index].reasonFeatImage = reasonFeatImage16
         break
       case 17:
         Reasons[index].reasonImage = reason17
         Reasons[index].reasonImageMd = reasonImage17
+        Reasons[index].reasonBoxImage = reasonBoxImage17
         Reasons[index].reasonFeatImage = reasonFeatImage17
         break
       case 18:
         Reasons[index].reasonImage = reason18
         Reasons[index].reasonImageMd = reasonImage18
+        Reasons[index].reasonBoxImage = reasonBoxImage18
         Reasons[index].reasonFeatImage = reasonFeatImage18
         break
       case 19:
         Reasons[index].reasonImage = reason19
         Reasons[index].reasonImageMd = reasonImage19
+        Reasons[index].reasonBoxImage = reasonBoxImage19
         Reasons[index].reasonFeatImage = reasonFeatImage19
         break
       case 20:
         Reasons[index].reasonImage = reason20
         Reasons[index].reasonImageMd = reasonImage20
+        Reasons[index].reasonBoxImage = reasonBoxImage20
         Reasons[index].reasonFeatImage = reasonFeatImage20
         break
       default:
@@ -998,9 +1149,10 @@ export default () => {
                             <Col xl={6}>
                               <div className={reason_content}>
                                 <h3 className={reason_box_heading}>
-                                  {`#${('0' + currentReason.id).slice(-2)} ${
+                                  {`#${('0' + currentReason.id).slice(-2)} `}
+                                  {ReactHtmlParser(
                                     currentReason.reasonBigHeading
-                                  }`}
+                                  )}
                                 </h3>
                                 {ReactHtmlParser(
                                   currentReason.reasonDescription
@@ -1067,6 +1219,20 @@ export default () => {
                                       role="button"
                                       tabIndex="0"
                                     >
+                                      <div className={reason_slide_loader}>
+                                        <div
+                                          className="spinner-grow text-secondary"
+                                          role="status"
+                                          style={{
+                                            width: '3rem',
+                                            height: '3rem',
+                                          }}
+                                        >
+                                          <span className="sr-only">
+                                            Loading...
+                                          </span>
+                                        </div>
+                                      </div>
                                       <Img
                                         fluid={
                                           currentReason.reasonImage
@@ -1074,7 +1240,13 @@ export default () => {
                                         }
                                         className={`${reason_slide_master} h-100`}
                                         imgStyle={{ maxWidth: sliderSize }}
-                                        style={{ maxWidth: sliderSize }}
+                                        style={{
+                                          maxWidth: sliderSize,
+                                          zIndex: 999,
+                                        }}
+                                        onLoad={() => {
+                                          $(`.${reason_slide_loader}`).hide()
+                                        }}
                                         alt="slide-1"
                                       />
                                     </div>
@@ -1318,7 +1490,7 @@ export default () => {
                                               reason_card_inner_content_title
                                             }
                                           >
-                                            {reasonBigHeading}
+                                            {ReactHtmlParser(reasonBigHeading)}
                                           </h4>
                                         </div>
                                       </div>
@@ -1362,7 +1534,9 @@ export default () => {
                               <strong>{`#${('0' + currentReason.id).slice(
                                 -2
                               )}`}</strong>
-                              {` ${currentReason.reasonBigHeading}`}
+                              {` ${ReactHtmlParser(
+                                currentReason.reasonBigHeading
+                              )}`}
                             </h3>
                             <h5 className={reason_modal_author}>
                               {ReactHtmlParser(currentReason.reasonBy)}
@@ -1536,7 +1710,7 @@ export default () => {
                                             reason_card_inner_content_title
                                           }
                                         >
-                                          {reasonBigHeading}
+                                          {ReactHtmlParser(reasonBigHeading)}
                                         </h4>
                                       </div>
                                     </div>
@@ -1589,7 +1763,9 @@ export default () => {
                             <strong>{`#${('0' + currentReason.id).slice(
                               -2
                             )}`}</strong>
-                            {` ${currentReason.reasonBigHeading}`}
+                            {` ${ReactHtmlParser(
+                              currentReason.reasonBigHeading
+                            )}`}
                           </h3>
                           <h5 className={reason_modal_author}>
                             {ReactHtmlParser(currentReason.reasonBy)}
@@ -1657,426 +1833,132 @@ export default () => {
                 </p>
               </Col>
             </Row>
-            <Row>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card1}`}>
-                    <Img
-                      fixed={reasonCar1.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card2}`}>
-                    <Img
-                      fixed={reasonCar2.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card3}`}>
-                    <Img
-                      fixed={reasonCar3.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card4}`}>
-                    <Img
-                      fixed={reasonCar4.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card1}`}>
-                    <Img
-                      fixed={reasonCar1.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card2}`}>
-                    <Img
-                      fixed={reasonCar2.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card3}`}>
-                    <Img
-                      fixed={reasonCar3.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card4}`}>
-                    <Img
-                      fixed={reasonCar4.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card1}`}>
-                    <Img
-                      fixed={reasonCar1.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card2}`}>
-                    <Img
-                      fixed={reasonCar2.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card3}`}>
-                    <Img
-                      fixed={reasonCar3.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card4}`}>
-                    <Img
-                      fixed={reasonCar4.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card1}`}>
-                    <Img
-                      fixed={reasonCar1.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card2}`}>
-                    <Img
-                      fixed={reasonCar2.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card3}`}>
-                    <Img
-                      fixed={reasonCar3.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card4}`}>
-                    <Img
-                      fixed={reasonCar4.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card1}`}>
-                    <Img
-                      fixed={reasonCar1.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card2}`}>
-                    <Img
-                      fixed={reasonCar2.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col md={8} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card3}`}>
-                    <Img
-                      fixed={reasonCar3.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title_width}>
-                        We can keep everyone warm and happy in our Sienna.
-                      </h4>
-                      <span className={reason_card_city2}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-              <Col md={4} className="mb-3">
-                <div className={`${reason_card_wrap}`}>
-                  <div className={`${reason_card} ${reason_card4}`}>
-                    <Img
-                      fixed={reasonCar4.childImageSharp.fixed}
-                      alt="reason-1"
-                      className={reason_card_img}
-                    />
-                    <div className={reason_card_content}>
-                      <p className={reason_card_label_index}>01</p>
-                      <h4 className={reason_card_title}>
-                        I can do so many things
-                      </h4>
-                      <span className={reason_card_city}>
-                        deborah, quebec city
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            </Row>
+            {Array.from({ length: 5 }, (_, i) => i + 1).map((val, index) => {
+              return (
+                <React.Fragment key={index}>
+                  <Row>
+                    <Col md={4} className="mb-3">
+                      <div className={`${reason_card_wrap}`}>
+                        <div className={`${reason_card} ${reason_card1}`}>
+                          <Img
+                            fixed={
+                              Reasons[4 * index + 0].reasonBoxImage
+                                .childImageSharp.fixed
+                            }
+                            alt={`reason-${Reasons[4 * index + 0].id}`}
+                            className={reason_card_img}
+                          />
+                          <div className={reason_card_content}>
+                            <p className={reason_card_label_index}>
+                              {`${('0' + Reasons[4 * index + 0].id).slice(-2)}`}
+                            </p>
+                            <h4 className={reason_card_title}>
+                              {ReactHtmlParser(
+                                Reasons[4 * index + 0].reasonBigHeading
+                              )}
+                            </h4>
+                            <span className={reason_card_city}>
+                              {ReactHtmlParser(
+                                Reasons[4 * index + 0].reasonBy
+                              )}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Col>
+                    <Col md={8} className="mb-3">
+                      <div className={`${reason_card_wrap}`}>
+                        <div className={`${reason_card} ${reason_card2}`}>
+                          <Img
+                            fixed={
+                              Reasons[4 * index + 1].reasonBoxImage
+                                .childImageSharp.fixed
+                            }
+                            alt={`reason-${Reasons[4 * index + 1].id}`}
+                            className={reason_card_img}
+                          />
+                          <div className={reason_card_content}>
+                            <p className={reason_card_label_index}>
+                              {`${('0' + Reasons[4 * index + 1].id).slice(-2)}`}
+                            </p>
+                            <h4 className={reason_card_title_width}>
+                              {ReactHtmlParser(
+                                Reasons[4 * index + 1].reasonBigHeading
+                              )}
+                            </h4>
+                            <span className={reason_card_city2}>
+                              {ReactHtmlParser(
+                                Reasons[4 * index + 1].reasonBy
+                              )}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md={8} className="mb-3">
+                      <div className={`${reason_card_wrap}`}>
+                        <div className={`${reason_card} ${reason_card3}`}>
+                          <Img
+                            fixed={
+                              Reasons[4 * index + 2].reasonBoxImage
+                                .childImageSharp.fixed
+                            }
+                            alt={`reason-${Reasons[4 * index + 2].id}`}
+                            className={reason_card_img}
+                          />
+                          <div className={reason_card_content}>
+                            <p className={reason_card_label_index}>
+                              {`${('0' + Reasons[4 * index + 2].id).slice(-2)}`}
+                            </p>
+                            <h4 className={reason_card_title_width}>
+                              {ReactHtmlParser(
+                                Reasons[4 * index + 2].reasonBigHeading
+                              )}
+                            </h4>
+                            <span className={reason_card_city2}>
+                              {ReactHtmlParser(
+                                Reasons[4 * index + 2].reasonBy
+                              )}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Col>
+                    <Col md={4} className="mb-3">
+                      <div className={`${reason_card_wrap}`}>
+                        <div className={`${reason_card} ${reason_card4}`}>
+                          <Img
+                            fixed={
+                              Reasons[4 * index + 3].reasonBoxImage
+                                .childImageSharp.fixed
+                            }
+                            alt={`reason-${Reasons[4 * index + 3].id}`}
+                            className={reason_card_img}
+                          />
+                          <div className={reason_card_content}>
+                            <p className={reason_card_label_index}>
+                              {`${('0' + Reasons[4 * index + 3].id).slice(-2)}`}
+                            </p>
+                            <h4 className={reason_card_title}>
+                              {ReactHtmlParser(
+                                Reasons[4 * index + 3].reasonBigHeading
+                              )}
+                            </h4>
+                            <span className={reason_card_city}>
+                              {ReactHtmlParser(
+                                Reasons[4 * index + 3].reasonBy
+                              )}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </Col>
+                  </Row>
+                </React.Fragment>
+              )
+            })}
           </Container>
         </section>
       )}

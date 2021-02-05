@@ -627,6 +627,8 @@
     top: 0;
     width: 100%;
     z-index: 999;
+    display: flex;
+    flex-direction: column;
   }
 
   .reason_card_label_index {
@@ -640,6 +642,7 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 42px;
+    max-width: 80%;
   }
 
   .reason_card_title_width {
@@ -655,7 +658,7 @@
     line-height: 32px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    padding-top: 85px;
+    margin-top: auto;
     display: block;
   }
 
@@ -664,7 +667,7 @@
     line-height: 32px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    padding-top: 45px;
+    margin-top: auto;
     display: block;
   }
 
@@ -770,6 +773,7 @@
 
   .bold_title {
     font-weight: 700;
+    display: block;
   }
 }
 
@@ -895,6 +899,15 @@
     background: #c4c4c4;
     border-radius: 10px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+  }
+
+  .reason_slide_loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
   }
 
   .reason_card .reason_card_img picture img,

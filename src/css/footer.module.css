@@ -82,6 +82,10 @@
     padding-bottom: 55px;
   }
 
+  .ad_inner {
+    max-width: 446px;
+  }
+
   .ad_box {
     align-items: center;
   }
@@ -89,10 +93,6 @@
   .ad_box .ad_heading_big {
     font-size: 100px;
     line-height: 100px;
-  }
-
-  .ad_box .ad_heading_big span {
-    display: block;
   }
 }
 
