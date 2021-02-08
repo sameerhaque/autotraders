@@ -1163,6 +1163,9 @@ export default () => {
                                   slidesPerView={1}
                                   centeredSlides={true}
                                   effect="flip"
+                                  flipEffect={{
+                                    slideShadows:false
+                                  }}
                                   updateOnWindowResize={true}
                                   loop={true}
                                   simulateTouch={false}
