@@ -110,7 +110,6 @@ const LandingCTA = () => {
     know_more_text =
       'People love their Toyota Sienna. Find out the reasons why they’re so proud to own one.'
   sliderReasons.forEach(ReasonId => {
-    console.log(ReasonId)
     switch (ReasonId) {
       case 3:
         Reasons[ReasonId - 1].slideImageMd = reason3Md

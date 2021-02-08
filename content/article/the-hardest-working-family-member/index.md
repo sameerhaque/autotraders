@@ -8,7 +8,6 @@ heading_strong: The hardest
 heading_thin: working family member
 author_image: neil.png
 author: Neil Vorano
-designation: specialist
 entryQuote: “It has the comfortable space for up to eight passengers, but a host of other features also makes it ideal for getting away from civilization.”
 entryBody: >-
   For our **#VanProud campaign,** we wanted to see what made vans so attractive to so many people. As it turns out, the features and capabilities vans provide make them a **perfect fit for busy lives.** Here are a few ways in which a van goes above and beyond simply carrying people.

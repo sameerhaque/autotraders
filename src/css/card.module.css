@@ -3,29 +3,8 @@
     background: #0f68c9;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.02);
     overflow: hidden;
-    padding-bottom: 193px;
     position: relative;
-  }
-
-  .reason_slider_bg {
-    opacity: 0.2;
-    position: relative;
-  }
-
-  .reason_slider_bg::after {
-    background: transparent;
-    background: linear-gradient(
-      180deg,
-      rgba(15, 104, 201, 0) 77.53%,
-      #0f68c9 98.48%
-    );
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    min-height: 655px;
   }
 
   .reason_slider_content_area {
@@ -136,6 +115,10 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+  }
+
+  .reason_card_holder:focus {
+    outline: none;
   }
 
   .reason_slider_mobile .reason_card_image {
@@ -370,13 +353,6 @@
 }
 
 @media (min-width: 576px) {
-  .reason_slider_section {
-    padding-bottom: 0;
-  }
-
-  .reason_slider_bg {
-    max-height: 630px;
-  }
 }
 
 @media (min-width: 768px) {
@@ -435,11 +411,7 @@
   .reason_slider_section {
     display: flex;
     justify-content: flex-end;
-    padding-bottom: 100px;
-  }
-
-  .reason_slider_bg {
-    max-height: unset;
+    min-height: 533px;
   }
 
   .reason_modal_title {
@@ -588,6 +560,10 @@
   .reason_card_wrap {
     border-radius: 20px;
     box-shadow: 5px 5px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .reason_card_wrap:focus {
+    outline: none;
   }
 
   .reason_card1 {
@@ -779,7 +755,7 @@
 
 @media (min-width: 992px) {
   .reason_slider_section {
-    padding-bottom: 185px;
+    min-height: 618px;
   }
 
   .reason_card_inner_content_title {
@@ -789,6 +765,9 @@
 }
 
 @media (min-width: 1200px) {
+  .reason_slider_section {
+    min-height: 740px;
+  }
   .breadcrumb_section {
     padding-bottom: 29px;
   }
@@ -796,10 +775,6 @@
   .reason_slider_section {
     padding-bottom: 0;
     overflow: visible;
-  }
-
-  .reason_slider_bg::after {
-    background: linear-gradient(90deg, #0f68c9 0, rgba(0, 0, 0, 0) 100%);
   }
 
   .reason_slider_content_area {
@@ -901,7 +876,7 @@
   .reason_slide_holder {
     overflow: hidden;
     background: #c4c4c4;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.15);
     position: relative;
   }

@@ -1,6 +1,6 @@
 @media (min-width: 0) {
   .navigation_section {
-    padding-top: 45px;
+    padding-top: 80px;
     background-color: #ffffff;
     position: relative;
   }
@@ -89,13 +89,9 @@
 }
 
 @media (min-width: 768px) {
-  .navigation_section {
-    padding-bottom: 35px;
-    padding-bottom: 36px;
-  }
-
   .navigation_section .nav_wrapper {
     margin-bottom: 35px;
+    margin-top: -35px;
   }
 
   .nav_holder {
@@ -115,15 +111,7 @@
 }
 
 @media (min-width: 1200px) {
-  .navigation_section {
-    padding-top: 100px;
-  }
-
   .reasons.navigation_section {
     padding-top: 84px;
-  }
-
-  .navigation_section .nav_wrapper {
-    margin-top: 0;
   }
 }

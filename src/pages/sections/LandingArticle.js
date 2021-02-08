@@ -16,14 +16,14 @@ const LandingArticle = () => {
       {
         Article_1: file(relativePath: { eq: "article-1.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 547, maxHeight: 350) {
+            fluid(maxWidth: 1094, maxHeight: 700) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         Article_2: file(relativePath: { eq: "article-2.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 547, maxHeight: 350) {
+            fluid(maxWidth: 1094, maxHeight: 700) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -49,9 +49,12 @@ const LandingArticle = () => {
             </h3>
           </Col>
           <Col lg={6}>
-            <p className={`${landing_article.description} pr-lg-4`}>
+            <p className={`${landing_article.description} pr-lg-4 mb-0`}>
               See how the Toyota Sienna{' '}
               <strong>can fit your own lifestyle.</strong>
+            </p>
+            <p className={`${landing_article.description} pr-lg-4`}>
+              Read the articles below.
             </p>
           </Col>
         </Row>

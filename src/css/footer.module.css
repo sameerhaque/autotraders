@@ -1,8 +1,6 @@
 @media (min-width: 0px) {
   .at_footer {
     padding-top: 40px;
-    padding-bottom: 84px;
-    max-width: 1440px;
     margin: auto;
     position: relative;
     background-color: #ffffff;
@@ -78,10 +76,6 @@
 }
 
 @media (min-width: 768px) {
-  .at_footer {
-    padding-bottom: 55px;
-  }
-
   .ad_inner {
     max-width: 446px;
   }
@@ -102,6 +96,5 @@
 @media (min-width: 1200px) {
   .at_footer {
     padding-top: 60px;
-    padding-bottom: 110px;
   }
 }
