@@ -56,9 +56,6 @@ collections:
       - label: Author
         name: author
         widget: string
-      - label: AutoTrader Designation
-        name: designation
-        widget: string
       - label: Entry Quote
         name: entryQuote
         widget: text

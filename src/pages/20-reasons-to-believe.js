@@ -28,7 +28,6 @@ export default () => {
       breadcrumb_content,
       breadcrumb_button,
       reason_slider_section,
-      reason_slider_bg,
       reason_slider_content_area,
       reason_slider_content_top,
       reason_slider_content_below,
@@ -109,9 +108,6 @@ export default () => {
     } = card,
     {
       userAvatar,
-      heroBgXl,
-      heroBgMd,
-      heroBg,
       reason1,
       reason2,
       reason3,
@@ -201,27 +197,6 @@ export default () => {
           childImageSharp {
             fixed(width: 190, height: 190) {
               ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        heroBgXl: file(relativePath: { eq: "reason-1-bg.jpg" }) {
-          childImageSharp {
-            fixed(width: 869, height: 740) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        heroBgMd: file(relativePath: { eq: "reason-1-bg-md.jpg" }) {
-          childImageSharp {
-            fixed(width: 1024, height: 433) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        heroBg: file(relativePath: { eq: "reason-1-bg-xs.jpg" }) {
-          childImageSharp {
-            fluid(maxWidth: 750, maxHeight: 903) {
-              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -794,14 +769,14 @@ export default () => {
         }
         prevImage: file(relativePath: { eq: "hardest-working.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 542, maxHeight: 250) {
+            fluid(maxWidth: 1085, maxHeight: 500) {
               ...GatsbyImageSharpFluid
             }
           }
         }
         nextImage: file(relativePath: { eq: "sienna-2021.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 543, maxHeight: 250) {
+            fluid(maxWidth: 1085, maxHeight: 500) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -813,18 +788,22 @@ export default () => {
     [sliderSize, setSetSliderSize] = useState(null),
     [activeSlide, setActiveSlide] = useState(null),
     [slider, setSlider] = useState(null),
+    [tabletSlider, setTabletSlider] = useState(null),
+    [mobileSlider, setMobileSlider] = useState(null),
     [tabletModal, setTabletModal] = useState(false),
     [reasonIndex, setReasonIndex] = useState(0),
     [currentReason, setCurrentReason] = useState(null),
-    openTabletModal = (_, index) => {
-      setReasonIndex(index)
-      setCurrentReason(Reasons[index])
-      setTabletModal(true)
-      window.dataLayer.push({
-        event: 'gtm_bx',
-        eventAction: 'toyota sienna 2021 - card - click',
-        eventLabel: `card ${('0' + index + 1).slice(-2)}`,
-      })
+    openMobileTabletModal = (_, index) => {
+      setTimeout(() => {
+        setReasonIndex(index)
+        setCurrentReason(Reasons[index])
+        setTabletModal(true)
+        window.dataLayer.push({
+          event: 'gtm_bx',
+          eventAction: 'toyota sienna 2021 - card - click',
+          eventLabel: `card ${('0' + index + 1).slice(-2)}`,
+        })
+      }, 301)
     },
     closeTabletModal = () => {
       setTabletModal(false)
@@ -868,6 +847,30 @@ export default () => {
           eventLabel: `card ${('0' + reasonIndex + 2).slice(-2)}`,
         })
       }
+    },
+    jumpToReason = (e, reasonId) => {
+      $('html, body').animate(
+        {
+          scrollTop: 0,
+        },
+        200
+      )
+      setTimeout(() => {
+        $(`.${reason_slide_loader}`).show()
+        setReasonIndex(reasonId - 1)
+        setCurrentReason(Reasons[reasonId - 1])
+        if (tabletSlider !== null) {
+          tabletSlider.slideTo(reasonId)
+        }
+        if (mobileSlider !== null) {
+          mobileSlider.slideTo(reasonId)
+        }
+        window.dataLayer.push({
+          event: 'gtm_bx',
+          eventAction: 'toyota sienna 2021 - card - nav - next',
+          eventLabel: `card 0${reasonId}`,
+        })
+      }, 201)
     },
     resetMode = useCallback(() => {
       if ($(window).outerWidth() >= 1200) {
@@ -1105,14 +1108,6 @@ export default () => {
         >
           {currentReason !== null ? (
             <>
-              <Img
-                className={`d-none d-xl-block ${reason_slider_bg}`}
-                fixed={heroBgXl.childImageSharp.fixed}
-              />
-              <Img
-                className={`d-none d-md-block d-xl-none ${reason_slider_bg}`}
-                fixed={heroBgMd.childImageSharp.fixed}
-              />
               <div className={reason_slider_content_area}>
                 <div className={reason_slider_content_top}>
                   <Container fluid>
@@ -1404,7 +1399,7 @@ export default () => {
                         }}
                         loop={true}
                         simulateTouch={true}
-                        slideToClickedSlide={true}
+                        slideToClickedSlide={false}
                         onPaginationRender={(_, paginationEl) => {
                           paginationEl.classList.add(reason_slider_pagination)
                         }}
@@ -1412,6 +1407,7 @@ export default () => {
                           setActiveSlide(swiper.realIndex)
                         }}
                         onSwiper={swiper => {
+                          setTabletSlider(swiper)
                           setActiveSlide(swiper.realIndex)
                         }}
                         onSlideNextTransitionEnd={swiper => {
@@ -1439,7 +1435,21 @@ export default () => {
                           ({ id, reasonImageMd, reasonBigHeading }, index) => {
                             return (
                               <SwiperSlide key={id}>
-                                <div className={reason_card_holder}>
+                                <div
+                                  className={reason_card_holder}
+                                  onClick={e => {
+                                    if (activeSlide === index) {
+                                      openMobileTabletModal(e, index)
+                                    }
+                                  }}
+                                  onKeyPress={e => {
+                                    if (activeSlide === index) {
+                                      openMobileTabletModal(e, index)
+                                    }
+                                  }}
+                                  role="button"
+                                  tabIndex="0"
+                                >
                                   <Img
                                     fluid={reasonImageMd.childImageSharp.fluid}
                                     alt={`reason-${id}`}
@@ -1465,7 +1475,7 @@ export default () => {
                                               reason_card_button_element
                                             }
                                             onClick={e => {
-                                              openTabletModal(e, index)
+                                              openMobileTabletModal(e, index)
                                             }}
                                           >
                                             <Open
@@ -1610,10 +1620,6 @@ export default () => {
                   : reason_slider_section
               }
             >
-              <Img
-                className={reason_slider_bg}
-                fluid={heroBg.childImageSharp.fluid}
-              />
               <div className={reason_slider_content_area}>
                 <div className={reason_slider_content_top}>
                   <button
@@ -1653,7 +1659,7 @@ export default () => {
                       }}
                       loop={true}
                       simulateTouch={true}
-                      slideToClickedSlide={true}
+                      slideToClickedSlide={false}
                       onPaginationRender={(_, paginationEl) => {
                         paginationEl.classList.add(reason_slider_pagination)
                       }}
@@ -1661,6 +1667,7 @@ export default () => {
                         setActiveSlide(swiper.realIndex)
                       }}
                       onSwiper={swiper => {
+                        setMobileSlider(swiper)
                         setActiveSlide(swiper.realIndex)
                       }}
                     >
@@ -1668,7 +1675,21 @@ export default () => {
                         ({ id, reasonImageMd, reasonBigHeading }, index) => {
                           return (
                             <SwiperSlide key={id}>
-                              <div className={reason_card_holder}>
+                              <div
+                                className={reason_card_holder}
+                                onClick={e => {
+                                  if (activeSlide === index) {
+                                    openMobileTabletModal(e, index)
+                                  }
+                                }}
+                                onKeyPress={e => {
+                                  if (activeSlide === index) {
+                                    openMobileTabletModal(e, index)
+                                  }
+                                }}
+                                role="button"
+                                tabIndex="0"
+                              >
                                 <Img
                                   fluid={reasonImageMd.childImageSharp.fluid}
                                   alt={`reason-${id}`}
@@ -1689,7 +1710,7 @@ export default () => {
                                         <button
                                           className={reason_card_button_element}
                                           onClick={e => {
-                                            openTabletModal(e, index)
+                                            openMobileTabletModal(e, index)
                                           }}
                                         >
                                           <Open
@@ -1838,7 +1859,17 @@ export default () => {
                 <React.Fragment key={index}>
                   <Row>
                     <Col md={4} className="mb-3">
-                      <div className={`${reason_card_wrap}`}>
+                      <div
+                        className={`${reason_card_wrap}`}
+                        onClick={e =>
+                          jumpToReason(e, Reasons[4 * index + 0].id)
+                        }
+                        onKeyPress={e =>
+                          jumpToReason(e, Reasons[4 * index + 0].id)
+                        }
+                        role="button"
+                        tabIndex="0"
+                      >
                         <div className={`${reason_card} ${reason_card1}`}>
                           <Img
                             fixed={
@@ -1858,16 +1889,24 @@ export default () => {
                               )}
                             </h4>
                             <span className={reason_card_city}>
-                              {ReactHtmlParser(
-                                Reasons[4 * index + 0].reasonBy
-                              )}
+                              {ReactHtmlParser(Reasons[4 * index + 0].reasonBy)}
                             </span>
                           </div>
                         </div>
                       </div>
                     </Col>
                     <Col md={8} className="mb-3">
-                      <div className={`${reason_card_wrap}`}>
+                      <div
+                        className={`${reason_card_wrap}`}
+                        onClick={e =>
+                          jumpToReason(e, Reasons[4 * index + 1].id)
+                        }
+                        onKeyPress={e =>
+                          jumpToReason(e, Reasons[4 * index + 1].id)
+                        }
+                        role="button"
+                        tabIndex="0"
+                      >
                         <div className={`${reason_card} ${reason_card2}`}>
                           <Img
                             fixed={
@@ -1887,9 +1926,7 @@ export default () => {
                               )}
                             </h4>
                             <span className={reason_card_city2}>
-                              {ReactHtmlParser(
-                                Reasons[4 * index + 1].reasonBy
-                              )}
+                              {ReactHtmlParser(Reasons[4 * index + 1].reasonBy)}
                             </span>
                           </div>
                         </div>
@@ -1898,7 +1935,17 @@ export default () => {
                   </Row>
                   <Row>
                     <Col md={8} className="mb-3">
-                      <div className={`${reason_card_wrap}`}>
+                      <div
+                        className={`${reason_card_wrap}`}
+                        onClick={e =>
+                          jumpToReason(e, Reasons[4 * index + 2].id)
+                        }
+                        onKeyPress={e =>
+                          jumpToReason(e, Reasons[4 * index + 2].id)
+                        }
+                        role="button"
+                        tabIndex="0"
+                      >
                         <div className={`${reason_card} ${reason_card3}`}>
                           <Img
                             fixed={
@@ -1918,16 +1965,24 @@ export default () => {
                               )}
                             </h4>
                             <span className={reason_card_city2}>
-                              {ReactHtmlParser(
-                                Reasons[4 * index + 2].reasonBy
-                              )}
+                              {ReactHtmlParser(Reasons[4 * index + 2].reasonBy)}
                             </span>
                           </div>
                         </div>
                       </div>
                     </Col>
                     <Col md={4} className="mb-3">
-                      <div className={`${reason_card_wrap}`}>
+                      <div
+                        className={`${reason_card_wrap}`}
+                        onClick={e =>
+                          jumpToReason(e, Reasons[4 * index + 3].id)
+                        }
+                        onKeyPress={e =>
+                          jumpToReason(e, Reasons[4 * index + 3].id)
+                        }
+                        role="button"
+                        tabIndex="0"
+                      >
                         <div className={`${reason_card} ${reason_card4}`}>
                           <Img
                             fixed={
@@ -1947,9 +2002,7 @@ export default () => {
                               )}
                             </h4>
                             <span className={reason_card_city}>
-                              {ReactHtmlParser(
-                                Reasons[4 * index + 3].reasonBy
-                              )}
+                              {ReactHtmlParser(Reasons[4 * index + 3].reasonBy)}
                             </span>
                           </div>
                         </div>

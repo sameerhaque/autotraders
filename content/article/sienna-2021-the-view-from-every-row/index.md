@@ -8,19 +8,12 @@ heading_strong: Sienna 2021,
 heading_thin: The View from Every Row
 author_image: neil.png
 author: Neil Vorano
-designation: specialist
-entryQuote: “Headroom is generous, even for people over six feet tall, and with the second row adjusted forward, you can stretch your legs out.”
+entryQuote: “So many thoughtful touches in this roomy cabin mean even more usefulness and comfort for everyone.”
 entryBody: >-
-  **The 2021 Toyota Sienna was built with passengers in mind.** How does that actually work when you travel in it? To answer that question, we took the Sienna XSE for a spin while sitting in each row and checking out features that are unique to each seat and passenger. 
+  #### Up Front:
 
 
-  Let’s take a look at the comfort and convenience from each row of seats.
-
-
-  #### Third Row:
-
-
-  Toyota has made the third row truly adult size, starting with getting back there in the first place. **The second-row Captains Seats slides all the way forward** and, with the large door opening, access is easy. The seats are firm but comfortable, and **the 60/40 seat backs can recline for even more relaxation.** Headroom is generous, even for people over six feet tall, and with the second row adjusted forward, you can stretch your legs out. And if you want to tune out for the long trip, put up the privacy shades, plug in your headphones to the jack with volume control for the available **HD Rear Seat Entertainment System,** charge your electronics with the **USB-A or USB-C ports** and just chill. Climate vents in the ceiling and cupholders in the sides will help make the ride even more comfortable.
+  The driver and front passenger are treated to a commanding view of the road, with **great visibility and light coming from the huge windshield and side windows.** Sitting in the wide front seats, the high centre console creating a cocoon around the driver and passenger, making it feel more like a car than a minivan. That console has a **large cargo box,** of course, but **it also hides a clever open area underneath to house a purse or handbag** with easy access. For the driver, every control falls easily at hand, and the **optional power tilt and telescoping steering wheel** – a class first – means a perfect driving position for anyone. The 9-inch **infotainment screen is easy to read and operate,** with hard buttons for its features and actual knobs for both volume and tuning, simplifying things. Charge a phone on the **QI wireless charging pad** in the dash or take advantage of the **USB-A and USB-C ports,** one of which also connects to the infotainment. The rear door controls are centrally located in the ceiling so either driver or passenger can operate them. And if rear visibility is hindered by passengers or cargo, the **available Digital Display Rear View Mirror** – a first in the segment – solves that problem; it operates as a normal mirror until it is flipped up, where it turns into a video screen, fed by the rear camera. So many thoughtful touches in this roomy cabin mean even more usefulness and comfort for everyone. 
 entrySliderImages:
   - slider-1-1.jpg
   - slider-1-2.jpg
@@ -38,12 +31,18 @@ middleSliderImages:
   - slider-2-2.jpg
   - slider-2-3.jpg
   - slider-2-4.jpg
-exitQuote: “So many thoughtful touches in this roomy cabin mean even more usefulness and comfort for everyone.”
+exitQuote: “Headroom is generous, even for people over six feet tall, and with the second row adjusted forward, you can stretch your legs out.”
 exitBody: >-
-  #### Up Front:
+  **The 2021 Toyota Sienna was built with passengers in mind.** How does that actually work when you travel in it? To answer that question, we took the Sienna XSE for a spin while sitting in each row and checking out features that are unique to each seat and passenger. 
 
 
-  The driver and front passenger are treated to a commanding view of the road, with **great visibility and light coming from the huge windshield and side windows.** Sitting in the wide front seats, the high centre console creating a cocoon around the driver and passenger, making it feel more like a car than a minivan. That console has a **large cargo box,** of course, but **it also hides a clever open area underneath to house a purse or handbag** with easy access. For the driver, every control falls easily at hand, and the **optional power tilt and telescoping steering wheel** – a class first – means a perfect driving position for anyone. The 9-inch **infotainment screen is easy to read and operate,** with hard buttons for its features and actual knobs for both volume and tuning, simplifying things. Charge a phone on the **QI wireless charging pad** in the dash or take advantage of the **USB-A and USB-C ports,** one of which also connects to the infotainment. The rear door controls are centrally located in the ceiling so either driver or passenger can operate them. And if rear visibility is hindered by passengers or cargo, the **available Digital Display Rear View Mirror** – a first in the segment – solves that problem; it operates as a normal mirror until it is flipped up, where it turns into a video screen, fed by the rear camera. So many thoughtful touches in this roomy cabin mean even more usefulness and comfort for everyone. 
+  Let’s take a look at the comfort and convenience from each row of seats.
+
+
+  #### Third Row:
+
+
+  Toyota has made the third row truly adult size, starting with getting back there in the first place. **The second-row Captains Seats slides all the way forward** and, with the large door opening, access is easy. The seats are firm but comfortable, and **the 60/40 seat backs can recline for even more relaxation.** Headroom is generous, even for people over six feet tall, and with the second row adjusted forward, you can stretch your legs out. And if you want to tune out for the long trip, put up the privacy shades, plug in your headphones to the jack with volume control for the available **HD Rear Seat Entertainment System,** charge your electronics with the **USB-A or USB-C ports** and just chill. Climate vents in the ceiling and cupholders in the sides will help make the ride even more comfortable.
 exitSliderImages:
   - slider-3-1.jpg
   - slider-3-2.jpg

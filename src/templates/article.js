@@ -51,7 +51,6 @@ const ArticleTemplate = ({ data }) => {
     { excerpt, frontmatter } = post,
     {
       author,
-      designation,
       title,
       description,
       heading_strong,
@@ -167,7 +166,7 @@ const ArticleTemplate = ({ data }) => {
                   <span>
                     by <strong>{author}</strong>,
                   </span>{' '}
-                  <strong>autoTRADER</strong> {designation}
+                  <strong>autoTRADER</strong>
                 </p>
               </div>
             </div>
@@ -477,12 +476,11 @@ export const pageQuery = graphql`
           }
         }
         author
-        designation
         entryQuote
         entryBody
         entrySliderImages {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 2230, maxHeight: 1200) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -491,7 +489,7 @@ export const pageQuery = graphql`
         middleBody
         middleSliderImages {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 2230, maxHeight: 1200) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -500,7 +498,7 @@ export const pageQuery = graphql`
         exitBody
         exitSliderImages {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 2230, maxHeight: 1200) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -509,21 +507,21 @@ export const pageQuery = graphql`
     }
     prevImageI: file(relativePath: { eq: "sienna-2021.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 543, maxHeight: 250) {
+        fluid(maxWidth: 1085, maxHeight: 500) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     prevImageII: file(relativePath: { eq: "hardest-working.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 542, maxHeight: 250) {
+        fluid(maxWidth: 1085, maxHeight: 500) {
           ...GatsbyImageSharpFluid
         }
       }
     }
     nextImage: file(relativePath: { eq: "20-reason.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 543, maxHeight: 250) {
+        fluid(maxWidth: 1085, maxHeight: 500) {
           ...GatsbyImageSharpFluid
         }
       }
