@@ -12,7 +12,7 @@ import SEO from '../components/seo'
 
 const IndexPage = ({ data }) => {
   useEffect(() => {
-    if (
+    /* if (
       window.dataLayer[window.dataLayer.length - 1].pageType !==
       '/brand-experience/toyota-sienna/2021/home/en'
     ) {
@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
         pageType: '/brand-experience/toyota-sienna/2021/home/en',
         sponsoredContentCampaign: 'toyota sienna - 2021',
       })
-    }
+    } */
   }, [])
   return (
     <Layout>
