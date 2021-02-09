@@ -67,3 +67,7 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
+
+autotraders.code-workspace
+autotrader-cms.code-workspace
+package-lock.json

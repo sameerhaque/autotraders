@@ -5,12 +5,13 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import Header from "./header"
-import "./layout.css"
+import Header from './header'
+import Footer from './footer'
+import layout from '../css/layout.module.css'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -26,18 +27,8 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <main>{children}</main>
-      <footer
-        style={{
-          marginTop: `2rem`,
-          maxWidth: `1120px`,
-          margin: `25px auto`,
-        }}
-      >
-        © {new Date().getFullYear()}, Test Build / Toyota
-        {` `}
-        <a href="https://www.autotraders.ca">AutoTraders</a>
-      </footer>
+      <main className={layout.main}>{children}</main>
+      <Footer />
     </>
   )
 }

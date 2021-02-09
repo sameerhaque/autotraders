@@ -1,20 +1,35 @@
-[build.processing.css]
-  bundle = true
-  minify = true
-[build.processing.js]
-  bundle = true
-  minify = true
-[build.processing.html]
-  pretty_urls = true
-[build.processing.images]
-  compress = true
-
+[build]
+  command = "npm run build"
 
 [[headers]]
-  for = "*.js" # js files should be set this way
+  for = "/static/*"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+	cache-control = '''
+	public,
+	max-age=2592000,
+	must-revalidate'''
 [[headers]]
-  for = "*.css" # css files too
+  for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=604800"
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
+[[headers]]
+  for = "/*.mp4"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800, must-revalidate"
+
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"

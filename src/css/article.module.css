@@ -1,0 +1,263 @@
+@media (min-width: 0) {
+  .hero {
+    background-color: #cee0f3;
+    display: flex;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  .hero_image {
+  }
+
+  .hero_content {
+    color: #ffffff;
+    background: linear-gradient(
+      115.75deg,
+      rgba(0, 0, 0, 0.3) 26.9%,
+      rgba(0, 0, 0, 0) 65.67%
+    );
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .hero_holder {
+    display: flex;
+    height: 100%;
+    position: relative;
+  }
+
+  .hero_button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid #ffffff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.2s;
+  }
+
+  .hero_button:hover {
+    transform: scale(1.2558);
+  }
+
+  .hero_button:focus {
+    outline: none;
+  }
+
+  .hero_inner {
+    height: 100%;
+    padding: 50px 20px;
+    width: 100%;
+  }
+
+  .hero_inner h1 {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 42px;
+    letter-spacing: -0.01em;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .hero_inner h1 strong {
+    display: block;
+    font-weight: 700;
+  }
+
+  .author_info {
+    display: flex;
+    align-items: center;
+  }
+
+  .author_img {
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    height: 50px;
+    overflow: hidden;
+    width: 50px;
+  }
+
+  .author_info p {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    margin-bottom: 0;
+    margin-left: 20px;
+    text-align: left;
+  }
+
+  .author_info p span {
+    display: block;
+  }
+
+  .author_info p strong {
+    font-weight: 500;
+  }
+
+  .article_content_wrapper {
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: left;
+    letter-spacing: 0em;
+    background-color: #ffffff;
+    position: relative;
+  }
+
+  .article_quote h3 {
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 44px;
+    margin-bottom: 20px;
+  }
+
+  .article_content h4 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 10px;
+  }
+  .article_content p {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 32px;
+  }
+
+  .slider_section {
+    overflow: hidden;
+    background-color: #ffffff;
+    position: relative;
+  }
+
+  .slider_container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .slider_section .article_slider {
+    overflow: visible;
+    margin-bottom: 30px;
+  }
+
+  .slider_section .article_slide {
+    border-radius: 10px;
+  }
+
+  .swiper_nav {
+    display: flex;
+    width: 116px;
+    justify-content: space-between;
+    margin-left: 20px;
+  }
+
+  .slider_button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  .slider_button:focus {
+    outline: none;
+  }
+}
+
+@media (min-width: 375px) {
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .hero_inner {
+    padding: 60px 30px;
+  }
+
+  .hero_button {
+    bottom: 100px;
+    right: 30px;
+  }
+
+  .hero_inner h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .author_info p {
+    line-height: 32px;
+  }
+
+  .author_info p span {
+    display: inline-block;
+  }
+
+  .swiper_nav {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+  .hero_inner {
+    padding: 60px 50px;
+  }
+
+  .hero_inner h1 {
+    font-size: 64px;
+    line-height: 64px;
+  }
+
+  .hero_holder {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .hero_button {
+    bottom: 30px;
+    right: 50px;
+  }
+
+  .hero_button::before {
+    color: #ffffff;
+    content: 'SCROLL DOWN';
+    position: absolute;
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    max-width: 39px;
+    text-align: right;
+    top: 50%;
+    left: calc(-100% - 10px);
+    transform: translateY(-50%) scale(1);
+    transition: transform 0.2s;
+  }
+
+  .hero_button:hover::before {
+    transform: translateY(-50%) scale(0.8);
+  }
+
+  .article_quote h3 {
+    max-width: 391px;
+  }
+
+  .slider_container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}

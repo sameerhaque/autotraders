@@ -1,0 +1,116 @@
+@media (min-width: 0px) {
+  .hero_image {
+    background-color: #cccccc;
+    position: relative;
+  }
+
+  .features_image {
+    background-color: #000000;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    height: 0;
+    position: relative;
+    padding-bottom: 53%;
+    overflow: hidden;
+    max-width: 100%;
+    z-index: 0;
+  }
+
+  .features_image::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .features_image .iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+  }
+
+  .hero_button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 0;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid #ffffff;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.2s;
+    z-index: 99;
+  }
+
+  .hero_button:active {
+    transform: scale(1.2558);
+  }
+
+  .hero_button:focus {
+    outline: none;
+  }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .hero_button {
+    bottom: 100px;
+    right: 30px;
+  }
+
+  .buttonFullScr {
+    bottom: 50px;
+    right: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+  .hero_button {
+    bottom: 86px;
+    right: 50px;
+  }
+
+  .features_image {
+    padding-bottom: 680px;
+  }
+
+  .features_image::after {
+    display: none;
+  }
+
+  .hero_button::before {
+    color: #ffffff;
+    content: 'SCROLL DOWN';
+    position: absolute;
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    max-width: 39px;
+    text-align: right;
+    top: 50%;
+    left: calc(-100% - 10px);
+    transform: translateY(-50%) scale(1);
+    transition: transform 0.2s;
+  }
+
+  .hero_button:hover::before {
+    transform: translateY(-50%) scale(0.8);
+  }
+}
